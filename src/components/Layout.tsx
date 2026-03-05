@@ -10,6 +10,7 @@ import {
   Bell,
   Loader2,
   DollarSign,
+  FileText,
 } from 'lucide-react'
 import {
   Sidebar,
@@ -31,6 +32,7 @@ import { Button } from '@/components/ui/button'
 import { ThemeToggle } from './ThemeToggle'
 import { ErrorBoundary } from './ErrorBoundary'
 import useAuthStore from '@/stores/useAuthStore'
+import { useDocumentStore } from '@/stores/useDocumentStore'
 
 const PageLoader = () => (
   <div className="flex-1 flex items-center justify-center min-h-[50vh]">
@@ -40,6 +42,7 @@ const PageLoader = () => (
 
 export default function Layout() {
   const { user, logout } = useAuthStore()
+  const { alertsCount } = useDocumentStore()
   const location = useLocation()
 
   const navItems = [
@@ -47,6 +50,12 @@ export default function Layout() {
     { title: 'Viagens', url: '/app/trips', icon: Map },
     { title: 'Finanças', url: '/app/finances', icon: DollarSign },
     { title: 'Veículos', url: '/app/garage', icon: Wrench },
+    {
+      title: 'Documentos',
+      url: '/app/documents',
+      icon: FileText,
+      badge: alertsCount > 0 ? alertsCount : undefined,
+    },
   ]
 
   const adminItems = [{ title: 'Painel Admin', url: '/admin', icon: ShieldAlert }]
@@ -75,9 +84,16 @@ export default function Layout() {
                       isActive={location.pathname.startsWith(item.url)}
                       tooltip={item.title}
                     >
-                      <Link to={item.url}>
-                        <item.icon />
-                        <span>{item.title}</span>
+                      <Link to={item.url} className="flex items-center justify-between w-full">
+                        <div className="flex items-center gap-2">
+                          <item.icon />
+                          <span>{item.title}</span>
+                        </div>
+                        {item.badge ? (
+                          <span className="ml-auto flex h-5 min-w-5 shrink-0 items-center justify-center rounded-full bg-destructive px-1.5 text-[10px] font-bold text-destructive-foreground">
+                            {item.badge}
+                          </span>
+                        ) : null}
                       </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
@@ -140,7 +156,9 @@ export default function Layout() {
           <div className="flex items-center gap-2">
             <Button variant="ghost" size="icon" className="h-9 w-9 rounded-full relative">
               <Bell className="h-4 w-4" />
-              <span className="absolute top-2 right-2 h-2 w-2 rounded-full bg-primary" />
+              {alertsCount > 0 && (
+                <span className="absolute top-2 right-2 h-2 w-2 rounded-full bg-destructive animate-pulse" />
+              )}
             </Button>
             <ThemeToggle />
           </div>
