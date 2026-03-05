@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { MapPin, Calendar, CarFront, Edit, Receipt } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { MapPin, Calendar, CarFront, Edit, Receipt, Tent } from 'lucide-react'
 import { format } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 import { Card, CardContent } from '@/components/ui/card'
@@ -68,7 +69,7 @@ export default function TripSummaryBar({ trip }: TripSummaryBarProps) {
             </div>
           </div>
 
-          <div className="flex gap-6 w-full md:w-auto md:min-w-[280px]">
+          <div className="flex gap-5 w-full md:w-auto md:min-w-[320px]">
             <div className="flex-1 space-y-4">
               <div className="space-y-1.5">
                 <div className="flex justify-between text-xs font-medium">
@@ -91,14 +92,26 @@ export default function TripSummaryBar({ trip }: TripSummaryBarProps) {
               </div>
             </div>
 
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => setIsEditing(true)}
-              className="shrink-0"
-            >
-              <Edit className="h-4 w-4" />
-            </Button>
+            <div className="flex flex-col gap-2 shrink-0 w-32">
+              <Button
+                variant="default"
+                size="sm"
+                asChild
+                className="w-full justify-start shadow-sm"
+              >
+                <Link to={`/app/trips/${trip.id}/overnights`}>
+                  <Tent className="h-4 w-4 mr-2" /> Pernoites
+                </Link>
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setIsEditing(true)}
+                className="w-full justify-start"
+              >
+                <Edit className="h-4 w-4 mr-2" /> Editar
+              </Button>
+            </div>
           </div>
         </CardContent>
       </Card>
