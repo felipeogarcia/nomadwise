@@ -24,6 +24,8 @@ export interface Trip {
   spent: number
   startDate: string
   endDate?: string
+  vehicleId?: string
+  estimatedKm?: number
 }
 
 export type VehicleType = 'moto' | 'carro' | 'motorhome' | 'van' | 'outro'
@@ -40,4 +42,18 @@ export interface Vehicle {
   tankCapacity: number
   nextMaintenance?: string
   imageUrl: string
+}
+
+export interface ChecklistCategory {
+  id: string
+  title: string
+}
+
+export interface ChecklistItem {
+  id: string
+  tripId: string
+  categoryId: string
+  title: string
+  isCompleted: boolean
+  isCustom: boolean
 }
