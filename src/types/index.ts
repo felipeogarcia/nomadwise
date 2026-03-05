@@ -57,3 +57,18 @@ export interface ChecklistItem {
   isCompleted: boolean
   isCustom: boolean
 }
+
+export type StopStatus = 'planned' | 'visited' | 'skipped'
+
+export interface ItineraryStop {
+  id: string
+  tripId: string
+  name: string
+  address?: string
+  lat?: number
+  lng?: number
+  date?: string
+  status: StopStatus
+  notes?: string
+  orderIndex: number
+}

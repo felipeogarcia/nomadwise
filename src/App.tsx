@@ -19,6 +19,7 @@ const NotFound = lazy(() => import('@/pages/NotFound'))
 const Onboarding = lazy(() => import('@/pages/Onboarding'))
 const DashboardPage = lazy(() => import('@/pages/dashboard/DashboardPage'))
 const TripsPage = lazy(() => import('@/pages/trips/TripsPage'))
+const TripDetailPage = lazy(() => import('@/pages/trips/TripDetailPage'))
 const GaragePage = lazy(() => import('@/pages/garage/GaragePage'))
 const AdminPage = lazy(() => import('@/pages/admin/AdminPage'))
 
@@ -55,6 +56,7 @@ const App = () => (
                       <Route index element={<Navigate to="/app/dashboard" replace />} />
                       <Route path="dashboard" element={<DashboardPage />} />
                       <Route path="trips" element={<TripsPage />} />
+                      <Route path="trips/:id" element={<TripDetailPage />} />
                       <Route path="garage" element={<GaragePage />} />
                     </Route>
 

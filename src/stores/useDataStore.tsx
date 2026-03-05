@@ -1,12 +1,13 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react'
 import { toast } from '@/hooks/use-toast'
-import { Trip, Vehicle, ChecklistItem, ChecklistCategory } from '@/types'
+import { Trip, Vehicle, ChecklistItem, ChecklistCategory, ItineraryStop } from '@/types'
 
 interface DataState {
   trips: Trip[]
   vehicles: Vehicle[]
   checklistItems: ChecklistItem[]
   categories: ChecklistCategory[]
+  stops: ItineraryStop[]
   addTrip: (trip: Omit<Trip, 'id' | 'spent'>) => void
   updateTrip: (id: string, data: Partial<Trip>) => void
   deleteTrip: (id: string) => void
@@ -16,6 +17,10 @@ interface DataState {
   updateChecklistItem: (id: string, data: Partial<ChecklistItem>) => void
   deleteChecklistItem: (id: string) => void
   seedChecklist: (tripId: string) => void
+  addStop: (stop: Omit<ItineraryStop, 'id'>) => void
+  updateStop: (id: string, data: Partial<ItineraryStop>) => void
+  deleteStop: (id: string) => void
+  updateStopsBatch: (updatedStops: ItineraryStop[]) => void
 }
 
 const CATEGORIES: ChecklistCategory[] = [
@@ -90,12 +95,59 @@ const mockVehicles: Vehicle[] = [
   },
 ]
 
+const mockStops: ItineraryStop[] = [
+  {
+    id: 's1',
+    tripId: 't1',
+    name: 'Buenos Aires',
+    address: 'Capital',
+    lat: -34.6037,
+    lng: -58.3816,
+    status: 'visited',
+    orderIndex: 0,
+    date: '2024-01-18',
+  },
+  {
+    id: 's2',
+    tripId: 't1',
+    name: 'Bahía Blanca',
+    lat: -38.7183,
+    lng: -62.2663,
+    status: 'visited',
+    orderIndex: 1,
+    date: '2024-01-20',
+  },
+  {
+    id: 's3',
+    tripId: 't1',
+    name: 'Puerto Madryn',
+    lat: -42.7692,
+    lng: -65.0385,
+    status: 'planned',
+    orderIndex: 2,
+    date: '2024-01-22',
+  },
+  {
+    id: 's4',
+    tripId: 't1',
+    name: 'Ushuaia',
+    address: 'Fim do Mundo',
+    lat: -54.8019,
+    lng: -68.303,
+    status: 'planned',
+    orderIndex: 3,
+    date: '2024-01-30',
+    notes: 'Comprar adesivos',
+  },
+]
+
 const DataContext = createContext<DataState | undefined>(undefined)
 
 export function DataProvider({ children }: { children: ReactNode }) {
   const [trips, setTrips] = useState<Trip[]>(mockTrips)
   const [vehicles, setVehicles] = useState<Vehicle[]>(mockVehicles)
   const [checklistItems, setChecklistItems] = useState<ChecklistItem[]>([])
+  const [stops, setStops] = useState<ItineraryStop[]>(mockStops)
 
   const addTrip = (trip: Omit<Trip, 'id' | 'spent'>) => {
     const newTrip = { ...trip, spent: 0, id: Math.random().toString(36).substr(2, 9) }
@@ -108,8 +160,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
 
   const deleteTrip = (id: string) => {
     setTrips((prev) => prev.filter((t) => t.id !== id))
-    // Cascading delete for checklist
     setChecklistItems((prev) => prev.filter((i) => i.tripId !== id))
+    setStops((prev) => prev.filter((s) => s.tripId !== id))
   }
 
   const addVehicle = (vehicle: Omit<Vehicle, 'id'>) => {
@@ -149,6 +201,26 @@ export function DataProvider({ children }: { children: ReactNode }) {
     })
   }
 
+  const addStop = (stop: Omit<ItineraryStop, 'id'>) => {
+    const newStop = { ...stop, id: Math.random().toString(36).substr(2, 9) }
+    setStops((prev) => [...prev, newStop])
+  }
+
+  const updateStop = (id: string, data: Partial<ItineraryStop>) => {
+    setStops((prev) => prev.map((s) => (s.id === id ? { ...s, ...data } : s)))
+  }
+
+  const deleteStop = (id: string) => {
+    setStops((prev) => prev.filter((s) => s.id !== id))
+  }
+
+  const updateStopsBatch = (updatedStops: ItineraryStop[]) => {
+    setStops((prev) => {
+      const otherStops = prev.filter((p) => !updatedStops.some((u) => u.id === p.id))
+      return [...otherStops, ...updatedStops]
+    })
+  }
+
   return React.createElement(
     DataContext.Provider,
     {
@@ -157,6 +229,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
         vehicles,
         checklistItems,
         categories: CATEGORIES,
+        stops,
         addTrip,
         updateTrip,
         deleteTrip,
@@ -166,6 +239,10 @@ export function DataProvider({ children }: { children: ReactNode }) {
         updateChecklistItem,
         deleteChecklistItem,
         seedChecklist,
+        addStop,
+        updateStop,
+        deleteStop,
+        updateStopsBatch,
       },
     },
     children,
