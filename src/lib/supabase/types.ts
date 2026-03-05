@@ -1,17 +1,11 @@
 // AVOID UPDATING THIS FILE DIRECTLY. It is automatically generated.
-export type Json =
-  | string
-  | number
-  | boolean
-  | null
-  | { [key: string]: Json | undefined }
-  | Json[]
+export type Json = string | number | boolean | null | { [key: string]: Json | undefined } | Json[]
 
 export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "14.1"
+    PostgrestVersion: '14.1'
   }
   public: {
     Tables: {
@@ -39,11 +33,11 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "ai_config_created_by_fkey"
-            columns: ["created_by"]
+            foreignKeyName: 'ai_config_created_by_fkey'
+            columns: ['created_by']
             isOneToOne: false
-            referencedRelation: "profiles"
-            referencedColumns: ["id"]
+            referencedRelation: 'profiles'
+            referencedColumns: ['id']
           },
         ]
       }
@@ -86,11 +80,11 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "ai_evaluations_submission_id_fkey"
-            columns: ["submission_id"]
+            foreignKeyName: 'ai_evaluations_submission_id_fkey'
+            columns: ['submission_id']
             isOneToOne: true
-            referencedRelation: "form_submissions"
-            referencedColumns: ["id"]
+            referencedRelation: 'form_submissions'
+            referencedColumns: ['id']
           },
         ]
       }
@@ -136,11 +130,11 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "application_forms_created_by_fkey"
-            columns: ["created_by"]
+            foreignKeyName: 'application_forms_created_by_fkey'
+            columns: ['created_by']
             isOneToOne: false
-            referencedRelation: "profiles"
-            referencedColumns: ["id"]
+            referencedRelation: 'profiles'
+            referencedColumns: ['id']
           },
         ]
       }
@@ -168,18 +162,18 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "eliter_program_assignments_eliter_id_fkey"
-            columns: ["eliter_id"]
+            foreignKeyName: 'eliter_program_assignments_eliter_id_fkey'
+            columns: ['eliter_id']
             isOneToOne: false
-            referencedRelation: "profiles"
-            referencedColumns: ["id"]
+            referencedRelation: 'profiles'
+            referencedColumns: ['id']
           },
           {
-            foreignKeyName: "eliter_program_assignments_program_id_fkey"
-            columns: ["program_id"]
+            foreignKeyName: 'eliter_program_assignments_program_id_fkey'
+            columns: ['program_id']
             isOneToOne: false
-            referencedRelation: "onboarding_programs"
-            referencedColumns: ["id"]
+            referencedRelation: 'onboarding_programs'
+            referencedColumns: ['id']
           },
         ]
       }
@@ -213,32 +207,32 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "eliter_quiz_answers_attempt_id_fkey"
-            columns: ["attempt_id"]
+            foreignKeyName: 'eliter_quiz_answers_attempt_id_fkey'
+            columns: ['attempt_id']
             isOneToOne: false
-            referencedRelation: "eliter_quiz_attempts"
-            referencedColumns: ["id"]
+            referencedRelation: 'eliter_quiz_attempts'
+            referencedColumns: ['id']
           },
           {
-            foreignKeyName: "eliter_quiz_answers_question_id_fkey"
-            columns: ["question_id"]
+            foreignKeyName: 'eliter_quiz_answers_question_id_fkey'
+            columns: ['question_id']
             isOneToOne: false
-            referencedRelation: "quiz_questions"
-            referencedColumns: ["id"]
+            referencedRelation: 'quiz_questions'
+            referencedColumns: ['id']
           },
           {
-            foreignKeyName: "eliter_quiz_answers_selected_option_id_fkey"
-            columns: ["selected_option_id"]
+            foreignKeyName: 'eliter_quiz_answers_selected_option_id_fkey'
+            columns: ['selected_option_id']
             isOneToOne: false
-            referencedRelation: "question_options"
-            referencedColumns: ["id"]
+            referencedRelation: 'question_options'
+            referencedColumns: ['id']
           },
           {
-            foreignKeyName: "eliter_quiz_answers_selected_option_id_fkey"
-            columns: ["selected_option_id"]
+            foreignKeyName: 'eliter_quiz_answers_selected_option_id_fkey'
+            columns: ['selected_option_id']
             isOneToOne: false
-            referencedRelation: "quiz_options_public"
-            referencedColumns: ["id"]
+            referencedRelation: 'quiz_options_public'
+            referencedColumns: ['id']
           },
         ]
       }
@@ -281,18 +275,18 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "eliter_quiz_attempts_assignment_id_fkey"
-            columns: ["assignment_id"]
+            foreignKeyName: 'eliter_quiz_attempts_assignment_id_fkey'
+            columns: ['assignment_id']
             isOneToOne: false
-            referencedRelation: "eliter_program_assignments"
-            referencedColumns: ["id"]
+            referencedRelation: 'eliter_program_assignments'
+            referencedColumns: ['id']
           },
           {
-            foreignKeyName: "eliter_quiz_attempts_quiz_id_fkey"
-            columns: ["quiz_id"]
+            foreignKeyName: 'eliter_quiz_attempts_quiz_id_fkey'
+            columns: ['quiz_id']
             isOneToOne: false
-            referencedRelation: "step_quizzes"
-            referencedColumns: ["id"]
+            referencedRelation: 'step_quizzes'
+            referencedColumns: ['id']
           },
         ]
       }
@@ -320,18 +314,18 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "eliter_step_progress_assignment_id_fkey"
-            columns: ["assignment_id"]
+            foreignKeyName: 'eliter_step_progress_assignment_id_fkey'
+            columns: ['assignment_id']
             isOneToOne: false
-            referencedRelation: "eliter_program_assignments"
-            referencedColumns: ["id"]
+            referencedRelation: 'eliter_program_assignments'
+            referencedColumns: ['id']
           },
           {
-            foreignKeyName: "eliter_step_progress_step_id_fkey"
-            columns: ["step_id"]
+            foreignKeyName: 'eliter_step_progress_step_id_fkey'
+            columns: ['step_id']
             isOneToOne: false
-            referencedRelation: "onboarding_steps"
-            referencedColumns: ["id"]
+            referencedRelation: 'onboarding_steps'
+            referencedColumns: ['id']
           },
         ]
       }
@@ -359,18 +353,18 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "eliter_task_progress_assignment_id_fkey"
-            columns: ["assignment_id"]
+            foreignKeyName: 'eliter_task_progress_assignment_id_fkey'
+            columns: ['assignment_id']
             isOneToOne: false
-            referencedRelation: "eliter_program_assignments"
-            referencedColumns: ["id"]
+            referencedRelation: 'eliter_program_assignments'
+            referencedColumns: ['id']
           },
           {
-            foreignKeyName: "eliter_task_progress_task_id_fkey"
-            columns: ["task_id"]
+            foreignKeyName: 'eliter_task_progress_task_id_fkey'
+            columns: ['task_id']
             isOneToOne: false
-            referencedRelation: "step_tasks"
-            referencedColumns: ["id"]
+            referencedRelation: 'step_tasks'
+            referencedColumns: ['id']
           },
         ]
       }
@@ -401,18 +395,18 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "form_answers_question_id_fkey"
-            columns: ["question_id"]
+            foreignKeyName: 'form_answers_question_id_fkey'
+            columns: ['question_id']
             isOneToOne: false
-            referencedRelation: "form_questions"
-            referencedColumns: ["id"]
+            referencedRelation: 'form_questions'
+            referencedColumns: ['id']
           },
           {
-            foreignKeyName: "form_answers_submission_id_fkey"
-            columns: ["submission_id"]
+            foreignKeyName: 'form_answers_submission_id_fkey'
+            columns: ['submission_id']
             isOneToOne: false
-            referencedRelation: "form_submissions"
-            referencedColumns: ["id"]
+            referencedRelation: 'form_submissions'
+            referencedColumns: ['id']
           },
         ]
       }
@@ -440,11 +434,11 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "form_question_options_question_id_fkey"
-            columns: ["question_id"]
+            foreignKeyName: 'form_question_options_question_id_fkey'
+            columns: ['question_id']
             isOneToOne: false
-            referencedRelation: "form_questions"
-            referencedColumns: ["id"]
+            referencedRelation: 'form_questions'
+            referencedColumns: ['id']
           },
         ]
       }
@@ -481,11 +475,11 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "form_questions_step_id_fkey"
-            columns: ["step_id"]
+            foreignKeyName: 'form_questions_step_id_fkey'
+            columns: ['step_id']
             isOneToOne: false
-            referencedRelation: "form_steps"
-            referencedColumns: ["id"]
+            referencedRelation: 'form_steps'
+            referencedColumns: ['id']
           },
         ]
       }
@@ -516,11 +510,11 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "form_steps_form_id_fkey"
-            columns: ["form_id"]
+            foreignKeyName: 'form_steps_form_id_fkey'
+            columns: ['form_id']
             isOneToOne: false
-            referencedRelation: "application_forms"
-            referencedColumns: ["id"]
+            referencedRelation: 'application_forms'
+            referencedColumns: ['id']
           },
         ]
       }
@@ -560,11 +554,11 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "form_submissions_form_id_fkey"
-            columns: ["form_id"]
+            foreignKeyName: 'form_submissions_form_id_fkey'
+            columns: ['form_id']
             isOneToOne: false
-            referencedRelation: "application_forms"
-            referencedColumns: ["id"]
+            referencedRelation: 'application_forms'
+            referencedColumns: ['id']
           },
         ]
       }
@@ -598,11 +592,11 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "onboarding_programs_created_by_fkey"
-            columns: ["created_by"]
+            foreignKeyName: 'onboarding_programs_created_by_fkey'
+            columns: ['created_by']
             isOneToOne: false
-            referencedRelation: "profiles"
-            referencedColumns: ["id"]
+            referencedRelation: 'profiles'
+            referencedColumns: ['id']
           },
         ]
       }
@@ -645,11 +639,11 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "onboarding_steps_program_id_fkey"
-            columns: ["program_id"]
+            foreignKeyName: 'onboarding_steps_program_id_fkey'
+            columns: ['program_id']
             isOneToOne: false
-            referencedRelation: "onboarding_programs"
-            referencedColumns: ["id"]
+            referencedRelation: 'onboarding_programs'
+            referencedColumns: ['id']
           },
         ]
       }
@@ -683,18 +677,18 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "open_ended_reviews_answer_id_fkey"
-            columns: ["answer_id"]
+            foreignKeyName: 'open_ended_reviews_answer_id_fkey'
+            columns: ['answer_id']
             isOneToOne: true
-            referencedRelation: "eliter_quiz_answers"
-            referencedColumns: ["id"]
+            referencedRelation: 'eliter_quiz_answers'
+            referencedColumns: ['id']
           },
           {
-            foreignKeyName: "open_ended_reviews_reviewed_by_fkey"
-            columns: ["reviewed_by"]
+            foreignKeyName: 'open_ended_reviews_reviewed_by_fkey'
+            columns: ['reviewed_by']
             isOneToOne: false
-            referencedRelation: "profiles"
-            referencedColumns: ["id"]
+            referencedRelation: 'profiles'
+            referencedColumns: ['id']
           },
         ]
       }
@@ -731,18 +725,18 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "pipeline_candidates_evaluation_id_fkey"
-            columns: ["evaluation_id"]
+            foreignKeyName: 'pipeline_candidates_evaluation_id_fkey'
+            columns: ['evaluation_id']
             isOneToOne: false
-            referencedRelation: "ai_evaluations"
-            referencedColumns: ["id"]
+            referencedRelation: 'ai_evaluations'
+            referencedColumns: ['id']
           },
           {
-            foreignKeyName: "pipeline_candidates_submission_id_fkey"
-            columns: ["submission_id"]
+            foreignKeyName: 'pipeline_candidates_submission_id_fkey'
+            columns: ['submission_id']
             isOneToOne: true
-            referencedRelation: "form_submissions"
-            referencedColumns: ["id"]
+            referencedRelation: 'form_submissions'
+            referencedColumns: ['id']
           },
         ]
       }
@@ -806,11 +800,11 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "question_options_question_id_fkey"
-            columns: ["question_id"]
+            foreignKeyName: 'question_options_question_id_fkey'
+            columns: ['question_id']
             isOneToOne: false
-            referencedRelation: "quiz_questions"
-            referencedColumns: ["id"]
+            referencedRelation: 'quiz_questions'
+            referencedColumns: ['id']
           },
         ]
       }
@@ -841,11 +835,11 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "quiz_questions_quiz_id_fkey"
-            columns: ["quiz_id"]
+            foreignKeyName: 'quiz_questions_quiz_id_fkey'
+            columns: ['quiz_id']
             isOneToOne: false
-            referencedRelation: "step_quizzes"
-            referencedColumns: ["id"]
+            referencedRelation: 'step_quizzes'
+            referencedColumns: ['id']
           },
         ]
       }
@@ -879,11 +873,11 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "step_quizzes_step_id_fkey"
-            columns: ["step_id"]
+            foreignKeyName: 'step_quizzes_step_id_fkey'
+            columns: ['step_id']
             isOneToOne: true
-            referencedRelation: "onboarding_steps"
-            referencedColumns: ["id"]
+            referencedRelation: 'onboarding_steps'
+            referencedColumns: ['id']
           },
         ]
       }
@@ -911,11 +905,11 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "step_tasks_step_id_fkey"
-            columns: ["step_id"]
+            foreignKeyName: 'step_tasks_step_id_fkey'
+            columns: ['step_id']
             isOneToOne: false
-            referencedRelation: "onboarding_steps"
-            referencedColumns: ["id"]
+            referencedRelation: 'onboarding_steps'
+            referencedColumns: ['id']
           },
         ]
       }
@@ -942,11 +936,11 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "question_options_question_id_fkey"
-            columns: ["question_id"]
+            foreignKeyName: 'question_options_question_id_fkey'
+            columns: ['question_id']
             isOneToOne: false
-            referencedRelation: "quiz_questions"
-            referencedColumns: ["id"]
+            referencedRelation: 'quiz_questions'
+            referencedColumns: ['id']
           },
         ]
       }
@@ -963,33 +957,31 @@ export type Database = {
   }
 }
 
-type DatabaseWithoutInternals = Omit<Database, "__InternalSupabase">
+type DatabaseWithoutInternals = Omit<Database, '__InternalSupabase'>
 
-type DefaultSchema = DatabaseWithoutInternals[Extract<keyof Database, "public">]
+type DefaultSchema = DatabaseWithoutInternals[Extract<keyof Database, 'public'>]
 
 export type Tables<
   DefaultSchemaTableNameOrOptions extends
-    | keyof (DefaultSchema["Tables"] & DefaultSchema["Views"])
+    | keyof (DefaultSchema['Tables'] & DefaultSchema['Views'])
     | { schema: keyof DatabaseWithoutInternals },
   TableName extends DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
-    ? keyof (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
-        DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Views"])
+    ? keyof (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions['schema']]['Tables'] &
+        DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions['schema']]['Views'])
     : never = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
-  ? (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
-      DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Views"])[TableName] extends {
+  ? (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions['schema']]['Tables'] &
+      DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions['schema']]['Views'])[TableName] extends {
       Row: infer R
     }
     ? R
     : never
-  : DefaultSchemaTableNameOrOptions extends keyof (DefaultSchema["Tables"] &
-        DefaultSchema["Views"])
-    ? (DefaultSchema["Tables"] &
-        DefaultSchema["Views"])[DefaultSchemaTableNameOrOptions] extends {
+  : DefaultSchemaTableNameOrOptions extends keyof (DefaultSchema['Tables'] & DefaultSchema['Views'])
+    ? (DefaultSchema['Tables'] & DefaultSchema['Views'])[DefaultSchemaTableNameOrOptions] extends {
         Row: infer R
       }
       ? R
@@ -998,23 +990,23 @@ export type Tables<
 
 export type TablesInsert<
   DefaultSchemaTableNameOrOptions extends
-    | keyof DefaultSchema["Tables"]
+    | keyof DefaultSchema['Tables']
     | { schema: keyof DatabaseWithoutInternals },
   TableName extends DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
-    ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
+    ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions['schema']]['Tables']
     : never = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
-  ? DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"][TableName] extends {
+  ? DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions['schema']]['Tables'][TableName] extends {
       Insert: infer I
     }
     ? I
     : never
-  : DefaultSchemaTableNameOrOptions extends keyof DefaultSchema["Tables"]
-    ? DefaultSchema["Tables"][DefaultSchemaTableNameOrOptions] extends {
+  : DefaultSchemaTableNameOrOptions extends keyof DefaultSchema['Tables']
+    ? DefaultSchema['Tables'][DefaultSchemaTableNameOrOptions] extends {
         Insert: infer I
       }
       ? I
@@ -1023,23 +1015,23 @@ export type TablesInsert<
 
 export type TablesUpdate<
   DefaultSchemaTableNameOrOptions extends
-    | keyof DefaultSchema["Tables"]
+    | keyof DefaultSchema['Tables']
     | { schema: keyof DatabaseWithoutInternals },
   TableName extends DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
-    ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
+    ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions['schema']]['Tables']
     : never = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
-  ? DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"][TableName] extends {
+  ? DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions['schema']]['Tables'][TableName] extends {
       Update: infer U
     }
     ? U
     : never
-  : DefaultSchemaTableNameOrOptions extends keyof DefaultSchema["Tables"]
-    ? DefaultSchema["Tables"][DefaultSchemaTableNameOrOptions] extends {
+  : DefaultSchemaTableNameOrOptions extends keyof DefaultSchema['Tables']
+    ? DefaultSchema['Tables'][DefaultSchemaTableNameOrOptions] extends {
         Update: infer U
       }
       ? U
@@ -1048,36 +1040,36 @@ export type TablesUpdate<
 
 export type Enums<
   DefaultSchemaEnumNameOrOptions extends
-    | keyof DefaultSchema["Enums"]
+    | keyof DefaultSchema['Enums']
     | { schema: keyof DatabaseWithoutInternals },
   EnumName extends DefaultSchemaEnumNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
-    ? keyof DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"]
+    ? keyof DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions['schema']]['Enums']
     : never = never,
 > = DefaultSchemaEnumNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
-  ? DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"][EnumName]
-  : DefaultSchemaEnumNameOrOptions extends keyof DefaultSchema["Enums"]
-    ? DefaultSchema["Enums"][DefaultSchemaEnumNameOrOptions]
+  ? DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions['schema']]['Enums'][EnumName]
+  : DefaultSchemaEnumNameOrOptions extends keyof DefaultSchema['Enums']
+    ? DefaultSchema['Enums'][DefaultSchemaEnumNameOrOptions]
     : never
 
 export type CompositeTypes<
   PublicCompositeTypeNameOrOptions extends
-    | keyof DefaultSchema["CompositeTypes"]
+    | keyof DefaultSchema['CompositeTypes']
     | { schema: keyof DatabaseWithoutInternals },
   CompositeTypeName extends PublicCompositeTypeNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
-    ? keyof DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"]
+    ? keyof DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions['schema']]['CompositeTypes']
     : never = never,
 > = PublicCompositeTypeNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
-  ? DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"][CompositeTypeName]
-  : PublicCompositeTypeNameOrOptions extends keyof DefaultSchema["CompositeTypes"]
-    ? DefaultSchema["CompositeTypes"][PublicCompositeTypeNameOrOptions]
+  ? DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions['schema']]['CompositeTypes'][CompositeTypeName]
+  : PublicCompositeTypeNameOrOptions extends keyof DefaultSchema['CompositeTypes']
+    ? DefaultSchema['CompositeTypes'][PublicCompositeTypeNameOrOptions]
     : never
 
 export const Constants = {
@@ -1085,7 +1077,6 @@ export const Constants = {
     Enums: {},
   },
 } as const
-
 
 // ====== DATABASE EXTENDED CONTEXT (auto-generated) ======
 // This section contains actual PostgreSQL column types, constraints, RLS policies,
@@ -1602,7 +1593,7 @@ export const Constants = {
 //     RETURN NEW;
 //   END;
 //   $function$
-//   
+//
 // FUNCTION handle_updated_at()
 //   CREATE OR REPLACE FUNCTION public.handle_updated_at()
 //    RETURNS trigger
@@ -1613,7 +1604,7 @@ export const Constants = {
 //     RETURN NEW;
 //   END;
 //   $function$
-//   
+//
 // FUNCTION is_gestor_master()
 //   CREATE OR REPLACE FUNCTION public.is_gestor_master()
 //    RETURNS boolean
@@ -1628,7 +1619,7 @@ export const Constants = {
 //       AND role = 'gestor_master'
 //     );
 //   $function$
-//   
+//
 // FUNCTION rls_auto_enable()
 //   CREATE OR REPLACE FUNCTION public.rls_auto_enable()
 //    RETURNS event_trigger
@@ -1659,7 +1650,7 @@ export const Constants = {
 //     END LOOP;
 //   END;
 //   $function$
-//   
+//
 
 // --- TRIGGERS ---
 // Table: ai_config
@@ -1701,4 +1692,3 @@ export const Constants = {
 //   CREATE UNIQUE INDEX profiles_user_id_key ON public.profiles USING btree (user_id)
 // Table: step_quizzes
 //   CREATE UNIQUE INDEX step_quizzes_step_id_key ON public.step_quizzes USING btree (step_id)
-

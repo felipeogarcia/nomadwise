@@ -9,6 +9,7 @@ import {
   LogOut,
   Bell,
   Loader2,
+  DollarSign,
 } from 'lucide-react'
 import {
   Sidebar,
@@ -44,6 +45,7 @@ export default function Layout() {
   const navItems = [
     { title: 'Dashboard', url: '/app/dashboard', icon: LayoutDashboard },
     { title: 'Viagens', url: '/app/trips', icon: Map },
+    { title: 'Finanças', url: '/app/finances', icon: DollarSign },
     { title: 'Veículos', url: '/app/garage', icon: Wrench },
   ]
 
