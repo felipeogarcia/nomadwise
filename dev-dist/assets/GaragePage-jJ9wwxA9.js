@@ -1,7 +1,8 @@
-import { n as Plus, t as Badge } from "./badge-SKcdJiv-.js";
-import { D as require_jsx_runtime, N as require_react, P as __toESM, T as createLucideIcon, a as Overlay, b as cn, c as Title, d as Input, g as Button, i as Description, l as Trigger, n as Close, o as Portal, r as Content, s as Root, v as useDataStore, x as X } from "./index-CF_5B8U_.js";
-import { t as Label } from "./label-Ayl4h07o.js";
-import { n as CardContent, t as Card } from "./card-CjwOOiZd.js";
+import { t as FileText } from "./file-text-B9B54Qhk.js";
+import { n as Plus, t as Badge } from "./badge-CgLT9b-S.js";
+import { B as require_jsx_runtime, E as X, J as require_react, M as createLucideIcon, S as useDataStore, T as cn, Y as __toESM, a as Close, b as Button, c as Overlay, d as Title, f as Trigger, l as Portal, m as Input, o as Content, s as Description, u as Root } from "./index-B8Swrxf1.js";
+import { n as CardContent, t as Card } from "./card-DE1ncmJY.js";
+import { t as Label } from "./label-C5hA19wM.js";
 var CircleAlert = createLucideIcon("circle-alert", [
 	["circle", {
 		cx: "12",
@@ -22,28 +23,6 @@ var CircleAlert = createLucideIcon("circle-alert", [
 		y1: "16",
 		y2: "16",
 		key: "4dfq90"
-	}]
-]);
-var FileText = createLucideIcon("file-text", [
-	["path", {
-		d: "M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z",
-		key: "1oefj6"
-	}],
-	["path", {
-		d: "M14 2v5a1 1 0 0 0 1 1h5",
-		key: "wfsgrz"
-	}],
-	["path", {
-		d: "M10 9H8",
-		key: "b1mrlr"
-	}],
-	["path", {
-		d: "M16 13H8",
-		key: "t4e002"
-	}],
-	["path", {
-		d: "M16 17H8",
-		key: "z1uh3a"
 	}]
 ]);
 var Settings = createLucideIcon("settings", [["path", {
@@ -233,4 +212,4 @@ function GaragePage() {
 }
 export { GaragePage as default };
 
-//# sourceMappingURL=GaragePage-BGrMRGoY.js.map
+//# sourceMappingURL=GaragePage-jJ9wwxA9.js.map

@@ -1,4 +1,4 @@
-import { T as createLucideIcon } from "./index-CF_5B8U_.js";
+import { M as createLucideIcon } from "./index-B8Swrxf1.js";
 var Wallet = createLucideIcon("wallet", [["path", {
 	d: "M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1",
 	key: "18etb6"
@@ -8,4 +8,4 @@ var Wallet = createLucideIcon("wallet", [["path", {
 }]]);
 export { Wallet as t };
 
-//# sourceMappingURL=wallet-DtkuZwdm.js.map
+//# sourceMappingURL=wallet-B1dSMfVI.js.map

@@ -1,4 +1,4 @@
-import { D as require_jsx_runtime, E as cva, N as require_react, P as __toESM, b as cn, u as Primitive } from "./index-CF_5B8U_.js";
+import { B as require_jsx_runtime, J as require_react, N as cva, T as cn, Y as __toESM, p as Primitive } from "./index-B8Swrxf1.js";
 var import_react = /* @__PURE__ */ __toESM(require_react(), 1);
 var import_jsx_runtime = /* @__PURE__ */ __toESM(require_jsx_runtime(), 1);
 var NAME = "Label";
@@ -24,4 +24,4 @@ var Label = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE
 Label.displayName = Root.displayName;
 export { Label as t };
 
-//# sourceMappingURL=label-Ayl4h07o.js.map
+//# sourceMappingURL=label-C5hA19wM.js.map

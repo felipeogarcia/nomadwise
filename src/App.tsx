@@ -14,7 +14,7 @@ import PublicLayout from '@/components/PublicLayout'
 import Layout from '@/components/Layout'
 
 // Lazy loaded routes
-const Index = lazy(() => import('@/pages/Index'))
+const Landing = lazy(() => import('@/pages/Landing'))
 const NotFound = lazy(() => import('@/pages/NotFound'))
 const Onboarding = lazy(() => import('@/pages/Onboarding'))
 const DashboardPage = lazy(() => import('@/pages/dashboard/DashboardPage'))
@@ -33,7 +33,7 @@ const App = () => (
             <Routes>
               {/* Public Routes via PublicLayout (includes its own Suspense) */}
               <Route element={<PublicLayout />}>
-                <Route path="/" element={<Index />} />
+                <Route path="/" element={<Landing />} />
               </Route>
 
               {/* Protected Environment */}

@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/Index-BqYMpsRO.js","assets/map-pin-C3Kl7N-I.js","assets/wallet-DtkuZwdm.js","assets/Onboarding-DtXPxcAW.js","assets/label-Ayl4h07o.js","assets/card-CjwOOiZd.js","assets/DashboardPage-GYTCz7dE.js","assets/progress-o7GVb6d0.js","assets/TripsPage-E9g4DPme.js","assets/badge-SKcdJiv-.js","assets/GaragePage-BGrMRGoY.js","assets/AdminPage-DYHVryzi.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/Landing-CJto3ahH.js","assets/file-text-B9B54Qhk.js","assets/wallet-B1dSMfVI.js","assets/card-DE1ncmJY.js","assets/Onboarding-CA5i1seU.js","assets/label-C5hA19wM.js","assets/DashboardPage-DLaUeA7R.js","assets/progress-CPD6Vx6U.js","assets/TripsPage-BXTvQosn.js","assets/badge-CgLT9b-S.js","assets/GaragePage-jJ9wwxA9.js","assets/AdminPage-DX1H6FcB.js"])))=>i.map(i=>d[i]);
 var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -26432,6 +26432,7 @@ var PageLoader$1 = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 	children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(LoaderCircle, { className: "h-8 w-8 animate-spin text-primary" })
 });
 function PublicLayout() {
+	const { login } = useAuthStore();
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 		className: "min-h-screen flex flex-col bg-background text-foreground selection:bg-primary selection:text-primary-foreground transition-colors duration-300",
 		children: [
@@ -26446,9 +26447,35 @@ function PublicLayout() {
 							className: "text-primary",
 							children: "wise"
 						})] })]
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-						className: "flex items-center gap-4",
-						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemeToggle, {})
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "flex items-center gap-2 md:gap-4",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "hidden md:flex items-center gap-2",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+								variant: "ghost",
+								asChild: true,
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+									to: "/login",
+									onClick: (e) => {
+										e.preventDefault();
+										login();
+									},
+									children: "Entrar"
+								})
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemeToggle, {})]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+							size: "sm",
+							className: "md:h-10 md:px-4 md:py-2",
+							asChild: true,
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+								to: "/login",
+								onClick: (e) => {
+									e.preventDefault();
+									login();
+								},
+								children: "Começar grátis"
+							})
+						})]
 					})]
 				})
 			}),
@@ -26459,15 +26486,75 @@ function PublicLayout() {
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {})
 				}) })
 			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("footer", {
-				className: "border-t py-6 md:py-0",
-				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-					className: "container flex flex-col items-center justify-between gap-4 md:h-16 md:flex-row",
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("footer", {
+				className: "bg-zinc-950 text-zinc-400 py-12 border-t border-zinc-900",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "container flex flex-col md:flex-row items-center md:items-start justify-between gap-8 px-4 md:px-6",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "flex flex-col items-center md:items-start gap-4 max-w-xs text-center md:text-left",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
+							to: "/",
+							className: "flex items-center gap-2 font-bold text-xl tracking-tight text-white group",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Compass, { className: "h-6 w-6 text-primary group-hover:rotate-45 transition-transform duration-500" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: ["Nomad", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "text-primary",
+								children: "wise"
+							})] })]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "text-sm leading-relaxed",
+							children: "A plataforma definitiva para nômades e viajantes de longa distância."
+						})]
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "flex gap-12 text-sm text-center md:text-left",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex flex-col gap-3",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
+									className: "font-semibold text-zinc-100",
+									children: "Produto"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+									href: "#features",
+									className: "hover:text-white transition-colors",
+									children: "Funcionalidades"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+									href: "#pricing",
+									className: "hover:text-white transition-colors",
+									children: "Preços"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+									href: "#faq",
+									className: "hover:text-white transition-colors",
+									children: "FAQ"
+								})
+							]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex flex-col gap-3",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
+									className: "font-semibold text-zinc-100",
+									children: "Legal"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+									href: "#",
+									className: "hover:text-white transition-colors",
+									children: "Termos de Serviço"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+									href: "#",
+									className: "hover:text-white transition-colors",
+									children: "Política de Privacidade"
+								})
+							]
+						})]
+					})]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "container mt-12 pt-8 border-t border-zinc-900 flex flex-col items-center",
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-						className: "text-sm text-muted-foreground leading-loose text-center md:text-left",
+						className: "text-sm",
 						children: "© 2024 Nomadwise. Todos os direitos reservados."
 					})
-				})
+				})]
 			})
 		]
 	});
@@ -27626,13 +27713,13 @@ function Layout() {
 		})]
 	})] });
 }
-var Index = (0, import_react.lazy)(() => __vitePreload(() => import("./Index-BqYMpsRO.js"), __vite__mapDeps([0,1,2])));
-var NotFound = (0, import_react.lazy)(() => __vitePreload(() => import("./NotFound-Dzovcd0G.js"), []));
-var Onboarding = (0, import_react.lazy)(() => __vitePreload(() => import("./Onboarding-DtXPxcAW.js"), __vite__mapDeps([3,4,5])));
-var DashboardPage = (0, import_react.lazy)(() => __vitePreload(() => import("./DashboardPage-GYTCz7dE.js"), __vite__mapDeps([6,7,1,2,5])));
-var TripsPage = (0, import_react.lazy)(() => __vitePreload(() => import("./TripsPage-E9g4DPme.js"), __vite__mapDeps([8,7,1,9,5])));
-var GaragePage = (0, import_react.lazy)(() => __vitePreload(() => import("./GaragePage-BGrMRGoY.js"), __vite__mapDeps([10,4,9,5])));
-var AdminPage = (0, import_react.lazy)(() => __vitePreload(() => import("./AdminPage-DYHVryzi.js"), __vite__mapDeps([11,5])));
+var Landing = (0, import_react.lazy)(() => __vitePreload(() => import("./Landing-CJto3ahH.js"), __vite__mapDeps([0,1,2,3])));
+var NotFound = (0, import_react.lazy)(() => __vitePreload(() => import("./NotFound-Dt3uvY-Q.js"), []));
+var Onboarding = (0, import_react.lazy)(() => __vitePreload(() => import("./Onboarding-CA5i1seU.js"), __vite__mapDeps([4,5,3])));
+var DashboardPage = (0, import_react.lazy)(() => __vitePreload(() => import("./DashboardPage-DLaUeA7R.js"), __vite__mapDeps([6,7,2,3])));
+var TripsPage = (0, import_react.lazy)(() => __vitePreload(() => import("./TripsPage-BXTvQosn.js"), __vite__mapDeps([8,7,9,3])));
+var GaragePage = (0, import_react.lazy)(() => __vitePreload(() => import("./GaragePage-jJ9wwxA9.js"), __vite__mapDeps([10,5,1,9,3])));
+var AdminPage = (0, import_react.lazy)(() => __vitePreload(() => import("./AdminPage-DX1H6FcB.js"), __vite__mapDeps([11,3])));
 var App = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemeProvider, {
 	defaultTheme: "system",
 	storageKey: "nomadwise-theme",
@@ -27649,7 +27736,7 @@ var App = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemeProvider, {
 					element: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(PublicLayout, {}),
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Route, {
 						path: "/",
-						element: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Index, {})
+						element: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Landing, {})
 					})
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Route, {
@@ -27710,6 +27797,6 @@ var App = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemeProvider, {
 });
 var App_default = App;
 (0, import_client.createRoot)(document.getElementById("root")).render(/* @__PURE__ */ (0, import_jsx_runtime.jsx)(App_default, {}));
-export { Navigate as A, ShieldAlert as C, require_jsx_runtime as D, cva as E, useNavigate as M, require_react as N, toast as O, __toESM as P, TriangleAlert as S, createLucideIcon as T, Slot as _, Overlay as a, cn as b, Title as c, Input as d, DropdownMenu as f, Button as g, DropdownMenuTrigger as h, Description as i, useLocation as j, Link as k, Trigger as l, DropdownMenuItem as m, Close as n, Portal$1 as o, DropdownMenuContent as p, Content as r, Root$1 as s, createContextScope as t, Primitive as u, useDataStore as v, LoaderCircle as w, X as x, useAuthStore as y };
+export { Map$1 as A, require_jsx_runtime as B, useAuthStore as C, Wrench as D, X as E, Presence as F, Navigate as G, composeEventHandlers as H, useLayoutEffect2 as I, require_react as J, useLocation as K, Primitive$1 as L, createLucideIcon as M, cva as N, TriangleAlert as O, useControllableState as P, createCollection as R, useDataStore as S, cn as T, toast as U, useComposedRefs as V, Link as W, __toESM as Y, DropdownMenuItem as _, Close as a, Button as b, Overlay as c, Title as d, Trigger as f, DropdownMenuContent as g, DropdownMenu as h, createContextScope as i, LoaderCircle as j, ShieldAlert as k, Portal$1 as l, Input as m, AvatarFallback as n, Content as o, Primitive as p, useNavigate as q, AvatarImage as r, Description as s, Avatar as t, Root$1 as u, DropdownMenuTrigger as v, useId as w, Slot as x, useDirection as y, createContextScope$1 as z };
 
-//# sourceMappingURL=index-CF_5B8U_.js.map
+//# sourceMappingURL=index-B8Swrxf1.js.map
