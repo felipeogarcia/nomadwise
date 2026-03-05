@@ -29,34 +29,32 @@ const mockTrips: Trip[] = [
     spent: 0,
     startDate: '2024-07-10',
   },
-  {
-    id: 't3',
-    title: 'Deserto do Atacama',
-    destination: 'Chile',
-    status: 'concluida',
-    budget: 12000,
-    spent: 11500,
-    startDate: '2023-05-20',
-    endDate: '2023-06-15',
-  },
 ]
 
 const mockVehicles: Vehicle[] = [
   {
     id: 'v1',
+    nickname: 'Bessie',
+    type: 'van',
     make: 'Mercedes-Benz',
     model: 'Sprinter 416',
     year: 2022,
     plate: 'NOM-4D22',
+    odometer: 15000,
+    tankCapacity: 75,
     nextMaintenance: '2024-06-01',
     imageUrl: 'https://img.usecurling.com/p/400/300?q=campervan&color=gray',
   },
   {
     id: 'v2',
+    nickname: 'Fera',
+    type: 'carro',
     make: 'Land Rover',
     model: 'Defender 110',
     year: 2015,
     plate: 'ADV-0X99',
+    odometer: 120000,
+    tankCapacity: 80,
     nextMaintenance: '2024-04-15',
     imageUrl: 'https://img.usecurling.com/p/400/300?q=suv&color=green',
   },
@@ -87,9 +85,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
 
   return React.createElement(
     DataContext.Provider,
-    {
-      value: { trips, vehicles, addTrip, addVehicle, deleteVehicle },
-    },
+    { value: { trips, vehicles, addTrip, addVehicle, deleteVehicle } },
     children,
   )
 }

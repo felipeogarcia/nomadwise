@@ -26,12 +26,18 @@ export interface Trip {
   endDate?: string
 }
 
+export type VehicleType = 'moto' | 'carro' | 'motorhome' | 'van' | 'outro'
+
 export interface Vehicle {
   id: string
+  nickname: string
+  type: VehicleType
   make: string
   model: string
   year: number
-  plate: string
-  nextMaintenance: string
+  plate?: string
+  odometer: number
+  tankCapacity: number
+  nextMaintenance?: string
   imageUrl: string
 }
