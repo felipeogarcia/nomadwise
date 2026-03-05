@@ -1,6 +1,14 @@
+import { Suspense } from 'react'
 import { Outlet, Link } from 'react-router-dom'
-import { Compass } from 'lucide-react'
+import { Compass, Loader2 } from 'lucide-react'
 import { ThemeToggle } from './ThemeToggle'
+import { ErrorBoundary } from './ErrorBoundary'
+
+const PageLoader = () => (
+  <div className="flex-1 flex items-center justify-center min-h-[50vh]">
+    <Loader2 className="h-8 w-8 animate-spin text-primary" />
+  </div>
+)
 
 export default function PublicLayout() {
   return (
@@ -19,7 +27,11 @@ export default function PublicLayout() {
         </div>
       </header>
       <main className="flex-1 flex flex-col">
-        <Outlet />
+        <ErrorBoundary>
+          <Suspense fallback={<PageLoader />}>
+            <Outlet />
+          </Suspense>
+        </ErrorBoundary>
       </main>
       <footer className="border-t py-6 md:py-0">
         <div className="container flex flex-col items-center justify-between gap-4 md:h-16 md:flex-row">

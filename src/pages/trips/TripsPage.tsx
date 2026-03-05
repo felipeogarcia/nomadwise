@@ -12,7 +12,8 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { Progress } from '@/components/ui/progress'
-import useDataStore, { TripStatus } from '@/stores/useDataStore'
+import useDataStore from '@/stores/useDataStore'
+import { TripStatus } from '@/types'
 
 export default function TripsPage() {
   const { trips } = useDataStore()

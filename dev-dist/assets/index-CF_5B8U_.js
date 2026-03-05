@@ -1,3 +1,4 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/Index-BqYMpsRO.js","assets/map-pin-C3Kl7N-I.js","assets/wallet-DtkuZwdm.js","assets/Onboarding-DtXPxcAW.js","assets/label-Ayl4h07o.js","assets/card-CjwOOiZd.js","assets/DashboardPage-GYTCz7dE.js","assets/progress-o7GVb6d0.js","assets/TripsPage-E9g4DPme.js","assets/badge-SKcdJiv-.js","assets/GaragePage-BGrMRGoY.js","assets/AdminPage-DYHVryzi.js"])))=>i.map(i=>d[i]);
 var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -6,8 +7,8 @@ var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __commonJSMin = (cb, mod) => () => (mod || cb((mod = { exports: {} }).exports, mod), mod.exports);
 var __copyProps = (to, from, except, desc) => {
-	if (from && typeof from === "object" || typeof from === "function") for (var keys = __getOwnPropNames(from), i$2 = 0, n$1 = keys.length, key; i$2 < n$1; i$2++) {
-		key = keys[i$2];
+	if (from && typeof from === "object" || typeof from === "function") for (var keys = __getOwnPropNames(from), i = 0, n = keys.length, key; i < n; i++) {
+		key = keys[i];
 		if (!__hasOwnProp.call(to, key) && key !== except) __defProp(to, key, {
 			get: ((k) => from[k]).bind(null, key),
 			enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable
@@ -136,9 +137,9 @@ var require_scheduler_development = /* @__PURE__ */ __commonJSMin(((exports) => 
 			}
 			return first;
 		}
-		function compare(a$1, b$1) {
-			var diff = a$1.sortIndex - b$1.sortIndex;
-			return 0 !== diff ? diff : a$1.id - b$1.id;
+		function compare(a, b$1) {
+			var diff = a.sortIndex - b$1.sortIndex;
+			return 0 !== diff ? diff : a.id - b$1.id;
 		}
 		function advanceTimers(currentTime) {
 			for (var timer = peek(timerQueue); null !== timer;) {
@@ -304,7 +305,7 @@ var require_scheduler = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 var require_react_development = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 	(function() {
 		function defineDeprecationWarning(methodName, info) {
-			Object.defineProperty(Component.prototype, methodName, { get: function() {
+			Object.defineProperty(Component$1.prototype, methodName, { get: function() {
 				console.warn("%s(...) is deprecated in plain JavaScript React classes. %s", info[0], info[1]);
 			} });
 		}
@@ -318,7 +319,7 @@ var require_react_development = /* @__PURE__ */ __commonJSMin(((exports, module)
 			var warningKey = publicInstance + "." + callerName;
 			didWarnStateUpdateForUnmountedComponent[warningKey] || (console.error("Can't call %s on a component that is not yet mounted. This is a no-op, but it might indicate a bug in your application. Instead, assign to `this.state` directly or define a `state = {};` class property with the desired state in the %s component.", callerName, publicInstance), didWarnStateUpdateForUnmountedComponent[warningKey] = !0);
 		}
-		function Component(props, context, updater) {
+		function Component$1(props, context, updater) {
 			this.props = props;
 			this.context = context;
 			this.refs = emptyObject;
@@ -398,12 +399,12 @@ var require_react_development = /* @__PURE__ */ __commonJSMin(((exports, module)
 		function UnknownOwner() {
 			return Error("react-stack-top-frame");
 		}
-		function hasValidKey(config$1) {
-			if (hasOwnProperty.call(config$1, "key")) {
-				var getter = Object.getOwnPropertyDescriptor(config$1, "key").get;
+		function hasValidKey(config) {
+			if (hasOwnProperty.call(config, "key")) {
+				var getter = Object.getOwnPropertyDescriptor(config, "key").get;
 				if (getter && getter.isReactWarning) return !1;
 			}
-			return void 0 !== config$1.key;
+			return void 0 !== config.key;
 		}
 		function defineKeyPropWarningGetter(props, displayName) {
 			function warnAboutAccessingKey() {
@@ -473,16 +474,16 @@ var require_react_development = /* @__PURE__ */ __commonJSMin(((exports, module)
 		function validateChildKeys(node) {
 			isValidElement(node) ? node._store && (node._store.validated = 1) : "object" === typeof node && null !== node && node.$$typeof === REACT_LAZY_TYPE$1 && ("fulfilled" === node._payload.status ? isValidElement(node._payload.value) && node._payload.value._store && (node._payload.value._store.validated = 1) : node._store && (node._store.validated = 1));
 		}
-		function isValidElement(object$1) {
-			return "object" === typeof object$1 && null !== object$1 && object$1.$$typeof === REACT_ELEMENT_TYPE;
+		function isValidElement(object) {
+			return "object" === typeof object && null !== object && object.$$typeof === REACT_ELEMENT_TYPE;
 		}
 		function escape(key) {
 			var escaperLookup = {
 				"=": "=0",
 				":": "=2"
 			};
-			return "$" + key.replace(/[=:]/g, function(match$2) {
-				return escaperLookup[match$2];
+			return "$" + key.replace(/[=:]/g, function(match) {
+				return escaperLookup[match];
 			});
 		}
 		function getElementKey(element, index$1) {
@@ -503,7 +504,7 @@ var require_react_development = /* @__PURE__ */ __commonJSMin(((exports, module)
 			}
 			throw thenable;
 		}
-		function mapIntoArray(children, array$1, escapedPrefix, nameSoFar, callback) {
+		function mapIntoArray(children, array, escapedPrefix, nameSoFar, callback) {
 			var type = typeof children;
 			if ("undefined" === type || "boolean" === type) children = null;
 			var invokeCallback = !1;
@@ -519,26 +520,26 @@ var require_react_development = /* @__PURE__ */ __commonJSMin(((exports, module)
 					case REACT_PORTAL_TYPE:
 						invokeCallback = !0;
 						break;
-					case REACT_LAZY_TYPE$1: return invokeCallback = children._init, mapIntoArray(invokeCallback(children._payload), array$1, escapedPrefix, nameSoFar, callback);
+					case REACT_LAZY_TYPE$1: return invokeCallback = children._init, mapIntoArray(invokeCallback(children._payload), array, escapedPrefix, nameSoFar, callback);
 				}
 			}
 			if (invokeCallback) {
 				invokeCallback = children;
 				callback = callback(invokeCallback);
 				var childKey = "" === nameSoFar ? "." + getElementKey(invokeCallback, 0) : nameSoFar;
-				isArrayImpl(callback) ? (escapedPrefix = "", null != childKey && (escapedPrefix = childKey.replace(userProvidedKeyEscapeRegex, "$&/") + "/"), mapIntoArray(callback, array$1, escapedPrefix, "", function(c) {
+				isArrayImpl(callback) ? (escapedPrefix = "", null != childKey && (escapedPrefix = childKey.replace(userProvidedKeyEscapeRegex, "$&/") + "/"), mapIntoArray(callback, array, escapedPrefix, "", function(c) {
 					return c;
-				})) : null != callback && (isValidElement(callback) && (null != callback.key && (invokeCallback && invokeCallback.key === callback.key || checkKeyStringCoercion(callback.key)), escapedPrefix = cloneAndReplaceKey(callback, escapedPrefix + (null == callback.key || invokeCallback && invokeCallback.key === callback.key ? "" : ("" + callback.key).replace(userProvidedKeyEscapeRegex, "$&/") + "/") + childKey), "" !== nameSoFar && null != invokeCallback && isValidElement(invokeCallback) && null == invokeCallback.key && invokeCallback._store && !invokeCallback._store.validated && (escapedPrefix._store.validated = 2), callback = escapedPrefix), array$1.push(callback));
+				})) : null != callback && (isValidElement(callback) && (null != callback.key && (invokeCallback && invokeCallback.key === callback.key || checkKeyStringCoercion(callback.key)), escapedPrefix = cloneAndReplaceKey(callback, escapedPrefix + (null == callback.key || invokeCallback && invokeCallback.key === callback.key ? "" : ("" + callback.key).replace(userProvidedKeyEscapeRegex, "$&/") + "/") + childKey), "" !== nameSoFar && null != invokeCallback && isValidElement(invokeCallback) && null == invokeCallback.key && invokeCallback._store && !invokeCallback._store.validated && (escapedPrefix._store.validated = 2), callback = escapedPrefix), array.push(callback));
 				return 1;
 			}
 			invokeCallback = 0;
 			childKey = "" === nameSoFar ? "." : nameSoFar + ":";
-			if (isArrayImpl(children)) for (var i$2 = 0; i$2 < children.length; i$2++) nameSoFar = children[i$2], type = childKey + getElementKey(nameSoFar, i$2), invokeCallback += mapIntoArray(nameSoFar, array$1, escapedPrefix, type, callback);
-			else if (i$2 = getIteratorFn(children), "function" === typeof i$2) for (i$2 === children.entries && (didWarnAboutMaps || console.warn("Using Maps as children is not supported. Use an array of keyed ReactElements instead."), didWarnAboutMaps = !0), children = i$2.call(children), i$2 = 0; !(nameSoFar = children.next()).done;) nameSoFar = nameSoFar.value, type = childKey + getElementKey(nameSoFar, i$2++), invokeCallback += mapIntoArray(nameSoFar, array$1, escapedPrefix, type, callback);
+			if (isArrayImpl(children)) for (var i = 0; i < children.length; i++) nameSoFar = children[i], type = childKey + getElementKey(nameSoFar, i), invokeCallback += mapIntoArray(nameSoFar, array, escapedPrefix, type, callback);
+			else if (i = getIteratorFn(children), "function" === typeof i) for (i === children.entries && (didWarnAboutMaps || console.warn("Using Maps as children is not supported. Use an array of keyed ReactElements instead."), didWarnAboutMaps = !0), children = i.call(children), i = 0; !(nameSoFar = children.next()).done;) nameSoFar = nameSoFar.value, type = childKey + getElementKey(nameSoFar, i++), invokeCallback += mapIntoArray(nameSoFar, array, escapedPrefix, type, callback);
 			else if ("object" === type) {
-				if ("function" === typeof children.then) return mapIntoArray(resolveThenable(children), array$1, escapedPrefix, nameSoFar, callback);
-				array$1 = String(children);
-				throw Error("Objects are not valid as a React child (found: " + ("[object Object]" === array$1 ? "object with keys {" + Object.keys(children).join(", ") + "}" : array$1) + "). If you meant to render a collection of children, use an array instead.");
+				if ("function" === typeof children.then) return mapIntoArray(resolveThenable(children), array, escapedPrefix, nameSoFar, callback);
+				array = String(children);
+				throw Error("Objects are not valid as a React child (found: " + ("[object Object]" === array ? "object with keys {" + Object.keys(children).join(", ") + "}" : array) + "). If you meant to render a collection of children, use an array instead.");
 			}
 			return invokeCallback;
 		}
@@ -630,17 +631,17 @@ var require_react_development = /* @__PURE__ */ __commonJSMin(((exports, module)
 		function flushActQueue(queue) {
 			if (!isFlushing) {
 				isFlushing = !0;
-				var i$2 = 0;
+				var i = 0;
 				try {
-					for (; i$2 < queue.length; i$2++) {
-						var callback = queue[i$2];
+					for (; i < queue.length; i++) {
+						var callback = queue[i];
 						do {
 							ReactSharedInternals.didUsePromise = !1;
 							var continuation = callback(!1);
 							if (null !== continuation) {
 								if (ReactSharedInternals.didUsePromise) {
-									queue[i$2] = callback;
-									queue.splice(0, i$2);
+									queue[i] = callback;
+									queue.splice(0, i);
 									return;
 								}
 								callback = continuation;
@@ -649,7 +650,7 @@ var require_react_development = /* @__PURE__ */ __commonJSMin(((exports, module)
 					}
 					queue.length = 0;
 				} catch (error) {
-					queue.splice(0, i$2 + 1), ReactSharedInternals.thrownErrors.push(error);
+					queue.splice(0, i + 1), ReactSharedInternals.thrownErrors.push(error);
 				} finally {
 					isFlushing = !1;
 				}
@@ -671,12 +672,12 @@ var require_react_development = /* @__PURE__ */ __commonJSMin(((exports, module)
 			}
 		}, assign = Object.assign, emptyObject = {};
 		Object.freeze(emptyObject);
-		Component.prototype.isReactComponent = {};
-		Component.prototype.setState = function(partialState, callback) {
+		Component$1.prototype.isReactComponent = {};
+		Component$1.prototype.setState = function(partialState, callback) {
 			if ("object" !== typeof partialState && "function" !== typeof partialState && null != partialState) throw Error("takes an object of state variables to update or a function which returns an object of state variables.");
 			this.updater.enqueueSetState(this, partialState, callback, "setState");
 		};
-		Component.prototype.forceUpdate = function(callback) {
+		Component$1.prototype.forceUpdate = function(callback) {
 			this.updater.enqueueForceUpdate(this, callback, "forceUpdate");
 		};
 		var deprecatedAPIs = {
@@ -684,10 +685,10 @@ var require_react_development = /* @__PURE__ */ __commonJSMin(((exports, module)
 			replaceState: ["replaceState", "Refactor your code to use setState instead (see https://github.com/facebook/react/issues/3236)."]
 		};
 		for (fnName in deprecatedAPIs) deprecatedAPIs.hasOwnProperty(fnName) && defineDeprecationWarning(fnName, deprecatedAPIs[fnName]);
-		ComponentDummy.prototype = Component.prototype;
+		ComponentDummy.prototype = Component$1.prototype;
 		deprecatedAPIs = PureComponent.prototype = new ComponentDummy();
 		deprecatedAPIs.constructor = PureComponent;
-		assign(deprecatedAPIs, Component.prototype);
+		assign(deprecatedAPIs, Component$1.prototype);
 		deprecatedAPIs.isPureReactComponent = !0;
 		var isArrayImpl = Array.isArray, REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), ReactSharedInternals = {
 			H: null,
@@ -745,11 +746,11 @@ var require_react_development = /* @__PURE__ */ __commonJSMin(((exports, module)
 				}, forEachContext);
 			},
 			count: function(children) {
-				var n$1 = 0;
+				var n = 0;
 				mapChildren(children, function() {
-					n$1++;
+					n++;
 				});
-				return n$1;
+				return n;
 			},
 			toArray: function(children) {
 				return mapChildren(children, function(child) {
@@ -763,7 +764,7 @@ var require_react_development = /* @__PURE__ */ __commonJSMin(((exports, module)
 		};
 		exports.Activity = REACT_ACTIVITY_TYPE;
 		exports.Children = fnName;
-		exports.Component = Component;
+		exports.Component = Component$1;
 		exports.Fragment = REACT_FRAGMENT_TYPE;
 		exports.Profiler = REACT_PROFILER_TYPE;
 		exports.PureComponent = PureComponent;
@@ -835,27 +836,27 @@ var require_react_development = /* @__PURE__ */ __commonJSMin(((exports, module)
 			var getCurrentStack = ReactSharedInternals.getCurrentStack;
 			return null === getCurrentStack ? null : getCurrentStack();
 		};
-		exports.cloneElement = function(element, config$1, children) {
+		exports.cloneElement = function(element, config, children) {
 			if (null === element || void 0 === element) throw Error("The argument must be a React element, but you passed " + element + ".");
 			var props = assign({}, element.props), key = element.key, owner = element._owner;
-			if (null != config$1) {
+			if (null != config) {
 				var JSCompiler_inline_result;
 				a: {
-					if (hasOwnProperty.call(config$1, "ref") && (JSCompiler_inline_result = Object.getOwnPropertyDescriptor(config$1, "ref").get) && JSCompiler_inline_result.isReactWarning) {
+					if (hasOwnProperty.call(config, "ref") && (JSCompiler_inline_result = Object.getOwnPropertyDescriptor(config, "ref").get) && JSCompiler_inline_result.isReactWarning) {
 						JSCompiler_inline_result = !1;
 						break a;
 					}
-					JSCompiler_inline_result = void 0 !== config$1.ref;
+					JSCompiler_inline_result = void 0 !== config.ref;
 				}
 				JSCompiler_inline_result && (owner = getOwner());
-				hasValidKey(config$1) && (checkKeyStringCoercion(config$1.key), key = "" + config$1.key);
-				for (propName in config$1) !hasOwnProperty.call(config$1, propName) || "key" === propName || "__self" === propName || "__source" === propName || "ref" === propName && void 0 === config$1.ref || (props[propName] = config$1[propName]);
+				hasValidKey(config) && (checkKeyStringCoercion(config.key), key = "" + config.key);
+				for (propName in config) !hasOwnProperty.call(config, propName) || "key" === propName || "__self" === propName || "__source" === propName || "ref" === propName && void 0 === config.ref || (props[propName] = config[propName]);
 			}
 			var propName = arguments.length - 2;
 			if (1 === propName) props.children = children;
 			else if (1 < propName) {
 				JSCompiler_inline_result = Array(propName);
-				for (var i$2 = 0; i$2 < propName; i$2++) JSCompiler_inline_result[i$2] = arguments[i$2 + 2];
+				for (var i = 0; i < propName; i++) JSCompiler_inline_result[i] = arguments[i + 2];
 				props.children = JSCompiler_inline_result;
 			}
 			props = ReactElement(element.type, key, props, owner, element._debugStack, element._debugTask);
@@ -880,22 +881,22 @@ var require_react_development = /* @__PURE__ */ __commonJSMin(((exports, module)
 			defaultValue._currentRenderer2 = null;
 			return defaultValue;
 		};
-		exports.createElement = function(type, config$1, children) {
-			for (var i$2 = 2; i$2 < arguments.length; i$2++) validateChildKeys(arguments[i$2]);
-			i$2 = {};
+		exports.createElement = function(type, config, children) {
+			for (var i = 2; i < arguments.length; i++) validateChildKeys(arguments[i]);
+			i = {};
 			var key = null;
-			if (null != config$1) for (propName in didWarnAboutOldJSXRuntime || !("__self" in config$1) || "key" in config$1 || (didWarnAboutOldJSXRuntime = !0, console.warn("Your app (or one of its dependencies) is using an outdated JSX transform. Update to the modern JSX transform for faster performance: https://react.dev/link/new-jsx-transform")), hasValidKey(config$1) && (checkKeyStringCoercion(config$1.key), key = "" + config$1.key), config$1) hasOwnProperty.call(config$1, propName) && "key" !== propName && "__self" !== propName && "__source" !== propName && (i$2[propName] = config$1[propName]);
+			if (null != config) for (propName in didWarnAboutOldJSXRuntime || !("__self" in config) || "key" in config || (didWarnAboutOldJSXRuntime = !0, console.warn("Your app (or one of its dependencies) is using an outdated JSX transform. Update to the modern JSX transform for faster performance: https://react.dev/link/new-jsx-transform")), hasValidKey(config) && (checkKeyStringCoercion(config.key), key = "" + config.key), config) hasOwnProperty.call(config, propName) && "key" !== propName && "__self" !== propName && "__source" !== propName && (i[propName] = config[propName]);
 			var childrenLength = arguments.length - 2;
-			if (1 === childrenLength) i$2.children = children;
+			if (1 === childrenLength) i.children = children;
 			else if (1 < childrenLength) {
 				for (var childArray = Array(childrenLength), _i = 0; _i < childrenLength; _i++) childArray[_i] = arguments[_i + 2];
 				Object.freeze && Object.freeze(childArray);
-				i$2.children = childArray;
+				i.children = childArray;
 			}
-			if (type && type.defaultProps) for (propName in childrenLength = type.defaultProps, childrenLength) void 0 === i$2[propName] && (i$2[propName] = childrenLength[propName]);
-			key && defineKeyPropWarningGetter(i$2, "function" === typeof type ? type.displayName || type.name || "Unknown" : type);
+			if (type && type.defaultProps) for (propName in childrenLength = type.defaultProps, childrenLength) void 0 === i[propName] && (i[propName] = childrenLength[propName]);
+			key && defineKeyPropWarningGetter(i, "function" === typeof type ? type.displayName || type.name || "Unknown" : type);
 			var propName = 1e4 > ReactSharedInternals.recentlyCreatedOwnerStacks++;
-			return ReactElement(type, key, i$2, getOwner(), propName ? Error("react-stack-top-frame") : unknownOwnerDebugStack, propName ? createTask(getTaskName(type)) : unknownOwnerDebugTask);
+			return ReactElement(type, key, i, getOwner(), propName ? Error("react-stack-top-frame") : unknownOwnerDebugStack, propName ? createTask(getTaskName(type)) : unknownOwnerDebugTask);
 		};
 		exports.createRef = function() {
 			var refObject = { current: null };
@@ -1212,8 +1213,8 @@ var require_react_dom_development = /* @__PURE__ */ __commonJSMin(((exports) => 
 		exports.requestFormReset = function(form) {
 			Internals.d.r(form);
 		};
-		exports.unstable_batchedUpdates = function(fn, a$1) {
-			return fn(a$1);
+		exports.unstable_batchedUpdates = function(fn, a) {
+			return fn(a);
 		};
 		exports.useFormState = function(action, initialState, permalink) {
 			return resolveDispatcher().useFormState(action, initialState, permalink);
@@ -1252,7 +1253,7 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 		function copyWithRename(obj, oldPath, newPath) {
 			if (oldPath.length !== newPath.length) console.warn("copyWithRename() expects paths of the same length");
 			else {
-				for (var i$2 = 0; i$2 < newPath.length - 1; i$2++) if (oldPath[i$2] !== newPath[i$2]) {
+				for (var i = 0; i < newPath.length - 1; i++) if (oldPath[i] !== newPath[i]) {
 					console.warn("copyWithRename() expects paths to be the same except for the deepest key");
 					return;
 				}
@@ -1284,12 +1285,12 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 		}
 		function noop() {}
 		function warnForMissingKey() {}
-		function setToSortedString(set$1) {
-			var array$1 = [];
-			set$1.forEach(function(value) {
-				array$1.push(value);
+		function setToSortedString(set) {
+			var array = [];
+			set.forEach(function(value) {
+				array.push(value);
 			});
-			return array$1.sort().join(", ");
+			return array.sort().join(", ");
 		}
 		function createFiber(tag, pendingProps, key, mode) {
 			return new FiberNode(tag, pendingProps, key, mode);
@@ -1349,55 +1350,55 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 				if (null === alternate) throw Error("Unable to find node on an unmounted component.");
 				return alternate !== fiber ? null : fiber;
 			}
-			for (var a$1 = fiber, b$1 = alternate;;) {
-				var parentA = a$1.return;
+			for (var a = fiber, b$1 = alternate;;) {
+				var parentA = a.return;
 				if (null === parentA) break;
 				var parentB = parentA.alternate;
 				if (null === parentB) {
 					b$1 = parentA.return;
 					if (null !== b$1) {
-						a$1 = b$1;
+						a = b$1;
 						continue;
 					}
 					break;
 				}
 				if (parentA.child === parentB.child) {
 					for (parentB = parentA.child; parentB;) {
-						if (parentB === a$1) return assertIsMounted(parentA), fiber;
+						if (parentB === a) return assertIsMounted(parentA), fiber;
 						if (parentB === b$1) return assertIsMounted(parentA), alternate;
 						parentB = parentB.sibling;
 					}
 					throw Error("Unable to find node on an unmounted component.");
 				}
-				if (a$1.return !== b$1.return) a$1 = parentA, b$1 = parentB;
+				if (a.return !== b$1.return) a = parentA, b$1 = parentB;
 				else {
 					for (var didFindChild = !1, _child = parentA.child; _child;) {
-						if (_child === a$1) {
+						if (_child === a) {
 							didFindChild = !0;
-							a$1 = parentA;
+							a = parentA;
 							b$1 = parentB;
 							break;
 						}
 						if (_child === b$1) {
 							didFindChild = !0;
 							b$1 = parentA;
-							a$1 = parentB;
+							a = parentB;
 							break;
 						}
 						_child = _child.sibling;
 					}
 					if (!didFindChild) {
 						for (_child = parentB.child; _child;) {
-							if (_child === a$1) {
+							if (_child === a) {
 								didFindChild = !0;
-								a$1 = parentB;
+								a = parentB;
 								b$1 = parentA;
 								break;
 							}
 							if (_child === b$1) {
 								didFindChild = !0;
 								b$1 = parentB;
-								a$1 = parentA;
+								a = parentA;
 								break;
 							}
 							_child = _child.sibling;
@@ -1405,10 +1406,10 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 						if (!didFindChild) throw Error("Child was not found in either parent set. This indicates a bug in React related to the return pointer. Please file an issue.");
 					}
 				}
-				if (a$1.alternate !== b$1) throw Error("Return fibers should always be each others' alternates. This error is likely caused by a bug in React. Please file an issue.");
+				if (a.alternate !== b$1) throw Error("Return fibers should always be each others' alternates. This error is likely caused by a bug in React. Please file an issue.");
 			}
-			if (3 !== a$1.tag) throw Error("Unable to find node on an unmounted component.");
-			return a$1.stateNode.current === a$1 ? fiber : alternate;
+			if (3 !== a.tag) throw Error("Unable to find node on an unmounted component.");
+			return a.stateNode.current === a ? fiber : alternate;
 		}
 		function findCurrentHostFiberImpl(node) {
 			var tag = node.tag;
@@ -1493,7 +1494,7 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 				case 29:
 					type = fiber._debugInfo;
 					if (null != type) {
-						for (var i$2 = type.length - 1; 0 <= i$2; i$2--) if ("string" === typeof type[i$2].name) return type[i$2].name;
+						for (var i = type.length - 1; 0 <= i; i--) if ("string" === typeof type[i].name) return type[i].name;
 					}
 					if (null !== fiber.return) return getComponentNameFromFiber(fiber.return);
 			}
@@ -1636,8 +1637,8 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 			if (void 0 === prefix) try {
 				throw Error();
 			} catch (x$1) {
-				var match$2 = x$1.stack.trim().match(/\n( *(at )?)/);
-				prefix = match$2 && match$2[1] || "";
+				var match = x$1.stack.trim().match(/\n( *(at )?)/);
+				prefix = match && match[1] || "";
 				suffix = -1 < x$1.stack.indexOf("\n    at") ? " (<anonymous>)" : -1 < x$1.stack.indexOf("@") ? "@unknown:0:0" : "";
 			}
 			return "\n" + prefix + name + suffix;
@@ -1741,8 +1742,8 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 				do {
 					info += describeFiber(workInProgress$1, previous);
 					var debugInfo = workInProgress$1._debugInfo;
-					if (debugInfo) for (var i$2 = debugInfo.length - 1; 0 <= i$2; i$2--) {
-						var entry = debugInfo[i$2];
+					if (debugInfo) for (var i = debugInfo.length - 1; 0 <= i; i--) {
+						var entry = debugInfo[i];
 						if ("string" === typeof entry.name) {
 							var JSCompiler_temp_const = info;
 							a: {
@@ -1976,7 +1977,7 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 			return lane;
 		}
 		function createLaneMap(initial) {
-			for (var laneMap = [], i$2 = 0; 31 > i$2; i$2++) laneMap.push(initial);
+			for (var laneMap = [], i = 0; 31 > i; i++) laneMap.push(initial);
 			return laneMap;
 		}
 		function markRootUpdated$1(root$1, updateLane) {
@@ -2259,16 +2260,16 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 		function trackValueOnNode(node, valueField, currentValue) {
 			var descriptor = Object.getOwnPropertyDescriptor(node.constructor.prototype, valueField);
 			if (!node.hasOwnProperty(valueField) && "undefined" !== typeof descriptor && "function" === typeof descriptor.get && "function" === typeof descriptor.set) {
-				var get$1 = descriptor.get, set$1 = descriptor.set;
+				var get = descriptor.get, set = descriptor.set;
 				Object.defineProperty(node, valueField, {
 					configurable: !0,
 					get: function() {
-						return get$1.call(this);
+						return get.call(this);
 					},
 					set: function(value) {
 						checkFormFieldValueStringCoercion(value);
 						currentValue = "" + value;
-						set$1.call(this, value);
+						set.call(this, value);
 					}
 				});
 				Object.defineProperty(node, valueField, { enumerable: descriptor.enumerable });
@@ -2369,18 +2370,18 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 			node = node.options;
 			if (multiple) {
 				multiple = {};
-				for (var i$2 = 0; i$2 < propValue.length; i$2++) multiple["$" + propValue[i$2]] = !0;
-				for (propValue = 0; propValue < node.length; propValue++) i$2 = multiple.hasOwnProperty("$" + node[propValue].value), node[propValue].selected !== i$2 && (node[propValue].selected = i$2), i$2 && setDefaultSelected && (node[propValue].defaultSelected = !0);
+				for (var i = 0; i < propValue.length; i++) multiple["$" + propValue[i]] = !0;
+				for (propValue = 0; propValue < node.length; propValue++) i = multiple.hasOwnProperty("$" + node[propValue].value), node[propValue].selected !== i && (node[propValue].selected = i), i && setDefaultSelected && (node[propValue].defaultSelected = !0);
 			} else {
 				propValue = "" + getToStringValue(propValue);
 				multiple = null;
-				for (i$2 = 0; i$2 < node.length; i$2++) {
-					if (node[i$2].value === propValue) {
-						node[i$2].selected = !0;
-						setDefaultSelected && (node[i$2].defaultSelected = !0);
+				for (i = 0; i < node.length; i++) {
+					if (node[i].value === propValue) {
+						node[i].selected = !0;
+						setDefaultSelected && (node[i].defaultSelected = !0);
 						return;
 					}
-					null !== multiple || node[i$2].disabled || (multiple = node[i$2]);
+					null !== multiple || node[i].disabled || (multiple = node[i]);
 				}
 				null !== multiple && (multiple.selected = !0);
 			}
@@ -2466,8 +2467,8 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 			}
 			return indentation(indent) + describeTextNode(clientText, maxLength) + "\n";
 		}
-		function objectName(object$1) {
-			return Object.prototype.toString.call(object$1).replace(/^\[object (.*)\]$/, function(m, p0) {
+		function objectName(object) {
+			return Object.prototype.toString.call(object).replace(/^\[object (.*)\]$/, function(m, p0) {
 				return p0;
 			});
 		}
@@ -2570,18 +2571,18 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 			if (skipToNode !== node && (1 !== node.children.length || node.children[0] !== skipToNode)) return indentation(indent) + "...\n" + describeNode(skipToNode, indent + 1);
 			skipToNode = "";
 			var debugInfo = node.fiber._debugInfo;
-			if (debugInfo) for (var i$2 = 0; i$2 < debugInfo.length; i$2++) {
-				var serverComponentName = debugInfo[i$2].name;
+			if (debugInfo) for (var i = 0; i < debugInfo.length; i++) {
+				var serverComponentName = debugInfo[i].name;
 				"string" === typeof serverComponentName && (skipToNode += indentation(indent) + "<" + serverComponentName + ">\n", indent++);
 			}
 			debugInfo = "";
-			i$2 = node.fiber.pendingProps;
-			if (6 === node.fiber.tag) debugInfo = describeTextDiff(i$2, node.serverProps, indent), indent++;
+			i = node.fiber.pendingProps;
+			if (6 === node.fiber.tag) debugInfo = describeTextDiff(i, node.serverProps, indent), indent++;
 			else if (serverComponentName = describeFiberType(node.fiber), null !== serverComponentName) if (void 0 === node.serverProps) {
 				debugInfo = indent;
 				var maxLength = 120 - 2 * debugInfo - serverComponentName.length - 2, content = "";
-				for (propName in i$2) if (i$2.hasOwnProperty(propName) && "children" !== propName) {
-					var propValue = describePropValue(i$2[propName], 15);
+				for (propName in i) if (i.hasOwnProperty(propName) && "children" !== propName) {
+					var propValue = describePropValue(i[propName], 15);
 					maxLength -= propName.length + propValue.length + 2;
 					if (0 > maxLength) {
 						content += " ...";
@@ -2591,14 +2592,14 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 				}
 				debugInfo = indentation(debugInfo) + "<" + serverComponentName + content + ">\n";
 				indent++;
-			} else null === node.serverProps ? (debugInfo = describeExpandedElement(serverComponentName, i$2, added(indent)), indent++) : "string" === typeof node.serverProps ? console.error("Should not have matched a non HostText fiber to a Text node. This is a bug in React.") : (debugInfo = describeElementDiff(serverComponentName, i$2, node.serverProps, indent), indent++);
+			} else null === node.serverProps ? (debugInfo = describeExpandedElement(serverComponentName, i, added(indent)), indent++) : "string" === typeof node.serverProps ? console.error("Should not have matched a non HostText fiber to a Text node. This is a bug in React.") : (debugInfo = describeElementDiff(serverComponentName, i, node.serverProps, indent), indent++);
 			var propName = "";
-			i$2 = node.fiber.child;
-			for (serverComponentName = 0; i$2 && serverComponentName < node.children.length;) maxLength = node.children[serverComponentName], maxLength.fiber === i$2 ? (propName += describeNode(maxLength, indent), serverComponentName++) : propName += describeSiblingFiber(i$2, indent), i$2 = i$2.sibling;
-			i$2 && 0 < node.children.length && (propName += indentation(indent) + "...\n");
-			i$2 = node.serverTail;
+			i = node.fiber.child;
+			for (serverComponentName = 0; i && serverComponentName < node.children.length;) maxLength = node.children[serverComponentName], maxLength.fiber === i ? (propName += describeNode(maxLength, indent), serverComponentName++) : propName += describeSiblingFiber(i, indent), i = i.sibling;
+			i && 0 < node.children.length && (propName += indentation(indent) + "...\n");
+			i = node.serverTail;
 			null === node.serverProps && indent--;
-			for (node = 0; node < i$2.length; node++) serverComponentName = i$2[node], propName = "string" === typeof serverComponentName ? propName + (removed(indent) + describeTextNode(serverComponentName, 120 - 2 * indent) + "\n") : propName + describeExpandedElement(serverComponentName.type, serverComponentName.props, removed(indent));
+			for (node = 0; node < i.length; node++) serverComponentName = i[node], propName = "string" === typeof serverComponentName ? propName + (removed(indent) + describeTextNode(serverComponentName, 120 - 2 * indent) + "\n") : propName + describeExpandedElement(serverComponentName.type, serverComponentName.props, removed(indent));
 			return skipToNode + debugInfo + propName;
 		}
 		function describeDiff(rootNode) {
@@ -2774,8 +2775,8 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 			}
 			node.textContent = text;
 		}
-		function camelize(string$2) {
-			return string$2.replace(hyphenPattern, function(_$1, character) {
+		function camelize(string) {
+			return string.replace(hyphenPattern, function(_$1, character) {
 				return character.toUpperCase();
 			});
 		}
@@ -2792,17 +2793,17 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 				if (styles) {
 					var expandedUpdates = {};
 					if (prevStyles) {
-						for (var key in prevStyles) if (prevStyles.hasOwnProperty(key) && !styles.hasOwnProperty(key)) for (var longhands = shorthandToLonghand[key] || [key], i$2 = 0; i$2 < longhands.length; i$2++) expandedUpdates[longhands[i$2]] = key;
+						for (var key in prevStyles) if (prevStyles.hasOwnProperty(key) && !styles.hasOwnProperty(key)) for (var longhands = shorthandToLonghand[key] || [key], i = 0; i < longhands.length; i++) expandedUpdates[longhands[i]] = key;
 					}
 					for (var _key in styles) if (styles.hasOwnProperty(_key) && (!prevStyles || prevStyles[_key] !== styles[_key])) for (key = shorthandToLonghand[_key] || [_key], longhands = 0; longhands < key.length; longhands++) expandedUpdates[key[longhands]] = _key;
 					_key = {};
 					for (var key$jscomp$0 in styles) for (key = shorthandToLonghand[key$jscomp$0] || [key$jscomp$0], longhands = 0; longhands < key.length; longhands++) _key[key[longhands]] = key$jscomp$0;
 					key$jscomp$0 = {};
-					for (var _key2 in expandedUpdates) if (key = expandedUpdates[_key2], (longhands = _key[_key2]) && key !== longhands && (i$2 = key + "," + longhands, !key$jscomp$0[i$2])) {
-						key$jscomp$0[i$2] = !0;
-						i$2 = console;
+					for (var _key2 in expandedUpdates) if (key = expandedUpdates[_key2], (longhands = _key[_key2]) && key !== longhands && (i = key + "," + longhands, !key$jscomp$0[i])) {
+						key$jscomp$0[i] = !0;
+						i = console;
 						var value = styles[key];
-						i$2.error.call(i$2, "%s a style property during rerender (%s) when a conflicting property is set (%s) can lead to styling bugs. To avoid this, don't mix shorthand and non-shorthand properties for the same value; instead, replace the shorthand with separate values.", null == value || "boolean" === typeof value || "" === value ? "Removing" : "Updating", key, longhands);
+						i.error.call(i, "%s a style property during rerender (%s) when a conflicting property is set (%s) can lead to styling bugs. To avoid this, don't mix shorthand and non-shorthand properties for the same value; instead, replace the shorthand with separate values.", null == value || "boolean" === typeof value || "" === value ? "Removing" : "Updating", key, longhands);
 					}
 				}
 				for (var styleName in prevStyles) !prevStyles.hasOwnProperty(styleName) || null != styles && styles.hasOwnProperty(styleName) || (0 === styleName.indexOf("--") ? node.setProperty(styleName, "") : "float" === styleName ? node.cssFloat = "" : node[styleName] = "");
@@ -3015,14 +3016,14 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 				}
 			}
 		}
-		function batchedUpdates$1(fn, a$1, b$1) {
-			if (isInsideEventHandler) return fn(a$1, b$1);
+		function batchedUpdates$1(fn, a, b$1) {
+			if (isInsideEventHandler) return fn(a, b$1);
 			isInsideEventHandler = !0;
 			try {
-				return fn(a$1);
+				return fn(a);
 			} finally {
 				if (isInsideEventHandler = !1, null !== restoreTarget || null !== restoreQueue) {
-					if (flushSyncWork$1(), restoreTarget && (a$1 = restoreTarget, fn = restoreQueue, restoreQueue = restoreTarget = null, restoreStateOfTarget(a$1), fn)) for (a$1 = 0; a$1 < fn.length; a$1++) restoreStateOfTarget(fn[a$1]);
+					if (flushSyncWork$1(), restoreTarget && (a = restoreTarget, fn = restoreQueue, restoreQueue = restoreTarget = null, restoreStateOfTarget(a), fn)) for (a = 0; a < fn.length; a++) restoreStateOfTarget(fn[a]);
 				}
 			}
 		}
@@ -3294,9 +3295,9 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 			topLevelEventsToReactNames.set(domEventName, reactName);
 			registerTwoPhaseEvent(reactName, [domEventName]);
 		}
-		function getArrayKind(array$1) {
-			for (var kind = EMPTY_ARRAY, i$2 = 0; i$2 < array$1.length; i$2++) {
-				var value = array$1[i$2];
+		function getArrayKind(array) {
+			for (var kind = EMPTY_ARRAY, i = 0; i < array.length; i++) {
+				var value = array[i];
 				if ("object" === typeof value && null !== value) if (isArrayImpl(value) && 2 === value.length && "string" === typeof value[0]) {
 					if (kind !== EMPTY_ARRAY && kind !== ENTRIES_ARRAY) return COMPLEX_ARRAY;
 					kind = ENTRIES_ARRAY;
@@ -3308,8 +3309,8 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 			}
 			return kind;
 		}
-		function addObjectToProperties(object$1, properties, indent, prefix$1) {
-			for (var key in object$1) hasOwnProperty.call(object$1, key) && "_" !== key[0] && addValueToProperties(key, object$1[key], properties, indent, prefix$1);
+		function addObjectToProperties(object, properties, indent, prefix$1) {
+			for (var key in object) hasOwnProperty.call(object, key) && "_" !== key[0] && addValueToProperties(key, object[key], properties, indent, prefix$1);
 		}
 		function addValueToProperties(propertyName, value, properties, indent, prefix$1) {
 			switch (typeof value) {
@@ -3451,8 +3452,8 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 			if (supportsUserTiming) {
 				var name = getComponentNameFromFiber(fiber);
 				if (null !== name) {
-					for (var debugTask = null, properties = [], i$2 = 0; i$2 < errors.length; i$2++) {
-						var capturedValue = errors[i$2];
+					for (var debugTask = null, properties = [], i = 0; i < errors.length; i++) {
+						var capturedValue = errors[i];
 						null == debugTask && null !== capturedValue.source && (debugTask = capturedValue.source._debugTask);
 						capturedValue = capturedValue.value;
 						properties.push(["Error", "object" === typeof capturedValue && null !== capturedValue && "string" === typeof capturedValue.message ? String(capturedValue.message) : String(capturedValue)]);
@@ -3480,8 +3481,8 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 					var name = getComponentNameFromFiber(fiber);
 					if (null !== name) {
 						selfTime = [];
-						for (var i$2 = 0; i$2 < errors.length; i$2++) {
-							var error = errors[i$2].value;
+						for (var i = 0; i < errors.length; i++) {
+							var error = errors[i].value;
 							selfTime.push(["Error", "object" === typeof error && null !== error && "string" === typeof error.message ? String(error.message) : String(error)]);
 						}
 						null !== fiber.key && addValueToProperties("key", fiber.key, selfTime, 0, "");
@@ -3517,8 +3518,8 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 		function logRecoveredRenderPhase(startTime, endTime, lanes, recoverableErrors, hydrationFailed, debugTask) {
 			if (supportsUserTiming && !(endTime <= startTime)) {
 				lanes = [];
-				for (var i$2 = 0; i$2 < recoverableErrors.length; i$2++) {
-					var error = recoverableErrors[i$2].value;
+				for (var i = 0; i < recoverableErrors.length; i++) {
+					var error = recoverableErrors[i].value;
 					lanes.push(["Recoverable Error", "object" === typeof error && null !== error && "string" === typeof error.message ? String(error.message) : String(error)]);
 				}
 				startTime = {
@@ -3543,8 +3544,8 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 		}
 		function logCommitErrored(startTime, endTime, errors, passive, debugTask) {
 			if (supportsUserTiming && !(endTime <= startTime)) {
-				for (var properties = [], i$2 = 0; i$2 < errors.length; i$2++) {
-					var error = errors[i$2].value;
+				for (var properties = [], i = 0; i < errors.length; i++) {
+					var error = errors[i].value;
 					properties.push(["Error", "object" === typeof error && null !== error && "string" === typeof error.message ? String(error.message) : String(error)]);
 				}
 				startTime = {
@@ -3565,15 +3566,15 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 			!supportsUserTiming || endTime <= startTime || (debugTask ? debugTask.run(console.timeStamp.bind(console, "Animating", startTime, endTime, currentTrack, LANES_TRACK_GROUP, "secondary-dark")) : console.timeStamp("Animating", startTime, endTime, currentTrack, LANES_TRACK_GROUP, "secondary-dark"));
 		}
 		function finishQueueingConcurrentUpdates() {
-			for (var endIndex = concurrentQueuesIndex, i$2 = concurrentlyUpdatedLanes = concurrentQueuesIndex = 0; i$2 < endIndex;) {
-				var fiber = concurrentQueues[i$2];
-				concurrentQueues[i$2++] = null;
-				var queue = concurrentQueues[i$2];
-				concurrentQueues[i$2++] = null;
-				var update = concurrentQueues[i$2];
-				concurrentQueues[i$2++] = null;
-				var lane = concurrentQueues[i$2];
-				concurrentQueues[i$2++] = null;
+			for (var endIndex = concurrentQueuesIndex, i = concurrentlyUpdatedLanes = concurrentQueuesIndex = 0; i < endIndex;) {
+				var fiber = concurrentQueues[i];
+				concurrentQueues[i++] = null;
+				var queue = concurrentQueues[i];
+				concurrentQueues[i++] = null;
+				var update = concurrentQueues[i];
+				concurrentQueues[i++] = null;
+				var lane = concurrentQueues[i];
+				concurrentQueues[i++] = null;
 				if (null !== queue && null !== update) {
 					var pending = queue.pending;
 					null === pending ? update.next = update : (update.next = pending.next, pending.next = update);
@@ -3699,9 +3700,9 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 			this._debugHookTypes = null;
 			hasBadMapPolyfill || "function" !== typeof Object.preventExtensions || Object.preventExtensions(this);
 		}
-		function shouldConstruct(Component) {
-			Component = Component.prototype;
-			return !(!Component || !Component.isReactComponent);
+		function shouldConstruct(Component$1) {
+			Component$1 = Component$1.prototype;
+			return !(!Component$1 || !Component$1.isReactComponent);
 		}
 		function createWorkInProgress(current$1, pendingProps) {
 			var workInProgress$1 = current$1.alternate;
@@ -4102,7 +4103,7 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 					a: for (; null !== list;) {
 						var dependency = list;
 						list = fiber;
-						for (var i$2 = 0; i$2 < contexts.length; i$2++) if (dependency.context === contexts[i$2]) {
+						for (var i = 0; i < contexts.length; i++) if (dependency.context === contexts[i]) {
 							list.lanes |= renderLanes$1;
 							dependency = list.alternate;
 							null !== dependency && (dependency.lanes |= renderLanes$1);
@@ -4358,7 +4359,7 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 				currentEntangledListeners = null;
 				currentEntangledLane = 0;
 				currentEntangledActionThenable = null;
-				for (var i$2 = 0; i$2 < listeners$1.length; i$2++) (0, listeners$1[i$2])();
+				for (var i = 0; i < listeners$1.length; i++) (0, listeners$1[i])();
 			}
 		}
 		function chainThenableValue(thenable, result) {
@@ -4373,7 +4374,7 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 			thenable.then(function() {
 				thenableWithOverride.status = "fulfilled";
 				thenableWithOverride.value = result;
-				for (var i$2 = 0; i$2 < listeners$1.length; i$2++) (0, listeners$1[i$2])(result);
+				for (var i = 0; i < listeners$1.length; i++) (0, listeners$1[i])(result);
 			}, function(error) {
 				thenableWithOverride.status = "rejected";
 				thenableWithOverride.reason = error;
@@ -4483,16 +4484,16 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 		function getCurrentDebugTask() {
 			var debugInfo = currentDebugInfo;
 			if (null != debugInfo) {
-				for (var i$2 = debugInfo.length - 1; 0 <= i$2; i$2--) if (null != debugInfo[i$2].name) {
-					var debugTask = debugInfo[i$2].debugTask;
+				for (var i = debugInfo.length - 1; 0 <= i; i--) if (null != debugInfo[i].name) {
+					var debugTask = debugInfo[i].debugTask;
 					if (null != debugTask) return debugTask;
 				}
 			}
 			return null;
 		}
 		function validateFragmentProps(element, fiber, returnFiber) {
-			for (var keys = Object.keys(element.props), i$2 = 0; i$2 < keys.length; i$2++) {
-				var key = keys[i$2];
+			for (var keys = Object.keys(element.props), i = 0; i < keys.length; i++) {
+				var key = keys[i];
 				if ("children" !== key && "key" !== key) {
 					null === fiber && (fiber = createFiberFromElement(element, returnFiber.mode, 0), fiber._debugInfo = currentDebugInfo, fiber.return = returnFiber);
 					runWithFiberInDEV(fiber, function(erroredKey) {
@@ -4856,9 +4857,9 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 					fiber._debugOwner = returnFiber._debugOwner;
 					fiber._debugTask = returnFiber._debugTask;
 					if (null != debugInfo) {
-						for (var i$2 = debugInfo.length - 1; 0 <= i$2; i$2--) if ("string" === typeof debugInfo[i$2].stack) {
-							fiber._debugOwner = debugInfo[i$2];
-							fiber._debugTask = debugInfo[i$2].debugTask;
+						for (var i = debugInfo.length - 1; 0 <= i; i--) if ("string" === typeof debugInfo[i].stack) {
+							fiber._debugOwner = debugInfo[i];
+							fiber._debugTask = debugInfo[i].debugTask;
 							break;
 						}
 					}
@@ -4935,14 +4936,14 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 				queue = queue.firstBaseUpdate;
 				if (null !== queue) {
 					do {
-						var clone$1 = {
+						var clone = {
 							lane: queue.lane,
 							tag: queue.tag,
 							payload: queue.payload,
 							callback: null,
 							next: null
 						};
-						null === newLast ? newFirst = newLast = clone$1 : newLast = newLast.next = clone$1;
+						null === newLast ? newFirst = newLast = clone : newLast = newLast.next = clone;
 						queue = queue.next;
 					} while (null !== queue);
 					null === newLast ? newFirst = newLast = capturedUpdate : newLast = newLast.next = capturedUpdate;
@@ -5149,9 +5150,9 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 			if (null !== hookTypesDev && (hookTypesUpdateIndexDev++, hookTypesDev[hookTypesUpdateIndexDev] !== hookName)) {
 				var componentName$1 = getComponentNameFromFiber(currentlyRenderingFiber);
 				if (!didWarnAboutMismatchedHooksForComponent.has(componentName$1) && (didWarnAboutMismatchedHooksForComponent.add(componentName$1), null !== hookTypesDev)) {
-					for (var table = "", i$2 = 0; i$2 <= hookTypesUpdateIndexDev; i$2++) {
-						var oldHookName = hookTypesDev[i$2], newHookName = i$2 === hookTypesUpdateIndexDev ? hookName : oldHookName;
-						for (oldHookName = i$2 + 1 + ". " + oldHookName; 30 > oldHookName.length;) oldHookName += " ";
+					for (var table = "", i = 0; i <= hookTypesUpdateIndexDev; i++) {
+						var oldHookName = hookTypesDev[i], newHookName = i === hookTypesUpdateIndexDev ? hookName : oldHookName;
+						for (oldHookName = i + 1 + ". " + oldHookName; 30 > oldHookName.length;) oldHookName += " ";
 						oldHookName += newHookName + "\n";
 						table += oldHookName;
 					}
@@ -5173,28 +5174,28 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 			if (ignorePreviousDependencies) return !1;
 			if (null === prevDeps) return console.error("%s received a final argument during this render, but not during the previous render. Even though the final argument is optional, its type cannot change between renders.", currentHookNameInDev), !1;
 			nextDeps.length !== prevDeps.length && console.error("The final argument passed to %s changed size between renders. The order and size of this array must remain constant.\n\nPrevious: %s\nIncoming: %s", currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + nextDeps.join(", ") + "]");
-			for (var i$2 = 0; i$2 < prevDeps.length && i$2 < nextDeps.length; i$2++) if (!objectIs(nextDeps[i$2], prevDeps[i$2])) return !1;
+			for (var i = 0; i < prevDeps.length && i < nextDeps.length; i++) if (!objectIs(nextDeps[i], prevDeps[i])) return !1;
 			return !0;
 		}
-		function renderWithHooks(current$1, workInProgress$1, Component, props, secondArg, nextRenderLanes) {
+		function renderWithHooks(current$1, workInProgress$1, Component$1, props, secondArg, nextRenderLanes) {
 			renderLanes = nextRenderLanes;
 			currentlyRenderingFiber = workInProgress$1;
 			hookTypesDev = null !== current$1 ? current$1._debugHookTypes : null;
 			hookTypesUpdateIndexDev = -1;
 			ignorePreviousDependencies = null !== current$1 && current$1.type !== workInProgress$1.type;
-			if ("[object AsyncFunction]" === Object.prototype.toString.call(Component) || "[object AsyncGeneratorFunction]" === Object.prototype.toString.call(Component)) nextRenderLanes = getComponentNameFromFiber(currentlyRenderingFiber), didWarnAboutAsyncClientComponent.has(nextRenderLanes) || (didWarnAboutAsyncClientComponent.add(nextRenderLanes), console.error("%s is an async Client Component. Only Server Components can be async at the moment. This error is often caused by accidentally adding `'use client'` to a module that was originally written for the server.", null === nextRenderLanes ? "An unknown Component" : "<" + nextRenderLanes + ">"));
+			if ("[object AsyncFunction]" === Object.prototype.toString.call(Component$1) || "[object AsyncGeneratorFunction]" === Object.prototype.toString.call(Component$1)) nextRenderLanes = getComponentNameFromFiber(currentlyRenderingFiber), didWarnAboutAsyncClientComponent.has(nextRenderLanes) || (didWarnAboutAsyncClientComponent.add(nextRenderLanes), console.error("%s is an async Client Component. Only Server Components can be async at the moment. This error is often caused by accidentally adding `'use client'` to a module that was originally written for the server.", null === nextRenderLanes ? "An unknown Component" : "<" + nextRenderLanes + ">"));
 			workInProgress$1.memoizedState = null;
 			workInProgress$1.updateQueue = null;
 			workInProgress$1.lanes = 0;
 			ReactSharedInternals.H = null !== current$1 && null !== current$1.memoizedState ? HooksDispatcherOnUpdateInDEV : null !== hookTypesDev ? HooksDispatcherOnMountWithHookTypesInDEV : HooksDispatcherOnMountInDEV;
 			shouldDoubleInvokeUserFnsInHooksDEV = nextRenderLanes = (workInProgress$1.mode & StrictLegacyMode) !== NoMode;
-			var children = callComponentInDEV(Component, props, secondArg);
+			var children = callComponentInDEV(Component$1, props, secondArg);
 			shouldDoubleInvokeUserFnsInHooksDEV = !1;
-			didScheduleRenderPhaseUpdateDuringThisPass && (children = renderWithHooksAgain(workInProgress$1, Component, props, secondArg));
+			didScheduleRenderPhaseUpdateDuringThisPass && (children = renderWithHooksAgain(workInProgress$1, Component$1, props, secondArg));
 			if (nextRenderLanes) {
 				setIsStrictModeForDevtools(!0);
 				try {
-					children = renderWithHooksAgain(workInProgress$1, Component, props, secondArg);
+					children = renderWithHooksAgain(workInProgress$1, Component$1, props, secondArg);
 				} finally {
 					setIsStrictModeForDevtools(!1);
 				}
@@ -5223,7 +5224,7 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 			needsToResetSuspendedThenableDEV ? (needsToResetSuspendedThenableDEV = !1, current$1 = !0) : current$1 = !1;
 			current$1 && (workInProgress$1 = getComponentNameFromFiber(workInProgress$1) || "Unknown", didWarnAboutUseWrappedInTryCatch.has(workInProgress$1) || didWarnAboutAsyncClientComponent.has(workInProgress$1) || (didWarnAboutUseWrappedInTryCatch.add(workInProgress$1), console.error("`use` was called from inside a try/catch block. This is not allowed and can lead to unexpected behavior. To handle errors triggered by `use`, wrap your component in a error boundary.")));
 		}
-		function renderWithHooksAgain(workInProgress$1, Component, props, secondArg) {
+		function renderWithHooksAgain(workInProgress$1, Component$1, props, secondArg) {
 			currentlyRenderingFiber = workInProgress$1;
 			var numberOfReRenders = 0;
 			do {
@@ -5243,7 +5244,7 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 				}
 				hookTypesUpdateIndexDev = -1;
 				ReactSharedInternals.H = HooksDispatcherOnRerenderInDEV;
-				children = callComponentInDEV(Component, props, secondArg);
+				children = callComponentInDEV(Component$1, props, secondArg);
 			} while (didScheduleRenderPhaseUpdateDuringThisPass);
 			return children;
 		}
@@ -5346,8 +5347,8 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 			if (null == memoCache) {
 				var current$1 = currentlyRenderingFiber.alternate;
 				null !== current$1 && (current$1 = current$1.updateQueue, null !== current$1 && (current$1 = current$1.memoCache, null != current$1 && (memoCache = {
-					data: current$1.data.map(function(array$1) {
-						return array$1.slice();
+					data: current$1.data.map(function(array) {
+						return array.slice();
 					}),
 					index: 0
 				})));
@@ -5689,7 +5690,7 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 		}
 		function notifyActionListeners(actionNode) {
 			actionNode = actionNode.listeners;
-			for (var i$2 = 0; i$2 < actionNode.length; i$2++) (0, actionNode[i$2])();
+			for (var i = 0; i < actionNode.length; i++) (0, actionNode[i])();
 		}
 		function actionStateReducer(oldState, newState) {
 			return newState;
@@ -6219,15 +6220,15 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 			"function" === typeof instance.UNSAFE_componentWillReceiveProps && instance.UNSAFE_componentWillReceiveProps(newProps, nextContext);
 			instance.state !== oldState && (workInProgress$1 = getComponentNameFromFiber(workInProgress$1) || "Component", didWarnAboutStateAssignmentForComponent.has(workInProgress$1) || (didWarnAboutStateAssignmentForComponent.add(workInProgress$1), console.error("%s.componentWillReceiveProps(): Assigning directly to this.state is deprecated (except inside a component's constructor). Use setState instead.", workInProgress$1)), classComponentUpdater.enqueueReplaceState(instance, instance.state, null));
 		}
-		function resolveClassComponentProps(Component, baseProps) {
+		function resolveClassComponentProps(Component$1, baseProps) {
 			var newProps = baseProps;
 			if ("ref" in baseProps) {
 				newProps = {};
 				for (var propName in baseProps) "ref" !== propName && (newProps[propName] = baseProps[propName]);
 			}
-			if (Component = Component.defaultProps) {
+			if (Component$1 = Component$1.defaultProps) {
 				newProps === baseProps && (newProps = assign({}, newProps));
-				for (var _propName in Component) void 0 === newProps[_propName] && (newProps[_propName] = Component[_propName]);
+				for (var _propName in Component$1) void 0 === newProps[_propName] && (newProps[_propName] = Component$1[_propName]);
 			}
 			return newProps;
 		}
@@ -6363,15 +6364,15 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 		function reconcileChildren(current$1, workInProgress$1, nextChildren, renderLanes$1) {
 			workInProgress$1.child = null === current$1 ? mountChildFibers(workInProgress$1, null, nextChildren, renderLanes$1) : reconcileChildFibers(workInProgress$1, current$1.child, nextChildren, renderLanes$1);
 		}
-		function updateForwardRef(current$1, workInProgress$1, Component, nextProps, renderLanes$1) {
-			Component = Component.render;
+		function updateForwardRef(current$1, workInProgress$1, Component$1, nextProps, renderLanes$1) {
+			Component$1 = Component$1.render;
 			var ref = workInProgress$1.ref;
 			if ("ref" in nextProps) {
 				var propsWithoutRef = {};
 				for (var key in nextProps) "ref" !== key && (propsWithoutRef[key] = nextProps[key]);
 			} else propsWithoutRef = nextProps;
 			prepareToReadContext(workInProgress$1);
-			nextProps = renderWithHooks(current$1, workInProgress$1, Component, propsWithoutRef, ref, renderLanes$1);
+			nextProps = renderWithHooks(current$1, workInProgress$1, Component$1, propsWithoutRef, ref, renderLanes$1);
 			key = checkDidRenderIdHook();
 			if (null !== current$1 && !didReceiveUpdate) return bailoutHooks(current$1, workInProgress$1, renderLanes$1), bailoutOnAlreadyFinishedWork(current$1, workInProgress$1, renderLanes$1);
 			isHydrating && key && pushMaterializedTreeId(workInProgress$1);
@@ -6379,11 +6380,11 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 			reconcileChildren(current$1, workInProgress$1, nextProps, renderLanes$1);
 			return workInProgress$1.child;
 		}
-		function updateMemoComponent(current$1, workInProgress$1, Component, nextProps, renderLanes$1) {
+		function updateMemoComponent(current$1, workInProgress$1, Component$1, nextProps, renderLanes$1) {
 			if (null === current$1) {
-				var type = Component.type;
-				if ("function" === typeof type && !shouldConstruct(type) && void 0 === type.defaultProps && null === Component.compare) return Component = resolveFunctionForHotReloading(type), workInProgress$1.tag = 15, workInProgress$1.type = Component, validateFunctionComponentInDev(workInProgress$1, type), updateSimpleMemoComponent(current$1, workInProgress$1, Component, nextProps, renderLanes$1);
-				current$1 = createFiberFromTypeAndProps(Component.type, null, nextProps, workInProgress$1, workInProgress$1.mode, renderLanes$1);
+				var type = Component$1.type;
+				if ("function" === typeof type && !shouldConstruct(type) && void 0 === type.defaultProps && null === Component$1.compare) return Component$1 = resolveFunctionForHotReloading(type), workInProgress$1.tag = 15, workInProgress$1.type = Component$1, validateFunctionComponentInDev(workInProgress$1, type), updateSimpleMemoComponent(current$1, workInProgress$1, Component$1, nextProps, renderLanes$1);
+				current$1 = createFiberFromTypeAndProps(Component$1.type, null, nextProps, workInProgress$1, workInProgress$1.mode, renderLanes$1);
 				current$1.ref = workInProgress$1.ref;
 				current$1.return = workInProgress$1;
 				return workInProgress$1.child = current$1;
@@ -6391,9 +6392,9 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 			type = current$1.child;
 			if (!checkScheduledUpdateOrContext(current$1, renderLanes$1)) {
 				var prevProps = type.memoizedProps;
-				Component = Component.compare;
-				Component = null !== Component ? Component : shallowEqual;
-				if (Component(prevProps, nextProps) && current$1.ref === workInProgress$1.ref) return bailoutOnAlreadyFinishedWork(current$1, workInProgress$1, renderLanes$1);
+				Component$1 = Component$1.compare;
+				Component$1 = null !== Component$1 ? Component$1 : shallowEqual;
+				if (Component$1(prevProps, nextProps) && current$1.ref === workInProgress$1.ref) return bailoutOnAlreadyFinishedWork(current$1, workInProgress$1, renderLanes$1);
 			}
 			workInProgress$1.flags |= 1;
 			current$1 = createWorkInProgress(type, nextProps);
@@ -6401,13 +6402,13 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 			current$1.return = workInProgress$1;
 			return workInProgress$1.child = current$1;
 		}
-		function updateSimpleMemoComponent(current$1, workInProgress$1, Component, nextProps, renderLanes$1) {
+		function updateSimpleMemoComponent(current$1, workInProgress$1, Component$1, nextProps, renderLanes$1) {
 			if (null !== current$1) {
 				var prevProps = current$1.memoizedProps;
 				if (shallowEqual(prevProps, nextProps) && current$1.ref === workInProgress$1.ref && workInProgress$1.type === current$1.type) if (didReceiveUpdate = !1, workInProgress$1.pendingProps = nextProps = prevProps, checkScheduledUpdateOrContext(current$1, renderLanes$1)) 0 !== (current$1.flags & 131072) && (didReceiveUpdate = !0);
 				else return workInProgress$1.lanes = current$1.lanes, bailoutOnAlreadyFinishedWork(current$1, workInProgress$1, renderLanes$1);
 			}
-			return updateFunctionComponent(current$1, workInProgress$1, Component, nextProps, renderLanes$1);
+			return updateFunctionComponent(current$1, workInProgress$1, Component$1, nextProps, renderLanes$1);
 		}
 		function updateOffscreenComponent(current$1, workInProgress$1, renderLanes$1, nextProps) {
 			var nextChildren = nextProps.children, prevState = null !== current$1 ? current$1.memoizedState : null;
@@ -6536,37 +6537,37 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 				if (null === current$1 || current$1.ref !== ref) workInProgress$1.flags |= 4194816;
 			}
 		}
-		function updateFunctionComponent(current$1, workInProgress$1, Component, nextProps, renderLanes$1) {
-			if (Component.prototype && "function" === typeof Component.prototype.render) {
-				var componentName$1 = getComponentNameFromType(Component) || "Unknown";
+		function updateFunctionComponent(current$1, workInProgress$1, Component$1, nextProps, renderLanes$1) {
+			if (Component$1.prototype && "function" === typeof Component$1.prototype.render) {
+				var componentName$1 = getComponentNameFromType(Component$1) || "Unknown";
 				didWarnAboutBadClass[componentName$1] || (console.error("The <%s /> component appears to have a render method, but doesn't extend React.Component. This is likely to cause errors. Change %s to extend React.Component instead.", componentName$1, componentName$1), didWarnAboutBadClass[componentName$1] = !0);
 			}
 			workInProgress$1.mode & StrictLegacyMode && ReactStrictModeWarnings.recordLegacyContextWarning(workInProgress$1, null);
-			null === current$1 && (validateFunctionComponentInDev(workInProgress$1, workInProgress$1.type), Component.contextTypes && (componentName$1 = getComponentNameFromType(Component) || "Unknown", didWarnAboutContextTypes[componentName$1] || (didWarnAboutContextTypes[componentName$1] = !0, console.error("%s uses the legacy contextTypes API which was removed in React 19. Use React.createContext() with React.useContext() instead. (https://react.dev/link/legacy-context)", componentName$1))));
+			null === current$1 && (validateFunctionComponentInDev(workInProgress$1, workInProgress$1.type), Component$1.contextTypes && (componentName$1 = getComponentNameFromType(Component$1) || "Unknown", didWarnAboutContextTypes[componentName$1] || (didWarnAboutContextTypes[componentName$1] = !0, console.error("%s uses the legacy contextTypes API which was removed in React 19. Use React.createContext() with React.useContext() instead. (https://react.dev/link/legacy-context)", componentName$1))));
 			prepareToReadContext(workInProgress$1);
-			Component = renderWithHooks(current$1, workInProgress$1, Component, nextProps, void 0, renderLanes$1);
+			Component$1 = renderWithHooks(current$1, workInProgress$1, Component$1, nextProps, void 0, renderLanes$1);
 			nextProps = checkDidRenderIdHook();
 			if (null !== current$1 && !didReceiveUpdate) return bailoutHooks(current$1, workInProgress$1, renderLanes$1), bailoutOnAlreadyFinishedWork(current$1, workInProgress$1, renderLanes$1);
 			isHydrating && nextProps && pushMaterializedTreeId(workInProgress$1);
 			workInProgress$1.flags |= 1;
-			reconcileChildren(current$1, workInProgress$1, Component, renderLanes$1);
+			reconcileChildren(current$1, workInProgress$1, Component$1, renderLanes$1);
 			return workInProgress$1.child;
 		}
-		function replayFunctionComponent(current$1, workInProgress$1, nextProps, Component, secondArg, renderLanes$1) {
+		function replayFunctionComponent(current$1, workInProgress$1, nextProps, Component$1, secondArg, renderLanes$1) {
 			prepareToReadContext(workInProgress$1);
 			hookTypesUpdateIndexDev = -1;
 			ignorePreviousDependencies = null !== current$1 && current$1.type !== workInProgress$1.type;
 			workInProgress$1.updateQueue = null;
-			nextProps = renderWithHooksAgain(workInProgress$1, Component, nextProps, secondArg);
+			nextProps = renderWithHooksAgain(workInProgress$1, Component$1, nextProps, secondArg);
 			finishRenderingHooks(current$1, workInProgress$1);
-			Component = checkDidRenderIdHook();
+			Component$1 = checkDidRenderIdHook();
 			if (null !== current$1 && !didReceiveUpdate) return bailoutHooks(current$1, workInProgress$1, renderLanes$1), bailoutOnAlreadyFinishedWork(current$1, workInProgress$1, renderLanes$1);
-			isHydrating && Component && pushMaterializedTreeId(workInProgress$1);
+			isHydrating && Component$1 && pushMaterializedTreeId(workInProgress$1);
 			workInProgress$1.flags |= 1;
 			reconcileChildren(current$1, workInProgress$1, nextProps, renderLanes$1);
 			return workInProgress$1.child;
 		}
-		function updateClassComponent(current$1, workInProgress$1, Component, nextProps, renderLanes$1) {
+		function updateClassComponent(current$1, workInProgress$1, Component$1, nextProps, renderLanes$1) {
 			switch (shouldErrorImpl(workInProgress$1)) {
 				case !1:
 					var _instance = workInProgress$1.stateNode, state = new workInProgress$1.type(workInProgress$1.memoizedProps, _instance.context).state;
@@ -6587,14 +6588,14 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 			prepareToReadContext(workInProgress$1);
 			if (null === workInProgress$1.stateNode) {
 				state = emptyContextObject;
-				_instance = Component.contextType;
-				"contextType" in Component && null !== _instance && (void 0 === _instance || _instance.$$typeof !== REACT_CONTEXT_TYPE) && !didWarnAboutInvalidateContextType.has(Component) && (didWarnAboutInvalidateContextType.add(Component), lane = void 0 === _instance ? " However, it is set to undefined. This can be caused by a typo or by mixing up named and default imports. This can also happen due to a circular dependency, so try moving the createContext() call to a separate file." : "object" !== typeof _instance ? " However, it is set to a " + typeof _instance + "." : _instance.$$typeof === REACT_CONSUMER_TYPE ? " Did you accidentally pass the Context.Consumer instead?" : " However, it is set to an object with keys {" + Object.keys(_instance).join(", ") + "}.", console.error("%s defines an invalid contextType. contextType should point to the Context object returned by React.createContext().%s", getComponentNameFromType(Component) || "Component", lane));
+				_instance = Component$1.contextType;
+				"contextType" in Component$1 && null !== _instance && (void 0 === _instance || _instance.$$typeof !== REACT_CONTEXT_TYPE) && !didWarnAboutInvalidateContextType.has(Component$1) && (didWarnAboutInvalidateContextType.add(Component$1), lane = void 0 === _instance ? " However, it is set to undefined. This can be caused by a typo or by mixing up named and default imports. This can also happen due to a circular dependency, so try moving the createContext() call to a separate file." : "object" !== typeof _instance ? " However, it is set to a " + typeof _instance + "." : _instance.$$typeof === REACT_CONSUMER_TYPE ? " Did you accidentally pass the Context.Consumer instead?" : " However, it is set to an object with keys {" + Object.keys(_instance).join(", ") + "}.", console.error("%s defines an invalid contextType. contextType should point to the Context object returned by React.createContext().%s", getComponentNameFromType(Component$1) || "Component", lane));
 				"object" === typeof _instance && null !== _instance && (state = readContext(_instance));
-				_instance = new Component(nextProps, state);
+				_instance = new Component$1(nextProps, state);
 				if (workInProgress$1.mode & StrictLegacyMode) {
 					setIsStrictModeForDevtools(!0);
 					try {
-						_instance = new Component(nextProps, state);
+						_instance = new Component$1(nextProps, state);
 					} finally {
 						setIsStrictModeForDevtools(!1);
 					}
@@ -6604,28 +6605,28 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 				workInProgress$1.stateNode = _instance;
 				_instance._reactInternals = workInProgress$1;
 				_instance._reactInternalInstance = fakeInternalInstance;
-				"function" === typeof Component.getDerivedStateFromProps && null === state && (state = getComponentNameFromType(Component) || "Component", didWarnAboutUninitializedState.has(state) || (didWarnAboutUninitializedState.add(state), console.error("`%s` uses `getDerivedStateFromProps` but its initial state is %s. This is not recommended. Instead, define the initial state by assigning an object to `this.state` in the constructor of `%s`. This ensures that `getDerivedStateFromProps` arguments have a consistent shape.", state, null === _instance.state ? "null" : "undefined", state)));
-				if ("function" === typeof Component.getDerivedStateFromProps || "function" === typeof _instance.getSnapshotBeforeUpdate) {
+				"function" === typeof Component$1.getDerivedStateFromProps && null === state && (state = getComponentNameFromType(Component$1) || "Component", didWarnAboutUninitializedState.has(state) || (didWarnAboutUninitializedState.add(state), console.error("`%s` uses `getDerivedStateFromProps` but its initial state is %s. This is not recommended. Instead, define the initial state by assigning an object to `this.state` in the constructor of `%s`. This ensures that `getDerivedStateFromProps` arguments have a consistent shape.", state, null === _instance.state ? "null" : "undefined", state)));
+				if ("function" === typeof Component$1.getDerivedStateFromProps || "function" === typeof _instance.getSnapshotBeforeUpdate) {
 					var foundWillUpdateName = lane = state = null;
 					"function" === typeof _instance.componentWillMount && !0 !== _instance.componentWillMount.__suppressDeprecationWarning ? state = "componentWillMount" : "function" === typeof _instance.UNSAFE_componentWillMount && (state = "UNSAFE_componentWillMount");
 					"function" === typeof _instance.componentWillReceiveProps && !0 !== _instance.componentWillReceiveProps.__suppressDeprecationWarning ? lane = "componentWillReceiveProps" : "function" === typeof _instance.UNSAFE_componentWillReceiveProps && (lane = "UNSAFE_componentWillReceiveProps");
 					"function" === typeof _instance.componentWillUpdate && !0 !== _instance.componentWillUpdate.__suppressDeprecationWarning ? foundWillUpdateName = "componentWillUpdate" : "function" === typeof _instance.UNSAFE_componentWillUpdate && (foundWillUpdateName = "UNSAFE_componentWillUpdate");
 					if (null !== state || null !== lane || null !== foundWillUpdateName) {
-						_instance = getComponentNameFromType(Component) || "Component";
-						var newApiName = "function" === typeof Component.getDerivedStateFromProps ? "getDerivedStateFromProps()" : "getSnapshotBeforeUpdate()";
+						_instance = getComponentNameFromType(Component$1) || "Component";
+						var newApiName = "function" === typeof Component$1.getDerivedStateFromProps ? "getDerivedStateFromProps()" : "getSnapshotBeforeUpdate()";
 						didWarnAboutLegacyLifecyclesAndDerivedState.has(_instance) || (didWarnAboutLegacyLifecyclesAndDerivedState.add(_instance), console.error("Unsafe legacy lifecycles will not be called for components using new component APIs.\n\n%s uses %s but also contains the following legacy lifecycles:%s%s%s\n\nThe above lifecycles should be removed. Learn more about this warning here:\nhttps://react.dev/link/unsafe-component-lifecycles", _instance, newApiName, null !== state ? "\n  " + state : "", null !== lane ? "\n  " + lane : "", null !== foundWillUpdateName ? "\n  " + foundWillUpdateName : ""));
 					}
 				}
 				_instance = workInProgress$1.stateNode;
-				state = getComponentNameFromType(Component) || "Component";
-				_instance.render || (Component.prototype && "function" === typeof Component.prototype.render ? console.error("No `render` method found on the %s instance: did you accidentally return an object from the constructor?", state) : console.error("No `render` method found on the %s instance: you may have forgotten to define `render`.", state));
+				state = getComponentNameFromType(Component$1) || "Component";
+				_instance.render || (Component$1.prototype && "function" === typeof Component$1.prototype.render ? console.error("No `render` method found on the %s instance: did you accidentally return an object from the constructor?", state) : console.error("No `render` method found on the %s instance: you may have forgotten to define `render`.", state));
 				!_instance.getInitialState || _instance.getInitialState.isReactClassApproved || _instance.state || console.error("getInitialState was defined on %s, a plain JavaScript class. This is only supported for classes created using React.createClass. Did you mean to define a state property instead?", state);
 				_instance.getDefaultProps && !_instance.getDefaultProps.isReactClassApproved && console.error("getDefaultProps was defined on %s, a plain JavaScript class. This is only supported for classes created using React.createClass. Use a static property to define defaultProps instead.", state);
 				_instance.contextType && console.error("contextType was defined as an instance property on %s. Use a static property to define contextType instead.", state);
-				Component.childContextTypes && !didWarnAboutChildContextTypes.has(Component) && (didWarnAboutChildContextTypes.add(Component), console.error("%s uses the legacy childContextTypes API which was removed in React 19. Use React.createContext() instead. (https://react.dev/link/legacy-context)", state));
-				Component.contextTypes && !didWarnAboutContextTypes$1.has(Component) && (didWarnAboutContextTypes$1.add(Component), console.error("%s uses the legacy contextTypes API which was removed in React 19. Use React.createContext() with static contextType instead. (https://react.dev/link/legacy-context)", state));
+				Component$1.childContextTypes && !didWarnAboutChildContextTypes.has(Component$1) && (didWarnAboutChildContextTypes.add(Component$1), console.error("%s uses the legacy childContextTypes API which was removed in React 19. Use React.createContext() instead. (https://react.dev/link/legacy-context)", state));
+				Component$1.contextTypes && !didWarnAboutContextTypes$1.has(Component$1) && (didWarnAboutContextTypes$1.add(Component$1), console.error("%s uses the legacy contextTypes API which was removed in React 19. Use React.createContext() with static contextType instead. (https://react.dev/link/legacy-context)", state));
 				"function" === typeof _instance.componentShouldUpdate && console.error("%s has a method called componentShouldUpdate(). Did you mean shouldComponentUpdate()? The name is phrased as a question because the function is expected to return a value.", state);
-				Component.prototype && Component.prototype.isPureReactComponent && "undefined" !== typeof _instance.shouldComponentUpdate && console.error("%s has a method called shouldComponentUpdate(). shouldComponentUpdate should not be used when extending React.PureComponent. Please extend React.Component if shouldComponentUpdate is used.", getComponentNameFromType(Component) || "A pure component");
+				Component$1.prototype && Component$1.prototype.isPureReactComponent && "undefined" !== typeof _instance.shouldComponentUpdate && console.error("%s has a method called shouldComponentUpdate(). shouldComponentUpdate should not be used when extending React.PureComponent. Please extend React.Component if shouldComponentUpdate is used.", getComponentNameFromType(Component$1) || "A pure component");
 				"function" === typeof _instance.componentDidUnmount && console.error("%s has a method called componentDidUnmount(). But there is no such lifecycle method. Did you mean componentWillUnmount()?", state);
 				"function" === typeof _instance.componentDidReceiveProps && console.error("%s has a method called componentDidReceiveProps(). But there is no such lifecycle method. If you meant to update the state in response to changing props, use componentWillReceiveProps(). If you meant to fetch data or run side-effects or mutations after React has updated the UI, use componentDidUpdate().", state);
 				"function" === typeof _instance.componentWillRecieveProps && console.error("%s has a method called componentWillRecieveProps(). Did you mean componentWillReceiveProps()?", state);
@@ -6633,39 +6634,39 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 				lane = _instance.props !== nextProps;
 				void 0 !== _instance.props && lane && console.error("When calling super() in `%s`, make sure to pass up the same props that your component's constructor was passed.", state);
 				_instance.defaultProps && console.error("Setting defaultProps as an instance property on %s is not supported and will be ignored. Instead, define defaultProps as a static property on %s.", state, state);
-				"function" !== typeof _instance.getSnapshotBeforeUpdate || "function" === typeof _instance.componentDidUpdate || didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate.has(Component) || (didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate.add(Component), console.error("%s: getSnapshotBeforeUpdate() should be used with componentDidUpdate(). This component defines getSnapshotBeforeUpdate() only.", getComponentNameFromType(Component)));
+				"function" !== typeof _instance.getSnapshotBeforeUpdate || "function" === typeof _instance.componentDidUpdate || didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate.has(Component$1) || (didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate.add(Component$1), console.error("%s: getSnapshotBeforeUpdate() should be used with componentDidUpdate(). This component defines getSnapshotBeforeUpdate() only.", getComponentNameFromType(Component$1)));
 				"function" === typeof _instance.getDerivedStateFromProps && console.error("%s: getDerivedStateFromProps() is defined as an instance method and will be ignored. Instead, declare it as a static method.", state);
 				"function" === typeof _instance.getDerivedStateFromError && console.error("%s: getDerivedStateFromError() is defined as an instance method and will be ignored. Instead, declare it as a static method.", state);
-				"function" === typeof Component.getSnapshotBeforeUpdate && console.error("%s: getSnapshotBeforeUpdate() is defined as a static method and will be ignored. Instead, declare it as an instance method.", state);
+				"function" === typeof Component$1.getSnapshotBeforeUpdate && console.error("%s: getSnapshotBeforeUpdate() is defined as a static method and will be ignored. Instead, declare it as an instance method.", state);
 				(lane = _instance.state) && ("object" !== typeof lane || isArrayImpl(lane)) && console.error("%s.state: must be set to an object or null", state);
-				"function" === typeof _instance.getChildContext && "object" !== typeof Component.childContextTypes && console.error("%s.getChildContext(): childContextTypes must be defined in order to use getChildContext().", state);
+				"function" === typeof _instance.getChildContext && "object" !== typeof Component$1.childContextTypes && console.error("%s.getChildContext(): childContextTypes must be defined in order to use getChildContext().", state);
 				_instance = workInProgress$1.stateNode;
 				_instance.props = nextProps;
 				_instance.state = workInProgress$1.memoizedState;
 				_instance.refs = {};
 				initializeUpdateQueue(workInProgress$1);
-				state = Component.contextType;
+				state = Component$1.contextType;
 				_instance.context = "object" === typeof state && null !== state ? readContext(state) : emptyContextObject;
-				_instance.state === nextProps && (state = getComponentNameFromType(Component) || "Component", didWarnAboutDirectlyAssigningPropsToState.has(state) || (didWarnAboutDirectlyAssigningPropsToState.add(state), console.error("%s: It is not recommended to assign props directly to state because updates to props won't be reflected in state. In most cases, it is better to use props directly.", state)));
+				_instance.state === nextProps && (state = getComponentNameFromType(Component$1) || "Component", didWarnAboutDirectlyAssigningPropsToState.has(state) || (didWarnAboutDirectlyAssigningPropsToState.add(state), console.error("%s: It is not recommended to assign props directly to state because updates to props won't be reflected in state. In most cases, it is better to use props directly.", state)));
 				workInProgress$1.mode & StrictLegacyMode && ReactStrictModeWarnings.recordLegacyContextWarning(workInProgress$1, _instance);
 				ReactStrictModeWarnings.recordUnsafeLifecycleWarnings(workInProgress$1, _instance);
 				_instance.state = workInProgress$1.memoizedState;
-				state = Component.getDerivedStateFromProps;
-				"function" === typeof state && (applyDerivedStateFromProps(workInProgress$1, Component, state, nextProps), _instance.state = workInProgress$1.memoizedState);
-				"function" === typeof Component.getDerivedStateFromProps || "function" === typeof _instance.getSnapshotBeforeUpdate || "function" !== typeof _instance.UNSAFE_componentWillMount && "function" !== typeof _instance.componentWillMount || (state = _instance.state, "function" === typeof _instance.componentWillMount && _instance.componentWillMount(), "function" === typeof _instance.UNSAFE_componentWillMount && _instance.UNSAFE_componentWillMount(), state !== _instance.state && (console.error("%s.componentWillMount(): Assigning directly to this.state is deprecated (except inside a component's constructor). Use setState instead.", getComponentNameFromFiber(workInProgress$1) || "Component"), classComponentUpdater.enqueueReplaceState(_instance, _instance.state, null)), processUpdateQueue(workInProgress$1, nextProps, _instance, renderLanes$1), suspendIfUpdateReadFromEntangledAsyncAction(), _instance.state = workInProgress$1.memoizedState);
+				state = Component$1.getDerivedStateFromProps;
+				"function" === typeof state && (applyDerivedStateFromProps(workInProgress$1, Component$1, state, nextProps), _instance.state = workInProgress$1.memoizedState);
+				"function" === typeof Component$1.getDerivedStateFromProps || "function" === typeof _instance.getSnapshotBeforeUpdate || "function" !== typeof _instance.UNSAFE_componentWillMount && "function" !== typeof _instance.componentWillMount || (state = _instance.state, "function" === typeof _instance.componentWillMount && _instance.componentWillMount(), "function" === typeof _instance.UNSAFE_componentWillMount && _instance.UNSAFE_componentWillMount(), state !== _instance.state && (console.error("%s.componentWillMount(): Assigning directly to this.state is deprecated (except inside a component's constructor). Use setState instead.", getComponentNameFromFiber(workInProgress$1) || "Component"), classComponentUpdater.enqueueReplaceState(_instance, _instance.state, null)), processUpdateQueue(workInProgress$1, nextProps, _instance, renderLanes$1), suspendIfUpdateReadFromEntangledAsyncAction(), _instance.state = workInProgress$1.memoizedState);
 				"function" === typeof _instance.componentDidMount && (workInProgress$1.flags |= 4194308);
 				(workInProgress$1.mode & StrictEffectsMode) !== NoMode && (workInProgress$1.flags |= 134217728);
 				_instance = !0;
 			} else if (null === current$1) {
 				_instance = workInProgress$1.stateNode;
 				var unresolvedOldProps = workInProgress$1.memoizedProps;
-				lane = resolveClassComponentProps(Component, unresolvedOldProps);
+				lane = resolveClassComponentProps(Component$1, unresolvedOldProps);
 				_instance.props = lane;
 				var oldContext = _instance.context;
-				foundWillUpdateName = Component.contextType;
+				foundWillUpdateName = Component$1.contextType;
 				state = emptyContextObject;
 				"object" === typeof foundWillUpdateName && null !== foundWillUpdateName && (state = readContext(foundWillUpdateName));
-				newApiName = Component.getDerivedStateFromProps;
+				newApiName = Component$1.getDerivedStateFromProps;
 				foundWillUpdateName = "function" === typeof newApiName || "function" === typeof _instance.getSnapshotBeforeUpdate;
 				unresolvedOldProps = workInProgress$1.pendingProps !== unresolvedOldProps;
 				foundWillUpdateName || "function" !== typeof _instance.UNSAFE_componentWillReceiveProps && "function" !== typeof _instance.componentWillReceiveProps || (unresolvedOldProps || oldContext !== state) && callComponentWillReceiveProps(workInProgress$1, _instance, nextProps, state);
@@ -6675,19 +6676,19 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 				processUpdateQueue(workInProgress$1, nextProps, _instance, renderLanes$1);
 				suspendIfUpdateReadFromEntangledAsyncAction();
 				oldContext = workInProgress$1.memoizedState;
-				unresolvedOldProps || oldState !== oldContext || hasForceUpdate ? ("function" === typeof newApiName && (applyDerivedStateFromProps(workInProgress$1, Component, newApiName, nextProps), oldContext = workInProgress$1.memoizedState), (lane = hasForceUpdate || checkShouldComponentUpdate(workInProgress$1, Component, lane, nextProps, oldState, oldContext, state)) ? (foundWillUpdateName || "function" !== typeof _instance.UNSAFE_componentWillMount && "function" !== typeof _instance.componentWillMount || ("function" === typeof _instance.componentWillMount && _instance.componentWillMount(), "function" === typeof _instance.UNSAFE_componentWillMount && _instance.UNSAFE_componentWillMount()), "function" === typeof _instance.componentDidMount && (workInProgress$1.flags |= 4194308), (workInProgress$1.mode & StrictEffectsMode) !== NoMode && (workInProgress$1.flags |= 134217728)) : ("function" === typeof _instance.componentDidMount && (workInProgress$1.flags |= 4194308), (workInProgress$1.mode & StrictEffectsMode) !== NoMode && (workInProgress$1.flags |= 134217728), workInProgress$1.memoizedProps = nextProps, workInProgress$1.memoizedState = oldContext), _instance.props = nextProps, _instance.state = oldContext, _instance.context = state, _instance = lane) : ("function" === typeof _instance.componentDidMount && (workInProgress$1.flags |= 4194308), (workInProgress$1.mode & StrictEffectsMode) !== NoMode && (workInProgress$1.flags |= 134217728), _instance = !1);
+				unresolvedOldProps || oldState !== oldContext || hasForceUpdate ? ("function" === typeof newApiName && (applyDerivedStateFromProps(workInProgress$1, Component$1, newApiName, nextProps), oldContext = workInProgress$1.memoizedState), (lane = hasForceUpdate || checkShouldComponentUpdate(workInProgress$1, Component$1, lane, nextProps, oldState, oldContext, state)) ? (foundWillUpdateName || "function" !== typeof _instance.UNSAFE_componentWillMount && "function" !== typeof _instance.componentWillMount || ("function" === typeof _instance.componentWillMount && _instance.componentWillMount(), "function" === typeof _instance.UNSAFE_componentWillMount && _instance.UNSAFE_componentWillMount()), "function" === typeof _instance.componentDidMount && (workInProgress$1.flags |= 4194308), (workInProgress$1.mode & StrictEffectsMode) !== NoMode && (workInProgress$1.flags |= 134217728)) : ("function" === typeof _instance.componentDidMount && (workInProgress$1.flags |= 4194308), (workInProgress$1.mode & StrictEffectsMode) !== NoMode && (workInProgress$1.flags |= 134217728), workInProgress$1.memoizedProps = nextProps, workInProgress$1.memoizedState = oldContext), _instance.props = nextProps, _instance.state = oldContext, _instance.context = state, _instance = lane) : ("function" === typeof _instance.componentDidMount && (workInProgress$1.flags |= 4194308), (workInProgress$1.mode & StrictEffectsMode) !== NoMode && (workInProgress$1.flags |= 134217728), _instance = !1);
 			} else {
 				_instance = workInProgress$1.stateNode;
 				cloneUpdateQueue(current$1, workInProgress$1);
 				state = workInProgress$1.memoizedProps;
-				foundWillUpdateName = resolveClassComponentProps(Component, state);
+				foundWillUpdateName = resolveClassComponentProps(Component$1, state);
 				_instance.props = foundWillUpdateName;
 				newApiName = workInProgress$1.pendingProps;
 				oldState = _instance.context;
-				oldContext = Component.contextType;
+				oldContext = Component$1.contextType;
 				lane = emptyContextObject;
 				"object" === typeof oldContext && null !== oldContext && (lane = readContext(oldContext));
-				unresolvedOldProps = Component.getDerivedStateFromProps;
+				unresolvedOldProps = Component$1.getDerivedStateFromProps;
 				(oldContext = "function" === typeof unresolvedOldProps || "function" === typeof _instance.getSnapshotBeforeUpdate) || "function" !== typeof _instance.UNSAFE_componentWillReceiveProps && "function" !== typeof _instance.componentWillReceiveProps || (state !== newApiName || oldState !== lane) && callComponentWillReceiveProps(workInProgress$1, _instance, nextProps, lane);
 				hasForceUpdate = !1;
 				oldState = workInProgress$1.memoizedState;
@@ -6695,7 +6696,7 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 				processUpdateQueue(workInProgress$1, nextProps, _instance, renderLanes$1);
 				suspendIfUpdateReadFromEntangledAsyncAction();
 				var newState = workInProgress$1.memoizedState;
-				state !== newApiName || oldState !== newState || hasForceUpdate || null !== current$1 && null !== current$1.dependencies && checkIfContextChanged(current$1.dependencies) ? ("function" === typeof unresolvedOldProps && (applyDerivedStateFromProps(workInProgress$1, Component, unresolvedOldProps, nextProps), newState = workInProgress$1.memoizedState), (foundWillUpdateName = hasForceUpdate || checkShouldComponentUpdate(workInProgress$1, Component, foundWillUpdateName, nextProps, oldState, newState, lane) || null !== current$1 && null !== current$1.dependencies && checkIfContextChanged(current$1.dependencies)) ? (oldContext || "function" !== typeof _instance.UNSAFE_componentWillUpdate && "function" !== typeof _instance.componentWillUpdate || ("function" === typeof _instance.componentWillUpdate && _instance.componentWillUpdate(nextProps, newState, lane), "function" === typeof _instance.UNSAFE_componentWillUpdate && _instance.UNSAFE_componentWillUpdate(nextProps, newState, lane)), "function" === typeof _instance.componentDidUpdate && (workInProgress$1.flags |= 4), "function" === typeof _instance.getSnapshotBeforeUpdate && (workInProgress$1.flags |= 1024)) : ("function" !== typeof _instance.componentDidUpdate || state === current$1.memoizedProps && oldState === current$1.memoizedState || (workInProgress$1.flags |= 4), "function" !== typeof _instance.getSnapshotBeforeUpdate || state === current$1.memoizedProps && oldState === current$1.memoizedState || (workInProgress$1.flags |= 1024), workInProgress$1.memoizedProps = nextProps, workInProgress$1.memoizedState = newState), _instance.props = nextProps, _instance.state = newState, _instance.context = lane, _instance = foundWillUpdateName) : ("function" !== typeof _instance.componentDidUpdate || state === current$1.memoizedProps && oldState === current$1.memoizedState || (workInProgress$1.flags |= 4), "function" !== typeof _instance.getSnapshotBeforeUpdate || state === current$1.memoizedProps && oldState === current$1.memoizedState || (workInProgress$1.flags |= 1024), _instance = !1);
+				state !== newApiName || oldState !== newState || hasForceUpdate || null !== current$1 && null !== current$1.dependencies && checkIfContextChanged(current$1.dependencies) ? ("function" === typeof unresolvedOldProps && (applyDerivedStateFromProps(workInProgress$1, Component$1, unresolvedOldProps, nextProps), newState = workInProgress$1.memoizedState), (foundWillUpdateName = hasForceUpdate || checkShouldComponentUpdate(workInProgress$1, Component$1, foundWillUpdateName, nextProps, oldState, newState, lane) || null !== current$1 && null !== current$1.dependencies && checkIfContextChanged(current$1.dependencies)) ? (oldContext || "function" !== typeof _instance.UNSAFE_componentWillUpdate && "function" !== typeof _instance.componentWillUpdate || ("function" === typeof _instance.componentWillUpdate && _instance.componentWillUpdate(nextProps, newState, lane), "function" === typeof _instance.UNSAFE_componentWillUpdate && _instance.UNSAFE_componentWillUpdate(nextProps, newState, lane)), "function" === typeof _instance.componentDidUpdate && (workInProgress$1.flags |= 4), "function" === typeof _instance.getSnapshotBeforeUpdate && (workInProgress$1.flags |= 1024)) : ("function" !== typeof _instance.componentDidUpdate || state === current$1.memoizedProps && oldState === current$1.memoizedState || (workInProgress$1.flags |= 4), "function" !== typeof _instance.getSnapshotBeforeUpdate || state === current$1.memoizedProps && oldState === current$1.memoizedState || (workInProgress$1.flags |= 1024), workInProgress$1.memoizedProps = nextProps, workInProgress$1.memoizedState = newState), _instance.props = nextProps, _instance.state = newState, _instance.context = lane, _instance = foundWillUpdateName) : ("function" !== typeof _instance.componentDidUpdate || state === current$1.memoizedProps && oldState === current$1.memoizedState || (workInProgress$1.flags |= 4), "function" !== typeof _instance.getSnapshotBeforeUpdate || state === current$1.memoizedProps && oldState === current$1.memoizedState || (workInProgress$1.flags |= 1024), _instance = !1);
 			}
 			lane = _instance;
 			markRef(current$1, workInProgress$1);
@@ -6703,8 +6704,8 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 			if (lane || state) {
 				lane = workInProgress$1.stateNode;
 				setCurrentFiber(workInProgress$1);
-				if (state && "function" !== typeof Component.getDerivedStateFromError) Component = null, profilerStartTime = -1;
-				else if (Component = callRenderInDEV(lane), workInProgress$1.mode & StrictLegacyMode) {
+				if (state && "function" !== typeof Component$1.getDerivedStateFromError) Component$1 = null, profilerStartTime = -1;
+				else if (Component$1 = callRenderInDEV(lane), workInProgress$1.mode & StrictLegacyMode) {
 					setIsStrictModeForDevtools(!0);
 					try {
 						callRenderInDEV(lane);
@@ -6713,7 +6714,7 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 					}
 				}
 				workInProgress$1.flags |= 1;
-				null !== current$1 && state ? (workInProgress$1.child = reconcileChildFibers(workInProgress$1, current$1.child, null, renderLanes$1), workInProgress$1.child = reconcileChildFibers(workInProgress$1, null, Component, renderLanes$1)) : reconcileChildren(current$1, workInProgress$1, Component, renderLanes$1);
+				null !== current$1 && state ? (workInProgress$1.child = reconcileChildFibers(workInProgress$1, current$1.child, null, renderLanes$1), workInProgress$1.child = reconcileChildFibers(workInProgress$1, null, Component$1, renderLanes$1)) : reconcileChildren(current$1, workInProgress$1, Component$1, renderLanes$1);
 				workInProgress$1.memoizedState = lane.state;
 				current$1 = workInProgress$1.child;
 			} else current$1 = bailoutOnAlreadyFinishedWork(current$1, workInProgress$1, renderLanes$1);
@@ -6727,10 +6728,10 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 			reconcileChildren(current$1, workInProgress$1, nextChildren, renderLanes$1);
 			return workInProgress$1.child;
 		}
-		function validateFunctionComponentInDev(workInProgress$1, Component) {
-			Component && Component.childContextTypes && console.error("childContextTypes cannot be defined on a function component.\n  %s.childContextTypes = ...", Component.displayName || Component.name || "Component");
-			"function" === typeof Component.getDerivedStateFromProps && (workInProgress$1 = getComponentNameFromType(Component) || "Unknown", didWarnAboutGetDerivedStateOnFunctionComponent[workInProgress$1] || (console.error("%s: Function components do not support getDerivedStateFromProps.", workInProgress$1), didWarnAboutGetDerivedStateOnFunctionComponent[workInProgress$1] = !0));
-			"object" === typeof Component.contextType && null !== Component.contextType && (Component = getComponentNameFromType(Component) || "Unknown", didWarnAboutContextTypeOnFunctionComponent[Component] || (console.error("%s: Function components do not support contextType.", Component), didWarnAboutContextTypeOnFunctionComponent[Component] = !0));
+		function validateFunctionComponentInDev(workInProgress$1, Component$1) {
+			Component$1 && Component$1.childContextTypes && console.error("childContextTypes cannot be defined on a function component.\n  %s.childContextTypes = ...", Component$1.displayName || Component$1.name || "Component");
+			"function" === typeof Component$1.getDerivedStateFromProps && (workInProgress$1 = getComponentNameFromType(Component$1) || "Unknown", didWarnAboutGetDerivedStateOnFunctionComponent[workInProgress$1] || (console.error("%s: Function components do not support getDerivedStateFromProps.", workInProgress$1), didWarnAboutGetDerivedStateOnFunctionComponent[workInProgress$1] = !0));
+			"object" === typeof Component$1.contextType && null !== Component$1.contextType && (Component$1 = getComponentNameFromType(Component$1) || "Unknown", didWarnAboutContextTypeOnFunctionComponent[Component$1] || (console.error("%s: Function components do not support contextType.", Component$1), didWarnAboutContextTypeOnFunctionComponent[Component$1] = !0));
 		}
 		function mountSuspenseOffscreenState(renderLanes$1) {
 			return {
@@ -6801,11 +6802,11 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 						JSCompiler_object_inline_digest_2724 = JSCompiler_object_inline_componentStack_2726.nextSibling && JSCompiler_object_inline_componentStack_2726.nextSibling.dataset;
 						if (JSCompiler_object_inline_digest_2724) {
 							nextPrimaryChildren = JSCompiler_object_inline_digest_2724.dgst;
-							var message$1 = JSCompiler_object_inline_digest_2724.msg;
+							var message = JSCompiler_object_inline_digest_2724.msg;
 							mode = JSCompiler_object_inline_digest_2724.stck;
 							var componentStack = JSCompiler_object_inline_digest_2724.cstck;
 						}
-						JSCompiler_object_inline_message_2723 = message$1;
+						JSCompiler_object_inline_message_2723 = message;
 						JSCompiler_object_inline_digest_2724 = nextPrimaryChildren;
 						JSCompiler_object_inline_stack_2725 = mode;
 						JSCompiler_object_inline_componentStack_2726 = componentStack;
@@ -7597,8 +7598,8 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 							hookName = 0 !== (updateQueue.tag & Layout$1) ? "useLayoutEffect" : 0 !== (updateQueue.tag & Insertion) ? "useInsertionEffect" : "useEffect";
 							var addendum = void 0;
 							addendum = null === lastEffect ? " You returned null. If your effect does not require clean up, return undefined (or nothing)." : "function" === typeof lastEffect.then ? "\n\nIt looks like you wrote " + hookName + "(async () => ...) or returned a Promise. Instead, write the async function inside your effect and call it immediately:\n\n" + hookName + "(() => {\n  async function fetchData() {\n    // You can await here\n    const response = await MyAPI.getData(someId);\n    // ...\n  }\n  fetchData();\n}, [someId]); // Or [] if effect doesn't need props or state\n\nLearn more about data fetching with Hooks: https://react.dev/link/hooks-data-fetching" : " You returned: " + lastEffect;
-							runWithFiberInDEV(finishedWork, function(n$1, a$1) {
-								console.error("%s must not return anything besides a function, which is used for clean-up.%s", n$1, a$1);
+							runWithFiberInDEV(finishedWork, function(n, a) {
+								console.error("%s must not return anything besides a function, which is used for clean-up.%s", n, a);
 							}, hookName, addendum);
 						}
 						updateQueue = updateQueue.next;
@@ -8174,8 +8175,8 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 		}
 		function recursivelyTraverseMutationEffects(root$jscomp$0, parentFiber) {
 			var deletions = parentFiber.deletions;
-			if (null !== deletions) for (var i$2 = 0; i$2 < deletions.length; i$2++) {
-				var root$1 = root$jscomp$0, returnFiber = parentFiber, deletedFiber = deletions[i$2], prevEffectStart = pushComponentEffectStart(), parent = returnFiber;
+			if (null !== deletions) for (var i = 0; i < deletions.length; i++) {
+				var root$1 = root$jscomp$0, returnFiber = parentFiber, deletedFiber = deletions[i], prevEffectStart = pushComponentEffectStart(), parent = returnFiber;
 				a: for (; null !== parent;) {
 					switch (parent.tag) {
 						case 27:
@@ -8255,8 +8256,8 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 									case "link":
 										var maybeNodes = getHydratableHoistableCache("link", "href", existingHiddenCallbacks).get(flags + (current$1.href || ""));
 										if (maybeNodes) {
-											for (var i$2 = 0; i$2 < maybeNodes.length; i$2++) if (currentResource = maybeNodes[i$2], currentResource.getAttribute("href") === (null == current$1.href || "" === current$1.href ? null : current$1.href) && currentResource.getAttribute("rel") === (null == current$1.rel ? null : current$1.rel) && currentResource.getAttribute("title") === (null == current$1.title ? null : current$1.title) && currentResource.getAttribute("crossorigin") === (null == current$1.crossOrigin ? null : current$1.crossOrigin)) {
-												maybeNodes.splice(i$2, 1);
+											for (var i = 0; i < maybeNodes.length; i++) if (currentResource = maybeNodes[i], currentResource.getAttribute("href") === (null == current$1.href || "" === current$1.href ? null : current$1.href) && currentResource.getAttribute("rel") === (null == current$1.rel ? null : current$1.rel) && currentResource.getAttribute("title") === (null == current$1.title ? null : current$1.title) && currentResource.getAttribute("crossorigin") === (null == current$1.crossOrigin ? null : current$1.crossOrigin)) {
+												maybeNodes.splice(i, 1);
 												break b;
 											}
 										}
@@ -8266,8 +8267,8 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 										break;
 									case "meta":
 										if (maybeNodes = getHydratableHoistableCache("meta", "content", existingHiddenCallbacks).get(flags + (current$1.content || ""))) {
-											for (i$2 = 0; i$2 < maybeNodes.length; i$2++) if (currentResource = maybeNodes[i$2], checkAttributeStringCoercion(current$1.content, "content"), currentResource.getAttribute("content") === (null == current$1.content ? null : "" + current$1.content) && currentResource.getAttribute("name") === (null == current$1.name ? null : current$1.name) && currentResource.getAttribute("property") === (null == current$1.property ? null : current$1.property) && currentResource.getAttribute("http-equiv") === (null == current$1.httpEquiv ? null : current$1.httpEquiv) && currentResource.getAttribute("charset") === (null == current$1.charSet ? null : current$1.charSet)) {
-												maybeNodes.splice(i$2, 1);
+											for (i = 0; i < maybeNodes.length; i++) if (currentResource = maybeNodes[i], checkAttributeStringCoercion(current$1.content, "content"), currentResource.getAttribute("content") === (null == current$1.content ? null : "" + current$1.content) && currentResource.getAttribute("name") === (null == current$1.name ? null : current$1.name) && currentResource.getAttribute("property") === (null == current$1.property ? null : current$1.property) && currentResource.getAttribute("http-equiv") === (null == current$1.httpEquiv ? null : current$1.httpEquiv) && currentResource.getAttribute("charset") === (null == current$1.charSet ? null : current$1.charSet)) {
+												maybeNodes.splice(i, 1);
 												break b;
 											}
 										}
@@ -8396,7 +8397,7 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 							if (null === current$1) {
 								wasHidden = root$1;
 								try {
-									i$2 = wasHidden.stateNode, existingHiddenCallbacks ? runWithFiberInDEV(wasHidden, hideDehydratedBoundary, i$2) : runWithFiberInDEV(wasHidden, unhideDehydratedBoundary, wasHidden.stateNode);
+									i = wasHidden.stateNode, existingHiddenCallbacks ? runWithFiberInDEV(wasHidden, hideDehydratedBoundary, i) : runWithFiberInDEV(wasHidden, unhideDehydratedBoundary, wasHidden.stateNode);
 								} catch (error) {
 									captureCommitPhaseError(wasHidden, wasHidden.return, error);
 								}
@@ -8755,8 +8756,8 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 		function recursivelyTraversePassiveUnmountEffects(parentFiber) {
 			var deletions = parentFiber.deletions;
 			if (0 !== (parentFiber.flags & 16)) {
-				if (null !== deletions) for (var i$2 = 0; i$2 < deletions.length; i$2++) {
-					var childToDelete = deletions[i$2], prevEffectStart = pushComponentEffectStart();
+				if (null !== deletions) for (var i = 0; i < deletions.length; i++) {
+					var childToDelete = deletions[i], prevEffectStart = pushComponentEffectStart();
 					nextEffect = childToDelete;
 					commitPassiveUnmountEffectsInsideOfDeletedTree_begin(childToDelete, parentFiber);
 					(childToDelete.mode & ProfileMode) !== NoMode && 0 <= componentEffectStartTime && 0 <= componentEffectEndTime && .05 < componentEffectEndTime - componentEffectStartTime && logComponentTrigger(childToDelete, componentEffectStartTime, componentEffectEndTime, "Unmount");
@@ -8800,8 +8801,8 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 		function recursivelyTraverseDisconnectPassiveEffects(parentFiber) {
 			var deletions = parentFiber.deletions;
 			if (0 !== (parentFiber.flags & 16)) {
-				if (null !== deletions) for (var i$2 = 0; i$2 < deletions.length; i$2++) {
-					var childToDelete = deletions[i$2], prevEffectStart = pushComponentEffectStart();
+				if (null !== deletions) for (var i = 0; i < deletions.length; i++) {
+					var childToDelete = deletions[i], prevEffectStart = pushComponentEffectStart();
 					nextEffect = childToDelete;
 					commitPassiveUnmountEffectsInsideOfDeletedTree_begin(childToDelete, parentFiber);
 					(childToDelete.mode & ProfileMode) !== NoMode && 0 <= componentEffectStartTime && 0 <= componentEffectEndTime && .05 < componentEffectEndTime - componentEffectStartTime && logComponentTrigger(childToDelete, componentEffectStartTime, componentEffectEndTime, "Unmount");
@@ -9059,8 +9060,8 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 		function isRenderConsistentWithExternalStores(finishedWork) {
 			for (var node = finishedWork;;) {
 				var tag = node.tag;
-				if ((0 === tag || 11 === tag || 15 === tag) && node.flags & 16384 && (tag = node.updateQueue, null !== tag && (tag = tag.stores, null !== tag))) for (var i$2 = 0; i$2 < tag.length; i$2++) {
-					var check = tag[i$2], getSnapshot = check.getSnapshot;
+				if ((0 === tag || 11 === tag || 15 === tag) && node.flags & 16384 && (tag = node.updateQueue, null !== tag && (tag = tag.stores, null !== tag))) for (var i = 0; i < tag.length; i++) {
+					var check = tag[i], getSnapshot = check.getSnapshot;
 					check = check.value;
 					try {
 						if (!objectIs(getSnapshot(), check)) return !1;
@@ -10124,8 +10125,8 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 		}
 		function processDispatchQueue(dispatchQueue, eventSystemFlags) {
 			eventSystemFlags = 0 !== (eventSystemFlags & 4);
-			for (var i$2 = 0; i$2 < dispatchQueue.length; i$2++) {
-				var _dispatchQueue$i = dispatchQueue[i$2];
+			for (var i = 0; i < dispatchQueue.length; i++) {
+				var _dispatchQueue$i = dispatchQueue[i];
 				a: {
 					var previousInstance = void 0, event = _dispatchQueue$i.event;
 					_dispatchQueue$i = _dispatchQueue$i.listeners;
@@ -11059,8 +11060,8 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 		function getStylesObjectFromElement(domElement) {
 			var serverValueInObjectForm = {};
 			domElement = domElement.style;
-			for (var i$2 = 0; i$2 < domElement.length; i$2++) {
-				var styleName = domElement[i$2];
+			for (var i = 0; i < domElement.length; i++) {
+				var styleName = domElement[i];
 				serverValueInObjectForm[styleName] = domElement.getPropertyValue(styleName);
 			}
 			return serverValueInObjectForm;
@@ -11163,11 +11164,11 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 			warnForPropDifference(propKey, domElement, value, serverDifferences);
 		}
 		function diffHydratedProperties(domElement, tag, props, hostContext) {
-			for (var serverDifferences = {}, extraAttributes = /* @__PURE__ */ new Set(), attributes = domElement.attributes, i$2 = 0; i$2 < attributes.length; i$2++) switch (attributes[i$2].name.toLowerCase()) {
+			for (var serverDifferences = {}, extraAttributes = /* @__PURE__ */ new Set(), attributes = domElement.attributes, i = 0; i < attributes.length; i++) switch (attributes[i].name.toLowerCase()) {
 				case "value": break;
 				case "checked": break;
 				case "selected": break;
-				default: extraAttributes.add(attributes[i$2].name);
+				default: extraAttributes.add(attributes[i].name);
 			}
 			if (isCustomElement(tag)) {
 				for (var propKey in props) if (props.hasOwnProperty(propKey)) {
@@ -11326,11 +11327,11 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 					case "capture":
 					case "download":
 						a: {
-							i$2 = domElement;
+							i = domElement;
 							var attributeName = attributes = value, serverDifferences$jscomp$0 = serverDifferences;
 							extraAttributes.delete(attributeName);
-							i$2 = i$2.getAttribute(attributeName);
-							if (null === i$2) switch (typeof propKey) {
+							i = i.getAttribute(attributeName);
+							if (null === i) switch (typeof propKey) {
 								case "undefined":
 								case "function":
 								case "symbol": break a;
@@ -11340,11 +11341,11 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 								case "function":
 								case "symbol": break;
 								case "boolean":
-									if (!0 === propKey && "" === i$2) break a;
+									if (!0 === propKey && "" === i) break a;
 									break;
-								default: if (checkAttributeStringCoercion(propKey, attributes), i$2 === "" + propKey) break a;
+								default: if (checkAttributeStringCoercion(propKey, attributes), i === "" + propKey) break a;
 							}
-							warnForPropDifference(attributes, i$2, propKey, serverDifferences$jscomp$0);
+							warnForPropDifference(attributes, i, propKey, serverDifferences$jscomp$0);
 						}
 						continue;
 					case "cols":
@@ -11352,12 +11353,12 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 					case "size":
 					case "span":
 						a: {
-							i$2 = domElement;
+							i = domElement;
 							attributeName = attributes = value;
 							serverDifferences$jscomp$0 = serverDifferences;
 							extraAttributes.delete(attributeName);
-							i$2 = i$2.getAttribute(attributeName);
-							if (null === i$2) switch (typeof propKey) {
+							i = i.getAttribute(attributeName);
+							if (null === i) switch (typeof propKey) {
 								case "undefined":
 								case "function":
 								case "symbol":
@@ -11368,9 +11369,9 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 								case "function":
 								case "symbol":
 								case "boolean": break;
-								default: if (!(isNaN(propKey) || 1 > propKey) && (checkAttributeStringCoercion(propKey, attributes), i$2 === "" + propKey)) break a;
+								default: if (!(isNaN(propKey) || 1 > propKey) && (checkAttributeStringCoercion(propKey, attributes), i === "" + propKey)) break a;
 							}
-							warnForPropDifference(attributes, i$2, propKey, serverDifferences$jscomp$0);
+							warnForPropDifference(attributes, i, propKey, serverDifferences$jscomp$0);
 						}
 						continue;
 					case "rowSpan":
@@ -11414,20 +11415,20 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 						hydrateBooleanAttribute(domElement, value, value, propKey, extraAttributes, serverDifferences);
 						continue;
 					default: if (!(2 < value.length) || "o" !== value[0] && "O" !== value[0] || "n" !== value[1] && "N" !== value[1]) {
-						i$2 = getAttributeAlias(value);
+						i = getAttributeAlias(value);
 						attributes = !1;
-						hostContext.context === HostContextNamespaceNone && "svg" !== tag && "math" !== tag ? extraAttributes.delete(i$2.toLowerCase()) : (attributeName = value.toLowerCase(), attributeName = possibleStandardNames.hasOwnProperty(attributeName) ? possibleStandardNames[attributeName] || null : null, null !== attributeName && attributeName !== value && (attributes = !0, extraAttributes.delete(attributeName)), extraAttributes.delete(i$2));
-						a: if (attributeName = domElement, serverDifferences$jscomp$0 = i$2, i$2 = propKey, isAttributeNameSafe(serverDifferences$jscomp$0)) if (attributeName.hasAttribute(serverDifferences$jscomp$0)) attributeName = attributeName.getAttribute(serverDifferences$jscomp$0), checkAttributeStringCoercion(i$2, serverDifferences$jscomp$0), i$2 = attributeName === "" + i$2 ? i$2 : attributeName;
+						hostContext.context === HostContextNamespaceNone && "svg" !== tag && "math" !== tag ? extraAttributes.delete(i.toLowerCase()) : (attributeName = value.toLowerCase(), attributeName = possibleStandardNames.hasOwnProperty(attributeName) ? possibleStandardNames[attributeName] || null : null, null !== attributeName && attributeName !== value && (attributes = !0, extraAttributes.delete(attributeName)), extraAttributes.delete(i));
+						a: if (attributeName = domElement, serverDifferences$jscomp$0 = i, i = propKey, isAttributeNameSafe(serverDifferences$jscomp$0)) if (attributeName.hasAttribute(serverDifferences$jscomp$0)) attributeName = attributeName.getAttribute(serverDifferences$jscomp$0), checkAttributeStringCoercion(i, serverDifferences$jscomp$0), i = attributeName === "" + i ? i : attributeName;
 						else {
-							switch (typeof i$2) {
+							switch (typeof i) {
 								case "function":
 								case "symbol": break a;
 								case "boolean": if (attributeName = serverDifferences$jscomp$0.toLowerCase().slice(0, 5), "data-" !== attributeName && "aria-" !== attributeName) break a;
 							}
-							i$2 = void 0 === i$2 ? void 0 : null;
+							i = void 0 === i ? void 0 : null;
 						}
-						else i$2 = void 0;
-						attributes || warnForPropDifference(value, i$2, propKey, serverDifferences);
+						else i = void 0;
+						attributes || warnForPropDifference(value, i, propKey, serverDifferences);
 					}
 				}
 			}
@@ -11456,18 +11457,18 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 		}
 		function estimateBandwidth() {
 			if ("function" === typeof performance.getEntriesByType) {
-				for (var count$3 = 0, bits = 0, resourceEntries = performance.getEntriesByType("resource"), i$2 = 0; i$2 < resourceEntries.length; i$2++) {
-					var entry = resourceEntries[i$2], transferSize = entry.transferSize, initiatorType = entry.initiatorType, duration$2 = entry.duration;
-					if (transferSize && duration$2 && isLikelyStaticResource(initiatorType)) {
+				for (var count$3 = 0, bits = 0, resourceEntries = performance.getEntriesByType("resource"), i = 0; i < resourceEntries.length; i++) {
+					var entry = resourceEntries[i], transferSize = entry.transferSize, initiatorType = entry.initiatorType, duration = entry.duration;
+					if (transferSize && duration && isLikelyStaticResource(initiatorType)) {
 						initiatorType = 0;
-						duration$2 = entry.responseEnd;
-						for (i$2 += 1; i$2 < resourceEntries.length; i$2++) {
-							var overlapEntry = resourceEntries[i$2], overlapStartTime = overlapEntry.startTime;
-							if (overlapStartTime > duration$2) break;
+						duration = entry.responseEnd;
+						for (i += 1; i < resourceEntries.length; i++) {
+							var overlapEntry = resourceEntries[i], overlapStartTime = overlapEntry.startTime;
+							if (overlapStartTime > duration) break;
 							var overlapTransferSize = overlapEntry.transferSize, overlapInitiatorType = overlapEntry.initiatorType;
-							overlapTransferSize && isLikelyStaticResource(overlapInitiatorType) && (overlapEntry = overlapEntry.responseEnd, initiatorType += overlapTransferSize * (overlapEntry < duration$2 ? 1 : (duration$2 - overlapStartTime) / (overlapEntry - overlapStartTime)));
+							overlapTransferSize && isLikelyStaticResource(overlapInitiatorType) && (overlapEntry = overlapEntry.responseEnd, initiatorType += overlapTransferSize * (overlapEntry < duration ? 1 : (duration - overlapStartTime) / (overlapEntry - overlapStartTime)));
 						}
-						--i$2;
+						--i;
 						bits += 8 * (transferSize + initiatorType) / (entry.duration / 1e3);
 						count$3++;
 						if (10 < count$3) break;
@@ -11728,8 +11729,8 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 		}
 		function describeHydratableInstanceForDevWarnings(instance) {
 			if (1 === instance.nodeType) {
-				for (var JSCompiler_temp_const = instance.nodeName.toLowerCase(), serverDifferences = {}, attributes = instance.attributes, i$2 = 0; i$2 < attributes.length; i$2++) {
-					var attr = attributes[i$2];
+				for (var JSCompiler_temp_const = instance.nodeName.toLowerCase(), serverDifferences = {}, attributes = instance.attributes, i = 0; i < attributes.length; i++) {
+					var attr = attributes[i];
 					serverDifferences[getPropNameFromAttributeName(attr.name)] = "style" === attr.name.toLowerCase() ? getStylesObjectFromElement(instance) : attr.value;
 				}
 				return {
@@ -11987,8 +11988,8 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 			return resource.instance;
 		}
 		function insertStylesheet(instance, precedence, root$1) {
-			for (var nodes = root$1.querySelectorAll("link[rel=\"stylesheet\"][data-precedence],style[data-precedence]"), last = nodes.length ? nodes[nodes.length - 1] : null, prior = last, i$2 = 0; i$2 < nodes.length; i$2++) {
-				var node = nodes[i$2];
+			for (var nodes = root$1.querySelectorAll("link[rel=\"stylesheet\"][data-precedence],style[data-precedence]"), last = nodes.length ? nodes[nodes.length - 1] : null, prior = last, i = 0; i < nodes.length; i++) {
+				var node = nodes[i];
 				if (node.dataset.precedence === precedence) prior = node;
 				else if (prior !== last) break;
 			}
@@ -12156,22 +12157,22 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 				else {
 					precedences = /* @__PURE__ */ new Map();
 					precedencesByRoot.set(root$1, precedences);
-					for (var nodes = root$1.querySelectorAll("link[data-precedence],style[data-precedence]"), i$2 = 0; i$2 < nodes.length; i$2++) {
-						var node = nodes[i$2];
+					for (var nodes = root$1.querySelectorAll("link[data-precedence],style[data-precedence]"), i = 0; i < nodes.length; i++) {
+						var node = nodes[i];
 						if ("LINK" === node.nodeName || "not all" !== node.getAttribute("media")) precedences.set(node.dataset.precedence, node), last = node;
 					}
 					last && precedences.set(LAST_PRECEDENCE, last);
 				}
 				nodes = resource.instance;
 				node = nodes.getAttribute("data-precedence");
-				i$2 = precedences.get(node) || last;
-				i$2 === last && precedences.set(LAST_PRECEDENCE, nodes);
+				i = precedences.get(node) || last;
+				i === last && precedences.set(LAST_PRECEDENCE, nodes);
 				precedences.set(node, nodes);
 				this.count++;
 				last = onUnsuspend.bind(this);
 				nodes.addEventListener("load", last);
 				nodes.addEventListener("error", last);
-				i$2 ? i$2.parentNode.insertBefore(nodes, i$2.nextSibling) : (root$1 = 9 === root$1.nodeType ? root$1.head : root$1, root$1.insertBefore(nodes, root$1.firstChild));
+				i ? i.parentNode.insertBefore(nodes, i.nextSibling) : (root$1 = 9 === root$1.nodeType ? root$1.head : root$1, root$1.insertBefore(nodes, root$1.firstChild));
 				resource.state.loading |= Inserted;
 			}
 		}
@@ -12244,8 +12245,8 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 		function markRetryLaneImpl(fiber, retryLane) {
 			fiber = fiber.memoizedState;
 			if (null !== fiber && null !== fiber.dehydrated) {
-				var a$1 = fiber.retryLane;
-				fiber.retryLane = 0 !== a$1 && a$1 < retryLane ? a$1 : retryLane;
+				var a = fiber.retryLane;
+				fiber.retryLane = 0 !== a && a < retryLane ? a : retryLane;
 			}
 		}
 		function markRetryLaneIfNotHydrated(fiber, retryLane) {
@@ -12553,12 +12554,12 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 		function scheduleReplayQueueIfNeeded(formReplayingQueue) {
 			lastScheduledReplayQueue !== formReplayingQueue && (lastScheduledReplayQueue = formReplayingQueue, Scheduler.unstable_scheduleCallback(Scheduler.unstable_NormalPriority, function() {
 				lastScheduledReplayQueue === formReplayingQueue && (lastScheduledReplayQueue = null);
-				for (var i$2 = 0; i$2 < formReplayingQueue.length; i$2 += 3) {
-					var form = formReplayingQueue[i$2], submitterOrAction = formReplayingQueue[i$2 + 1], formData = formReplayingQueue[i$2 + 2];
+				for (var i = 0; i < formReplayingQueue.length; i += 3) {
+					var form = formReplayingQueue[i], submitterOrAction = formReplayingQueue[i + 1], formData = formReplayingQueue[i + 2];
 					if ("function" !== typeof submitterOrAction) if (null === findInstanceBlockingTarget(submitterOrAction || form)) continue;
 					else break;
 					var formInst = getInstanceFromNode(form);
-					null !== formInst && (formReplayingQueue.splice(i$2, 3), i$2 -= 3, form = {
+					null !== formInst && (formReplayingQueue.splice(i, 3), i -= 3, form = {
 						pending: !0,
 						data: formData,
 						method: form.method,
@@ -12576,23 +12577,23 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 			null !== queuedMouse && scheduleCallbackIfUnblocked(queuedMouse, unblocked);
 			queuedPointers.forEach(unblock);
 			queuedPointerCaptures.forEach(unblock);
-			for (var i$2 = 0; i$2 < queuedExplicitHydrationTargets.length; i$2++) {
-				var queuedTarget = queuedExplicitHydrationTargets[i$2];
+			for (var i = 0; i < queuedExplicitHydrationTargets.length; i++) {
+				var queuedTarget = queuedExplicitHydrationTargets[i];
 				queuedTarget.blockedOn === unblocked && (queuedTarget.blockedOn = null);
 			}
-			for (; 0 < queuedExplicitHydrationTargets.length && (i$2 = queuedExplicitHydrationTargets[0], null === i$2.blockedOn);) attemptExplicitHydrationTarget(i$2), null === i$2.blockedOn && queuedExplicitHydrationTargets.shift();
-			i$2 = (unblocked.ownerDocument || unblocked).$$reactFormReplay;
-			if (null != i$2) for (queuedTarget = 0; queuedTarget < i$2.length; queuedTarget += 3) {
-				var form = i$2[queuedTarget], submitterOrAction = i$2[queuedTarget + 1], formProps = form[internalPropsKey] || null;
-				if ("function" === typeof submitterOrAction) formProps || scheduleReplayQueueIfNeeded(i$2);
+			for (; 0 < queuedExplicitHydrationTargets.length && (i = queuedExplicitHydrationTargets[0], null === i.blockedOn);) attemptExplicitHydrationTarget(i), null === i.blockedOn && queuedExplicitHydrationTargets.shift();
+			i = (unblocked.ownerDocument || unblocked).$$reactFormReplay;
+			if (null != i) for (queuedTarget = 0; queuedTarget < i.length; queuedTarget += 3) {
+				var form = i[queuedTarget], submitterOrAction = i[queuedTarget + 1], formProps = form[internalPropsKey] || null;
+				if ("function" === typeof submitterOrAction) formProps || scheduleReplayQueueIfNeeded(i);
 				else if (formProps) {
 					var action = null;
 					if (submitterOrAction && submitterOrAction.hasAttribute("formAction")) {
 						if (form = submitterOrAction, formProps = submitterOrAction[internalPropsKey] || null) action = formProps.formAction;
 						else if (null !== findInstanceBlockingTarget(form)) continue;
 					} else action = formProps.action;
-					"function" === typeof action ? i$2[queuedTarget + 1] = action : (i$2.splice(queuedTarget, 3), queuedTarget -= 3);
-					scheduleReplayQueueIfNeeded(i$2);
+					"function" === typeof action ? i[queuedTarget + 1] = action : (i.splice(queuedTarget, 3), queuedTarget -= 3);
+					scheduleReplayQueueIfNeeded(i);
 				}
 			}
 		}
@@ -13839,11 +13840,11 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 			pendingUNSAFE_ComponentWillUpdateWarnings = [];
 			pendingLegacyContextWarning = /* @__PURE__ */ new Map();
 		};
-		var callComponent = { react_stack_bottom_frame: function(Component, props, secondArg) {
+		var callComponent = { react_stack_bottom_frame: function(Component$1, props, secondArg) {
 			var wasRendering = isRendering;
 			isRendering = !0;
 			try {
-				return Component(props, secondArg);
+				return Component$1(props, secondArg);
 			} finally {
 				isRendering = wasRendering;
 			}
@@ -13887,9 +13888,9 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 			} catch (error) {
 				captureCommitPhaseError(current$1, nearestMountedAncestor, error);
 			}
-		} }, callDestroyInDEV = callDestroy.react_stack_bottom_frame.bind(callDestroy), callLazyInit = { react_stack_bottom_frame: function(lazy) {
-			var init = lazy._init;
-			return init(lazy._payload);
+		} }, callDestroyInDEV = callDestroy.react_stack_bottom_frame.bind(callDestroy), callLazyInit = { react_stack_bottom_frame: function(lazy$1) {
+			var init = lazy$1._init;
+			return init(lazy$1._payload);
 		} }, callLazyInitInDEV = callLazyInit.react_stack_bottom_frame.bind(callLazyInit), SuspenseException = Error("Suspense Exception: This is not a real error! It's an implementation detail of `use` to interrupt the current render. You must either rethrow it immediately, or move the `use` call outside of the `try/catch` block. Capturing without rethrowing will lead to unexpected behavior.\n\nTo handle async errors, wrap your component in an error boundary, or call the promise's `.catch` method and pass the result to `use`."), SuspenseyCommitException = Error("Suspense Exception: This is not a real error, and should not leak into userspace. If you're seeing this, it's likely a bug in React."), SuspenseActionException = Error("Suspense Exception: This is not a real error! It's an implementation detail of `useActionState` to interrupt the current render. You must either rethrow it immediately, or move the `useActionState` call outside of the `try/catch` block. Capturing without rethrowing will lead to unexpected behavior.\n\nTo handle async errors, wrap your component in an error boundary."), noopSuspenseyCommitThenable = { then: function() {
 			console.error("Internal React error: A listener was unexpectedly attached to a \"noop\" thenable. This is a bug in React. Please file an issue.");
 		} }, suspendedThenable = null, needsToResetSuspendedThenableDEV = !1, thenableState$1 = null, thenableIndexCounter$1 = 0, currentDebugInfo = null, didWarnAboutMaps;
@@ -14993,8 +14994,8 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 		var didWarnAboutUpdateInRenderForAnotherComponent = /* @__PURE__ */ new Set();
 		var fakeActCallbackNode$1 = {}, firstScheduledRoot = null, lastScheduledRoot = null, didScheduleMicrotask = !1, didScheduleMicrotask_act = !1, mightHavePendingSyncWork = !1, isFlushingWork = !1, currentEventTransitionLane = 0, fakeActCallbackNode = {};
 		(function() {
-			for (var i$2 = 0; i$2 < simpleEventPluginEvents.length; i$2++) {
-				var eventName = simpleEventPluginEvents[i$2], domEventName = eventName.toLowerCase();
+			for (var i = 0; i < simpleEventPluginEvents.length; i++) {
+				var eventName = simpleEventPluginEvents[i], domEventName = eventName.toLowerCase();
 				eventName = eventName[0].toUpperCase() + eventName.slice(1);
 				registerSimpleEvent(domEventName, "on" + eventName);
 			}
@@ -15266,9 +15267,9 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 					target,
 					priority: updatePriority
 				};
-				for (var i$2 = 0; i$2 < queuedExplicitHydrationTargets.length && 0 !== updatePriority && updatePriority < queuedExplicitHydrationTargets[i$2].priority; i$2++);
-				queuedExplicitHydrationTargets.splice(i$2, 0, target);
-				0 === i$2 && attemptExplicitHydrationTarget(target);
+				for (var i = 0; i < queuedExplicitHydrationTargets.length && 0 !== updatePriority && updatePriority < queuedExplicitHydrationTargets[i].priority; i++);
+				queuedExplicitHydrationTargets.splice(i, 0, target);
+				0 === i && attemptExplicitHydrationTarget(target);
 			}
 		};
 		(function() {
@@ -15352,9 +15353,11 @@ var require_react_dom_client_development = /* @__PURE__ */ __commonJSMin(((expor
 		"undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(Error());
 	})();
 }));
-var require_client = /* @__PURE__ */ __commonJSMin(((exports, module) => {
+var import_client = (/* @__PURE__ */ __commonJSMin(((exports, module) => {
 	module.exports = require_react_dom_client_development();
-}));
+})))();
+var import_react_dom$5 = /* @__PURE__ */ __toESM(require_react_dom(), 1);
+var import_react = /* @__PURE__ */ __toESM(require_react(), 1);
 var scriptRel = "modulepreload";
 var assetsURL = function(dep) {
 	return "/" + dep;
@@ -15381,8 +15384,8 @@ const __vitePreload = function preload(baseModule, deps, importerUrl) {
 			seen[dep] = true;
 			const isCss = dep.endsWith(".css");
 			const cssSelector = isCss ? "[rel=\"stylesheet\"]" : "";
-			if (!!importerUrl) for (let i$1$1 = links.length - 1; i$1$1 >= 0; i$1$1--) {
-				const link$1 = links[i$1$1];
+			if (!!importerUrl) for (let i$1 = links.length - 1; i$1 >= 0; i$1--) {
+				const link$1 = links[i$1];
 				if (link$1.href === dep && (!isCss || link$1.rel === "stylesheet")) return;
 			}
 			else if (document.querySelector(`link[href="${dep}"]${cssSelector}`)) return;
@@ -15413,7 +15416,6 @@ const __vitePreload = function preload(baseModule, deps, importerUrl) {
 		return baseModule().catch(handlePreloadError);
 	});
 };
-var import_react = /* @__PURE__ */ __toESM(require_react(), 1);
 var PopStateEventType = "popstate";
 function isLocation(obj) {
 	return typeof obj === "object" && obj != null && "pathname" in obj && "search" in obj && "hash" in obj && "state" in obj && "key" in obj;
@@ -15437,14 +15439,14 @@ function createBrowserHistory(options$1 = {}) {
 	}
 	return getUrlBasedHistory(createBrowserLocation, createBrowserHref, null, options$1);
 }
-function invariant(value, message$1) {
-	if (value === false || value === null || typeof value === "undefined") throw new Error(message$1);
+function invariant(value, message) {
+	if (value === false || value === null || typeof value === "undefined") throw new Error(message);
 }
-function warning(cond, message$1) {
+function warning(cond, message) {
 	if (!cond) {
-		if (typeof console !== "undefined") console.warn(message$1);
+		if (typeof console !== "undefined") console.warn(message);
 		try {
-			throw new Error(message$1);
+			throw new Error(message);
 		} catch (e) {}
 	}
 }
@@ -15589,8 +15591,8 @@ function getUrlBasedHistory(getLocation, createHref2, validateLocation, options$
 		},
 		push,
 		replace: replace2,
-		go(n$1) {
-			return globalHistory.go(n$1);
+		go(n) {
+			return globalHistory.go(n);
 		}
 	};
 	return history;
@@ -15613,14 +15615,14 @@ function matchRoutesImpl(routes, locationArg, basename, allowPartial) {
 	let branches = flattenRoutes(routes);
 	rankRouteBranches(branches);
 	let matches = null;
-	for (let i$2 = 0; matches == null && i$2 < branches.length; ++i$2) {
+	for (let i = 0; matches == null && i < branches.length; ++i) {
 		let decoded = decodePath(pathname);
-		matches = matchRouteBranch(branches[i$2], decoded, allowPartial);
+		matches = matchRouteBranch(branches[i], decoded, allowPartial);
 	}
 	return matches;
 }
-function convertRouteMatchToUiMatch(match$2, loaderData) {
-	let { route, pathname, params } = match$2;
+function convertRouteMatchToUiMatch(match, loaderData) {
+	let { route, pathname, params } = match;
 	return {
 		id: route.id,
 		pathname,
@@ -15632,19 +15634,19 @@ function convertRouteMatchToUiMatch(match$2, loaderData) {
 }
 function flattenRoutes(routes, branches = [], parentsMeta = [], parentPath = "", _hasParentOptionalSegments = false) {
 	let flattenRoute = (route, index$1, hasParentOptionalSegments = _hasParentOptionalSegments, relativePath) => {
-		let meta$2 = {
+		let meta = {
 			relativePath: relativePath === void 0 ? route.path || "" : relativePath,
 			caseSensitive: route.caseSensitive === true,
 			childrenIndex: index$1,
 			route
 		};
-		if (meta$2.relativePath.startsWith("/")) {
-			if (!meta$2.relativePath.startsWith(parentPath) && hasParentOptionalSegments) return;
-			invariant(meta$2.relativePath.startsWith(parentPath), `Absolute route path "${meta$2.relativePath}" nested under path "${parentPath}" is not valid. An absolute child route path must start with the combined path of all its parent routes.`);
-			meta$2.relativePath = meta$2.relativePath.slice(parentPath.length);
+		if (meta.relativePath.startsWith("/")) {
+			if (!meta.relativePath.startsWith(parentPath) && hasParentOptionalSegments) return;
+			invariant(meta.relativePath.startsWith(parentPath), `Absolute route path "${meta.relativePath}" nested under path "${parentPath}" is not valid. An absolute child route path must start with the combined path of all its parent routes.`);
+			meta.relativePath = meta.relativePath.slice(parentPath.length);
 		}
-		let path = joinPaths([parentPath, meta$2.relativePath]);
-		let routesMeta = parentsMeta.concat(meta$2);
+		let path = joinPaths([parentPath, meta.relativePath]);
+		let routesMeta = parentsMeta.concat(meta);
 		if (route.children && route.children.length > 0) {
 			invariant(route.index !== true, `Index routes must not have child routes. Please remove all child routes from route path "${path}".`);
 			flattenRoutes(route.children, branches, routesMeta, path, hasParentOptionalSegments);
@@ -15667,16 +15669,16 @@ function explodeOptionalSegments(path) {
 	if (segments.length === 0) return [];
 	let [first, ...rest] = segments;
 	let isOptional = first.endsWith("?");
-	let required$1 = first.replace(/\?$/, "");
-	if (rest.length === 0) return isOptional ? [required$1, ""] : [required$1];
+	let required = first.replace(/\?$/, "");
+	if (rest.length === 0) return isOptional ? [required, ""] : [required];
 	let restExploded = explodeOptionalSegments(rest.join("/"));
 	let result = [];
-	result.push(...restExploded.map((subpath) => subpath === "" ? required$1 : [required$1, subpath].join("/")));
+	result.push(...restExploded.map((subpath) => subpath === "" ? required : [required, subpath].join("/")));
 	if (isOptional) result.push(...restExploded);
 	return result.map((exploded) => path.startsWith("/") && exploded === "" ? "/" : exploded);
 }
 function rankRouteBranches(branches) {
-	branches.sort((a$1, b$1) => a$1.score !== b$1.score ? b$1.score - a$1.score : compareIndexes(a$1.routesMeta.map((meta$2) => meta$2.childrenIndex), b$1.routesMeta.map((meta$2) => meta$2.childrenIndex)));
+	branches.sort((a, b$1) => a.score !== b$1.score ? b$1.score - a.score : compareIndexes(a.routesMeta.map((meta) => meta.childrenIndex), b$1.routesMeta.map((meta) => meta.childrenIndex)));
 }
 var paramRe = /^:[\w-]+$/;
 var dynamicSegmentValue = 3;
@@ -15684,46 +15686,46 @@ var indexRouteValue = 2;
 var emptySegmentValue = 1;
 var staticSegmentValue = 10;
 var splatPenalty = -2;
-var isSplat = (s$2) => s$2 === "*";
+var isSplat = (s) => s === "*";
 function computeScore(path, index$1) {
 	let segments = path.split("/");
 	let initialScore = segments.length;
 	if (segments.some(isSplat)) initialScore += splatPenalty;
 	if (index$1) initialScore += indexRouteValue;
-	return segments.filter((s$2) => !isSplat(s$2)).reduce((score, segment) => score + (paramRe.test(segment) ? dynamicSegmentValue : segment === "" ? emptySegmentValue : staticSegmentValue), initialScore);
+	return segments.filter((s) => !isSplat(s)).reduce((score, segment) => score + (paramRe.test(segment) ? dynamicSegmentValue : segment === "" ? emptySegmentValue : staticSegmentValue), initialScore);
 }
-function compareIndexes(a$1, b$1) {
-	return a$1.length === b$1.length && a$1.slice(0, -1).every((n$1, i$2) => n$1 === b$1[i$2]) ? a$1[a$1.length - 1] - b$1[b$1.length - 1] : 0;
+function compareIndexes(a, b$1) {
+	return a.length === b$1.length && a.slice(0, -1).every((n, i) => n === b$1[i]) ? a[a.length - 1] - b$1[b$1.length - 1] : 0;
 }
 function matchRouteBranch(branch, pathname, allowPartial = false) {
 	let { routesMeta } = branch;
 	let matchedParams = {};
 	let matchedPathname = "/";
 	let matches = [];
-	for (let i$2 = 0; i$2 < routesMeta.length; ++i$2) {
-		let meta$2 = routesMeta[i$2];
-		let end = i$2 === routesMeta.length - 1;
+	for (let i = 0; i < routesMeta.length; ++i) {
+		let meta = routesMeta[i];
+		let end = i === routesMeta.length - 1;
 		let remainingPathname = matchedPathname === "/" ? pathname : pathname.slice(matchedPathname.length) || "/";
-		let match$2 = matchPath({
-			path: meta$2.relativePath,
-			caseSensitive: meta$2.caseSensitive,
+		let match = matchPath({
+			path: meta.relativePath,
+			caseSensitive: meta.caseSensitive,
 			end
 		}, remainingPathname);
-		let route = meta$2.route;
-		if (!match$2 && end && allowPartial && !routesMeta[routesMeta.length - 1].route.index) match$2 = matchPath({
-			path: meta$2.relativePath,
-			caseSensitive: meta$2.caseSensitive,
+		let route = meta.route;
+		if (!match && end && allowPartial && !routesMeta[routesMeta.length - 1].route.index) match = matchPath({
+			path: meta.relativePath,
+			caseSensitive: meta.caseSensitive,
 			end: false
 		}, remainingPathname);
-		if (!match$2) return null;
-		Object.assign(matchedParams, match$2.params);
+		if (!match) return null;
+		Object.assign(matchedParams, match.params);
 		matches.push({
 			params: matchedParams,
-			pathname: joinPaths([matchedPathname, match$2.pathname]),
-			pathnameBase: normalizePathname(joinPaths([matchedPathname, match$2.pathnameBase])),
+			pathname: joinPaths([matchedPathname, match.pathname]),
+			pathnameBase: normalizePathname(joinPaths([matchedPathname, match.pathnameBase])),
 			route
 		});
-		if (match$2.pathnameBase !== "/") matchedPathname = joinPaths([matchedPathname, match$2.pathnameBase]);
+		if (match.pathnameBase !== "/") matchedPathname = joinPaths([matchedPathname, match.pathnameBase]);
 	}
 	return matches;
 }
@@ -15734,11 +15736,11 @@ function matchPath(pattern, pathname) {
 		end: true
 	};
 	let [matcher, compiledParams] = compilePath(pattern.path, pattern.caseSensitive, pattern.end);
-	let match$2 = pathname.match(matcher);
-	if (!match$2) return null;
-	let matchedPathname = match$2[0];
+	let match = pathname.match(matcher);
+	if (!match) return null;
+	let matchedPathname = match[0];
 	let pathnameBase = matchedPathname.replace(/(.)\/+$/, "$1");
-	let captureGroups = match$2.slice(1);
+	let captureGroups = match.slice(1);
 	return {
 		params: compiledParams.reduce((memo2, { paramName, isOptional }, index$1) => {
 			if (paramName === "*") {
@@ -15758,13 +15760,13 @@ function matchPath(pattern, pathname) {
 function compilePath(path, caseSensitive = false, end = true) {
 	warning(path === "*" || !path.endsWith("*") || path.endsWith("/*"), `Route path "${path}" will be treated as if it were "${path.replace(/\*$/, "/*")}" because the \`*\` character must always follow a \`/\` in the pattern. To get rid of this warning, please change the route path to "${path.replace(/\*$/, "/*")}".`);
 	let params = [];
-	let regexpSource = "^" + path.replace(/\/*\*?$/, "").replace(/^\/*/, "/").replace(/[\\.*+^${}|()[\]]/g, "\\$&").replace(/\/:([\w-]+)(\?)?/g, (match$2, paramName, isOptional, index$1, str) => {
+	let regexpSource = "^" + path.replace(/\/*\*?$/, "").replace(/^\/*/, "/").replace(/[\\.*+^${}|()[\]]/g, "\\$&").replace(/\/:([\w-]+)(\?)?/g, (match, paramName, isOptional, index$1, str) => {
 		params.push({
 			paramName,
 			isOptional: isOptional != null
 		});
 		if (isOptional) {
-			let nextChar = str.charAt(index$1 + match$2.length);
+			let nextChar = str.charAt(index$1 + match.length);
 			if (nextChar && nextChar !== "/") return "/([^\\/]*)";
 			return "(?:/([^\\/]*))?";
 		}
@@ -15821,11 +15823,11 @@ function getInvalidPathError(char, field, dest, path) {
 	return `Cannot include a '${char}' character in a manually specified \`to.${field}\` field [${JSON.stringify(path)}].  Please separate it out to the \`to.${dest}\` field. Alternatively you may provide the full path as a string in <Link to="..."> and the router will parse it for you.`;
 }
 function getPathContributingMatches(matches) {
-	return matches.filter((match$2, index$1) => index$1 === 0 || match$2.route.path && match$2.route.path.length > 0);
+	return matches.filter((match, index$1) => index$1 === 0 || match.route.path && match.route.path.length > 0);
 }
 function getResolveToMatches(matches) {
 	let pathMatches = getPathContributingMatches(matches);
-	return pathMatches.map((match$2, idx) => idx === pathMatches.length - 1 ? match$2.pathname : match$2.pathnameBase);
+	return pathMatches.map((match, idx) => idx === pathMatches.length - 1 ? match.pathname : match.pathnameBase);
 }
 function resolveTo(toArg, routePathnames, locationPathname, isPathRelative = false) {
 	let to;
@@ -15963,7 +15965,7 @@ function useLocation() {
 	return import_react.useContext(LocationContext).location;
 }
 var navigateEffectWarning = `You should call navigate() in a React.useEffect(), not when your component is first rendered.`;
-function useIsomorphicLayoutEffect$2(cb) {
+function useIsomorphicLayoutEffect$1(cb) {
 	if (!import_react.useContext(NavigationContext).static) import_react.useLayoutEffect(cb);
 }
 function useNavigate() {
@@ -15978,7 +15980,7 @@ function useNavigateUnstable() {
 	let { pathname: locationPathname } = useLocation();
 	let routePathnamesJson = JSON.stringify(getResolveToMatches(matches));
 	let activeRef = import_react.useRef(false);
-	useIsomorphicLayoutEffect$2(() => {
+	useIsomorphicLayoutEffect$1(() => {
 		activeRef.current = true;
 	});
 	return import_react.useCallback((to, options$1 = {}) => {
@@ -16049,10 +16051,10 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	let matches = matchRoutes(routes, { pathname: remainingPathname });
 	warning(parentRoute || matches != null, `No routes matched location "${location.pathname}${location.search}${location.hash}" `);
 	warning(matches == null || matches[matches.length - 1].route.element !== void 0 || matches[matches.length - 1].route.Component !== void 0 || matches[matches.length - 1].route.lazy !== void 0, `Matched leaf route at location "${location.pathname}${location.search}${location.hash}" does not have an element or Component. This means it will render an <Outlet /> with a null value by default resulting in an "empty" page.`);
-	let renderedMatches = _renderMatches(matches && matches.map((match$2) => Object.assign({}, match$2, {
-		params: Object.assign({}, parentParams, match$2.params),
-		pathname: joinPaths([parentPathnameBase, navigator$1.encodeLocation ? navigator$1.encodeLocation(match$2.pathname.replace(/\?/g, "%3F").replace(/#/g, "%23")).pathname : match$2.pathname]),
-		pathnameBase: match$2.pathnameBase === "/" ? parentPathnameBase : joinPaths([parentPathnameBase, navigator$1.encodeLocation ? navigator$1.encodeLocation(match$2.pathnameBase.replace(/\?/g, "%3F").replace(/#/g, "%23")).pathname : match$2.pathnameBase])
+	let renderedMatches = _renderMatches(matches && matches.map((match) => Object.assign({}, match, {
+		params: Object.assign({}, parentParams, match.params),
+		pathname: joinPaths([parentPathnameBase, navigator$1.encodeLocation ? navigator$1.encodeLocation(match.pathname.replace(/\?/g, "%3F").replace(/#/g, "%23")).pathname : match.pathname]),
+		pathnameBase: match.pathnameBase === "/" ? parentPathnameBase : joinPaths([parentPathnameBase, navigator$1.encodeLocation ? navigator$1.encodeLocation(match.pathnameBase.replace(/\?/g, "%3F").replace(/#/g, "%23")).pathname : match.pathnameBase])
 	})), parentMatches, dataRouterOpts);
 	if (locationArg && renderedMatches) return /* @__PURE__ */ import_react.createElement(LocationContext.Provider, { value: {
 		location: {
@@ -16070,7 +16072,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 }
 function DefaultErrorComponent() {
 	let error = useRouteError();
-	let message$1 = isRouteErrorResponse(error) ? `${error.status} ${error.statusText}` : error instanceof Error ? error.message : JSON.stringify(error);
+	let message = isRouteErrorResponse(error) ? `${error.status} ${error.statusText}` : error instanceof Error ? error.message : JSON.stringify(error);
 	let stack = error instanceof Error ? error.stack : null;
 	let lightgrey = "rgba(200,200,200, 0.5)";
 	let preStyles = {
@@ -16084,7 +16086,7 @@ function DefaultErrorComponent() {
 	let devInfo = null;
 	console.error("Error handled by React Router default ErrorBoundary:", error);
 	devInfo = /* @__PURE__ */ import_react.createElement(import_react.Fragment, null, /* @__PURE__ */ import_react.createElement("p", null, "💿 Hey developer 👋"), /* @__PURE__ */ import_react.createElement("p", null, "You can provide a way better UX than this when your app throws errors by providing your own ", /* @__PURE__ */ import_react.createElement("code", { style: codeStyles }, "ErrorBoundary"), " or", " ", /* @__PURE__ */ import_react.createElement("code", { style: codeStyles }, "errorElement"), " prop on your route."));
-	return /* @__PURE__ */ import_react.createElement(import_react.Fragment, null, /* @__PURE__ */ import_react.createElement("h2", null, "Unexpected Application Error!"), /* @__PURE__ */ import_react.createElement("h3", { style: { fontStyle: "italic" } }, message$1), stack ? /* @__PURE__ */ import_react.createElement("pre", { style: preStyles }, stack) : null, devInfo);
+	return /* @__PURE__ */ import_react.createElement(import_react.Fragment, null, /* @__PURE__ */ import_react.createElement("h2", null, "Unexpected Application Error!"), /* @__PURE__ */ import_react.createElement("h3", { style: { fontStyle: "italic" } }, message), stack ? /* @__PURE__ */ import_react.createElement("pre", { style: preStyles }, stack) : null, devInfo);
 }
 var defaultErrorElement = /* @__PURE__ */ import_react.createElement(DefaultErrorComponent, null);
 var RenderErrorBoundary = class extends import_react.Component {
@@ -16153,9 +16155,9 @@ function RSCErrorHandler({ children, error }) {
 	}
 	return children;
 }
-function RenderedRoute({ routeContext, match: match$2, children }) {
+function RenderedRoute({ routeContext, match, children }) {
 	let dataRouterContext = import_react.useContext(DataRouterContext);
-	if (dataRouterContext && dataRouterContext.static && dataRouterContext.staticContext && (match$2.route.errorElement || match$2.route.ErrorBoundary)) dataRouterContext.staticContext._deepestRenderedBoundaryId = match$2.route.id;
+	if (dataRouterContext && dataRouterContext.static && dataRouterContext.staticContext && (match.route.errorElement || match.route.ErrorBoundary)) dataRouterContext.staticContext._deepestRenderedBoundaryId = match.route.id;
 	return /* @__PURE__ */ import_react.createElement(RouteContext.Provider, { value: routeContext }, children);
 }
 function _renderMatches(matches, parentMatches = [], dataRouterOpts) {
@@ -16177,13 +16179,13 @@ function _renderMatches(matches, parentMatches = [], dataRouterOpts) {
 	let fallbackIndex = -1;
 	if (dataRouterOpts && dataRouterState) {
 		renderFallback = dataRouterState.renderFallback;
-		for (let i$2 = 0; i$2 < renderedMatches.length; i$2++) {
-			let match$2 = renderedMatches[i$2];
-			if (match$2.route.HydrateFallback || match$2.route.hydrateFallbackElement) fallbackIndex = i$2;
-			if (match$2.route.id) {
+		for (let i = 0; i < renderedMatches.length; i++) {
+			let match = renderedMatches[i];
+			if (match.route.HydrateFallback || match.route.hydrateFallbackElement) fallbackIndex = i;
+			if (match.route.id) {
 				let { loaderData, errors: errors2 } = dataRouterState;
-				let needsToRunLoader = match$2.route.loader && !loaderData.hasOwnProperty(match$2.route.id) && (!errors2 || errors2[match$2.route.id] === void 0);
-				if (match$2.route.lazy || needsToRunLoader) {
+				let needsToRunLoader = match.route.loader && !loaderData.hasOwnProperty(match.route.id) && (!errors2 || errors2[match.route.id] === void 0);
+				if (match.route.lazy || needsToRunLoader) {
 					if (dataRouterOpts.isStatic) renderFallback = true;
 					if (fallbackIndex >= 0) renderedMatches = renderedMatches.slice(0, fallbackIndex + 1);
 					else renderedMatches = [renderedMatches[0]];
@@ -16201,14 +16203,14 @@ function _renderMatches(matches, parentMatches = [], dataRouterOpts) {
 			errorInfo
 		});
 	} : void 0;
-	return renderedMatches.reduceRight((outlet, match$2, index$1) => {
+	return renderedMatches.reduceRight((outlet, match, index$1) => {
 		let error;
 		let shouldRenderHydrateFallback = false;
 		let errorElement = null;
 		let hydrateFallbackElement = null;
 		if (dataRouterState) {
-			error = errors && match$2.route.id ? errors[match$2.route.id] : void 0;
-			errorElement = match$2.route.errorElement || defaultErrorElement;
+			error = errors && match.route.id ? errors[match.route.id] : void 0;
+			errorElement = match.route.errorElement || defaultErrorElement;
 			if (renderFallback) {
 				if (fallbackIndex < 0 && index$1 === 0) {
 					warningOnce("route-fallback", false, "No `HydrateFallback` element provided to render during initial hydration");
@@ -16216,7 +16218,7 @@ function _renderMatches(matches, parentMatches = [], dataRouterOpts) {
 					hydrateFallbackElement = null;
 				} else if (fallbackIndex === index$1) {
 					shouldRenderHydrateFallback = true;
-					hydrateFallbackElement = match$2.route.hydrateFallbackElement || null;
+					hydrateFallbackElement = match.route.hydrateFallbackElement || null;
 				}
 			}
 		}
@@ -16225,11 +16227,11 @@ function _renderMatches(matches, parentMatches = [], dataRouterOpts) {
 			let children;
 			if (error) children = errorElement;
 			else if (shouldRenderHydrateFallback) children = hydrateFallbackElement;
-			else if (match$2.route.Component) children = /* @__PURE__ */ import_react.createElement(match$2.route.Component, null);
-			else if (match$2.route.element) children = match$2.route.element;
+			else if (match.route.Component) children = /* @__PURE__ */ import_react.createElement(match.route.Component, null);
+			else if (match.route.element) children = match.route.element;
 			else children = outlet;
 			return /* @__PURE__ */ import_react.createElement(RenderedRoute, {
-				match: match$2,
+				match,
 				routeContext: {
 					outlet,
 					matches: matches2,
@@ -16238,7 +16240,7 @@ function _renderMatches(matches, parentMatches = [], dataRouterOpts) {
 				children
 			});
 		};
-		return dataRouterState && (match$2.route.ErrorBoundary || match$2.route.errorElement || index$1 === 0) ? /* @__PURE__ */ import_react.createElement(RenderErrorBoundary, {
+		return dataRouterState && (match.route.ErrorBoundary || match.route.errorElement || index$1 === 0) ? /* @__PURE__ */ import_react.createElement(RenderErrorBoundary, {
 			location: dataRouterState.location,
 			revalidation: dataRouterState.revalidation,
 			component: errorElement,
@@ -16298,7 +16300,7 @@ function useNavigateStable() {
 	let { router } = useDataRouterContext("useNavigate");
 	let id = useCurrentRouteId("useNavigate");
 	let activeRef = import_react.useRef(false);
-	useIsomorphicLayoutEffect$2(() => {
+	useIsomorphicLayoutEffect$1(() => {
 		activeRef.current = true;
 	});
 	return import_react.useCallback(async (to, options$1 = {}) => {
@@ -16312,10 +16314,10 @@ function useNavigateStable() {
 	}, [router, id]);
 }
 var alreadyWarned = {};
-function warningOnce(key, cond, message$1) {
+function warningOnce(key, cond, message) {
 	if (!cond && !alreadyWarned[key]) {
 		alreadyWarned[key] = true;
-		warning(false, message$1);
+		warning(false, message);
 	}
 }
 import_react.useOptimistic;
@@ -16446,17 +16448,17 @@ function createRoutesFromChildren(children, parentPath = []) {
 }
 var defaultMethod = "get";
 var defaultEncType = "application/x-www-form-urlencoded";
-function isHtmlElement(object$1) {
-	return typeof HTMLElement !== "undefined" && object$1 instanceof HTMLElement;
+function isHtmlElement(object) {
+	return typeof HTMLElement !== "undefined" && object instanceof HTMLElement;
 }
-function isButtonElement(object$1) {
-	return isHtmlElement(object$1) && object$1.tagName.toLowerCase() === "button";
+function isButtonElement(object) {
+	return isHtmlElement(object) && object.tagName.toLowerCase() === "button";
 }
-function isFormElement(object$1) {
-	return isHtmlElement(object$1) && object$1.tagName.toLowerCase() === "form";
+function isFormElement(object) {
+	return isHtmlElement(object) && object.tagName.toLowerCase() === "form";
 }
-function isInputElement(object$1) {
-	return isHtmlElement(object$1) && object$1.tagName.toLowerCase() === "input";
+function isInputElement(object) {
+	return isHtmlElement(object) && object.tagName.toLowerCase() === "input";
 }
 function isModifiedEvent(event) {
 	return !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
@@ -16543,10 +16545,10 @@ var ESCAPE_LOOKUP = {
 };
 var ESCAPE_REGEX = /[&><\u2028\u2029]/g;
 function escapeHtml(html) {
-	return html.replace(ESCAPE_REGEX, (match$2) => ESCAPE_LOOKUP[match$2]);
+	return html.replace(ESCAPE_REGEX, (match) => ESCAPE_LOOKUP[match]);
 }
-function invariant2(value, message$1) {
-	if (value === false || value === null || typeof value === "undefined") throw new Error(message$1);
+function invariant2(value, message) {
+	if (value === false || value === null || typeof value === "undefined") throw new Error(message);
 }
 function singleFetchUrl(reqUrl, basename, trailingSlashAware, extension) {
 	let url = typeof reqUrl === "string" ? new URL(reqUrl, typeof window === "undefined" ? "server://singlefetch/" : window.location.origin) : reqUrl;
@@ -16575,17 +16577,17 @@ async function loadRouteModule(route, routeModulesCache) {
 		return new Promise(() => {});
 	}
 }
-function isPageLinkDescriptor(object$1) {
-	return object$1 != null && typeof object$1.page === "string";
+function isPageLinkDescriptor(object) {
+	return object != null && typeof object.page === "string";
 }
-function isHtmlLinkDescriptor(object$1) {
-	if (object$1 == null) return false;
-	if (object$1.href == null) return object$1.rel === "preload" && typeof object$1.imageSrcSet === "string" && typeof object$1.imageSizes === "string";
-	return typeof object$1.rel === "string" && typeof object$1.href === "string";
+function isHtmlLinkDescriptor(object) {
+	if (object == null) return false;
+	if (object.href == null) return object.rel === "preload" && typeof object.imageSrcSet === "string" && typeof object.imageSizes === "string";
+	return typeof object.rel === "string" && typeof object.href === "string";
 }
 async function getKeyedPrefetchLinks(matches, manifest, routeModules) {
-	return dedupeLinkDescriptors((await Promise.all(matches.map(async (match$2) => {
-		let route = manifest.routes[match$2.route.id];
+	return dedupeLinkDescriptors((await Promise.all(matches.map(async (match) => {
+		let route = manifest.routes[match.route.id];
 		if (route) {
 			let mod = await loadRouteModule(route, routeModules);
 			return mod.links ? mod.links() : [];
@@ -16601,24 +16603,24 @@ async function getKeyedPrefetchLinks(matches, manifest, routeModules) {
 	}));
 }
 function getNewMatchesForLinks(page, nextMatches, currentMatches, manifest, location, mode) {
-	let isNew = (match$2, index$1) => {
+	let isNew = (match, index$1) => {
 		if (!currentMatches[index$1]) return true;
-		return match$2.route.id !== currentMatches[index$1].route.id;
+		return match.route.id !== currentMatches[index$1].route.id;
 	};
-	let matchPathChanged = (match$2, index$1) => {
-		return currentMatches[index$1].pathname !== match$2.pathname || currentMatches[index$1].route.path?.endsWith("*") && currentMatches[index$1].params["*"] !== match$2.params["*"];
+	let matchPathChanged = (match, index$1) => {
+		return currentMatches[index$1].pathname !== match.pathname || currentMatches[index$1].route.path?.endsWith("*") && currentMatches[index$1].params["*"] !== match.params["*"];
 	};
-	if (mode === "assets") return nextMatches.filter((match$2, index$1) => isNew(match$2, index$1) || matchPathChanged(match$2, index$1));
-	if (mode === "data") return nextMatches.filter((match$2, index$1) => {
-		let manifestRoute = manifest.routes[match$2.route.id];
+	if (mode === "assets") return nextMatches.filter((match, index$1) => isNew(match, index$1) || matchPathChanged(match, index$1));
+	if (mode === "data") return nextMatches.filter((match, index$1) => {
+		let manifestRoute = manifest.routes[match.route.id];
 		if (!manifestRoute || !manifestRoute.hasLoader) return false;
-		if (isNew(match$2, index$1) || matchPathChanged(match$2, index$1)) return true;
-		if (match$2.route.shouldRevalidate) {
-			let routeChoice = match$2.route.shouldRevalidate({
+		if (isNew(match, index$1) || matchPathChanged(match, index$1)) return true;
+		if (match.route.shouldRevalidate) {
+			let routeChoice = match.route.shouldRevalidate({
 				currentUrl: new URL(location.pathname + location.search + location.hash, window.origin),
 				currentParams: currentMatches[0]?.params || {},
 				nextUrl: new URL(page, window.origin),
-				nextParams: match$2.params,
+				nextParams: match.params,
 				defaultShouldRevalidate: true
 			});
 			if (typeof routeChoice === "boolean") return routeChoice;
@@ -16628,8 +16630,8 @@ function getNewMatchesForLinks(page, nextMatches, currentMatches, manifest, loca
 	return [];
 }
 function getModuleLinkHrefs(matches, manifest, { includeHydrateFallback } = {}) {
-	return dedupeHrefs(matches.map((match$2) => {
-		let route = manifest.routes[match$2.route.id];
+	return dedupeHrefs(matches.map((match) => {
+		let route = manifest.routes[match.route.id];
 		if (!route) return [];
 		let hrefs = [route.module];
 		if (route.clientActionModule) hrefs = hrefs.concat(route.clientActionModule);
@@ -16649,13 +16651,13 @@ function sortKeys(obj) {
 	return sorted;
 }
 function dedupeLinkDescriptors(descriptors, preloads) {
-	let set$1 = /* @__PURE__ */ new Set();
+	let set = /* @__PURE__ */ new Set();
 	let preloadsSet = new Set(preloads);
 	return descriptors.reduce((deduped, descriptor) => {
 		if (preloads && !isPageLinkDescriptor(descriptor) && descriptor.as === "script" && descriptor.href && preloadsSet.has(descriptor.href)) return deduped;
 		let key = JSON.stringify(sortKeys(descriptor));
-		if (!set$1.has(key)) {
-			set$1.add(key);
+		if (!set.has(key)) {
+			set.add(key);
 			deduped.push({
 				key,
 				link: descriptor
@@ -16988,7 +16990,7 @@ var NavLink = import_react.forwardRef(function NavLinkWithRef({ "aria-current": 
 	}, typeof children === "function" ? children(renderProps) : children);
 });
 NavLink.displayName = "NavLink";
-var Form$1 = import_react.forwardRef(({ discover = "render", fetcherKey, navigate, reloadDocument, replace: replace2, state, method = defaultMethod, action, onSubmit, relative, preventScrollReset, viewTransition, unstable_defaultShouldRevalidate, ...props }, forwardedRef) => {
+var Form = import_react.forwardRef(({ discover = "render", fetcherKey, navigate, reloadDocument, replace: replace2, state, method = defaultMethod, action, onSubmit, relative, preventScrollReset, viewTransition, unstable_defaultShouldRevalidate, ...props }, forwardedRef) => {
 	let { unstable_useTransitions } = import_react.useContext(NavigationContext);
 	let submit = useSubmit();
 	let formAction = useFormAction(action, { relative });
@@ -17023,7 +17025,7 @@ var Form$1 = import_react.forwardRef(({ discover = "render", fetcherKey, navigat
 		"data-discover": !isAbsolute && discover === "render" ? "true" : void 0
 	});
 });
-Form$1.displayName = "Form";
+Form.displayName = "Form";
 function ScrollRestoration({ getKey, storageKey, ...props }) {
 	let remixContext = import_react.useContext(FrameworkContext);
 	let { basename } = import_react.useContext(NavigationContext);
@@ -17151,7 +17153,7 @@ function useFormAction(action, { relative } = {}) {
 	let { basename } = import_react.useContext(NavigationContext);
 	let routeContext = import_react.useContext(RouteContext);
 	invariant(routeContext, "useFormAction must be used inside a RouteContext");
-	let [match$2] = routeContext.matches.slice(-1);
+	let [match] = routeContext.matches.slice(-1);
 	let path = { ...useResolvedPath(action ? action : ".", { relative }) };
 	let location = useLocation();
 	if (action == null) {
@@ -17165,7 +17167,7 @@ function useFormAction(action, { relative } = {}) {
 			path.search = qs ? `?${qs}` : "";
 		}
 	}
-	if ((!action || action === ".") && match$2.route.index) path.search = path.search ? path.search.replace(/^\?/, "?index&") : "?index";
+	if ((!action || action === ".") && match.route.index) path.search = path.search ? path.search.replace(/^\?/, "?index&") : "?index";
 	if (basename !== "/") path.pathname = path.pathname === "/" ? basename : joinPaths([basename, path.pathname]);
 	return createPath(path);
 }
@@ -17274,7 +17276,6 @@ function useViewTransitionState(to, { relative } = {}) {
 	let nextPath = stripBasename(vtContext.nextLocation.pathname, basename) || vtContext.nextLocation.pathname;
 	return matchPath(path.pathname, nextPath) != null || matchPath(path.pathname, currentPath) != null;
 }
-var import_client = require_client();
 var TOAST_LIMIT = 1;
 var TOAST_REMOVE_DELAY = 1e6;
 var count$2 = 0;
@@ -17302,10 +17303,10 @@ const reducer = (state, action) => {
 		};
 		case "UPDATE_TOAST": return {
 			...state,
-			toasts: state.toasts.map((t$1) => t$1.id === action.toast.id ? {
-				...t$1,
+			toasts: state.toasts.map((t) => t.id === action.toast.id ? {
+				...t,
 				...action.toast
-			} : t$1)
+			} : t)
 		};
 		case "DISMISS_TOAST": {
 			const { toastId } = action;
@@ -17315,10 +17316,10 @@ const reducer = (state, action) => {
 			});
 			return {
 				...state,
-				toasts: state.toasts.map((t$1) => t$1.id === toastId || toastId === void 0 ? {
-					...t$1,
+				toasts: state.toasts.map((t) => t.id === toastId || toastId === void 0 ? {
+					...t,
 					open: false
-				} : t$1)
+				} : t)
 			};
 		}
 		case "REMOVE_TOAST":
@@ -17328,7 +17329,7 @@ const reducer = (state, action) => {
 			};
 			return {
 				...state,
-				toasts: state.toasts.filter((t$1) => t$1.id !== action.toastId)
+				toasts: state.toasts.filter((t) => t.id !== action.toastId)
 			};
 	}
 };
@@ -17388,7 +17389,6 @@ function useToast() {
 		})
 	};
 }
-var import_react_dom$5 = /* @__PURE__ */ __toESM(require_react_dom(), 1);
 typeof window !== "undefined" && window.document && window.document.createElement;
 function composeEventHandlers(originalEventHandler, ourEventHandler, { checkForDefaultPrevented = true } = {}) {
 	return function handleEvent(event) {
@@ -17409,10 +17409,10 @@ function composeRefs(...refs) {
 			return cleanup;
 		});
 		if (hasCleanup) return () => {
-			for (let i$2 = 0; i$2 < cleanups.length; i$2++) {
-				const cleanup = cleanups[i$2];
+			for (let i = 0; i < cleanups.length; i++) {
+				const cleanup = cleanups[i];
 				if (typeof cleanup == "function") cleanup();
-				else setRef(refs[i$2], null);
+				else setRef(refs[i], null);
 			}
 		};
 	};
@@ -17497,12 +17497,12 @@ var require_react_jsx_runtime_development = /* @__PURE__ */ __commonJSMin(((expo
 		function UnknownOwner() {
 			return Error("react-stack-top-frame");
 		}
-		function hasValidKey(config$1) {
-			if (hasOwnProperty.call(config$1, "key")) {
-				var getter = Object.getOwnPropertyDescriptor(config$1, "key").get;
+		function hasValidKey(config) {
+			if (hasOwnProperty.call(config, "key")) {
+				var getter = Object.getOwnPropertyDescriptor(config, "key").get;
 				if (getter && getter.isReactWarning) return !1;
 			}
-			return void 0 !== config$1.key;
+			return void 0 !== config.key;
 		}
 		function defineKeyPropWarningGetter(props, displayName) {
 			function warnAboutAccessingKey() {
@@ -17564,16 +17564,16 @@ var require_react_jsx_runtime_development = /* @__PURE__ */ __commonJSMin(((expo
 			Object.freeze && (Object.freeze(type.props), Object.freeze(type));
 			return type;
 		}
-		function jsxDEVImpl(type, config$1, maybeKey, isStaticChildren, debugStack, debugTask) {
-			var children = config$1.children;
+		function jsxDEVImpl(type, config, maybeKey, isStaticChildren, debugStack, debugTask) {
+			var children = config.children;
 			if (void 0 !== children) if (isStaticChildren) if (isArrayImpl(children)) {
 				for (isStaticChildren = 0; isStaticChildren < children.length; isStaticChildren++) validateChildKeys(children[isStaticChildren]);
 				Object.freeze && Object.freeze(children);
 			} else console.error("React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead.");
 			else validateChildKeys(children);
-			if (hasOwnProperty.call(config$1, "key")) {
+			if (hasOwnProperty.call(config, "key")) {
 				children = getComponentNameFromType(type);
-				var keys = Object.keys(config$1).filter(function(k) {
+				var keys = Object.keys(config).filter(function(k) {
 					return "key" !== k;
 				});
 				isStaticChildren = 0 < keys.length ? "{key: someKey, " + keys.join(": ..., ") + ": ...}" : "{key: someKey}";
@@ -17581,19 +17581,19 @@ var require_react_jsx_runtime_development = /* @__PURE__ */ __commonJSMin(((expo
 			}
 			children = null;
 			void 0 !== maybeKey && (checkKeyStringCoercion(maybeKey), children = "" + maybeKey);
-			hasValidKey(config$1) && (checkKeyStringCoercion(config$1.key), children = "" + config$1.key);
-			if ("key" in config$1) {
+			hasValidKey(config) && (checkKeyStringCoercion(config.key), children = "" + config.key);
+			if ("key" in config) {
 				maybeKey = {};
-				for (var propName in config$1) "key" !== propName && (maybeKey[propName] = config$1[propName]);
-			} else maybeKey = config$1;
+				for (var propName in config) "key" !== propName && (maybeKey[propName] = config[propName]);
+			} else maybeKey = config;
 			children && defineKeyPropWarningGetter(maybeKey, "function" === typeof type ? type.displayName || type.name || "Unknown" : type);
 			return ReactElement(type, children, maybeKey, getOwner(), debugStack, debugTask);
 		}
 		function validateChildKeys(node) {
 			isValidElement(node) ? node._store && (node._store.validated = 1) : "object" === typeof node && null !== node && node.$$typeof === REACT_LAZY_TYPE$1 && ("fulfilled" === node._payload.status ? isValidElement(node._payload.value) && node._payload.value._store && (node._payload.value._store.validated = 1) : node._store && (node._store.validated = 1));
 		}
-		function isValidElement(object$1) {
-			return "object" === typeof object$1 && null !== object$1 && object$1.$$typeof === REACT_ELEMENT_TYPE;
+		function isValidElement(object) {
+			return "object" === typeof object && null !== object && object.$$typeof === REACT_ELEMENT_TYPE;
 		}
 		var React$5 = require_react(), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE$1 = Symbol.for("react.lazy"), REACT_ACTIVITY_TYPE = Symbol.for("react.activity"), REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), ReactSharedInternals = React$5.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, hasOwnProperty = Object.prototype.hasOwnProperty, isArrayImpl = Array.isArray, createTask = console.createTask ? console.createTask : function() {
 			return null;
@@ -17607,19 +17607,20 @@ var require_react_jsx_runtime_development = /* @__PURE__ */ __commonJSMin(((expo
 		var unknownOwnerDebugTask = createTask(getTaskName(UnknownOwner));
 		var didWarnAboutKeySpread = {};
 		exports.Fragment = REACT_FRAGMENT_TYPE;
-		exports.jsx = function(type, config$1, maybeKey) {
+		exports.jsx = function(type, config, maybeKey) {
 			var trackActualOwner = 1e4 > ReactSharedInternals.recentlyCreatedOwnerStacks++;
-			return jsxDEVImpl(type, config$1, maybeKey, !1, trackActualOwner ? Error("react-stack-top-frame") : unknownOwnerDebugStack, trackActualOwner ? createTask(getTaskName(type)) : unknownOwnerDebugTask);
+			return jsxDEVImpl(type, config, maybeKey, !1, trackActualOwner ? Error("react-stack-top-frame") : unknownOwnerDebugStack, trackActualOwner ? createTask(getTaskName(type)) : unknownOwnerDebugTask);
 		};
-		exports.jsxs = function(type, config$1, maybeKey) {
+		exports.jsxs = function(type, config, maybeKey) {
 			var trackActualOwner = 1e4 > ReactSharedInternals.recentlyCreatedOwnerStacks++;
-			return jsxDEVImpl(type, config$1, maybeKey, !0, trackActualOwner ? Error("react-stack-top-frame") : unknownOwnerDebugStack, trackActualOwner ? createTask(getTaskName(type)) : unknownOwnerDebugTask);
+			return jsxDEVImpl(type, config, maybeKey, !0, trackActualOwner ? Error("react-stack-top-frame") : unknownOwnerDebugStack, trackActualOwner ? createTask(getTaskName(type)) : unknownOwnerDebugTask);
 		};
 	})();
 }));
-var import_jsx_runtime = /* @__PURE__ */ __toESM((/* @__PURE__ */ __commonJSMin(((exports, module) => {
+var require_jsx_runtime = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 	module.exports = require_react_jsx_runtime_development();
-})))(), 1);
+}));
+var import_jsx_runtime = /* @__PURE__ */ __toESM(require_jsx_runtime(), 1);
 function createContext2(rootComponentName, defaultContext) {
 	const Context = import_react.createContext(defaultContext);
 	const Provider$2 = (props) => {
@@ -17848,7 +17849,7 @@ function createCollection(name) {
 			const collectionNode = context.collectionRef.current;
 			if (!collectionNode) return [];
 			const orderedNodes = Array.from(collectionNode.querySelectorAll(`[${ITEM_DATA_ATTR}]`));
-			return Array.from(context.itemMap.values()).sort((a$1, b$1) => orderedNodes.indexOf(a$1.ref.current) - orderedNodes.indexOf(b$1.ref.current));
+			return Array.from(context.itemMap.values()).sort((a, b$1) => orderedNodes.indexOf(a.ref.current) - orderedNodes.indexOf(b$1.ref.current));
 		}, [context.collectionRef, context.itemMap]);
 	}
 	return [
@@ -18088,7 +18089,7 @@ function handleAndDispatchCustomEvent$1(name, handler, detail, { discrete }) {
 	if (discrete) dispatchDiscreteCustomEvent(target, event);
 	else target.dispatchEvent(event);
 }
-var Root$8 = DismissableLayer;
+var Root$6 = DismissableLayer;
 var Branch = DismissableLayerBranch;
 var useLayoutEffect2 = globalThis?.document ? import_react.useLayoutEffect : () => {};
 var import_react_dom$4 = /* @__PURE__ */ __toESM(require_react_dom(), 1);
@@ -18223,7 +18224,7 @@ function useControllableState({ prop, defaultProp, onChange = () => {}, caller }
 	}
 	return [value, import_react.useCallback((nextValue) => {
 		if (isControlled) {
-			const value2 = isFunction$1(nextValue) ? nextValue(prop) : nextValue;
+			const value2 = isFunction(nextValue) ? nextValue(prop) : nextValue;
 			if (value2 !== prop) onChangeRef.current?.(value2);
 		} else setUncontrolledProp(nextValue);
 	}, [
@@ -18252,7 +18253,7 @@ function useUncontrolledState({ defaultProp, onChange }) {
 		onChangeRef
 	];
 }
-function isFunction$1(value) {
+function isFunction(value) {
 	return typeof value === "function";
 }
 var VISUALLY_HIDDEN_STYLES = Object.freeze({
@@ -18267,7 +18268,7 @@ var VISUALLY_HIDDEN_STYLES = Object.freeze({
 	whiteSpace: "nowrap",
 	wordWrap: "normal"
 });
-var NAME$3 = "VisuallyHidden";
+var NAME$2 = "VisuallyHidden";
 var VisuallyHidden = import_react.forwardRef((props, forwardedRef) => {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Primitive$1.span, {
 		...props,
@@ -18278,15 +18279,15 @@ var VisuallyHidden = import_react.forwardRef((props, forwardedRef) => {
 		}
 	});
 });
-VisuallyHidden.displayName = NAME$3;
-var Root$7 = VisuallyHidden;
+VisuallyHidden.displayName = NAME$2;
+var Root$5 = VisuallyHidden;
 var import_react_dom$3 = /* @__PURE__ */ __toESM(require_react_dom(), 1);
 var PROVIDER_NAME$1 = "ToastProvider";
 var [Collection$2, useCollection$2, createCollectionScope$2] = createCollection("Toast");
 var [createToastContext, createToastScope] = createContextScope$1("Toast", [createCollectionScope$2]);
 var [ToastProviderProvider, useToastProviderContext] = createToastContext(PROVIDER_NAME$1);
 var ToastProvider$1 = (props) => {
-	const { __scopeToast, label = "Notification", duration: duration$2 = 5e3, swipeDirection = "right", swipeThreshold = 50, children } = props;
+	const { __scopeToast, label = "Notification", duration = 5e3, swipeDirection = "right", swipeThreshold = 50, children } = props;
 	const [viewport, setViewport] = import_react.useState(null);
 	const [toastCount, setToastCount] = import_react.useState(0);
 	const isFocusedToastEscapeKeyDownRef = import_react.useRef(false);
@@ -18297,7 +18298,7 @@ var ToastProvider$1 = (props) => {
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ToastProviderProvider, {
 			scope: __scopeToast,
 			label,
-			duration: duration$2,
+			duration,
 			swipeDirection,
 			swipeThreshold,
 			toastCount,
@@ -18510,9 +18511,9 @@ var ToastImpl = import_react.forwardRef((props, forwardedRef) => {
 	const composedRefs = useComposedRefs(forwardedRef, (node2) => setNode(node2));
 	const pointerStartRef = import_react.useRef(null);
 	const swipeDeltaRef = import_react.useRef(null);
-	const duration$2 = durationProp || context.duration;
+	const duration = durationProp || context.duration;
 	const closeTimerStartTimeRef = import_react.useRef(0);
-	const closeTimerRemainingTimeRef = import_react.useRef(duration$2);
+	const closeTimerRemainingTimeRef = import_react.useRef(duration);
 	const closeTimerRef = import_react.useRef(0);
 	const { onToastAdd, onToastRemove } = context;
 	const handleClose = useCallbackRef(() => {
@@ -18547,16 +18548,16 @@ var ToastImpl = import_react.forwardRef((props, forwardedRef) => {
 		}
 	}, [
 		context.viewport,
-		duration$2,
+		duration,
 		onPause,
 		onResume,
 		startTimer
 	]);
 	import_react.useEffect(() => {
-		if (open && !context.isClosePausedRef.current) startTimer(duration$2);
+		if (open && !context.isClosePausedRef.current) startTimer(duration);
 	}, [
 		open,
-		duration$2,
+		duration,
 		context.isClosePausedRef,
 		startTimer
 	]);
@@ -18578,7 +18579,7 @@ var ToastImpl = import_react.forwardRef((props, forwardedRef) => {
 		onClose: handleClose,
 		children: import_react_dom$3.createPortal(/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Collection$2.ItemSlot, {
 			scope: __scopeToast,
-			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root$8, {
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root$6, {
 				asChild: true,
 				onEscapeKeyDown: composeEventHandlers(onEscapeKeyDown, () => {
 					if (!context.isFocusedToastEscapeKeyDownRef.current) handleClose();
@@ -18744,7 +18745,7 @@ function getAnnounceTextContent(container) {
 	const textContent = [];
 	Array.from(container.childNodes).forEach((node) => {
 		if (node.nodeType === node.TEXT_NODE && node.textContent) textContent.push(node.textContent);
-		if (isHTMLElement$2(node)) {
+		if (isHTMLElement$1(node)) {
 			const isHidden$1 = node.ariaHidden || node.hidden || node.style.display === "none";
 			const isExcluded = node.dataset.radixToastAnnounceExclude === "";
 			if (!isHidden$1) if (isExcluded) {
@@ -18785,7 +18786,7 @@ function useNextFrame(callback = () => {}) {
 		};
 	}, [fn]);
 }
-function isHTMLElement$2(node) {
+function isHTMLElement$1(node) {
 	return node.nodeType === node.ELEMENT_NODE;
 }
 function getTabbableCandidates$1(container) {
@@ -18813,25 +18814,25 @@ var Title$1 = ToastTitle$1;
 var Description$1 = ToastDescription$1;
 var Action = ToastAction$1;
 var Close$1 = ToastClose$1;
-function r$1(e) {
-	var t$1, f, n$1 = "";
-	if ("string" == typeof e || "number" == typeof e) n$1 += e;
+function r(e) {
+	var t, f, n = "";
+	if ("string" == typeof e || "number" == typeof e) n += e;
 	else if ("object" == typeof e) if (Array.isArray(e)) {
-		var o$1 = e.length;
-		for (t$1 = 0; t$1 < o$1; t$1++) e[t$1] && (f = r$1(e[t$1])) && (n$1 && (n$1 += " "), n$1 += f);
-	} else for (f in e) e[f] && (n$1 && (n$1 += " "), n$1 += f);
-	return n$1;
+		var o = e.length;
+		for (t = 0; t < o; t++) e[t] && (f = r(e[t])) && (n && (n += " "), n += f);
+	} else for (f in e) e[f] && (n && (n += " "), n += f);
+	return n;
 }
 function clsx() {
-	for (var e, t$1, f = 0, n$1 = "", o$1 = arguments.length; f < o$1; f++) (e = arguments[f]) && (t$1 = r$1(e)) && (n$1 && (n$1 += " "), n$1 += t$1);
-	return n$1;
+	for (var e, t, f = 0, n = "", o = arguments.length; f < o; f++) (e = arguments[f]) && (t = r(e)) && (n && (n += " "), n += t);
+	return n;
 }
 var falsyToString = (value) => typeof value === "boolean" ? `${value}` : value === 0 ? "0" : value;
 const cx = clsx;
-const cva = (base, config$1) => (props) => {
+const cva = (base, config) => (props) => {
 	var _config_compoundVariants;
-	if ((config$1 === null || config$1 === void 0 ? void 0 : config$1.variants) == null) return cx(base, props === null || props === void 0 ? void 0 : props.class, props === null || props === void 0 ? void 0 : props.className);
-	const { variants, defaultVariants } = config$1;
+	if ((config === null || config === void 0 ? void 0 : config.variants) == null) return cx(base, props === null || props === void 0 ? void 0 : props.class, props === null || props === void 0 ? void 0 : props.className);
+	const { variants, defaultVariants } = config;
 	const getVariantClassNames = Object.keys(variants).map((variant) => {
 		const variantProp = props === null || props === void 0 ? void 0 : props[variant];
 		const defaultVariantProp = defaultVariants === null || defaultVariants === void 0 ? void 0 : defaultVariants[variant];
@@ -18845,7 +18846,7 @@ const cva = (base, config$1) => (props) => {
 		acc[key] = value;
 		return acc;
 	}, {});
-	return cx(base, getVariantClassNames, config$1 === null || config$1 === void 0 ? void 0 : (_config_compoundVariants = config$1.compoundVariants) === null || _config_compoundVariants === void 0 ? void 0 : _config_compoundVariants.reduce((acc, param) => {
+	return cx(base, getVariantClassNames, config === null || config === void 0 ? void 0 : (_config_compoundVariants = config.compoundVariants) === null || _config_compoundVariants === void 0 ? void 0 : _config_compoundVariants.reduce((acc, param) => {
 		let { class: cvClass, className: cvClassName, ...compoundVariantOptions } = param;
 		return Object.entries(compoundVariantOptions).every((param$1) => {
 			let [key, value] = param$1;
@@ -18869,8 +18870,8 @@ const cva = (base, config$1) => (props) => {
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
-var mergeClasses = (...classes) => classes.filter((className, index$1, array$1) => {
-	return Boolean(className) && className.trim() !== "" && array$1.indexOf(className) === index$1;
+var mergeClasses = (...classes) => classes.filter((className, index$1, array) => {
+	return Boolean(className) && className.trim() !== "" && array.indexOf(className) === index$1;
 }).join(" ").trim();
 /**
 * @license lucide-react v0.575.0 - ISC
@@ -18878,22 +18879,22 @@ var mergeClasses = (...classes) => classes.filter((className, index$1, array$1) 
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
-var toKebabCase = (string$2) => string$2.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
+var toKebabCase = (string) => string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
 /**
 * @license lucide-react v0.575.0 - ISC
 *
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
-var toCamelCase = (string$2) => string$2.replace(/^([A-Z])|[\s-_]+(\w)/g, (match$2, p1, p2) => p2 ? p2.toUpperCase() : p1.toLowerCase());
+var toCamelCase = (string) => string.replace(/^([A-Z])|[\s-_]+(\w)/g, (match, p1, p2) => p2 ? p2.toUpperCase() : p1.toLowerCase());
 /**
 * @license lucide-react v0.575.0 - ISC
 *
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
-var toPascalCase = (string$2) => {
-	const camelCase = toCamelCase(string$2);
+var toPascalCase = (string) => {
+	const camelCase = toCamelCase(string);
 	return camelCase.charAt(0).toUpperCase() + camelCase.slice(1);
 };
 /**
@@ -18947,22 +18948,15 @@ var Icon = (0, import_react.forwardRef)(({ color = "currentColor", size: size$3 
 * See the LICENSE file in the root directory of this source tree.
 */
 var createLucideIcon = (iconName, iconNode) => {
-	const Component = (0, import_react.forwardRef)(({ className, ...props }, ref) => (0, import_react.createElement)(Icon, {
+	const Component$1 = (0, import_react.forwardRef)(({ className, ...props }, ref) => (0, import_react.createElement)(Icon, {
 		ref,
 		iconNode,
 		className: mergeClasses(`lucide-${toKebabCase(toPascalCase(iconName))}`, `lucide-${iconName}`, className),
 		...props
 	}));
-	Component.displayName = toPascalCase(iconName);
-	return Component;
+	Component$1.displayName = toPascalCase(iconName);
+	return Component$1;
 };
-var ArrowRight = createLucideIcon("arrow-right", [["path", {
-	d: "M5 12h14",
-	key: "1ays0h"
-}], ["path", {
-	d: "m12 5 7 7-7 7",
-	key: "xquz4c"
-}]]);
 var Bell = createLucideIcon("bell", [["path", {
 	d: "M10.268 21a2 2 0 0 0 3.464 0",
 	key: "vwvbt9"
@@ -18970,28 +18964,6 @@ var Bell = createLucideIcon("bell", [["path", {
 	d: "M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326",
 	key: "11g9vi"
 }]]);
-var Calendar = createLucideIcon("calendar", [
-	["path", {
-		d: "M8 2v4",
-		key: "1cmpym"
-	}],
-	["path", {
-		d: "M16 2v4",
-		key: "4m81vk"
-	}],
-	["rect", {
-		width: "18",
-		height: "18",
-		x: "3",
-		y: "4",
-		rx: "2",
-		key: "1hopcy"
-	}],
-	["path", {
-		d: "M3 10h18",
-		key: "8toen8"
-	}]
-]);
 var Check = createLucideIcon("check", [["path", {
 	d: "M20 6 9 17l-5-5",
 	key: "1gmf2c"
@@ -19000,28 +18972,6 @@ var ChevronRight = createLucideIcon("chevron-right", [["path", {
 	d: "m9 18 6-6-6-6",
 	key: "mthhwq"
 }]]);
-var CircleAlert = createLucideIcon("circle-alert", [
-	["circle", {
-		cx: "12",
-		cy: "12",
-		r: "10",
-		key: "1mglay"
-	}],
-	["line", {
-		x1: "12",
-		x2: "12",
-		y1: "8",
-		y2: "12",
-		key: "1pkeuh"
-	}],
-	["line", {
-		x1: "12",
-		x2: "12.01",
-		y1: "16",
-		y2: "16",
-		key: "4dfq90"
-	}]
-]);
 var Circle = createLucideIcon("circle", [["circle", {
 	cx: "12",
 	cy: "12",
@@ -19037,48 +18987,6 @@ var Compass = createLucideIcon("compass", [["circle", {
 	d: "m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z",
 	key: "9ktpf1"
 }]]);
-var Ellipsis = createLucideIcon("ellipsis", [
-	["circle", {
-		cx: "12",
-		cy: "12",
-		r: "1",
-		key: "41hilf"
-	}],
-	["circle", {
-		cx: "19",
-		cy: "12",
-		r: "1",
-		key: "1wjl8i"
-	}],
-	["circle", {
-		cx: "5",
-		cy: "12",
-		r: "1",
-		key: "1pcz8c"
-	}]
-]);
-var FileText = createLucideIcon("file-text", [
-	["path", {
-		d: "M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z",
-		key: "1oefj6"
-	}],
-	["path", {
-		d: "M14 2v5a1 1 0 0 0 1 1h5",
-		key: "wfsgrz"
-	}],
-	["path", {
-		d: "M10 9H8",
-		key: "b1mrlr"
-	}],
-	["path", {
-		d: "M16 13H8",
-		key: "t4e002"
-	}],
-	["path", {
-		d: "M16 17H8",
-		key: "z1uh3a"
-	}]
-]);
 var LayoutDashboard = createLucideIcon("layout-dashboard", [
 	["rect", {
 		width: "7",
@@ -19113,28 +19021,10 @@ var LayoutDashboard = createLucideIcon("layout-dashboard", [
 		key: "ldoo1y"
 	}]
 ]);
-var ListChecks = createLucideIcon("list-checks", [
-	["path", {
-		d: "M13 5h8",
-		key: "a7qcls"
-	}],
-	["path", {
-		d: "M13 12h8",
-		key: "h98zly"
-	}],
-	["path", {
-		d: "M13 19h8",
-		key: "c3s6r1"
-	}],
-	["path", {
-		d: "m3 17 2 2 4-4",
-		key: "1jhpwq"
-	}],
-	["path", {
-		d: "m3 7 2 2 4-4",
-		key: "1obspn"
-	}]
-]);
+var LoaderCircle = createLucideIcon("loader-circle", [["path", {
+	d: "M21 12a9 9 0 1 1-6.219-8.56",
+	key: "13zald"
+}]]);
 var LogOut = createLucideIcon("log-out", [
 	["path", {
 		d: "m16 17 5-5-5-5",
@@ -19149,37 +19039,6 @@ var LogOut = createLucideIcon("log-out", [
 		key: "1uf3rs"
 	}]
 ]);
-var MapPinOff = createLucideIcon("map-pin-off", [
-	["path", {
-		d: "M12.75 7.09a3 3 0 0 1 2.16 2.16",
-		key: "1d4wjd"
-	}],
-	["path", {
-		d: "M17.072 17.072c-1.634 2.17-3.527 3.912-4.471 4.727a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 1.432-4.568",
-		key: "12yil7"
-	}],
-	["path", {
-		d: "m2 2 20 20",
-		key: "1ooewy"
-	}],
-	["path", {
-		d: "M8.475 2.818A8 8 0 0 1 20 10c0 1.183-.31 2.377-.81 3.533",
-		key: "lhrkcz"
-	}],
-	["path", {
-		d: "M9.13 9.13a3 3 0 0 0 3.74 3.74",
-		key: "13wojd"
-	}]
-]);
-var MapPin = createLucideIcon("map-pin", [["path", {
-	d: "M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0",
-	key: "1r0f0z"
-}], ["circle", {
-	cx: "12",
-	cy: "10",
-	r: "3",
-	key: "ilqhr7"
-}]]);
 var Map$1 = createLucideIcon("map", [
 	["path", {
 		d: "M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z",
@@ -19209,22 +19068,6 @@ var PanelLeft = createLucideIcon("panel-left", [["rect", {
 	d: "M9 3v18",
 	key: "fh3hqa"
 }]]);
-var Plus = createLucideIcon("plus", [["path", {
-	d: "M5 12h14",
-	key: "1ays0h"
-}], ["path", {
-	d: "M12 5v14",
-	key: "s699le"
-}]]);
-var Settings = createLucideIcon("settings", [["path", {
-	d: "M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915",
-	key: "1i5ecw"
-}], ["circle", {
-	cx: "12",
-	cy: "12",
-	r: "3",
-	key: "1v7zrd"
-}]]);
 var ShieldAlert = createLucideIcon("shield-alert", [
 	["path", {
 		d: "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z",
@@ -19239,13 +19082,6 @@ var ShieldAlert = createLucideIcon("shield-alert", [
 		key: "1drbdi"
 	}]
 ]);
-var ShieldCheck = createLucideIcon("shield-check", [["path", {
-	d: "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z",
-	key: "oel41y"
-}], ["path", {
-	d: "m9 12 2 2 4-4",
-	key: "dzmm74"
-}]]);
 var Sun = createLucideIcon("sun", [
 	["circle", {
 		cx: "12",
@@ -19286,23 +19122,6 @@ var Sun = createLucideIcon("sun", [
 		key: "1shlcs"
 	}]
 ]);
-var Tag = createLucideIcon("tag", [["path", {
-	d: "M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z",
-	key: "vktsd0"
-}], ["circle", {
-	cx: "7.5",
-	cy: "7.5",
-	r: ".5",
-	fill: "currentColor",
-	key: "kqv944"
-}]]);
-var TrendingUp = createLucideIcon("trending-up", [["path", {
-	d: "M16 7h6v6",
-	key: "box55l"
-}], ["path", {
-	d: "m22 7-8.5 8.5-5-5L2 17",
-	key: "1t1m79"
-}]]);
 var TriangleAlert = createLucideIcon("triangle-alert", [
 	["path", {
 		d: "m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3",
@@ -19317,33 +19136,6 @@ var TriangleAlert = createLucideIcon("triangle-alert", [
 		key: "p32p05"
 	}]
 ]);
-var Users = createLucideIcon("users", [
-	["path", {
-		d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2",
-		key: "1yyitq"
-	}],
-	["path", {
-		d: "M16 3.128a4 4 0 0 1 0 7.744",
-		key: "16gr8j"
-	}],
-	["path", {
-		d: "M22 21v-2a4 4 0 0 0-3-3.87",
-		key: "kshegd"
-	}],
-	["circle", {
-		cx: "9",
-		cy: "7",
-		r: "4",
-		key: "nufk8"
-	}]
-]);
-var Wallet = createLucideIcon("wallet", [["path", {
-	d: "M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1",
-	key: "18etb6"
-}], ["path", {
-	d: "M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4",
-	key: "xoc0q4"
-}]]);
 var Wrench = createLucideIcon("wrench", [["path", {
 	d: "M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z",
 	key: "1ngwbx"
@@ -19356,9 +19148,9 @@ var X = createLucideIcon("x", [["path", {
 	key: "d8bk6v"
 }]]);
 var CLASS_PART_SEPARATOR = "-";
-var createClassGroupUtils = (config$1) => {
-	const classMap = createClassMap(config$1);
-	const { conflictingClassGroups, conflictingClassGroupModifiers } = config$1;
+var createClassGroupUtils = (config) => {
+	const classMap = createClassMap(config);
+	const { conflictingClassGroups, conflictingClassGroupModifiers } = config;
 	const getClassGroupId = (className) => {
 		const classParts = className.split(CLASS_PART_SEPARATOR);
 		if (classParts[0] === "" && classParts.length !== 1) classParts.shift();
@@ -19392,13 +19184,13 @@ var getGroupIdForArbitraryProperty = (className) => {
 		if (property) return "arbitrary.." + property;
 	}
 };
-var createClassMap = (config$1) => {
-	const { theme, prefix } = config$1;
+var createClassMap = (config) => {
+	const { theme, prefix } = config;
 	const classMap = {
 		nextPart: /* @__PURE__ */ new Map(),
 		validators: []
 	};
-	getPrefixedClassGroupEntries(Object.entries(config$1.classGroups), prefix).forEach(([classGroupId, classGroup]) => {
+	getPrefixedClassGroupEntries(Object.entries(config.classGroups), prefix).forEach(([classGroupId, classGroup]) => {
 		processClassesRecursively(classGroup, classMap, classGroupId, theme);
 	});
 	return classMap;
@@ -19481,8 +19273,8 @@ var createLruCache = (maxCacheSize) => {
 	};
 };
 var IMPORTANT_MODIFIER = "!";
-var createParseClassName = (config$1) => {
-	const { separator, experimentalParseClassName } = config$1;
+var createParseClassName = (config) => {
+	const { separator, experimentalParseClassName } = config;
 	const isSeparatorSingleCharacter = separator.length === 1;
 	const firstSeparatorCharacter = separator[0];
 	const separatorLength = separator.length;
@@ -19535,10 +19327,10 @@ var sortModifiers = (modifiers) => {
 	sortedModifiers.push(...unsortedModifiers.sort());
 	return sortedModifiers;
 };
-var createConfigUtils = (config$1) => ({
-	cache: createLruCache(config$1.cacheSize),
-	parseClassName: createParseClassName(config$1),
-	...createClassGroupUtils(config$1)
+var createConfigUtils = (config) => ({
+	cache: createLruCache(config.cacheSize),
+	parseClassName: createParseClassName(config),
+	...createClassGroupUtils(config)
 });
 var SPLIT_CLASSES_REGEX = /\s+/;
 var mergeClassList = (classList, configUtils) => {
@@ -19569,8 +19361,8 @@ var mergeClassList = (classList, configUtils) => {
 		if (classGroupsInConflict.includes(classId)) continue;
 		classGroupsInConflict.push(classId);
 		const conflictGroups = getConflictingClassGroupIds(classGroupId, hasPostfixModifier);
-		for (let i$2 = 0; i$2 < conflictGroups.length; ++i$2) {
-			const group = conflictGroups[i$2];
+		for (let i = 0; i < conflictGroups.length; ++i) {
+			const group = conflictGroups[i];
 			classGroupsInConflict.push(modifierId + group);
 		}
 		result = originalClassName + (result.length > 0 ? " " + result : result);
@@ -19581,26 +19373,26 @@ function twJoin() {
 	let index$1 = 0;
 	let argument;
 	let resolvedValue;
-	let string$2 = "";
+	let string = "";
 	while (index$1 < arguments.length) if (argument = arguments[index$1++]) {
 		if (resolvedValue = toValue(argument)) {
-			string$2 && (string$2 += " ");
-			string$2 += resolvedValue;
+			string && (string += " ");
+			string += resolvedValue;
 		}
 	}
-	return string$2;
+	return string;
 }
 var toValue = (mix) => {
 	if (typeof mix === "string") return mix;
 	let resolvedValue;
-	let string$2 = "";
+	let string = "";
 	for (let k = 0; k < mix.length; k++) if (mix[k]) {
 		if (resolvedValue = toValue(mix[k])) {
-			string$2 && (string$2 += " ");
-			string$2 += resolvedValue;
+			string && (string += " ");
+			string += resolvedValue;
 		}
 	}
-	return string$2;
+	return string;
 };
 function createTailwindMerge(createConfigFirst, ...createConfigRest) {
 	let configUtils;
@@ -19642,12 +19434,12 @@ var lengthUnitRegex = /\d+(%|px|r?em|[sdl]?v([hwib]|min|max)|pt|pc|in|cm|mm|cap|
 var colorFunctionRegex = /^(rgba?|hsla?|hwb|(ok)?(lab|lch)|color-mix)\(.+\)$/;
 var shadowRegex = /^(inset_)?-?((\d+)?\.?(\d+)[a-z]+|0)_-?((\d+)?\.?(\d+)[a-z]+|0)/;
 var imageRegex = /^(url|image|image-set|cross-fade|element|(repeating-)?(linear|radial|conic)-gradient)\(.+\)$/;
-var isLength = (value) => isNumber$1(value) || stringLengths.has(value) || fractionRegex.test(value);
+var isLength = (value) => isNumber(value) || stringLengths.has(value) || fractionRegex.test(value);
 var isArbitraryLength = (value) => getIsArbitraryValue(value, "length", isLengthOnly);
-var isNumber$1 = (value) => Boolean(value) && !Number.isNaN(Number(value));
-var isArbitraryNumber = (value) => getIsArbitraryValue(value, "number", isNumber$1);
+var isNumber = (value) => Boolean(value) && !Number.isNaN(Number(value));
+var isArbitraryNumber = (value) => getIsArbitraryValue(value, "number", isNumber);
 var isInteger = (value) => Boolean(value) && Number.isInteger(Number(value));
-var isPercent = (value) => value.endsWith("%") && isNumber$1(value.slice(0, -1));
+var isPercent = (value) => value.endsWith("%") && isNumber(value.slice(0, -1));
 var isArbitraryValue = (value) => arbitraryValueRegex.test(value);
 var isTshirtSize = (value) => tshirtUnitRegex.test(value);
 var sizeLabels = /* @__PURE__ */ new Set([
@@ -19724,7 +19516,7 @@ var getDefaultConfig = () => {
 	];
 	const getNumberWithAutoAndArbitrary = () => [
 		"auto",
-		isNumber$1,
+		isNumber,
 		isArbitraryValue
 	];
 	const getPositions = () => [
@@ -19787,7 +19579,7 @@ var getDefaultConfig = () => {
 		"right",
 		"column"
 	];
-	const getNumberAndArbitrary = () => [isNumber$1, isArbitraryValue];
+	const getNumberAndArbitrary = () => [isNumber, isArbitraryValue];
 	return {
 		cacheSize: 500,
 		separator: ":",
@@ -20176,7 +19968,7 @@ var getDefaultConfig = () => {
 			] }],
 			"line-clamp": [{ "line-clamp": [
 				"none",
-				isNumber$1,
+				isNumber,
 				isArbitraryNumber
 			] }],
 			leading: [{ leading: [
@@ -20807,25 +20599,25 @@ function Toaster() {
 		}, id);
 	}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ToastViewport, {})] });
 }
-var M = (e, i$2, s$2, u, m, a$1, l, h) => {
+var M = (e, i, s, u, m, a, l, h) => {
 	let d = document.documentElement, w = ["light", "dark"];
-	function p(n$1) {
+	function p(n) {
 		(Array.isArray(e) ? e : [e]).forEach((y) => {
-			let k = y === "class", S = k && a$1 ? m.map((f) => a$1[f] || f) : m;
-			k ? (d.classList.remove(...S), d.classList.add(a$1 && a$1[n$1] ? a$1[n$1] : n$1)) : d.setAttribute(y, n$1);
-		}), R(n$1);
+			let k = y === "class", S = k && a ? m.map((f) => a[f] || f) : m;
+			k ? (d.classList.remove(...S), d.classList.add(a && a[n] ? a[n] : n)) : d.setAttribute(y, n);
+		}), R(n);
 	}
-	function R(n$1) {
-		h && w.includes(n$1) && (d.style.colorScheme = n$1);
+	function R(n) {
+		h && w.includes(n) && (d.style.colorScheme = n);
 	}
 	function c() {
 		return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 	}
 	if (u) p(u);
 	else try {
-		let n$1 = localStorage.getItem(i$2) || s$2;
-		p(l && n$1 === "system" ? c() : n$1);
-	} catch (n$1) {}
+		let n = localStorage.getItem(i) || s;
+		p(l && n === "system" ? c() : n);
+	} catch (n) {}
 }, x = import_react.createContext(void 0), U = {
 	setTheme: (e) => {},
 	themes: []
@@ -20833,11 +20625,11 @@ var M = (e, i$2, s$2, u, m, a$1, l, h) => {
 	var e;
 	return (e = import_react.useContext(x)) != null ? e : U;
 };
-import_react.memo(({ forcedTheme: e, storageKey: i$2, attribute: s$2, enableSystem: u, enableColorScheme: m, defaultTheme: a$1, value: l, themes: h, nonce: d, scriptProps: w }) => {
+import_react.memo(({ forcedTheme: e, storageKey: i, attribute: s, enableSystem: u, enableColorScheme: m, defaultTheme: a, value: l, themes: h, nonce: d, scriptProps: w }) => {
 	let p = JSON.stringify([
-		s$2,
-		i$2,
-		a$1,
+		s,
+		i,
+		a,
 		e,
 		h,
 		l,
@@ -20874,9 +20666,9 @@ var Loader = ({ visible, className }) => {
 	return /* @__PURE__ */ import_react.createElement("div", {
 		className: ["sonner-loading-wrapper", className].filter(Boolean).join(" "),
 		"data-visible": visible
-	}, /* @__PURE__ */ import_react.createElement("div", { className: "sonner-spinner" }, bars.map((_$1, i$2) => /* @__PURE__ */ import_react.createElement("div", {
+	}, /* @__PURE__ */ import_react.createElement("div", { className: "sonner-spinner" }, bars.map((_$1, i) => /* @__PURE__ */ import_react.createElement("div", {
 		className: "sonner-loading-bar",
-		key: `spinner-bar-${i$2}`
+		key: `spinner-bar-${i}`
 	}))));
 };
 var SuccessIcon = /* @__PURE__ */ import_react.createElement("svg", {
@@ -20974,7 +20766,7 @@ var Observer = class {
 		};
 		this.create = (data) => {
 			var _data_id;
-			const { message: message$1, ...rest } = data;
+			const { message, ...rest } = data;
 			const id = typeof (data == null ? void 0 : data.id) === "number" || ((_data_id = data.id) == null ? void 0 : _data_id.length) > 0 ? data.id : toastsCounter++;
 			const alreadyExists = this.toasts.find((toast$2) => {
 				return toast$2.id === id;
@@ -20987,20 +20779,20 @@ var Observer = class {
 						...toast$2,
 						...data,
 						id,
-						title: message$1
+						title: message
 					});
 					return {
 						...toast$2,
 						...data,
 						id,
 						dismissible,
-						title: message$1
+						title: message
 					};
 				}
 				return toast$2;
 			});
 			else this.addToast({
-				title: message$1,
+				title: message,
 				...rest,
 				dismissible,
 				id
@@ -21022,45 +20814,45 @@ var Observer = class {
 			});
 			return id;
 		};
-		this.message = (message$1, data) => {
+		this.message = (message, data) => {
 			return this.create({
 				...data,
-				message: message$1
+				message
 			});
 		};
-		this.error = (message$1, data) => {
+		this.error = (message, data) => {
 			return this.create({
 				...data,
-				message: message$1,
+				message,
 				type: "error"
 			});
 		};
-		this.success = (message$1, data) => {
+		this.success = (message, data) => {
 			return this.create({
 				...data,
 				type: "success",
-				message: message$1
+				message
 			});
 		};
-		this.info = (message$1, data) => {
+		this.info = (message, data) => {
 			return this.create({
 				...data,
 				type: "info",
-				message: message$1
+				message
 			});
 		};
-		this.warning = (message$1, data) => {
+		this.warning = (message, data) => {
 			return this.create({
 				...data,
 				type: "warning",
-				message: message$1
+				message
 			});
 		};
-		this.loading = (message$1, data) => {
+		this.loading = (message, data) => {
 			return this.create({
 				...data,
 				type: "loading",
-				message: message$1
+				message
 			});
 		};
 		this.promise = (promise, data) => {
@@ -21144,10 +20936,10 @@ var Observer = class {
 			if (typeof id !== "string" && typeof id !== "number") return { unwrap };
 			else return Object.assign(id, { unwrap });
 		};
-		this.custom = (jsx$24, data) => {
+		this.custom = (jsx$22, data) => {
 			const id = (data == null ? void 0 : data.id) || toastsCounter++;
 			this.create({
-				jsx: jsx$24(id),
+				jsx: jsx$22(id),
 				id,
 				...data
 			});
@@ -21162,10 +20954,10 @@ var Observer = class {
 	}
 };
 var ToastState = new Observer();
-var toastFunction = (message$1, data) => {
+var toastFunction = (message, data) => {
 	const id = (data == null ? void 0 : data.id) || toastsCounter++;
 	ToastState.addToast({
-		title: message$1,
+		title: message,
 		...data,
 		id
 	});
@@ -21239,7 +21031,7 @@ var Toast = (props) => {
 		var _toast_closeButton;
 		return (_toast_closeButton = toast$2.closeButton) != null ? _toast_closeButton : closeButtonFromToaster;
 	}, [toast$2.closeButton, closeButtonFromToaster]);
-	const duration$2 = import_react.useMemo(() => toast$2.duration || durationFromToaster || TOAST_LIFETIME, [toast$2.duration, durationFromToaster]);
+	const duration = import_react.useMemo(() => toast$2.duration || durationFromToaster || TOAST_LIFETIME, [toast$2.duration, durationFromToaster]);
 	const closeTimerStartTimeRef = import_react.useRef(0);
 	const offset$3 = import_react.useRef(0);
 	const lastCloseTimerStartTimeRef = import_react.useRef(0);
@@ -21256,8 +21048,8 @@ var Toast = (props) => {
 	const disabled = toastType === "loading";
 	offset$3.current = import_react.useMemo(() => heightIndex * gap + toastsHeightBefore, [heightIndex, toastsHeightBefore]);
 	import_react.useEffect(() => {
-		remainingTime.current = duration$2;
-	}, [duration$2]);
+		remainingTime.current = duration;
+	}, [duration]);
 	import_react.useEffect(() => {
 		setMounted(true);
 	}, []);
@@ -21560,7 +21352,7 @@ function assignOffset(defaultOffset, mobileOffset) {
 	return styles;
 }
 var Toaster$2 = /* @__PURE__ */ import_react.forwardRef(function Toaster$3(props, ref) {
-	const { id, invert, position = "bottom-right", hotkey = ["altKey", "KeyT"], expand, closeButton, className, offset: offset$3, mobileOffset, theme = "light", richColors, duration: duration$2, style, visibleToasts = VISIBLE_TOASTS_AMOUNT, toastOptions, dir = getDocumentDirection(), gap = GAP, icons, containerAriaLabel = "Notifications" } = props;
+	const { id, invert, position = "bottom-right", hotkey = ["altKey", "KeyT"], expand, closeButton, className, offset: offset$3, mobileOffset, theme = "light", richColors, duration, style, visibleToasts = VISIBLE_TOASTS_AMOUNT, toastOptions, dir = getDocumentDirection(), gap = GAP, icons, containerAriaLabel = "Notifications" } = props;
 	const [toasts, setToasts] = import_react.useState([]);
 	const filteredToasts = import_react.useMemo(() => {
 		if (id) return toasts.filter((toast$2) => toast$2.toasterId === id);
@@ -21588,17 +21380,17 @@ var Toaster$2 = /* @__PURE__ */ import_react.forwardRef(function Toaster$3(props
 		return ToastState.subscribe((toast$2) => {
 			if (toast$2.dismiss) {
 				requestAnimationFrame(() => {
-					setToasts((toasts$1) => toasts$1.map((t$1) => t$1.id === toast$2.id ? {
-						...t$1,
+					setToasts((toasts$1) => toasts$1.map((t) => t.id === toast$2.id ? {
+						...t,
 						delete: true
-					} : t$1));
+					} : t));
 				});
 				return;
 			}
 			setTimeout(() => {
 				import_react_dom$2.flushSync(() => {
 					setToasts((toasts$1) => {
-						const indexOfExistingToast = toasts$1.findIndex((t$1) => t$1.id === toast$2.id);
+						const indexOfExistingToast = toasts$1.findIndex((t) => t.id === toast$2.id);
 						if (indexOfExistingToast !== -1) return [
 							...toasts$1.slice(0, indexOfExistingToast),
 							{
@@ -21727,7 +21519,7 @@ var Toaster$2 = /* @__PURE__ */ import_react.forwardRef(function Toaster$3(props
 				index: index$2,
 				toast: toast$2,
 				defaultRichColors: richColors,
-				duration: (_toastOptions_duration = toastOptions == null ? void 0 : toastOptions.duration) != null ? _toastOptions_duration : duration$2,
+				duration: (_toastOptions_duration = toastOptions == null ? void 0 : toastOptions.duration) != null ? _toastOptions_duration : duration,
 				className: toastOptions == null ? void 0 : toastOptions.className,
 				descriptionClassName: toastOptions == null ? void 0 : toastOptions.descriptionClassName,
 				invert,
@@ -21742,7 +21534,7 @@ var Toaster$2 = /* @__PURE__ */ import_react.forwardRef(function Toaster$3(props
 				actionButtonStyle: toastOptions == null ? void 0 : toastOptions.actionButtonStyle,
 				closeButtonAriaLabel: toastOptions == null ? void 0 : toastOptions.closeButtonAriaLabel,
 				removeToast,
-				toasts: filteredToasts.filter((t$1) => t$1.position == toast$2.position),
+				toasts: filteredToasts.filter((t) => t.position == toast$2.position),
 				heights: heights.filter((h) => h.position == toast$2.position),
 				setHeights,
 				expandByDefault: expand,
@@ -21993,8 +21785,8 @@ async function detectOverflow$1(state, options$1) {
 		right: (elementClientRect.right - clippingClientRect.right + paddingObject.right) / offsetScale.x
 	};
 }
-var computePosition$1 = async (reference, floating, config$1) => {
-	const { placement = "bottom", strategy = "absolute", middleware = [], platform: platform$1 } = config$1;
+var computePosition$1 = async (reference, floating, config) => {
+	const { placement = "bottom", strategy = "absolute", middleware = [], platform: platform$1 } = config;
 	const validMiddleware = middleware.filter(Boolean);
 	const rtl = await (platform$1.isRTL == null ? void 0 : platform$1.isRTL(floating));
 	let rects = await platform$1.getElementRects({
@@ -22006,9 +21798,9 @@ var computePosition$1 = async (reference, floating, config$1) => {
 	let statefulPlacement = placement;
 	let middlewareData = {};
 	let resetCount = 0;
-	for (let i$2 = 0; i$2 < validMiddleware.length; i$2++) {
+	for (let i = 0; i < validMiddleware.length; i++) {
 		var _platform$detectOverf;
-		const { name, fn } = validMiddleware[i$2];
+		const { name, fn } = validMiddleware[i];
 		const { x: nextX, y: nextY, data, reset } = await fn({
 			x: x$1,
 			y,
@@ -22046,7 +21838,7 @@ var computePosition$1 = async (reference, floating, config$1) => {
 				}) : reset.rects;
 				({x: x$1, y} = computeCoordsFromPlacement(rects, statefulPlacement, rtl));
 			}
-			i$2 = -1;
+			i = -1;
 		}
 	}
 	return {
@@ -22145,7 +21937,7 @@ var flip$2 = function(options$1) {
 						reset: { placement: nextPlacement }
 					};
 				}
-				let resetPlacement = (_overflowsData$filter = overflowsData.filter((d) => d.overflows[0] <= 0).sort((a$1, b$1) => a$1.overflows[1] - b$1.overflows[1])[0]) == null ? void 0 : _overflowsData$filter.placement;
+				let resetPlacement = (_overflowsData$filter = overflowsData.filter((d) => d.overflows[0] <= 0).sort((a, b$1) => a.overflows[1] - b$1.overflows[1])[0]) == null ? void 0 : _overflowsData$filter.placement;
 				if (!resetPlacement) switch (fallbackStrategy) {
 					case "bestFit": {
 						var _overflowsData$filter2;
@@ -22155,7 +21947,7 @@ var flip$2 = function(options$1) {
 								return currentSideAxis === initialSideAxis || currentSideAxis === "y";
 							}
 							return true;
-						}).map((d) => [d.placement, d.overflows.filter((overflow$1) => overflow$1 > 0).reduce((acc, overflow$1) => acc + overflow$1, 0)]).sort((a$1, b$1) => a$1[1] - b$1[1])[0]) == null ? void 0 : _overflowsData$filter2[0];
+						}).map((d) => [d.placement, d.overflows.filter((overflow$1) => overflow$1 > 0).reduce((acc, overflow$1) => acc + overflow$1, 0)]).sort((a, b$1) => a[1] - b$1[1])[0]) == null ? void 0 : _overflowsData$filter2[0];
 						if (placement$1) resetPlacement = placement$1;
 						break;
 					}
@@ -22440,7 +22232,7 @@ function isElement(value) {
 	if (!hasWindow()) return false;
 	return value instanceof Element || value instanceof getWindow(value).Element;
 }
-function isHTMLElement$1(value) {
+function isHTMLElement(value) {
 	if (!hasWindow()) return false;
 	return value instanceof HTMLElement || value instanceof getWindow(value).HTMLElement;
 }
@@ -22499,7 +22291,7 @@ function isContainingBlock(elementOrCss) {
 }
 function getContainingBlock(element) {
 	let currentNode = getParentNode(element);
-	while (isHTMLElement$1(currentNode) && !isLastTraversableNode(currentNode)) {
+	while (isHTMLElement(currentNode) && !isLastTraversableNode(currentNode)) {
 		if (isContainingBlock(currentNode)) return currentNode;
 		else if (isTopLayer(currentNode)) return null;
 		currentNode = getParentNode(currentNode);
@@ -22539,7 +22331,7 @@ function getParentNode(node) {
 function getNearestOverflowAncestor(node) {
 	const parentNode = getParentNode(node);
 	if (isLastTraversableNode(parentNode)) return node.ownerDocument ? node.ownerDocument.body : node.body;
-	if (isHTMLElement$1(parentNode) && isOverflowElement(parentNode)) return parentNode;
+	if (isHTMLElement(parentNode) && isOverflowElement(parentNode)) return parentNode;
 	return getNearestOverflowAncestor(parentNode);
 }
 function getOverflowAncestors(node, list, traverseIframes) {
@@ -22562,7 +22354,7 @@ function getCssDimensions(element) {
 	const css = getComputedStyle$1(element);
 	let width = parseFloat(css.width) || 0;
 	let height = parseFloat(css.height) || 0;
-	const hasOffset = isHTMLElement$1(element);
+	const hasOffset = isHTMLElement(element);
 	const offsetWidth = hasOffset ? element.offsetWidth : width;
 	const offsetHeight = hasOffset ? element.offsetHeight : height;
 	const shouldFallback = round(width) !== offsetWidth || round(height) !== offsetHeight;
@@ -22581,7 +22373,7 @@ function unwrapElement(element) {
 }
 function getScale(element) {
 	const domElement = unwrapElement(element);
-	if (!isHTMLElement$1(domElement)) return createCoords(1);
+	if (!isHTMLElement(domElement)) return createCoords(1);
 	const rect = domElement.getBoundingClientRect();
 	const { width, height, $ } = getCssDimensions(domElement);
 	let x$1 = ($ ? round(rect.width) : rect.width) / width;
@@ -22673,10 +22465,10 @@ function convertOffsetParentRelativeRectToViewportRelativeRect(_ref) {
 	};
 	let scale = createCoords(1);
 	const offsets = createCoords(0);
-	const isOffsetParentAnElement = isHTMLElement$1(offsetParent);
+	const isOffsetParentAnElement = isHTMLElement(offsetParent);
 	if (isOffsetParentAnElement || !isOffsetParentAnElement && !isFixed) {
 		if (getNodeName(offsetParent) !== "body" || isOverflowElement(documentElement)) scroll = getNodeScroll(offsetParent);
-		if (isHTMLElement$1(offsetParent)) {
+		if (isHTMLElement(offsetParent)) {
 			const offsetRect = getBoundingClientRect(offsetParent);
 			scale = getScale(offsetParent);
 			offsets.x = offsetRect.x + offsetParent.clientLeft;
@@ -22749,7 +22541,7 @@ function getInnerBoundingClientRect(element, strategy) {
 	const clientRect = getBoundingClientRect(element, true, strategy === "fixed");
 	const top = clientRect.top + element.clientTop;
 	const left = clientRect.left + element.clientLeft;
-	const scale = isHTMLElement$1(element) ? getScale(element) : createCoords(1);
+	const scale = isHTMLElement(element) ? getScale(element) : createCoords(1);
 	return {
 		width: element.clientWidth * scale.x,
 		height: element.clientHeight * scale.y,
@@ -22823,7 +22615,7 @@ function getDimensions(element) {
 	};
 }
 function getRectRelativeToOffsetParent(element, offsetParent, strategy) {
-	const isOffsetParentAnElement = isHTMLElement$1(offsetParent);
+	const isOffsetParentAnElement = isHTMLElement(offsetParent);
 	const documentElement = getDocumentElement(offsetParent);
 	const isFixed = strategy === "fixed";
 	const rect = getBoundingClientRect(element, true, isFixed, offsetParent);
@@ -22856,7 +22648,7 @@ function isStaticPositioned(element) {
 	return getComputedStyle$1(element).position === "static";
 }
 function getTrueOffsetParent(element, polyfill) {
-	if (!isHTMLElement$1(element) || getComputedStyle$1(element).position === "fixed") return null;
+	if (!isHTMLElement(element) || getComputedStyle$1(element).position === "fixed") return null;
 	if (polyfill) return polyfill(element);
 	let rawOffsetParent = element.offsetParent;
 	if (getDocumentElement(element) === rawOffsetParent) rawOffsetParent = rawOffsetParent.ownerDocument.body;
@@ -22865,7 +22657,7 @@ function getTrueOffsetParent(element, polyfill) {
 function getOffsetParent(element, polyfill) {
 	const win = getWindow(element);
 	if (isTopLayer(element)) return win;
-	if (!isHTMLElement$1(element)) {
+	if (!isHTMLElement(element)) {
 		let svgOffsetParent = getParentNode(element);
 		while (svgOffsetParent && !isLastTraversableNode(svgOffsetParent)) {
 			if (isElement(svgOffsetParent) && !isStaticPositioned(svgOffsetParent)) return svgOffsetParent;
@@ -22907,8 +22699,8 @@ var platform = {
 	isElement,
 	isRTL
 };
-function rectsAreEqual(a$1, b$1) {
-	return a$1.x === b$1.x && a$1.y === b$1.y && a$1.width === b$1.width && a$1.height === b$1.height;
+function rectsAreEqual(a, b$1) {
+	return a.x === b$1.x && a.y === b$1.y && a.width === b$1.width && a.height === b$1.height;
 }
 function observeMove(element, onMove) {
 	let io = null;
@@ -23036,32 +22828,32 @@ var computePosition = (reference, floating, options$1) => {
 };
 var import_react_dom$1 = /* @__PURE__ */ __toESM(require_react_dom(), 1);
 var index = typeof document !== "undefined" ? import_react.useLayoutEffect : function noop() {};
-function deepEqual$1(a$1, b$1) {
-	if (a$1 === b$1) return true;
-	if (typeof a$1 !== typeof b$1) return false;
-	if (typeof a$1 === "function" && a$1.toString() === b$1.toString()) return true;
+function deepEqual(a, b$1) {
+	if (a === b$1) return true;
+	if (typeof a !== typeof b$1) return false;
+	if (typeof a === "function" && a.toString() === b$1.toString()) return true;
 	let length;
-	let i$2;
+	let i;
 	let keys;
-	if (a$1 && b$1 && typeof a$1 === "object") {
-		if (Array.isArray(a$1)) {
-			length = a$1.length;
+	if (a && b$1 && typeof a === "object") {
+		if (Array.isArray(a)) {
+			length = a.length;
 			if (length !== b$1.length) return false;
-			for (i$2 = length; i$2-- !== 0;) if (!deepEqual$1(a$1[i$2], b$1[i$2])) return false;
+			for (i = length; i-- !== 0;) if (!deepEqual(a[i], b$1[i])) return false;
 			return true;
 		}
-		keys = Object.keys(a$1);
+		keys = Object.keys(a);
 		length = keys.length;
 		if (length !== Object.keys(b$1).length) return false;
-		for (i$2 = length; i$2-- !== 0;) if (!{}.hasOwnProperty.call(b$1, keys[i$2])) return false;
-		for (i$2 = length; i$2-- !== 0;) {
-			const key = keys[i$2];
-			if (key === "_owner" && a$1.$$typeof) continue;
-			if (!deepEqual$1(a$1[key], b$1[key])) return false;
+		for (i = length; i-- !== 0;) if (!{}.hasOwnProperty.call(b$1, keys[i])) return false;
+		for (i = length; i-- !== 0;) {
+			const key = keys[i];
+			if (key === "_owner" && a.$$typeof) continue;
+			if (!deepEqual(a[key], b$1[key])) return false;
 		}
 		return true;
 	}
-	return a$1 !== a$1 && b$1 !== b$1;
+	return a !== a && b$1 !== b$1;
 }
 function getDPR(element) {
 	if (typeof window === "undefined") return 1;
@@ -23080,7 +22872,7 @@ function useLatestRef(value) {
 }
 function useFloating(options$1) {
 	if (options$1 === void 0) options$1 = {};
-	const { placement = "bottom", strategy = "absolute", middleware = [], platform: platform$1, elements: { reference: externalReference, floating: externalFloating } = {}, transform: transform$1 = true, whileElementsMounted, open } = options$1;
+	const { placement = "bottom", strategy = "absolute", middleware = [], platform: platform$1, elements: { reference: externalReference, floating: externalFloating } = {}, transform = true, whileElementsMounted, open } = options$1;
 	const [data, setData] = import_react.useState({
 		x: 0,
 		y: 0,
@@ -23090,7 +22882,7 @@ function useFloating(options$1) {
 		isPositioned: false
 	});
 	const [latestMiddleware, setLatestMiddleware] = import_react.useState(middleware);
-	if (!deepEqual$1(latestMiddleware, middleware)) setLatestMiddleware(middleware);
+	if (!deepEqual(latestMiddleware, middleware)) setLatestMiddleware(middleware);
 	const [_reference, _setReference] = import_react.useState(null);
 	const [_floating, _setFloating] = import_react.useState(null);
 	const setReference = import_react.useCallback((node) => {
@@ -23116,18 +22908,18 @@ function useFloating(options$1) {
 	const openRef = useLatestRef(open);
 	const update = import_react.useCallback(() => {
 		if (!referenceRef.current || !floatingRef.current) return;
-		const config$1 = {
+		const config = {
 			placement,
 			strategy,
 			middleware: latestMiddleware
 		};
-		if (platformRef.current) config$1.platform = platformRef.current;
-		computePosition(referenceRef.current, floatingRef.current, config$1).then((data$1) => {
+		if (platformRef.current) config.platform = platformRef.current;
+		computePosition(referenceRef.current, floatingRef.current, config).then((data$1) => {
 			const fullData = {
 				...data$1,
 				isPositioned: openRef.current !== false
 			};
-			if (isMountedRef.current && !deepEqual$1(dataRef.current, fullData)) {
+			if (isMountedRef.current && !deepEqual(dataRef.current, fullData)) {
 				dataRef.current = fullData;
 				import_react_dom$1.flushSync(() => {
 					setData(fullData);
@@ -23190,7 +22982,7 @@ function useFloating(options$1) {
 		if (!elements.floating) return initialStyles;
 		const x$1 = roundByDPR(elements.floating, data.x);
 		const y = roundByDPR(elements.floating, data.y);
-		if (transform$1) return {
+		if (transform) return {
 			...initialStyles,
 			transform: "translate(" + x$1 + "px, " + y + "px)",
 			...getDPR(elements.floating) >= 1.5 && { willChange: "transform" }
@@ -23202,7 +22994,7 @@ function useFloating(options$1) {
 		};
 	}, [
 		strategy,
-		transform$1,
+		transform,
 		elements.floating,
 		data.x,
 		data.y
@@ -23273,7 +23065,7 @@ var arrow = (options$1, deps) => ({
 	...arrow$1$1(options$1),
 	options: [options$1, deps]
 });
-var NAME$2 = "Arrow";
+var NAME$1 = "Arrow";
 var Arrow$1 = import_react.forwardRef((props, forwardedRef) => {
 	const { children, width = 10, height = 5, ...arrowProps } = props;
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Primitive$1.svg, {
@@ -23286,8 +23078,8 @@ var Arrow$1 = import_react.forwardRef((props, forwardedRef) => {
 		children: props.asChild ? children : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("polygon", { points: "0,0 30,0 15,10" })
 	});
 });
-Arrow$1.displayName = NAME$2;
-var Root$6 = Arrow$1;
+Arrow$1.displayName = NAME$1;
+var Root$4 = Arrow$1;
 function useSize(element) {
 	const [size$3, setSize] = import_react.useState(void 0);
 	useLayoutEffect2(() => {
@@ -23504,7 +23296,7 @@ var PopperArrow = import_react.forwardRef(function PopperArrow2(props, forwarded
 			}[contentContext.placedSide],
 			visibility: contentContext.shouldHideArrow ? "hidden" : void 0
 		},
-		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root$6, {
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root$4, {
 			...arrowProps,
 			ref: forwardedRef,
 			style: {
@@ -23886,7 +23678,7 @@ var TooltipContentImpl = import_react.forwardRef((props, forwardedRef) => {
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Slottable, { children }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(VisuallyHiddenContentContextProvider, {
 				scope: __scopeTooltip,
 				isInside: true,
-				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root$7, {
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root$5, {
 					id: context.contentId,
 					role: "tooltip",
 					children: ariaLabel || children
@@ -23986,8 +23778,8 @@ function getPointsFromRect(rect) {
 function isPointInPolygon$1(point, polygon) {
 	const { x: x$1, y } = point;
 	let inside = false;
-	for (let i$2 = 0, j = polygon.length - 1; i$2 < polygon.length; j = i$2++) {
-		const ii = polygon[i$2];
+	for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
+		const ii = polygon[i];
 		const jj = polygon[j];
 		const xi = ii.x;
 		const yi = ii.y;
@@ -23999,11 +23791,11 @@ function isPointInPolygon$1(point, polygon) {
 }
 function getHull(points) {
 	const newPoints = points.slice();
-	newPoints.sort((a$1, b$1) => {
-		if (a$1.x < b$1.x) return -1;
-		else if (a$1.x > b$1.x) return 1;
-		else if (a$1.y < b$1.y) return -1;
-		else if (a$1.y > b$1.y) return 1;
+	newPoints.sort((a, b$1) => {
+		if (a.x < b$1.x) return -1;
+		else if (a.x > b$1.x) return 1;
+		else if (a.y < b$1.y) return -1;
+		else if (a.y > b$1.y) return 1;
 		else return 0;
 	});
 	return getHullPresorted(newPoints);
@@ -24011,24 +23803,24 @@ function getHull(points) {
 function getHullPresorted(points) {
 	if (points.length <= 1) return points.slice();
 	const upperHull = [];
-	for (let i$2 = 0; i$2 < points.length; i$2++) {
-		const p = points[i$2];
+	for (let i = 0; i < points.length; i++) {
+		const p = points[i];
 		while (upperHull.length >= 2) {
 			const q = upperHull[upperHull.length - 1];
-			const r$2 = upperHull[upperHull.length - 2];
-			if ((q.x - r$2.x) * (p.y - r$2.y) >= (q.y - r$2.y) * (p.x - r$2.x)) upperHull.pop();
+			const r$1 = upperHull[upperHull.length - 2];
+			if ((q.x - r$1.x) * (p.y - r$1.y) >= (q.y - r$1.y) * (p.x - r$1.x)) upperHull.pop();
 			else break;
 		}
 		upperHull.push(p);
 	}
 	upperHull.pop();
 	const lowerHull = [];
-	for (let i$2 = points.length - 1; i$2 >= 0; i$2--) {
-		const p = points[i$2];
+	for (let i = points.length - 1; i >= 0; i--) {
+		const p = points[i];
 		while (lowerHull.length >= 2) {
 			const q = lowerHull[lowerHull.length - 1];
-			const r$2 = lowerHull[lowerHull.length - 2];
-			if ((q.x - r$2.x) * (p.y - r$2.y) >= (q.y - r$2.y) * (p.x - r$2.x)) lowerHull.pop();
+			const r$1 = lowerHull[lowerHull.length - 2];
+			if ((q.x - r$1.x) * (p.y - r$1.y) >= (q.y - r$1.y) * (p.x - r$1.x)) lowerHull.pop();
 			else break;
 		}
 		lowerHull.push(p);
@@ -24127,12 +23919,8 @@ function AuthProvider({ children }) {
 		if (!user) return;
 		setUser({
 			...user,
-			name: data.fullName,
+			...data,
 			status: "active"
-		});
-		toast({
-			title: "Perfil atualizado",
-			description: "Seu perfil foi ativado com sucesso."
 		});
 	};
 	return import_react.createElement(AuthContext.Provider, { value: {
@@ -24243,13 +24031,18 @@ function useDataStore() {
 	return context;
 }
 function AuthGuard() {
-	const { isAuthenticated, user } = useAuthStore();
+	const { isAuthenticated } = useAuthStore();
 	const location = useLocation();
 	if (!isAuthenticated) return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Navigate, {
 		to: "/",
 		state: { from: location },
 		replace: true
 	});
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {});
+}
+function OnboardingGuard() {
+	const { user } = useAuthStore();
+	const location = useLocation();
 	if (user?.status === "pending_profile" && location.pathname !== "/onboarding") return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Navigate, {
 		to: "/onboarding",
 		replace: true
@@ -24258,7 +24051,11 @@ function AuthGuard() {
 		to: "/app/dashboard",
 		replace: true
 	});
-	if (location.pathname.startsWith("/admin") && user?.role !== 0) return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Navigate, {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {});
+}
+function AdminGuard() {
+	const { user } = useAuthStore();
+	if (user?.role !== 0) return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Navigate, {
 		to: "/app/dashboard",
 		replace: true
 	});
@@ -24596,8 +24393,8 @@ function createFocusScopesStack() {
 		}
 	};
 }
-function arrayRemove(array$1, item) {
-	const updatedArray = [...array$1];
+function arrayRemove(array, item) {
+	const updatedArray = [...array];
 	const index$1 = updatedArray.indexOf(item);
 	if (index$1 !== -1) updatedArray.splice(index$1, 1);
 	return updatedArray;
@@ -24782,10 +24579,10 @@ function focusFirst$1(candidates, preventScroll = false) {
 		if (document.activeElement !== PREVIOUSLY_FOCUSED_ELEMENT) return;
 	}
 }
-function wrapArray$1(array$1, startIndex) {
-	return array$1.map((_$1, index$1) => array$1[(startIndex + index$1) % array$1.length]);
+function wrapArray$1(array, startIndex) {
+	return array.map((_$1, index$1) => array[(startIndex + index$1) % array.length]);
 }
-var Root$5 = RovingFocusGroup;
+var Root$3 = RovingFocusGroup;
 var Item = RovingFocusGroupItem;
 var getDefaultParent = function(originalTarget) {
 	if (typeof document === "undefined") return null;
@@ -24877,28 +24674,28 @@ var hideOthers = function(originalTarget, parentNode, markerName) {
 	return applyAttributeToOthers(targets, activeParentNode, markerName, "aria-hidden");
 };
 var __assign = function() {
-	__assign = Object.assign || function __assign$1(t$1) {
-		for (var s$2, i$2 = 1, n$1 = arguments.length; i$2 < n$1; i$2++) {
-			s$2 = arguments[i$2];
-			for (var p in s$2) if (Object.prototype.hasOwnProperty.call(s$2, p)) t$1[p] = s$2[p];
+	__assign = Object.assign || function __assign$1(t) {
+		for (var s, i = 1, n = arguments.length; i < n; i++) {
+			s = arguments[i];
+			for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
 		}
-		return t$1;
+		return t;
 	};
 	return __assign.apply(this, arguments);
 };
-function __rest(s$2, e) {
-	var t$1 = {};
-	for (var p in s$2) if (Object.prototype.hasOwnProperty.call(s$2, p) && e.indexOf(p) < 0) t$1[p] = s$2[p];
-	if (s$2 != null && typeof Object.getOwnPropertySymbols === "function") {
-		for (var i$2 = 0, p = Object.getOwnPropertySymbols(s$2); i$2 < p.length; i$2++) if (e.indexOf(p[i$2]) < 0 && Object.prototype.propertyIsEnumerable.call(s$2, p[i$2])) t$1[p[i$2]] = s$2[p[i$2]];
+function __rest(s, e) {
+	var t = {};
+	for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+	if (s != null && typeof Object.getOwnPropertySymbols === "function") {
+		for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
 	}
-	return t$1;
+	return t;
 }
 function __spreadArray(to, from, pack) {
 	if (pack || arguments.length === 2) {
-		for (var i$2 = 0, l = from.length, ar; i$2 < l; i$2++) if (ar || !(i$2 in from)) {
-			if (!ar) ar = Array.prototype.slice.call(from, 0, i$2);
-			ar[i$2] = from[i$2];
+		for (var i = 0, l = from.length, ar; i < l; i++) if (ar || !(i in from)) {
+			if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+			ar[i] = from[i];
 		}
 	}
 	return to.concat(ar || Array.prototype.slice.call(from));
@@ -24934,7 +24731,7 @@ function useCallbackRef$1(initialValue, callback) {
 	ref.callback = callback;
 	return ref.facade;
 }
-var useIsomorphicLayoutEffect$1 = typeof window !== "undefined" ? import_react.useLayoutEffect : import_react.useEffect;
+var useIsomorphicLayoutEffect = typeof window !== "undefined" ? import_react.useLayoutEffect : import_react.useEffect;
 var currentValues = /* @__PURE__ */ new WeakMap();
 function useMergeRefs(refs, defaultValue) {
 	var callbackRef = useCallbackRef$1(defaultValue || null, function(newValue) {
@@ -24942,7 +24739,7 @@ function useMergeRefs(refs, defaultValue) {
 			return assignRef(ref, newValue);
 		});
 	});
-	useIsomorphicLayoutEffect$1(function() {
+	useIsomorphicLayoutEffect(function() {
 		var oldValue = currentValues.get(callbackRef);
 		if (oldValue) {
 			var prevRefs_1 = new Set(oldValue);
@@ -24959,8 +24756,8 @@ function useMergeRefs(refs, defaultValue) {
 	}, [refs]);
 	return callbackRef;
 }
-function ItoI(a$1) {
-	return a$1;
+function ItoI(a) {
+	return a;
 }
 function innerCreateMedium(defaults, middleware) {
 	if (middleware === void 0) middleware = ItoI;
@@ -25037,8 +24834,8 @@ function createSidecarMedium(options$1) {
 	}, options$1);
 	return medium;
 }
-var SideCar = function(_a$1) {
-	var sideCar = _a$1.sideCar, rest = __rest(_a$1, ["sideCar"]);
+var SideCar = function(_a) {
+	var sideCar = _a.sideCar, rest = __rest(_a, ["sideCar"]);
 	if (!sideCar) throw new Error("Sidecar: please provide `sideCar` property to import the right car");
 	var Target = sideCar.read();
 	if (!Target) throw new Error("Sidecar medium not found");
@@ -25053,11 +24850,11 @@ var effectCar = createSidecarMedium();
 var nothing = function() {};
 var RemoveScroll = import_react.forwardRef(function(props, parentRef) {
 	var ref = import_react.useRef(null);
-	var _a$1 = import_react.useState({
+	var _a = import_react.useState({
 		onScrollCapture: nothing,
 		onWheelCapture: nothing,
 		onTouchMoveCapture: nothing
-	}), callbacks = _a$1[0], setCallbacks = _a$1[1];
+	}), callbacks = _a[0], setCallbacks = _a[1];
 	var forwardProps = props.forwardProps, children = props.children, className = props.className, removeScrollBar = props.removeScrollBar, enabled = props.enabled, shards = props.shards, sideCar = props.sideCar, noRelative = props.noRelative, noIsolation = props.noIsolation, inert = props.inert, allowPinchZoom = props.allowPinchZoom, _b = props.as, Container = _b === void 0 ? "div" : _b, gapMode = props.gapMode, rest = __rest(props, [
 		"forwardProps",
 		"children",
@@ -25156,8 +24953,8 @@ var styleHookSingleton = function() {
 };
 var styleSingleton = function() {
 	var useStyle = styleHookSingleton();
-	var Sheet$1 = function(_a$1) {
-		var styles = _a$1.styles, dynamic = _a$1.dynamic;
+	var Sheet$1 = function(_a) {
+		var styles = _a.styles, dynamic = _a.dynamic;
 		useStyle(styles, dynamic);
 		return null;
 	};
@@ -25169,7 +24966,7 @@ var zeroGap = {
 	right: 0,
 	gap: 0
 };
-var parse$2 = function(x$1) {
+var parse = function(x$1) {
 	return parseInt(x$1 || "", 10) || 0;
 };
 var getOffset = function(gapMode) {
@@ -25178,9 +24975,9 @@ var getOffset = function(gapMode) {
 	var top = cs[gapMode === "padding" ? "paddingTop" : "marginTop"];
 	var right = cs[gapMode === "padding" ? "paddingRight" : "marginRight"];
 	return [
-		parse$2(left),
-		parse$2(top),
-		parse$2(right)
+		parse(left),
+		parse(top),
+		parse(right)
 	];
 };
 var getGapWidth = function(gapMode) {
@@ -25198,8 +24995,8 @@ var getGapWidth = function(gapMode) {
 };
 var Style = styleSingleton();
 var lockAttribute = "data-scroll-locked";
-var getStyles = function(_a$1, allowRelative, gapMode, important) {
-	var left = _a$1.left, top = _a$1.top, right = _a$1.right, gap = _a$1.gap;
+var getStyles = function(_a, allowRelative, gapMode, important) {
+	var left = _a.left, top = _a.top, right = _a.right, gap = _a.gap;
 	if (gapMode === void 0) gapMode = "margin";
 	return "\n  .".concat(noScrollbarsClassName, " {\n   overflow: hidden ").concat(important, ";\n   padding-right: ").concat(gap, "px ").concat(important, ";\n  }\n  body[").concat(lockAttribute, "] {\n    overflow: hidden ").concat(important, ";\n    overscroll-behavior: contain;\n    ").concat([
 		allowRelative && "position: relative ".concat(important, ";"),
@@ -25221,8 +25018,8 @@ var useLockAttribute = function() {
 		};
 	}, []);
 };
-var RemoveScrollBar = function(_a$1) {
-	var noRelative = _a$1.noRelative, noImportant = _a$1.noImportant, _b = _a$1.gapMode, gapMode = _b === void 0 ? "margin" : _b;
+var RemoveScrollBar = function(_a) {
+	var noRelative = _a.noRelative, noImportant = _a.noImportant, _b = _a.gapMode, gapMode = _b === void 0 ? "margin" : _b;
 	useLockAttribute();
 	var gap = import_react.useMemo(function() {
 		return getGapWidth(gapMode);
@@ -25261,25 +25058,25 @@ var locationCouldBeScrolled = function(axis, node) {
 	do {
 		if (typeof ShadowRoot !== "undefined" && current instanceof ShadowRoot) current = current.host;
 		if (elementCouldBeScrolled(axis, current)) {
-			var _a$1 = getScrollVariables(axis, current);
-			if (_a$1[1] > _a$1[2]) return true;
+			var _a = getScrollVariables(axis, current);
+			if (_a[1] > _a[2]) return true;
 		}
 		current = current.parentNode;
 	} while (current && current !== ownerDocument.body);
 	return false;
 };
-var getVScrollVariables = function(_a$1) {
+var getVScrollVariables = function(_a) {
 	return [
-		_a$1.scrollTop,
-		_a$1.scrollHeight,
-		_a$1.clientHeight
+		_a.scrollTop,
+		_a.scrollHeight,
+		_a.clientHeight
 	];
 };
-var getHScrollVariables = function(_a$1) {
+var getHScrollVariables = function(_a) {
 	return [
-		_a$1.scrollLeft,
-		_a$1.scrollWidth,
-		_a$1.clientWidth
+		_a.scrollLeft,
+		_a.scrollWidth,
+		_a.clientWidth
 	];
 };
 var elementCouldBeScrolled = function(axis, node) {
@@ -25302,8 +25099,8 @@ var handleScroll = function(axis, endTarget, event, sourceDelta, noOverscroll) {
 	var availableScrollTop = 0;
 	do {
 		if (!target) break;
-		var _a$1 = getScrollVariables(axis, target), position = _a$1[0];
-		var elementScroll = _a$1[1] - _a$1[2] - directionFactor * position;
+		var _a = getScrollVariables(axis, target), position = _a[0];
+		var elementScroll = _a[1] - _a[2] - directionFactor * position;
 		if (position || elementScroll) {
 			if (elementCouldBeScrolled(axis, target)) {
 				availableScroll += elementScroll;
@@ -25719,7 +25516,7 @@ var MenuContentImpl = import_react.forwardRef((props, forwardedRef) => {
 					onFocusOutside,
 					onInteractOutside,
 					onDismiss,
-					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root$5, {
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root$3, {
 						asChild: true,
 						...rovingFocusGroupScope,
 						dir: rootContext.dir,
@@ -26185,8 +25982,8 @@ function focusFirst(candidates) {
 		if (document.activeElement !== PREVIOUSLY_FOCUSED_ELEMENT) return;
 	}
 }
-function wrapArray(array$1, startIndex) {
-	return array$1.map((_$1, index$1) => array$1[(startIndex + index$1) % array$1.length]);
+function wrapArray(array, startIndex) {
+	return array.map((_$1, index$1) => array[(startIndex + index$1) % array.length]);
 }
 function getNextMatch(values, search, currentMatch) {
 	const normalizedSearch = search.length > 1 && Array.from(search).every((char) => char === search[0]) ? search[0] : search;
@@ -26199,8 +25996,8 @@ function getNextMatch(values, search, currentMatch) {
 function isPointInPolygon(point, polygon) {
 	const { x: x$1, y } = point;
 	let inside = false;
-	for (let i$2 = 0, j = polygon.length - 1; i$2 < polygon.length; j = i$2++) {
-		const ii = polygon[i$2];
+	for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
+		const ii = polygon[i];
 		const jj = polygon[j];
 		const xi = ii.x;
 		const yi = ii.y;
@@ -26225,7 +26022,7 @@ var Anchor2 = MenuAnchor;
 var Portal$2 = MenuPortal;
 var Content2$1 = MenuContent;
 var Group = MenuGroup;
-var Label$2 = MenuLabel;
+var Label = MenuLabel;
 var Item2$1 = MenuItem;
 var CheckboxItem = MenuCheckboxItem;
 var RadioGroup = MenuRadioGroup;
@@ -26367,7 +26164,7 @@ var LABEL_NAME = "DropdownMenuLabel";
 var DropdownMenuLabel$1 = import_react.forwardRef((props, forwardedRef) => {
 	const { __scopeDropdownMenu, ...labelProps } = props;
 	const menuScope = useMenuScope(__scopeDropdownMenu);
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label$2, {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
 		...menuScope,
 		...labelProps,
 		ref: forwardedRef
@@ -26418,7 +26215,7 @@ var DropdownMenuRadioItem$1 = import_react.forwardRef((props, forwardedRef) => {
 	});
 });
 DropdownMenuRadioItem$1.displayName = RADIO_ITEM_NAME;
-var INDICATOR_NAME$1 = "DropdownMenuItemIndicator";
+var INDICATOR_NAME = "DropdownMenuItemIndicator";
 var DropdownMenuItemIndicator = import_react.forwardRef((props, forwardedRef) => {
 	const { __scopeDropdownMenu, ...itemIndicatorProps } = props;
 	const menuScope = useMenuScope(__scopeDropdownMenu);
@@ -26428,7 +26225,7 @@ var DropdownMenuItemIndicator = import_react.forwardRef((props, forwardedRef) =>
 		ref: forwardedRef
 	});
 });
-DropdownMenuItemIndicator.displayName = INDICATOR_NAME$1;
+DropdownMenuItemIndicator.displayName = INDICATOR_NAME;
 var SEPARATOR_NAME = "DropdownMenuSeparator";
 var DropdownMenuSeparator$1 = import_react.forwardRef((props, forwardedRef) => {
 	const { __scopeDropdownMenu, ...separatorProps } = props;
@@ -26596,6 +26393,44 @@ function ThemeToggle() {
 		]
 	})] });
 }
+var ErrorBoundary = class extends import_react.Component {
+	state = { hasError: false };
+	static getDerivedStateFromError(error) {
+		return {
+			hasError: true,
+			error
+		};
+	}
+	componentDidCatch(error, errorInfo) {
+		console.error("ErrorBoundary caught an error:", error, errorInfo);
+	}
+	render() {
+		if (this.state.hasError) return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "flex flex-col items-center justify-center min-h-[400px] p-6 text-center animate-fade-in",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TriangleAlert, { className: "h-16 w-16 text-destructive mb-6 opacity-90" }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+					className: "text-3xl font-bold tracking-tight mb-3",
+					children: "Ops! Algo deu errado."
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+					className: "text-muted-foreground mb-8 max-w-md text-lg",
+					children: "Encontramos um erro inesperado ao processar esta requisição. Nossa equipe já foi notificada."
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+					size: "lg",
+					onClick: () => this.setState({ hasError: false }),
+					children: "Tentar Novamente"
+				})
+			]
+		});
+		return this.props.children;
+	}
+};
+var PageLoader$1 = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+	className: "flex-1 flex items-center justify-center min-h-[50vh]",
+	children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(LoaderCircle, { className: "h-8 w-8 animate-spin text-primary" })
+});
 function PublicLayout() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 		className: "min-h-screen flex flex-col bg-background text-foreground selection:bg-primary selection:text-primary-foreground transition-colors duration-300",
@@ -26619,7 +26454,10 @@ function PublicLayout() {
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("main", {
 				className: "flex-1 flex flex-col",
-				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {})
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ErrorBoundary, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react.Suspense, {
+					fallback: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(PageLoader$1, {}),
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {})
+				}) })
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("footer", {
 				className: "border-t py-6 md:py-0",
@@ -26693,7 +26531,7 @@ var Primitive = [
 		[node]: Node$1
 	};
 }, {});
-var NAME$1 = "Separator";
+var NAME = "Separator";
 var DEFAULT_ORIENTATION = "horizontal";
 var ORIENTATIONS = ["horizontal", "vertical"];
 var Separator$1 = import_react.forwardRef((props, forwardedRef) => {
@@ -26711,23 +26549,23 @@ var Separator$1 = import_react.forwardRef((props, forwardedRef) => {
 		ref: forwardedRef
 	});
 });
-Separator$1.displayName = NAME$1;
+Separator$1.displayName = NAME;
 function isValidOrientation(orientation) {
 	return ORIENTATIONS.includes(orientation);
 }
-var Root$4 = Separator$1;
-var Separator = import_react.forwardRef(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root$4, {
+var Root$2 = Separator$1;
+var Separator = import_react.forwardRef(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root$2, {
 	ref,
 	decorative,
 	orientation,
 	className: cn("shrink-0 bg-border", orientation === "horizontal" ? "h-[1px] w-full" : "h-full w-[1px]", className),
 	...props
 }));
-Separator.displayName = Root$4.displayName;
+Separator.displayName = Root$2.displayName;
 var DIALOG_NAME = "Dialog";
 var [createDialogContext, createDialogScope] = createContextScope$1(DIALOG_NAME);
 var [DialogProvider, useDialogContext] = createDialogContext(DIALOG_NAME);
-var Dialog$1 = (props) => {
+var Dialog = (props) => {
 	const { __scopeDialog, children, open: openProp, defaultOpen, onOpenChange, modal = true } = props;
 	const triggerRef = import_react.useRef(null);
 	const contentRef = import_react.useRef(null);
@@ -26751,9 +26589,9 @@ var Dialog$1 = (props) => {
 		children
 	});
 };
-Dialog$1.displayName = DIALOG_NAME;
+Dialog.displayName = DIALOG_NAME;
 var TRIGGER_NAME = "DialogTrigger";
-var DialogTrigger$1 = import_react.forwardRef((props, forwardedRef) => {
+var DialogTrigger = import_react.forwardRef((props, forwardedRef) => {
 	const { __scopeDialog, ...triggerProps } = props;
 	const context = useDialogContext(TRIGGER_NAME, __scopeDialog);
 	const composedTriggerRef = useComposedRefs(forwardedRef, context.triggerRef);
@@ -26768,10 +26606,10 @@ var DialogTrigger$1 = import_react.forwardRef((props, forwardedRef) => {
 		onClick: composeEventHandlers(props.onClick, context.onOpenToggle)
 	});
 });
-DialogTrigger$1.displayName = TRIGGER_NAME;
+DialogTrigger.displayName = TRIGGER_NAME;
 var PORTAL_NAME = "DialogPortal";
 var [PortalProvider, usePortalContext] = createDialogContext(PORTAL_NAME, { forceMount: void 0 });
-var DialogPortal$1 = (props) => {
+var DialogPortal = (props) => {
 	const { __scopeDialog, forceMount, children, container } = props;
 	const context = useDialogContext(PORTAL_NAME, __scopeDialog);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(PortalProvider, {
@@ -26787,9 +26625,9 @@ var DialogPortal$1 = (props) => {
 		}))
 	});
 };
-DialogPortal$1.displayName = PORTAL_NAME;
+DialogPortal.displayName = PORTAL_NAME;
 var OVERLAY_NAME = "DialogOverlay";
-var DialogOverlay$1 = import_react.forwardRef((props, forwardedRef) => {
+var DialogOverlay = import_react.forwardRef((props, forwardedRef) => {
 	const portalContext = usePortalContext(OVERLAY_NAME, props.__scopeDialog);
 	const { forceMount = portalContext.forceMount, ...overlayProps } = props;
 	const context = useDialogContext(OVERLAY_NAME, props.__scopeDialog);
@@ -26801,7 +26639,7 @@ var DialogOverlay$1 = import_react.forwardRef((props, forwardedRef) => {
 		})
 	}) : null;
 });
-DialogOverlay$1.displayName = OVERLAY_NAME;
+DialogOverlay.displayName = OVERLAY_NAME;
 var Slot$1 = /* @__PURE__ */ createSlot("DialogOverlay.RemoveScroll");
 var DialogOverlayImpl = import_react.forwardRef((props, forwardedRef) => {
 	const { __scopeDialog, ...overlayProps } = props;
@@ -26822,7 +26660,7 @@ var DialogOverlayImpl = import_react.forwardRef((props, forwardedRef) => {
 	});
 });
 var CONTENT_NAME = "DialogContent";
-var DialogContent$1 = import_react.forwardRef((props, forwardedRef) => {
+var DialogContent = import_react.forwardRef((props, forwardedRef) => {
 	const portalContext = usePortalContext(CONTENT_NAME, props.__scopeDialog);
 	const { forceMount = portalContext.forceMount, ...contentProps } = props;
 	const context = useDialogContext(CONTENT_NAME, props.__scopeDialog);
@@ -26837,7 +26675,7 @@ var DialogContent$1 = import_react.forwardRef((props, forwardedRef) => {
 		})
 	});
 });
-DialogContent$1.displayName = CONTENT_NAME;
+DialogContent.displayName = CONTENT_NAME;
 var DialogContentModal = import_react.forwardRef((props, forwardedRef) => {
 	const context = useDialogContext(CONTENT_NAME, props.__scopeDialog);
 	const contentRef = import_react.useRef(null);
@@ -26921,7 +26759,7 @@ var DialogContentImpl = import_react.forwardRef((props, forwardedRef) => {
 	})] })] });
 });
 var TITLE_NAME = "DialogTitle";
-var DialogTitle$1 = import_react.forwardRef((props, forwardedRef) => {
+var DialogTitle = import_react.forwardRef((props, forwardedRef) => {
 	const { __scopeDialog, ...titleProps } = props;
 	const context = useDialogContext(TITLE_NAME, __scopeDialog);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Primitive$1.h2, {
@@ -26930,9 +26768,9 @@ var DialogTitle$1 = import_react.forwardRef((props, forwardedRef) => {
 		ref: forwardedRef
 	});
 });
-DialogTitle$1.displayName = TITLE_NAME;
+DialogTitle.displayName = TITLE_NAME;
 var DESCRIPTION_NAME = "DialogDescription";
-var DialogDescription$1 = import_react.forwardRef((props, forwardedRef) => {
+var DialogDescription = import_react.forwardRef((props, forwardedRef) => {
 	const { __scopeDialog, ...descriptionProps } = props;
 	const context = useDialogContext(DESCRIPTION_NAME, __scopeDialog);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Primitive$1.p, {
@@ -26941,9 +26779,9 @@ var DialogDescription$1 = import_react.forwardRef((props, forwardedRef) => {
 		ref: forwardedRef
 	});
 });
-DialogDescription$1.displayName = DESCRIPTION_NAME;
+DialogDescription.displayName = DESCRIPTION_NAME;
 var CLOSE_NAME = "DialogClose";
-var DialogClose$1 = import_react.forwardRef((props, forwardedRef) => {
+var DialogClose = import_react.forwardRef((props, forwardedRef) => {
 	const { __scopeDialog, ...closeProps } = props;
 	const context = useDialogContext(CLOSE_NAME, __scopeDialog);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Primitive$1.button, {
@@ -26953,7 +26791,7 @@ var DialogClose$1 = import_react.forwardRef((props, forwardedRef) => {
 		onClick: composeEventHandlers(props.onClick, () => context.onOpenChange(false))
 	});
 });
-DialogClose$1.displayName = CLOSE_NAME;
+DialogClose.displayName = CLOSE_NAME;
 function getState(open) {
 	return open ? "open" : "closed";
 }
@@ -26992,15 +26830,15 @@ var DescriptionWarning = ({ contentRef, descriptionId }) => {
 	]);
 	return null;
 };
-var Root$3 = Dialog$1;
-var Trigger = DialogTrigger$1;
-var Portal$1 = DialogPortal$1;
-var Overlay = DialogOverlay$1;
-var Content = DialogContent$1;
-var Title = DialogTitle$1;
-var Description = DialogDescription$1;
-var Close = DialogClose$1;
-var Sheet = Root$3;
+var Root$1 = Dialog;
+var Trigger = DialogTrigger;
+var Portal$1 = DialogPortal;
+var Overlay = DialogOverlay;
+var Content = DialogContent;
+var Title = DialogTitle;
+var Description = DialogDescription;
+var Close = DialogClose;
+var Sheet = Root$1;
 var SheetPortal = Portal$1;
 var SheetOverlay = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Overlay, {
 	className: cn("fixed inset-0 z-50 bg-black/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0", className),
@@ -27503,7 +27341,7 @@ var require_use_sync_external_store_shim_development = /* @__PURE__ */ __commonJ
 				var cachedValue = getSnapshot();
 				objectIs(value, cachedValue) || (console.error("The result of getSnapshot should be cached to avoid an infinite loop"), didWarnUncachedGetSnapshot = !0);
 			}
-			cachedValue = useState$5({ inst: {
+			cachedValue = useState$4({ inst: {
 				value,
 				getSnapshot
 			} });
@@ -27517,7 +27355,7 @@ var require_use_sync_external_store_shim_development = /* @__PURE__ */ __commonJ
 				value,
 				getSnapshot
 			]);
-			useEffect$2(function() {
+			useEffect$1(function() {
 				checkIfSnapshotChanged(inst) && forceUpdate({ inst });
 				return subscribe$1(function() {
 					checkIfSnapshotChanged(inst) && forceUpdate({ inst });
@@ -27540,7 +27378,7 @@ var require_use_sync_external_store_shim_development = /* @__PURE__ */ __commonJ
 			return getSnapshot();
 		}
 		"undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-		var React$5 = require_react(), objectIs = "function" === typeof Object.is ? Object.is : is, useState$5 = React$5.useState, useEffect$2 = React$5.useEffect, useLayoutEffect$1 = React$5.useLayoutEffect, useDebugValue = React$5.useDebugValue, didWarnOld18Alpha = !1, didWarnUncachedGetSnapshot = !1, shim = "undefined" === typeof window || "undefined" === typeof window.document || "undefined" === typeof window.document.createElement ? useSyncExternalStore$1 : useSyncExternalStore$2;
+		var React$5 = require_react(), objectIs = "function" === typeof Object.is ? Object.is : is, useState$4 = React$5.useState, useEffect$1 = React$5.useEffect, useLayoutEffect$1 = React$5.useLayoutEffect, useDebugValue = React$5.useDebugValue, didWarnOld18Alpha = !1, didWarnUncachedGetSnapshot = !1, shim = "undefined" === typeof window || "undefined" === typeof window.document || "undefined" === typeof window.document.createElement ? useSyncExternalStore$1 : useSyncExternalStore$2;
 		exports.useSyncExternalStore = void 0 !== React$5.useSyncExternalStore ? React$5.useSyncExternalStore : shim;
 		"undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(Error());
 	})();
@@ -27647,15 +27485,15 @@ function useImageLoadingStatus(src, { referrerPolicy, crossOrigin }) {
 	]);
 	return loadingStatus;
 }
-var Root$2 = Avatar$1;
+var Root = Avatar$1;
 var Image = AvatarImage$1;
 var Fallback = AvatarFallback$1;
-var Avatar = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root$2, {
+var Avatar = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
 	ref,
 	className: cn("relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full", className),
 	...props
 }));
-Avatar.displayName = Root$2.displayName;
+Avatar.displayName = Root.displayName;
 var AvatarImage = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Image, {
 	ref,
 	className: cn("aspect-square h-full w-full", className),
@@ -27668,6 +27506,10 @@ var AvatarFallback = import_react.forwardRef(({ className, ...props }, ref) => /
 	...props
 }));
 AvatarFallback.displayName = Fallback.displayName;
+var PageLoader = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+	className: "flex-1 flex items-center justify-center min-h-[50vh]",
+	children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(LoaderCircle, { className: "h-8 w-8 animate-spin text-primary" })
+});
 function Layout() {
 	const { user, logout } = useAuthStore();
 	const location = useLocation();
@@ -27683,7 +27525,7 @@ function Layout() {
 			icon: Map$1
 		},
 		{
-			title: "Garagem",
+			title: "Veículos",
 			url: "/app/garage",
 			icon: Wrench
 		}
@@ -27693,8 +27535,7 @@ function Layout() {
 		url: "/admin",
 		icon: ShieldAlert
 	}];
-	const isPending = user?.status === "pending_profile";
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(SidebarProvider, { children: [!isPending && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Sidebar, {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(SidebarProvider, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Sidebar, {
 		variant: "inset",
 		className: "border-r",
 		children: [
@@ -27758,15 +27599,12 @@ function Layout() {
 			})
 		]
 	}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(SidebarInset, {
-		className: cn("flex flex-col flex-1 min-h-screen bg-muted/30", { "ml-0": isPending }),
+		className: "flex flex-col flex-1 min-h-screen bg-muted/30",
 		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("header", {
 			className: "sticky top-0 z-30 flex h-16 shrink-0 items-center justify-between gap-2 border-b bg-background/95 px-4 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm",
-			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "flex items-center gap-2",
-				children: [!isPending && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SidebarTrigger, { className: "-ml-1" }), isPending && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "flex items-center gap-2 font-bold text-lg",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Compass, { className: "h-5 w-5 text-primary" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Nomadwise" })]
-				})]
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SidebarTrigger, { className: "-ml-1" })
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "flex items-center gap-2",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
@@ -27780,7900 +27618,21 @@ function Layout() {
 			className: "flex-1 w-full p-4 md:p-6 lg:p-8 overflow-x-hidden animate-fade-in",
 			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "mx-auto w-full max-w-6xl",
-				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {})
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ErrorBoundary, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react.Suspense, {
+					fallback: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(PageLoader, {}),
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {})
+				}) })
 			})
 		})]
 	})] });
 }
-function Index() {
-	const { isAuthenticated, login, loginAsAdmin } = useAuthStore();
-	if (isAuthenticated) return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Navigate, {
-		to: "/app/dashboard",
-		replace: true
-	});
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "flex flex-col w-full",
-		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
-			className: "relative w-full py-20 md:py-32 overflow-hidden bg-background",
-			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 z-0 opacity-10 dark:opacity-20 pointer-events-none bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/40 via-background to-background" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "container relative z-10 px-4 md:px-6 flex flex-col items-center text-center",
-				children: [
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-						className: "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 mb-6 animate-fade-in-down",
-						children: "Novidade: Gestão de orçamentos v2.0"
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h1", {
-						className: "text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 max-w-4xl animate-fade-in-up",
-						children: [
-							"Viaje mais,",
-							" ",
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-								className: "text-primary text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/60",
-								children: "preocupe-se menos."
-							})
-						]
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-						className: "text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl animate-fade-in-up",
-						style: { animationDelay: "100ms" },
-						children: "A plataforma definitiva para nômades e viajantes de longa distância. Gerencie roteiros, finanças, documentos e a manutenção do seu veículo em um só lugar."
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "flex flex-col sm:flex-row gap-4 w-full sm:w-auto animate-fade-in-up",
-						style: { animationDelay: "200ms" },
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
-							size: "lg",
-							className: "h-12 px-8 text-base shadow-lg hover:shadow-primary/25 transition-all",
-							onClick: login,
-							children: ["Começar Agora ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, { className: "ml-2 h-4 w-4" })]
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-							size: "lg",
-							variant: "outline",
-							className: "h-12 px-8 text-base",
-							onClick: loginAsAdmin,
-							children: "Acesso Admin"
-						})]
-					})
-				]
-			})]
-		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
-			className: "py-20 bg-muted/50 border-y",
-			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "container px-4 md:px-6",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "text-center mb-16",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
-						className: "text-3xl font-bold tracking-tight mb-4",
-						children: "Tudo que você precisa para a estrada"
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-						className: "text-muted-foreground max-w-2xl mx-auto",
-						children: "Projetado especificamente para as necessidades de quem vive em movimento."
-					})]
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "grid md:grid-cols-3 gap-8",
-					children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "bg-card p-6 rounded-2xl border shadow-sm hover:shadow-md transition-shadow group",
-							children: [
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-									className: "h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform",
-									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(MapPin, { className: "h-6 w-6 text-primary" })
-								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-									className: "text-xl font-semibold mb-3",
-									children: "Gestão de Roteiros"
-								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-									className: "text-muted-foreground",
-									children: "Planeje cada parada, registre experiências e mantenha um diário organizado das suas viagens de longa duração."
-								})
-							]
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "bg-card p-6 rounded-2xl border shadow-sm hover:shadow-md transition-shadow group",
-							children: [
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-									className: "h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform",
-									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Wallet, { className: "h-6 w-6 text-primary" })
-								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-									className: "text-xl font-semibold mb-3",
-									children: "Controle Financeiro"
-								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-									className: "text-muted-foreground",
-									children: "Acompanhe orçamentos por viagem, registre gastos com combustível, pedágios e alimentação com relatórios visuais."
-								})
-							]
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "bg-card p-6 rounded-2xl border shadow-sm hover:shadow-md transition-shadow group",
-							children: [
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-									className: "h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform",
-									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ShieldCheck, { className: "h-6 w-6 text-primary" })
-								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-									className: "text-xl font-semibold mb-3",
-									children: "Garagem Virtual"
-								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-									className: "text-muted-foreground",
-									children: "Controle manutenções preventivas, armazene documentos do veículo e receba alertas antes que problemas aconteçam."
-								})
-							]
-						})
-					]
-				})]
-			})
-		})]
-	});
-}
-var NotFound = () => {
-	const location = useLocation();
-	(0, import_react.useEffect)(() => {
-		console.error("404 Error: Rota não encontrada:", location.pathname);
-	}, [location.pathname]);
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-		className: "min-h-screen flex items-center justify-center bg-background text-foreground px-4",
-		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			className: "text-center animate-fade-in-up",
-			children: [
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MapPinOff, { className: "h-20 w-20 mx-auto text-muted-foreground mb-6 opacity-80" }),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
-					className: "text-5xl font-extrabold mb-4 tracking-tight",
-					children: "404"
-				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-					className: "text-xl text-muted-foreground mb-8 max-w-md mx-auto",
-					children: "Parece que você pegou a saída errada. Essa página não existe no nosso mapa."
-				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-					asChild: true,
-					size: "lg",
-					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
-						to: "/",
-						children: "Voltar para o Início"
-					})
-				})
-			]
-		})
-	});
-};
-var NotFound_default = NotFound;
-var isCheckBoxInput = (element) => element.type === "checkbox";
-var isDateObject = (value) => value instanceof Date;
-var isNullOrUndefined = (value) => value == null;
-var isObjectType = (value) => typeof value === "object";
-var isObject$1 = (value) => !isNullOrUndefined(value) && !Array.isArray(value) && isObjectType(value) && !isDateObject(value);
-var getEventValue = (event) => isObject$1(event) && event.target ? isCheckBoxInput(event.target) ? event.target.checked : event.target.value : event;
-var getNodeParentName = (name) => name.substring(0, name.search(/\.\d+(\.|$)/)) || name;
-var isNameInFieldArray = (names, name) => names.has(getNodeParentName(name));
-var isPlainObject$1 = (tempObject) => {
-	const prototypeCopy = tempObject.constructor && tempObject.constructor.prototype;
-	return isObject$1(prototypeCopy) && prototypeCopy.hasOwnProperty("isPrototypeOf");
-};
-var isWeb = typeof window !== "undefined" && typeof window.HTMLElement !== "undefined" && typeof document !== "undefined";
-function cloneObject(data) {
-	if (data instanceof Date) return new Date(data);
-	const isFileListInstance = typeof FileList !== "undefined" && data instanceof FileList;
-	if (isWeb && (data instanceof Blob || isFileListInstance)) return data;
-	const isArray = Array.isArray(data);
-	if (!isArray && !(isObject$1(data) && isPlainObject$1(data))) return data;
-	const copy = isArray ? [] : Object.create(Object.getPrototypeOf(data));
-	for (const key in data) if (Object.prototype.hasOwnProperty.call(data, key)) copy[key] = cloneObject(data[key]);
-	return copy;
-}
-var isKey = (value) => /^\w*$/.test(value);
-var isUndefined = (val) => val === void 0;
-var compact = (value) => Array.isArray(value) ? value.filter(Boolean) : [];
-var stringToPath = (input) => compact(input.replace(/["|']|\]/g, "").split(/\.|\[/));
-var get = (object$1, path, defaultValue) => {
-	if (!path || !isObject$1(object$1)) return defaultValue;
-	const result = (isKey(path) ? [path] : stringToPath(path)).reduce((result$1, key) => isNullOrUndefined(result$1) ? result$1 : result$1[key], object$1);
-	return isUndefined(result) || result === object$1 ? isUndefined(object$1[path]) ? defaultValue : object$1[path] : result;
-};
-var isBoolean = (value) => typeof value === "boolean";
-var isFunction = (value) => typeof value === "function";
-var set = (object$1, path, value) => {
-	let index$1 = -1;
-	const tempPath = isKey(path) ? [path] : stringToPath(path);
-	const length = tempPath.length;
-	const lastIndex = length - 1;
-	while (++index$1 < length) {
-		const key = tempPath[index$1];
-		let newValue = value;
-		if (index$1 !== lastIndex) {
-			const objValue = object$1[key];
-			newValue = isObject$1(objValue) || Array.isArray(objValue) ? objValue : !isNaN(+tempPath[index$1 + 1]) ? [] : {};
-		}
-		if (key === "__proto__" || key === "constructor" || key === "prototype") return;
-		object$1[key] = newValue;
-		object$1 = object$1[key];
-	}
-};
-var EVENTS = {
-	BLUR: "blur",
-	FOCUS_OUT: "focusout",
-	CHANGE: "change"
-};
-var VALIDATION_MODE = {
-	onBlur: "onBlur",
-	onChange: "onChange",
-	onSubmit: "onSubmit",
-	onTouched: "onTouched",
-	all: "all"
-};
-var INPUT_VALIDATION_RULES = {
-	max: "max",
-	min: "min",
-	maxLength: "maxLength",
-	minLength: "minLength",
-	pattern: "pattern",
-	required: "required",
-	validate: "validate"
-};
-var HookFormControlContext = import_react.createContext(null);
-HookFormControlContext.displayName = "HookFormControlContext";
-var useFormControlContext = () => import_react.useContext(HookFormControlContext);
-var getProxyFormState = (formState, control, localProxyFormState, isRoot = true) => {
-	const result = { defaultValues: control._defaultValues };
-	for (const key in formState) Object.defineProperty(result, key, { get: () => {
-		const _key = key;
-		if (control._proxyFormState[_key] !== VALIDATION_MODE.all) control._proxyFormState[_key] = !isRoot || VALIDATION_MODE.all;
-		localProxyFormState && (localProxyFormState[_key] = true);
-		return formState[_key];
-	} });
-	return result;
-};
-var useIsomorphicLayoutEffect = typeof window !== "undefined" ? import_react.useLayoutEffect : import_react.useEffect;
-function useFormState(props) {
-	const formControl = useFormControlContext();
-	const { control = formControl, disabled, name, exact } = props || {};
-	const [formState, updateFormState] = import_react.useState(control._formState);
-	const _localProxyFormState = import_react.useRef({
-		isDirty: false,
-		isLoading: false,
-		dirtyFields: false,
-		touchedFields: false,
-		validatingFields: false,
-		isValidating: false,
-		isValid: false,
-		errors: false
-	});
-	useIsomorphicLayoutEffect(() => control._subscribe({
-		name,
-		formState: _localProxyFormState.current,
-		exact,
-		callback: (formState$1) => {
-			!disabled && updateFormState({
-				...control._formState,
-				...formState$1
-			});
-		}
-	}), [
-		name,
-		disabled,
-		exact
-	]);
-	import_react.useEffect(() => {
-		_localProxyFormState.current.isValid && control._setValid(true);
-	}, [control]);
-	return import_react.useMemo(() => getProxyFormState(formState, control, _localProxyFormState.current, false), [formState, control]);
-}
-var isString = (value) => typeof value === "string";
-var generateWatchOutput = (names, _names, formValues, isGlobal, defaultValue) => {
-	if (isString(names)) {
-		isGlobal && _names.watch.add(names);
-		return get(formValues, names, defaultValue);
-	}
-	if (Array.isArray(names)) return names.map((fieldName) => (isGlobal && _names.watch.add(fieldName), get(formValues, fieldName)));
-	isGlobal && (_names.watchAll = true);
-	return formValues;
-};
-var isPrimitive = (value) => isNullOrUndefined(value) || !isObjectType(value);
-function deepEqual(object1, object2, _internal_visited = /* @__PURE__ */ new WeakSet()) {
-	if (isPrimitive(object1) || isPrimitive(object2)) return Object.is(object1, object2);
-	if (isDateObject(object1) && isDateObject(object2)) return Object.is(object1.getTime(), object2.getTime());
-	const keys1 = Object.keys(object1);
-	const keys2 = Object.keys(object2);
-	if (keys1.length !== keys2.length) return false;
-	if (_internal_visited.has(object1) || _internal_visited.has(object2)) return true;
-	_internal_visited.add(object1);
-	_internal_visited.add(object2);
-	for (const key of keys1) {
-		const val1 = object1[key];
-		if (!keys2.includes(key)) return false;
-		if (key !== "ref") {
-			const val2 = object2[key];
-			if (isDateObject(val1) && isDateObject(val2) || isObject$1(val1) && isObject$1(val2) || Array.isArray(val1) && Array.isArray(val2) ? !deepEqual(val1, val2, _internal_visited) : !Object.is(val1, val2)) return false;
-		}
-	}
-	return true;
-}
-function useWatch(props) {
-	const formControl = useFormControlContext();
-	const { control = formControl, name, defaultValue, disabled, exact, compute } = props || {};
-	const _defaultValue = import_react.useRef(defaultValue);
-	const _compute = import_react.useRef(compute);
-	const _computeFormValues = import_react.useRef(void 0);
-	const _prevControl = import_react.useRef(control);
-	const _prevName = import_react.useRef(name);
-	_compute.current = compute;
-	const [value, updateValue] = import_react.useState(() => {
-		const defaultValue$1 = control._getWatch(name, _defaultValue.current);
-		return _compute.current ? _compute.current(defaultValue$1) : defaultValue$1;
-	});
-	const getCurrentOutput = import_react.useCallback((values) => {
-		const formValues = generateWatchOutput(name, control._names, values || control._formValues, false, _defaultValue.current);
-		return _compute.current ? _compute.current(formValues) : formValues;
-	}, [
-		control._formValues,
-		control._names,
-		name
-	]);
-	const refreshValue = import_react.useCallback((values) => {
-		if (!disabled) {
-			const formValues = generateWatchOutput(name, control._names, values || control._formValues, false, _defaultValue.current);
-			if (_compute.current) {
-				const computedFormValues = _compute.current(formValues);
-				if (!deepEqual(computedFormValues, _computeFormValues.current)) {
-					updateValue(computedFormValues);
-					_computeFormValues.current = computedFormValues;
-				}
-			} else updateValue(formValues);
-		}
-	}, [
-		control._formValues,
-		control._names,
-		disabled,
-		name
-	]);
-	useIsomorphicLayoutEffect(() => {
-		if (_prevControl.current !== control || !deepEqual(_prevName.current, name)) {
-			_prevControl.current = control;
-			_prevName.current = name;
-			refreshValue();
-		}
-		return control._subscribe({
-			name,
-			formState: { values: true },
-			exact,
-			callback: (formState) => {
-				refreshValue(formState.values);
-			}
-		});
-	}, [
-		control,
-		exact,
-		name,
-		refreshValue
-	]);
-	import_react.useEffect(() => control._removeUnmounted());
-	const controlChanged = _prevControl.current !== control;
-	const prevName = _prevName.current;
-	const computedOutput = import_react.useMemo(() => {
-		if (disabled) return null;
-		const nameChanged = !controlChanged && !deepEqual(prevName, name);
-		return controlChanged || nameChanged ? getCurrentOutput() : null;
-	}, [
-		disabled,
-		controlChanged,
-		name,
-		prevName,
-		getCurrentOutput
-	]);
-	return computedOutput !== null ? computedOutput : value;
-}
-function useController(props) {
-	const formControl = useFormControlContext();
-	const { name, disabled, control = formControl, shouldUnregister, defaultValue, exact = true } = props;
-	const isArrayField = isNameInFieldArray(control._names.array, name);
-	const value = useWatch({
-		control,
-		name,
-		defaultValue: import_react.useMemo(() => get(control._formValues, name, get(control._defaultValues, name, defaultValue)), [
-			control,
-			name,
-			defaultValue
-		]),
-		exact
-	});
-	const formState = useFormState({
-		control,
-		name,
-		exact
-	});
-	const _props = import_react.useRef(props);
-	const _previousNameRef = import_react.useRef(void 0);
-	const _registerProps = import_react.useRef(control.register(name, {
-		...props.rules,
-		value,
-		...isBoolean(props.disabled) ? { disabled: props.disabled } : {}
-	}));
-	_props.current = props;
-	const fieldState = import_react.useMemo(() => Object.defineProperties({}, {
-		invalid: {
-			enumerable: true,
-			get: () => !!get(formState.errors, name)
-		},
-		isDirty: {
-			enumerable: true,
-			get: () => !!get(formState.dirtyFields, name)
-		},
-		isTouched: {
-			enumerable: true,
-			get: () => !!get(formState.touchedFields, name)
-		},
-		isValidating: {
-			enumerable: true,
-			get: () => !!get(formState.validatingFields, name)
-		},
-		error: {
-			enumerable: true,
-			get: () => get(formState.errors, name)
-		}
-	}), [formState, name]);
-	const onChange = import_react.useCallback((event) => _registerProps.current.onChange({
-		target: {
-			value: getEventValue(event),
-			name
-		},
-		type: EVENTS.CHANGE
-	}), [name]);
-	const onBlur = import_react.useCallback(() => _registerProps.current.onBlur({
-		target: {
-			value: get(control._formValues, name),
-			name
-		},
-		type: EVENTS.BLUR
-	}), [name, control._formValues]);
-	const ref = import_react.useCallback((elm) => {
-		const field$1 = get(control._fields, name);
-		if (field$1 && field$1._f && elm) field$1._f.ref = {
-			focus: () => isFunction(elm.focus) && elm.focus(),
-			select: () => isFunction(elm.select) && elm.select(),
-			setCustomValidity: (message$1) => isFunction(elm.setCustomValidity) && elm.setCustomValidity(message$1),
-			reportValidity: () => isFunction(elm.reportValidity) && elm.reportValidity()
-		};
-	}, [control._fields, name]);
-	const field = import_react.useMemo(() => ({
-		name,
-		value,
-		...isBoolean(disabled) || formState.disabled ? { disabled: formState.disabled || disabled } : {},
-		onChange,
-		onBlur,
-		ref
-	}), [
-		name,
-		disabled,
-		formState.disabled,
-		onChange,
-		onBlur,
-		ref,
-		value
-	]);
-	import_react.useEffect(() => {
-		const _shouldUnregisterField = control._options.shouldUnregister || shouldUnregister;
-		const previousName = _previousNameRef.current;
-		if (previousName && previousName !== name && !isArrayField) control.unregister(previousName);
-		control.register(name, {
-			..._props.current.rules,
-			...isBoolean(_props.current.disabled) ? { disabled: _props.current.disabled } : {}
-		});
-		const updateMounted = (name$1, value$1) => {
-			const field$1 = get(control._fields, name$1);
-			if (field$1 && field$1._f) field$1._f.mount = value$1;
-		};
-		updateMounted(name, true);
-		if (_shouldUnregisterField) {
-			const value$1 = cloneObject(get(control._options.defaultValues, name, _props.current.defaultValue));
-			set(control._defaultValues, name, value$1);
-			if (isUndefined(get(control._formValues, name))) set(control._formValues, name, value$1);
-		}
-		!isArrayField && control.register(name);
-		_previousNameRef.current = name;
-		return () => {
-			(isArrayField ? _shouldUnregisterField && !control._state.action : _shouldUnregisterField) ? control.unregister(name) : updateMounted(name, false);
-		};
-	}, [
-		name,
-		control,
-		isArrayField,
-		shouldUnregister
-	]);
-	import_react.useEffect(() => {
-		control._setDisabledField({
-			disabled,
-			name
-		});
-	}, [
-		disabled,
-		name,
-		control
-	]);
-	return import_react.useMemo(() => ({
-		field,
-		formState,
-		fieldState
-	}), [
-		field,
-		formState,
-		fieldState
-	]);
-}
-var Controller = (props) => props.render(useController(props));
-var HookFormContext = import_react.createContext(null);
-HookFormContext.displayName = "HookFormContext";
-var useFormContext = () => import_react.useContext(HookFormContext);
-var FormProvider = (props) => {
-	const { children, watch, getValues, getFieldState, setError, clearErrors, setValue, trigger, formState, resetField, reset, handleSubmit, unregister, control, register, setFocus, subscribe: subscribe$1 } = props;
-	return import_react.createElement(HookFormContext.Provider, { value: import_react.useMemo(() => ({
-		watch,
-		getValues,
-		getFieldState,
-		setError,
-		clearErrors,
-		setValue,
-		trigger,
-		formState,
-		resetField,
-		reset,
-		handleSubmit,
-		unregister,
-		control,
-		register,
-		setFocus,
-		subscribe: subscribe$1
-	}), [
-		clearErrors,
-		control,
-		formState,
-		getFieldState,
-		getValues,
-		handleSubmit,
-		register,
-		reset,
-		resetField,
-		setError,
-		setFocus,
-		setValue,
-		subscribe$1,
-		trigger,
-		unregister,
-		watch
-	]) }, import_react.createElement(HookFormControlContext.Provider, { value: control }, children));
-};
-var appendErrors = (name, validateAllFieldCriteria, errors, type, message$1) => validateAllFieldCriteria ? {
-	...errors[name],
-	types: {
-		...errors[name] && errors[name].types ? errors[name].types : {},
-		[type]: message$1 || true
-	}
-} : {};
-var convertToArrayPayload = (value) => Array.isArray(value) ? value : [value];
-var createSubject = () => {
-	let _observers = [];
-	const next = (value) => {
-		for (const observer of _observers) observer.next && observer.next(value);
-	};
-	const subscribe$1 = (observer) => {
-		_observers.push(observer);
-		return { unsubscribe: () => {
-			_observers = _observers.filter((o$1) => o$1 !== observer);
-		} };
-	};
-	const unsubscribe = () => {
-		_observers = [];
-	};
-	return {
-		get observers() {
-			return _observers;
-		},
-		next,
-		subscribe: subscribe$1,
-		unsubscribe
-	};
-};
-function extractFormValues(fieldsState, formValues) {
-	const values = {};
-	for (const key in fieldsState) if (fieldsState.hasOwnProperty(key)) {
-		const fieldState = fieldsState[key];
-		const fieldValue = formValues[key];
-		if (fieldState && isObject$1(fieldState) && fieldValue) {
-			const nestedFieldsState = extractFormValues(fieldState, fieldValue);
-			if (isObject$1(nestedFieldsState)) values[key] = nestedFieldsState;
-		} else if (fieldsState[key]) values[key] = fieldValue;
-	}
-	return values;
-}
-var isEmptyObject = (value) => isObject$1(value) && !Object.keys(value).length;
-var isFileInput = (element) => element.type === "file";
-var isHTMLElement = (value) => {
-	if (!isWeb) return false;
-	const owner = value ? value.ownerDocument : 0;
-	return value instanceof (owner && owner.defaultView ? owner.defaultView.HTMLElement : HTMLElement);
-};
-var isMultipleSelect = (element) => element.type === `select-multiple`;
-var isRadioInput = (element) => element.type === "radio";
-var isRadioOrCheckbox = (ref) => isRadioInput(ref) || isCheckBoxInput(ref);
-var live = (ref) => isHTMLElement(ref) && ref.isConnected;
-function baseGet(object$1, updatePath) {
-	const length = updatePath.slice(0, -1).length;
-	let index$1 = 0;
-	while (index$1 < length) object$1 = isUndefined(object$1) ? index$1++ : object$1[updatePath[index$1++]];
-	return object$1;
-}
-function isEmptyArray(obj) {
-	for (const key in obj) if (obj.hasOwnProperty(key) && !isUndefined(obj[key])) return false;
-	return true;
-}
-function unset(object$1, path) {
-	const paths = Array.isArray(path) ? path : isKey(path) ? [path] : stringToPath(path);
-	const childObject = paths.length === 1 ? object$1 : baseGet(object$1, paths);
-	const index$1 = paths.length - 1;
-	const key = paths[index$1];
-	if (childObject) delete childObject[key];
-	if (index$1 !== 0 && (isObject$1(childObject) && isEmptyObject(childObject) || Array.isArray(childObject) && isEmptyArray(childObject))) unset(object$1, paths.slice(0, -1));
-	return object$1;
-}
-var objectHasFunction = (data) => {
-	for (const key in data) if (isFunction(data[key])) return true;
-	return false;
-};
-function isTraversable(value) {
-	return Array.isArray(value) || isObject$1(value) && !objectHasFunction(value);
-}
-function markFieldsDirty(data, fields = {}) {
-	for (const key in data) {
-		const value = data[key];
-		if (isTraversable(value)) {
-			fields[key] = Array.isArray(value) ? [] : {};
-			markFieldsDirty(value, fields[key]);
-		} else if (!isUndefined(value)) fields[key] = true;
-	}
-	return fields;
-}
-function getDirtyFields(data, formValues, dirtyFieldsFromValues) {
-	if (!dirtyFieldsFromValues) dirtyFieldsFromValues = markFieldsDirty(formValues);
-	for (const key in data) {
-		const value = data[key];
-		if (isTraversable(value)) if (isUndefined(formValues) || isPrimitive(dirtyFieldsFromValues[key])) dirtyFieldsFromValues[key] = markFieldsDirty(value, Array.isArray(value) ? [] : {});
-		else getDirtyFields(value, isNullOrUndefined(formValues) ? {} : formValues[key], dirtyFieldsFromValues[key]);
-		else {
-			const formValue = formValues[key];
-			dirtyFieldsFromValues[key] = !deepEqual(value, formValue);
-		}
-	}
-	return dirtyFieldsFromValues;
-}
-var defaultResult = {
-	value: false,
-	isValid: false
-};
-var validResult = {
-	value: true,
-	isValid: true
-};
-var getCheckboxValue = (options$1) => {
-	if (Array.isArray(options$1)) {
-		if (options$1.length > 1) {
-			const values = options$1.filter((option) => option && option.checked && !option.disabled).map((option) => option.value);
-			return {
-				value: values,
-				isValid: !!values.length
-			};
-		}
-		return options$1[0].checked && !options$1[0].disabled ? options$1[0].attributes && !isUndefined(options$1[0].attributes.value) ? isUndefined(options$1[0].value) || options$1[0].value === "" ? validResult : {
-			value: options$1[0].value,
-			isValid: true
-		} : validResult : defaultResult;
-	}
-	return defaultResult;
-};
-var getFieldValueAs = (value, { valueAsNumber, valueAsDate, setValueAs }) => isUndefined(value) ? value : valueAsNumber ? value === "" ? NaN : value ? +value : value : valueAsDate && isString(value) ? new Date(value) : setValueAs ? setValueAs(value) : value;
-var defaultReturn = {
-	isValid: false,
-	value: null
-};
-var getRadioValue = (options$1) => Array.isArray(options$1) ? options$1.reduce((previous, option) => option && option.checked && !option.disabled ? {
-	isValid: true,
-	value: option.value
-} : previous, defaultReturn) : defaultReturn;
-function getFieldValue(_f) {
-	const ref = _f.ref;
-	if (isFileInput(ref)) return ref.files;
-	if (isRadioInput(ref)) return getRadioValue(_f.refs).value;
-	if (isMultipleSelect(ref)) return [...ref.selectedOptions].map(({ value }) => value);
-	if (isCheckBoxInput(ref)) return getCheckboxValue(_f.refs).value;
-	return getFieldValueAs(isUndefined(ref.value) ? _f.ref.value : ref.value, _f);
-}
-var getResolverOptions = (fieldsNames, _fields, criteriaMode, shouldUseNativeValidation) => {
-	const fields = {};
-	for (const name of fieldsNames) {
-		const field = get(_fields, name);
-		field && set(fields, name, field._f);
-	}
-	return {
-		criteriaMode,
-		names: [...fieldsNames],
-		fields,
-		shouldUseNativeValidation
-	};
-};
-var isRegex = (value) => value instanceof RegExp;
-var getRuleValue = (rule) => isUndefined(rule) ? rule : isRegex(rule) ? rule.source : isObject$1(rule) ? isRegex(rule.value) ? rule.value.source : rule.value : rule;
-var getValidationModes = (mode) => ({
-	isOnSubmit: !mode || mode === VALIDATION_MODE.onSubmit,
-	isOnBlur: mode === VALIDATION_MODE.onBlur,
-	isOnChange: mode === VALIDATION_MODE.onChange,
-	isOnAll: mode === VALIDATION_MODE.all,
-	isOnTouch: mode === VALIDATION_MODE.onTouched
-});
-var ASYNC_FUNCTION = "AsyncFunction";
-var hasPromiseValidation = (fieldReference) => !!fieldReference && !!fieldReference.validate && !!(isFunction(fieldReference.validate) && fieldReference.validate.constructor.name === ASYNC_FUNCTION || isObject$1(fieldReference.validate) && Object.values(fieldReference.validate).find((validateFunction) => validateFunction.constructor.name === ASYNC_FUNCTION));
-var hasValidation = (options$1) => options$1.mount && (options$1.required || options$1.min || options$1.max || options$1.maxLength || options$1.minLength || options$1.pattern || options$1.validate);
-var isWatched = (name, _names, isBlurEvent) => !isBlurEvent && (_names.watchAll || _names.watch.has(name) || [..._names.watch].some((watchName) => name.startsWith(watchName) && /^\.\w+/.test(name.slice(watchName.length))));
-var iterateFieldsByAction = (fields, action, fieldsNames, abortEarly) => {
-	for (const key of fieldsNames || Object.keys(fields)) {
-		const field = get(fields, key);
-		if (field) {
-			const { _f, ...currentField } = field;
-			if (_f) {
-				if (_f.refs && _f.refs[0] && action(_f.refs[0], key) && !abortEarly) return true;
-				else if (_f.ref && action(_f.ref, _f.name) && !abortEarly) return true;
-				else if (iterateFieldsByAction(currentField, action)) break;
-			} else if (isObject$1(currentField)) {
-				if (iterateFieldsByAction(currentField, action)) break;
-			}
-		}
-	}
-};
-function schemaErrorLookup(errors, _fields, name) {
-	const error = get(errors, name);
-	if (error || isKey(name)) return {
-		error,
-		name
-	};
-	const names = name.split(".");
-	while (names.length) {
-		const fieldName = names.join(".");
-		const field = get(_fields, fieldName);
-		const foundError = get(errors, fieldName);
-		if (field && !Array.isArray(field) && name !== fieldName) return { name };
-		if (foundError && foundError.type) return {
-			name: fieldName,
-			error: foundError
-		};
-		if (foundError && foundError.root && foundError.root.type) return {
-			name: `${fieldName}.root`,
-			error: foundError.root
-		};
-		names.pop();
-	}
-	return { name };
-}
-var shouldRenderFormState = (formStateData, _proxyFormState, updateFormState, isRoot) => {
-	updateFormState(formStateData);
-	const { name, ...formState } = formStateData;
-	return isEmptyObject(formState) || Object.keys(formState).length >= Object.keys(_proxyFormState).length || Object.keys(formState).find((key) => _proxyFormState[key] === (!isRoot || VALIDATION_MODE.all));
-};
-var shouldSubscribeByName = (name, signalName, exact) => !name || !signalName || name === signalName || convertToArrayPayload(name).some((currentName) => currentName && (exact ? currentName === signalName : currentName.startsWith(signalName) || signalName.startsWith(currentName)));
-var skipValidation = (isBlurEvent, isTouched, isSubmitted, reValidateMode, mode) => {
-	if (mode.isOnAll) return false;
-	else if (!isSubmitted && mode.isOnTouch) return !(isTouched || isBlurEvent);
-	else if (isSubmitted ? reValidateMode.isOnBlur : mode.isOnBlur) return !isBlurEvent;
-	else if (isSubmitted ? reValidateMode.isOnChange : mode.isOnChange) return isBlurEvent;
-	return true;
-};
-var unsetEmptyArray = (ref, name) => !compact(get(ref, name)).length && unset(ref, name);
-var updateFieldArrayRootError = (errors, error, name) => {
-	const fieldArrayErrors = convertToArrayPayload(get(errors, name));
-	set(fieldArrayErrors, "root", error[name]);
-	set(errors, name, fieldArrayErrors);
-	return errors;
-};
-function getValidateError(result, ref, type = "validate") {
-	if (isString(result) || Array.isArray(result) && result.every(isString) || isBoolean(result) && !result) return {
-		type,
-		message: isString(result) ? result : "",
-		ref
-	};
-}
-var getValueAndMessage = (validationData) => isObject$1(validationData) && !isRegex(validationData) ? validationData : {
-	value: validationData,
-	message: ""
-};
-var validateField = async (field, disabledFieldNames, formValues, validateAllFieldCriteria, shouldUseNativeValidation, isFieldArray) => {
-	const { ref, refs, required: required$1, maxLength, minLength, min: min$1, max: max$1, pattern, validate, name, valueAsNumber, mount } = field._f;
-	const inputValue = get(formValues, name);
-	if (!mount || disabledFieldNames.has(name)) return {};
-	const inputRef = refs ? refs[0] : ref;
-	const setCustomValidity = (message$1) => {
-		if (shouldUseNativeValidation && inputRef.reportValidity) {
-			inputRef.setCustomValidity(isBoolean(message$1) ? "" : message$1 || "");
-			inputRef.reportValidity();
-		}
-	};
-	const error = {};
-	const isRadio = isRadioInput(ref);
-	const isCheckBox = isCheckBoxInput(ref);
-	const isRadioOrCheckbox$1 = isRadio || isCheckBox;
-	const isEmpty = (valueAsNumber || isFileInput(ref)) && isUndefined(ref.value) && isUndefined(inputValue) || isHTMLElement(ref) && ref.value === "" || inputValue === "" || Array.isArray(inputValue) && !inputValue.length;
-	const appendErrorsCurry = appendErrors.bind(null, name, validateAllFieldCriteria, error);
-	const getMinMaxMessage = (exceedMax, maxLengthMessage, minLengthMessage, maxType = INPUT_VALIDATION_RULES.maxLength, minType = INPUT_VALIDATION_RULES.minLength) => {
-		const message$1 = exceedMax ? maxLengthMessage : minLengthMessage;
-		error[name] = {
-			type: exceedMax ? maxType : minType,
-			message: message$1,
-			ref,
-			...appendErrorsCurry(exceedMax ? maxType : minType, message$1)
-		};
-	};
-	if (isFieldArray ? !Array.isArray(inputValue) || !inputValue.length : required$1 && (!isRadioOrCheckbox$1 && (isEmpty || isNullOrUndefined(inputValue)) || isBoolean(inputValue) && !inputValue || isCheckBox && !getCheckboxValue(refs).isValid || isRadio && !getRadioValue(refs).isValid)) {
-		const { value, message: message$1 } = isString(required$1) ? {
-			value: !!required$1,
-			message: required$1
-		} : getValueAndMessage(required$1);
-		if (value) {
-			error[name] = {
-				type: INPUT_VALIDATION_RULES.required,
-				message: message$1,
-				ref: inputRef,
-				...appendErrorsCurry(INPUT_VALIDATION_RULES.required, message$1)
-			};
-			if (!validateAllFieldCriteria) {
-				setCustomValidity(message$1);
-				return error;
-			}
-		}
-	}
-	if (!isEmpty && (!isNullOrUndefined(min$1) || !isNullOrUndefined(max$1))) {
-		let exceedMax;
-		let exceedMin;
-		const maxOutput = getValueAndMessage(max$1);
-		const minOutput = getValueAndMessage(min$1);
-		if (!isNullOrUndefined(inputValue) && !isNaN(inputValue)) {
-			const valueNumber = ref.valueAsNumber || (inputValue ? +inputValue : inputValue);
-			if (!isNullOrUndefined(maxOutput.value)) exceedMax = valueNumber > maxOutput.value;
-			if (!isNullOrUndefined(minOutput.value)) exceedMin = valueNumber < minOutput.value;
-		} else {
-			const valueDate = ref.valueAsDate || new Date(inputValue);
-			const convertTimeToDate = (time$2) => /* @__PURE__ */ new Date((/* @__PURE__ */ new Date()).toDateString() + " " + time$2);
-			const isTime = ref.type == "time";
-			const isWeek = ref.type == "week";
-			if (isString(maxOutput.value) && inputValue) exceedMax = isTime ? convertTimeToDate(inputValue) > convertTimeToDate(maxOutput.value) : isWeek ? inputValue > maxOutput.value : valueDate > new Date(maxOutput.value);
-			if (isString(minOutput.value) && inputValue) exceedMin = isTime ? convertTimeToDate(inputValue) < convertTimeToDate(minOutput.value) : isWeek ? inputValue < minOutput.value : valueDate < new Date(minOutput.value);
-		}
-		if (exceedMax || exceedMin) {
-			getMinMaxMessage(!!exceedMax, maxOutput.message, minOutput.message, INPUT_VALIDATION_RULES.max, INPUT_VALIDATION_RULES.min);
-			if (!validateAllFieldCriteria) {
-				setCustomValidity(error[name].message);
-				return error;
-			}
-		}
-	}
-	if ((maxLength || minLength) && !isEmpty && (isString(inputValue) || isFieldArray && Array.isArray(inputValue))) {
-		const maxLengthOutput = getValueAndMessage(maxLength);
-		const minLengthOutput = getValueAndMessage(minLength);
-		const exceedMax = !isNullOrUndefined(maxLengthOutput.value) && inputValue.length > +maxLengthOutput.value;
-		const exceedMin = !isNullOrUndefined(minLengthOutput.value) && inputValue.length < +minLengthOutput.value;
-		if (exceedMax || exceedMin) {
-			getMinMaxMessage(exceedMax, maxLengthOutput.message, minLengthOutput.message);
-			if (!validateAllFieldCriteria) {
-				setCustomValidity(error[name].message);
-				return error;
-			}
-		}
-	}
-	if (pattern && !isEmpty && isString(inputValue)) {
-		const { value: patternValue, message: message$1 } = getValueAndMessage(pattern);
-		if (isRegex(patternValue) && !inputValue.match(patternValue)) {
-			error[name] = {
-				type: INPUT_VALIDATION_RULES.pattern,
-				message: message$1,
-				ref,
-				...appendErrorsCurry(INPUT_VALIDATION_RULES.pattern, message$1)
-			};
-			if (!validateAllFieldCriteria) {
-				setCustomValidity(message$1);
-				return error;
-			}
-		}
-	}
-	if (validate) {
-		if (isFunction(validate)) {
-			const validateError = getValidateError(await validate(inputValue, formValues), inputRef);
-			if (validateError) {
-				error[name] = {
-					...validateError,
-					...appendErrorsCurry(INPUT_VALIDATION_RULES.validate, validateError.message)
-				};
-				if (!validateAllFieldCriteria) {
-					setCustomValidity(validateError.message);
-					return error;
-				}
-			}
-		} else if (isObject$1(validate)) {
-			let validationResult = {};
-			for (const key in validate) {
-				if (!isEmptyObject(validationResult) && !validateAllFieldCriteria) break;
-				const validateError = getValidateError(await validate[key](inputValue, formValues), inputRef, key);
-				if (validateError) {
-					validationResult = {
-						...validateError,
-						...appendErrorsCurry(key, validateError.message)
-					};
-					setCustomValidity(validateError.message);
-					if (validateAllFieldCriteria) error[name] = validationResult;
-				}
-			}
-			if (!isEmptyObject(validationResult)) {
-				error[name] = {
-					ref: inputRef,
-					...validationResult
-				};
-				if (!validateAllFieldCriteria) return error;
-			}
-		}
-	}
-	setCustomValidity(true);
-	return error;
-};
-var defaultOptions$1 = {
-	mode: VALIDATION_MODE.onSubmit,
-	reValidateMode: VALIDATION_MODE.onChange,
-	shouldFocusError: true
-};
-function createFormControl(props = {}) {
-	let _options = {
-		...defaultOptions$1,
-		...props
-	};
-	let _formState = {
-		submitCount: 0,
-		isDirty: false,
-		isReady: false,
-		isLoading: isFunction(_options.defaultValues),
-		isValidating: false,
-		isSubmitted: false,
-		isSubmitting: false,
-		isSubmitSuccessful: false,
-		isValid: false,
-		touchedFields: {},
-		dirtyFields: {},
-		validatingFields: {},
-		errors: _options.errors || {},
-		disabled: _options.disabled || false
-	};
-	let _fields = {};
-	let _defaultValues = isObject$1(_options.defaultValues) || isObject$1(_options.values) ? cloneObject(_options.defaultValues || _options.values) || {} : {};
-	let _formValues = _options.shouldUnregister ? {} : cloneObject(_defaultValues);
-	let _state = {
-		action: false,
-		mount: false,
-		watch: false,
-		keepIsValid: false
-	};
-	let _names = {
-		mount: /* @__PURE__ */ new Set(),
-		disabled: /* @__PURE__ */ new Set(),
-		unMount: /* @__PURE__ */ new Set(),
-		array: /* @__PURE__ */ new Set(),
-		watch: /* @__PURE__ */ new Set()
-	};
-	let delayErrorCallback;
-	let timer = 0;
-	const defaultProxyFormState = {
-		isDirty: false,
-		dirtyFields: false,
-		validatingFields: false,
-		touchedFields: false,
-		isValidating: false,
-		isValid: false,
-		errors: false
-	};
-	const _proxyFormState = { ...defaultProxyFormState };
-	let _proxySubscribeFormState = { ..._proxyFormState };
-	const _subjects = {
-		array: createSubject(),
-		state: createSubject()
-	};
-	const shouldDisplayAllAssociatedErrors = _options.criteriaMode === VALIDATION_MODE.all;
-	const debounce = (callback) => (wait) => {
-		clearTimeout(timer);
-		timer = setTimeout(callback, wait);
-	};
-	const _setValid = async (shouldUpdateValid) => {
-		if (_state.keepIsValid) return;
-		if (!_options.disabled && (_proxyFormState.isValid || _proxySubscribeFormState.isValid || shouldUpdateValid)) {
-			let isValid$1;
-			if (_options.resolver) {
-				isValid$1 = isEmptyObject((await _runSchema()).errors);
-				_updateIsValidating();
-			} else isValid$1 = await executeBuiltInValidation(_fields, true);
-			if (isValid$1 !== _formState.isValid) _subjects.state.next({ isValid: isValid$1 });
-		}
-	};
-	const _updateIsValidating = (names, isValidating) => {
-		if (!_options.disabled && (_proxyFormState.isValidating || _proxyFormState.validatingFields || _proxySubscribeFormState.isValidating || _proxySubscribeFormState.validatingFields)) {
-			(names || Array.from(_names.mount)).forEach((name) => {
-				if (name) isValidating ? set(_formState.validatingFields, name, isValidating) : unset(_formState.validatingFields, name);
-			});
-			_subjects.state.next({
-				validatingFields: _formState.validatingFields,
-				isValidating: !isEmptyObject(_formState.validatingFields)
-			});
-		}
-	};
-	const _setFieldArray = (name, values = [], method, args, shouldSetValues = true, shouldUpdateFieldsAndState = true) => {
-		if (args && method && !_options.disabled) {
-			_state.action = true;
-			if (shouldUpdateFieldsAndState && Array.isArray(get(_fields, name))) {
-				const fieldValues = method(get(_fields, name), args.argA, args.argB);
-				shouldSetValues && set(_fields, name, fieldValues);
-			}
-			if (shouldUpdateFieldsAndState && Array.isArray(get(_formState.errors, name))) {
-				const errors = method(get(_formState.errors, name), args.argA, args.argB);
-				shouldSetValues && set(_formState.errors, name, errors);
-				unsetEmptyArray(_formState.errors, name);
-			}
-			if ((_proxyFormState.touchedFields || _proxySubscribeFormState.touchedFields) && shouldUpdateFieldsAndState && Array.isArray(get(_formState.touchedFields, name))) {
-				const touchedFields = method(get(_formState.touchedFields, name), args.argA, args.argB);
-				shouldSetValues && set(_formState.touchedFields, name, touchedFields);
-			}
-			if (_proxyFormState.dirtyFields || _proxySubscribeFormState.dirtyFields) _formState.dirtyFields = getDirtyFields(_defaultValues, _formValues);
-			_subjects.state.next({
-				name,
-				isDirty: _getDirty(name, values),
-				dirtyFields: _formState.dirtyFields,
-				errors: _formState.errors,
-				isValid: _formState.isValid
-			});
-		} else set(_formValues, name, values);
-	};
-	const updateErrors = (name, error) => {
-		set(_formState.errors, name, error);
-		_subjects.state.next({ errors: _formState.errors });
-	};
-	const _setErrors = (errors) => {
-		_formState.errors = errors;
-		_subjects.state.next({
-			errors: _formState.errors,
-			isValid: false
-		});
-	};
-	const updateValidAndValue = (name, shouldSkipSetValueAs, value, ref) => {
-		const field = get(_fields, name);
-		if (field) {
-			const defaultValue = get(_formValues, name, isUndefined(value) ? get(_defaultValues, name) : value);
-			isUndefined(defaultValue) || ref && ref.defaultChecked || shouldSkipSetValueAs ? set(_formValues, name, shouldSkipSetValueAs ? defaultValue : getFieldValue(field._f)) : setFieldValue(name, defaultValue);
-			_state.mount && !_state.action && _setValid();
-		}
-	};
-	const updateTouchAndDirty = (name, fieldValue, isBlurEvent, shouldDirty, shouldRender) => {
-		let shouldUpdateField = false;
-		let isPreviousDirty = false;
-		const output = { name };
-		if (!_options.disabled) {
-			if (!isBlurEvent || shouldDirty) {
-				if (_proxyFormState.isDirty || _proxySubscribeFormState.isDirty) {
-					isPreviousDirty = _formState.isDirty;
-					_formState.isDirty = output.isDirty = _getDirty();
-					shouldUpdateField = isPreviousDirty !== output.isDirty;
-				}
-				const isCurrentFieldPristine = deepEqual(get(_defaultValues, name), fieldValue);
-				isPreviousDirty = !!get(_formState.dirtyFields, name);
-				isCurrentFieldPristine ? unset(_formState.dirtyFields, name) : set(_formState.dirtyFields, name, true);
-				output.dirtyFields = _formState.dirtyFields;
-				shouldUpdateField = shouldUpdateField || (_proxyFormState.dirtyFields || _proxySubscribeFormState.dirtyFields) && isPreviousDirty !== !isCurrentFieldPristine;
-			}
-			if (isBlurEvent) {
-				const isPreviousFieldTouched = get(_formState.touchedFields, name);
-				if (!isPreviousFieldTouched) {
-					set(_formState.touchedFields, name, isBlurEvent);
-					output.touchedFields = _formState.touchedFields;
-					shouldUpdateField = shouldUpdateField || (_proxyFormState.touchedFields || _proxySubscribeFormState.touchedFields) && isPreviousFieldTouched !== isBlurEvent;
-				}
-			}
-			shouldUpdateField && shouldRender && _subjects.state.next(output);
-		}
-		return shouldUpdateField ? output : {};
-	};
-	const shouldRenderByError = (name, isValid$1, error, fieldState) => {
-		const previousFieldError = get(_formState.errors, name);
-		const shouldUpdateValid = (_proxyFormState.isValid || _proxySubscribeFormState.isValid) && isBoolean(isValid$1) && _formState.isValid !== isValid$1;
-		if (_options.delayError && error) {
-			delayErrorCallback = debounce(() => updateErrors(name, error));
-			delayErrorCallback(_options.delayError);
-		} else {
-			clearTimeout(timer);
-			delayErrorCallback = null;
-			error ? set(_formState.errors, name, error) : unset(_formState.errors, name);
-		}
-		if ((error ? !deepEqual(previousFieldError, error) : previousFieldError) || !isEmptyObject(fieldState) || shouldUpdateValid) {
-			const updatedFormState = {
-				...fieldState,
-				...shouldUpdateValid && isBoolean(isValid$1) ? { isValid: isValid$1 } : {},
-				errors: _formState.errors,
-				name
-			};
-			_formState = {
-				..._formState,
-				...updatedFormState
-			};
-			_subjects.state.next(updatedFormState);
-		}
-	};
-	const _runSchema = async (name) => {
-		_updateIsValidating(name, true);
-		return await _options.resolver(_formValues, _options.context, getResolverOptions(name || _names.mount, _fields, _options.criteriaMode, _options.shouldUseNativeValidation));
-	};
-	const executeSchemaAndUpdateState = async (names) => {
-		const { errors } = await _runSchema(names);
-		_updateIsValidating(names);
-		if (names) for (const name of names) {
-			const error = get(errors, name);
-			error ? set(_formState.errors, name, error) : unset(_formState.errors, name);
-		}
-		else _formState.errors = errors;
-		return errors;
-	};
-	const executeBuiltInValidation = async (fields, shouldOnlyCheckValid, context = { valid: true }) => {
-		for (const name in fields) {
-			const field = fields[name];
-			if (field) {
-				const { _f, ...fieldValue } = field;
-				if (_f) {
-					const isFieldArrayRoot = _names.array.has(_f.name);
-					const isPromiseFunction = field._f && hasPromiseValidation(field._f);
-					if (isPromiseFunction && _proxyFormState.validatingFields) _updateIsValidating([_f.name], true);
-					const fieldError = await validateField(field, _names.disabled, _formValues, shouldDisplayAllAssociatedErrors, _options.shouldUseNativeValidation && !shouldOnlyCheckValid, isFieldArrayRoot);
-					if (isPromiseFunction && _proxyFormState.validatingFields) _updateIsValidating([_f.name]);
-					if (fieldError[_f.name]) {
-						context.valid = false;
-						if (shouldOnlyCheckValid || props.shouldUseNativeValidation) break;
-					}
-					!shouldOnlyCheckValid && (get(fieldError, _f.name) ? isFieldArrayRoot ? updateFieldArrayRootError(_formState.errors, fieldError, _f.name) : set(_formState.errors, _f.name, fieldError[_f.name]) : unset(_formState.errors, _f.name));
-				}
-				!isEmptyObject(fieldValue) && await executeBuiltInValidation(fieldValue, shouldOnlyCheckValid, context);
-			}
-		}
-		return context.valid;
-	};
-	const _removeUnmounted = () => {
-		for (const name of _names.unMount) {
-			const field = get(_fields, name);
-			field && (field._f.refs ? field._f.refs.every((ref) => !live(ref)) : !live(field._f.ref)) && unregister(name);
-		}
-		_names.unMount = /* @__PURE__ */ new Set();
-	};
-	const _getDirty = (name, data) => !_options.disabled && (name && data && set(_formValues, name, data), !deepEqual(getValues(), _defaultValues));
-	const _getWatch = (names, defaultValue, isGlobal) => generateWatchOutput(names, _names, { ..._state.mount ? _formValues : isUndefined(defaultValue) ? _defaultValues : isString(names) ? { [names]: defaultValue } : defaultValue }, isGlobal, defaultValue);
-	const _getFieldArray = (name) => compact(get(_state.mount ? _formValues : _defaultValues, name, _options.shouldUnregister ? get(_defaultValues, name, []) : []));
-	const setFieldValue = (name, value, options$1 = {}) => {
-		const field = get(_fields, name);
-		let fieldValue = value;
-		if (field) {
-			const fieldReference = field._f;
-			if (fieldReference) {
-				!fieldReference.disabled && set(_formValues, name, getFieldValueAs(value, fieldReference));
-				fieldValue = isHTMLElement(fieldReference.ref) && isNullOrUndefined(value) ? "" : value;
-				if (isMultipleSelect(fieldReference.ref)) [...fieldReference.ref.options].forEach((optionRef) => optionRef.selected = fieldValue.includes(optionRef.value));
-				else if (fieldReference.refs) if (isCheckBoxInput(fieldReference.ref)) fieldReference.refs.forEach((checkboxRef) => {
-					if (!checkboxRef.defaultChecked || !checkboxRef.disabled) if (Array.isArray(fieldValue)) checkboxRef.checked = !!fieldValue.find((data) => data === checkboxRef.value);
-					else checkboxRef.checked = fieldValue === checkboxRef.value || !!fieldValue;
-				});
-				else fieldReference.refs.forEach((radioRef) => radioRef.checked = radioRef.value === fieldValue);
-				else if (isFileInput(fieldReference.ref)) fieldReference.ref.value = "";
-				else {
-					fieldReference.ref.value = fieldValue;
-					if (!fieldReference.ref.type) _subjects.state.next({
-						name,
-						values: cloneObject(_formValues)
-					});
-				}
-			}
-		}
-		(options$1.shouldDirty || options$1.shouldTouch) && updateTouchAndDirty(name, fieldValue, options$1.shouldTouch, options$1.shouldDirty, true);
-		options$1.shouldValidate && trigger(name);
-	};
-	const setValues = (name, value, options$1) => {
-		for (const fieldKey in value) {
-			if (!value.hasOwnProperty(fieldKey)) return;
-			const fieldValue = value[fieldKey];
-			const fieldName = name + "." + fieldKey;
-			const field = get(_fields, fieldName);
-			(_names.array.has(name) || isObject$1(fieldValue) || field && !field._f) && !isDateObject(fieldValue) ? setValues(fieldName, fieldValue, options$1) : setFieldValue(fieldName, fieldValue, options$1);
-		}
-	};
-	const setValue = (name, value, options$1 = {}) => {
-		const field = get(_fields, name);
-		const isFieldArray = _names.array.has(name);
-		const cloneValue = cloneObject(value);
-		set(_formValues, name, cloneValue);
-		if (isFieldArray) {
-			_subjects.array.next({
-				name,
-				values: cloneObject(_formValues)
-			});
-			if ((_proxyFormState.isDirty || _proxyFormState.dirtyFields || _proxySubscribeFormState.isDirty || _proxySubscribeFormState.dirtyFields) && options$1.shouldDirty) _subjects.state.next({
-				name,
-				dirtyFields: getDirtyFields(_defaultValues, _formValues),
-				isDirty: _getDirty(name, cloneValue)
-			});
-		} else field && !field._f && !isNullOrUndefined(cloneValue) ? setValues(name, cloneValue, options$1) : setFieldValue(name, cloneValue, options$1);
-		if (isWatched(name, _names)) _subjects.state.next({
-			..._formState,
-			name,
-			values: cloneObject(_formValues)
-		});
-		else _subjects.state.next({
-			name: _state.mount ? name : void 0,
-			values: cloneObject(_formValues)
-		});
-	};
-	const onChange = async (event) => {
-		_state.mount = true;
-		const target = event.target;
-		let name = target.name;
-		let isFieldValueUpdated = true;
-		const field = get(_fields, name);
-		const _updateIsFieldValueUpdated = (fieldValue) => {
-			isFieldValueUpdated = Number.isNaN(fieldValue) || isDateObject(fieldValue) && isNaN(fieldValue.getTime()) || deepEqual(fieldValue, get(_formValues, name, fieldValue));
-		};
-		const validationModeBeforeSubmit = getValidationModes(_options.mode);
-		const validationModeAfterSubmit = getValidationModes(_options.reValidateMode);
-		if (field) {
-			let error;
-			let isValid$1;
-			const fieldValue = target.type ? getFieldValue(field._f) : getEventValue(event);
-			const isBlurEvent = event.type === EVENTS.BLUR || event.type === EVENTS.FOCUS_OUT;
-			const shouldSkipValidation = !hasValidation(field._f) && !_options.resolver && !get(_formState.errors, name) && !field._f.deps || skipValidation(isBlurEvent, get(_formState.touchedFields, name), _formState.isSubmitted, validationModeAfterSubmit, validationModeBeforeSubmit);
-			const watched = isWatched(name, _names, isBlurEvent);
-			set(_formValues, name, fieldValue);
-			if (isBlurEvent) {
-				if (!target || !target.readOnly) {
-					field._f.onBlur && field._f.onBlur(event);
-					delayErrorCallback && delayErrorCallback(0);
-				}
-			} else if (field._f.onChange) field._f.onChange(event);
-			const fieldState = updateTouchAndDirty(name, fieldValue, isBlurEvent);
-			const shouldRender = !isEmptyObject(fieldState) || watched;
-			!isBlurEvent && _subjects.state.next({
-				name,
-				type: event.type,
-				values: cloneObject(_formValues)
-			});
-			if (shouldSkipValidation) {
-				if (_proxyFormState.isValid || _proxySubscribeFormState.isValid) {
-					if (_options.mode === "onBlur") {
-						if (isBlurEvent) _setValid();
-					} else if (!isBlurEvent) _setValid();
-				}
-				return shouldRender && _subjects.state.next({
-					name,
-					...watched ? {} : fieldState
-				});
-			}
-			!isBlurEvent && watched && _subjects.state.next({ ..._formState });
-			if (_options.resolver) {
-				const { errors } = await _runSchema([name]);
-				_updateIsValidating([name]);
-				_updateIsFieldValueUpdated(fieldValue);
-				if (isFieldValueUpdated) {
-					const previousErrorLookupResult = schemaErrorLookup(_formState.errors, _fields, name);
-					const errorLookupResult = schemaErrorLookup(errors, _fields, previousErrorLookupResult.name || name);
-					error = errorLookupResult.error;
-					name = errorLookupResult.name;
-					isValid$1 = isEmptyObject(errors);
-				}
-			} else {
-				_updateIsValidating([name], true);
-				error = (await validateField(field, _names.disabled, _formValues, shouldDisplayAllAssociatedErrors, _options.shouldUseNativeValidation))[name];
-				_updateIsValidating([name]);
-				_updateIsFieldValueUpdated(fieldValue);
-				if (isFieldValueUpdated) {
-					if (error) isValid$1 = false;
-					else if (_proxyFormState.isValid || _proxySubscribeFormState.isValid) isValid$1 = await executeBuiltInValidation(_fields, true);
-				}
-			}
-			if (isFieldValueUpdated) {
-				field._f.deps && (!Array.isArray(field._f.deps) || field._f.deps.length > 0) && trigger(field._f.deps);
-				shouldRenderByError(name, isValid$1, error, fieldState);
-			}
-		}
-	};
-	const _focusInput = (ref, key) => {
-		if (get(_formState.errors, key) && ref.focus) {
-			ref.focus();
-			return 1;
-		}
-	};
-	const trigger = async (name, options$1 = {}) => {
-		let isValid$1;
-		let validationResult;
-		const fieldNames = convertToArrayPayload(name);
-		if (_options.resolver) {
-			const errors = await executeSchemaAndUpdateState(isUndefined(name) ? name : fieldNames);
-			isValid$1 = isEmptyObject(errors);
-			validationResult = name ? !fieldNames.some((name$1) => get(errors, name$1)) : isValid$1;
-		} else if (name) {
-			validationResult = (await Promise.all(fieldNames.map(async (fieldName) => {
-				const field = get(_fields, fieldName);
-				return await executeBuiltInValidation(field && field._f ? { [fieldName]: field } : field);
-			}))).every(Boolean);
-			!(!validationResult && !_formState.isValid) && _setValid();
-		} else validationResult = isValid$1 = await executeBuiltInValidation(_fields);
-		_subjects.state.next({
-			...!isString(name) || (_proxyFormState.isValid || _proxySubscribeFormState.isValid) && isValid$1 !== _formState.isValid ? {} : { name },
-			..._options.resolver || !name ? { isValid: isValid$1 } : {},
-			errors: _formState.errors
-		});
-		options$1.shouldFocus && !validationResult && iterateFieldsByAction(_fields, _focusInput, name ? fieldNames : _names.mount);
-		return validationResult;
-	};
-	const getValues = (fieldNames, config$1) => {
-		let values = { ..._state.mount ? _formValues : _defaultValues };
-		if (config$1) values = extractFormValues(config$1.dirtyFields ? _formState.dirtyFields : _formState.touchedFields, values);
-		return isUndefined(fieldNames) ? values : isString(fieldNames) ? get(values, fieldNames) : fieldNames.map((name) => get(values, name));
-	};
-	const getFieldState = (name, formState) => ({
-		invalid: !!get((formState || _formState).errors, name),
-		isDirty: !!get((formState || _formState).dirtyFields, name),
-		error: get((formState || _formState).errors, name),
-		isValidating: !!get(_formState.validatingFields, name),
-		isTouched: !!get((formState || _formState).touchedFields, name)
-	});
-	const clearErrors = (name) => {
-		const names = name ? convertToArrayPayload(name) : void 0;
-		names === null || names === void 0 || names.forEach((inputName) => unset(_formState.errors, inputName));
-		if (names) names.forEach((inputName) => {
-			_subjects.state.next({
-				name: inputName,
-				errors: _formState.errors
-			});
-		});
-		else _subjects.state.next({ errors: {} });
-	};
-	const setError = (name, error, options$1) => {
-		const ref = (get(_fields, name, { _f: {} })._f || {}).ref;
-		const { ref: currentRef, message: message$1, type, ...restOfErrorTree } = get(_formState.errors, name) || {};
-		set(_formState.errors, name, {
-			...restOfErrorTree,
-			...error,
-			ref
-		});
-		_subjects.state.next({
-			name,
-			errors: _formState.errors,
-			isValid: false
-		});
-		options$1 && options$1.shouldFocus && ref && ref.focus && ref.focus();
-	};
-	const watch = (name, defaultValue) => isFunction(name) ? _subjects.state.subscribe({ next: (payload) => "values" in payload && name(_getWatch(void 0, defaultValue), payload) }) : _getWatch(name, defaultValue, true);
-	const _subscribe = (props$1) => _subjects.state.subscribe({ next: (formState) => {
-		if (shouldSubscribeByName(props$1.name, formState.name, props$1.exact) && shouldRenderFormState(formState, props$1.formState || _proxyFormState, _setFormState, props$1.reRenderRoot)) props$1.callback({
-			values: { ..._formValues },
-			..._formState,
-			...formState,
-			defaultValues: _defaultValues
-		});
-	} }).unsubscribe;
-	const subscribe$1 = (props$1) => {
-		_state.mount = true;
-		_proxySubscribeFormState = {
-			..._proxySubscribeFormState,
-			...props$1.formState
-		};
-		return _subscribe({
-			...props$1,
-			formState: {
-				...defaultProxyFormState,
-				...props$1.formState
-			}
-		});
-	};
-	const unregister = (name, options$1 = {}) => {
-		for (const fieldName of name ? convertToArrayPayload(name) : _names.mount) {
-			_names.mount.delete(fieldName);
-			_names.array.delete(fieldName);
-			if (!options$1.keepValue) {
-				unset(_fields, fieldName);
-				unset(_formValues, fieldName);
-			}
-			!options$1.keepError && unset(_formState.errors, fieldName);
-			!options$1.keepDirty && unset(_formState.dirtyFields, fieldName);
-			!options$1.keepTouched && unset(_formState.touchedFields, fieldName);
-			!options$1.keepIsValidating && unset(_formState.validatingFields, fieldName);
-			!_options.shouldUnregister && !options$1.keepDefaultValue && unset(_defaultValues, fieldName);
-		}
-		_subjects.state.next({ values: cloneObject(_formValues) });
-		_subjects.state.next({
-			..._formState,
-			...!options$1.keepDirty ? {} : { isDirty: _getDirty() }
-		});
-		!options$1.keepIsValid && _setValid();
-	};
-	const _setDisabledField = ({ disabled, name }) => {
-		if (isBoolean(disabled) && _state.mount || !!disabled || _names.disabled.has(name)) {
-			const disabledStateChanged = _names.disabled.has(name) !== !!disabled;
-			disabled ? _names.disabled.add(name) : _names.disabled.delete(name);
-			disabledStateChanged && _state.mount && !_state.action && _setValid();
-		}
-	};
-	const register = (name, options$1 = {}) => {
-		let field = get(_fields, name);
-		const disabledIsDefined = isBoolean(options$1.disabled) || isBoolean(_options.disabled);
-		set(_fields, name, {
-			...field || {},
-			_f: {
-				...field && field._f ? field._f : { ref: { name } },
-				name,
-				mount: true,
-				...options$1
-			}
-		});
-		_names.mount.add(name);
-		if (field) _setDisabledField({
-			disabled: isBoolean(options$1.disabled) ? options$1.disabled : _options.disabled,
-			name
-		});
-		else updateValidAndValue(name, true, options$1.value);
-		return {
-			...disabledIsDefined ? { disabled: options$1.disabled || _options.disabled } : {},
-			..._options.progressive ? {
-				required: !!options$1.required,
-				min: getRuleValue(options$1.min),
-				max: getRuleValue(options$1.max),
-				minLength: getRuleValue(options$1.minLength),
-				maxLength: getRuleValue(options$1.maxLength),
-				pattern: getRuleValue(options$1.pattern)
-			} : {},
-			name,
-			onChange,
-			onBlur: onChange,
-			ref: (ref) => {
-				if (ref) {
-					register(name, options$1);
-					field = get(_fields, name);
-					const fieldRef = isUndefined(ref.value) ? ref.querySelectorAll ? ref.querySelectorAll("input,select,textarea")[0] || ref : ref : ref;
-					const radioOrCheckbox = isRadioOrCheckbox(fieldRef);
-					const refs = field._f.refs || [];
-					if (radioOrCheckbox ? refs.find((option) => option === fieldRef) : fieldRef === field._f.ref) return;
-					set(_fields, name, { _f: {
-						...field._f,
-						...radioOrCheckbox ? {
-							refs: [
-								...refs.filter(live),
-								fieldRef,
-								...Array.isArray(get(_defaultValues, name)) ? [{}] : []
-							],
-							ref: {
-								type: fieldRef.type,
-								name
-							}
-						} : { ref: fieldRef }
-					} });
-					updateValidAndValue(name, false, void 0, fieldRef);
-				} else {
-					field = get(_fields, name, {});
-					if (field._f) field._f.mount = false;
-					(_options.shouldUnregister || options$1.shouldUnregister) && !(isNameInFieldArray(_names.array, name) && _state.action) && _names.unMount.add(name);
-				}
-			}
-		};
-	};
-	const _focusError = () => _options.shouldFocusError && iterateFieldsByAction(_fields, _focusInput, _names.mount);
-	const _disableForm = (disabled) => {
-		if (isBoolean(disabled)) {
-			_subjects.state.next({ disabled });
-			iterateFieldsByAction(_fields, (ref, name) => {
-				const currentField = get(_fields, name);
-				if (currentField) {
-					ref.disabled = currentField._f.disabled || disabled;
-					if (Array.isArray(currentField._f.refs)) currentField._f.refs.forEach((inputRef) => {
-						inputRef.disabled = currentField._f.disabled || disabled;
-					});
-				}
-			}, 0, false);
-		}
-	};
-	const handleSubmit = (onValid, onInvalid) => async (e) => {
-		let onValidError = void 0;
-		if (e) {
-			e.preventDefault && e.preventDefault();
-			e.persist && e.persist();
-		}
-		let fieldValues = cloneObject(_formValues);
-		_subjects.state.next({ isSubmitting: true });
-		if (_options.resolver) {
-			const { errors, values } = await _runSchema();
-			_updateIsValidating();
-			_formState.errors = errors;
-			fieldValues = cloneObject(values);
-		} else await executeBuiltInValidation(_fields);
-		if (_names.disabled.size) for (const name of _names.disabled) unset(fieldValues, name);
-		unset(_formState.errors, "root");
-		if (isEmptyObject(_formState.errors)) {
-			_subjects.state.next({ errors: {} });
-			try {
-				await onValid(fieldValues, e);
-			} catch (error) {
-				onValidError = error;
-			}
-		} else {
-			if (onInvalid) await onInvalid({ ..._formState.errors }, e);
-			_focusError();
-			setTimeout(_focusError);
-		}
-		_subjects.state.next({
-			isSubmitted: true,
-			isSubmitting: false,
-			isSubmitSuccessful: isEmptyObject(_formState.errors) && !onValidError,
-			submitCount: _formState.submitCount + 1,
-			errors: _formState.errors
-		});
-		if (onValidError) throw onValidError;
-	};
-	const resetField = (name, options$1 = {}) => {
-		if (get(_fields, name)) {
-			if (isUndefined(options$1.defaultValue)) setValue(name, cloneObject(get(_defaultValues, name)));
-			else {
-				setValue(name, options$1.defaultValue);
-				set(_defaultValues, name, cloneObject(options$1.defaultValue));
-			}
-			if (!options$1.keepTouched) unset(_formState.touchedFields, name);
-			if (!options$1.keepDirty) {
-				unset(_formState.dirtyFields, name);
-				_formState.isDirty = options$1.defaultValue ? _getDirty(name, cloneObject(get(_defaultValues, name))) : _getDirty();
-			}
-			if (!options$1.keepError) {
-				unset(_formState.errors, name);
-				_proxyFormState.isValid && _setValid();
-			}
-			_subjects.state.next({ ..._formState });
-		}
-	};
-	const _reset = (formValues, keepStateOptions = {}) => {
-		const updatedValues = formValues ? cloneObject(formValues) : _defaultValues;
-		const cloneUpdatedValues = cloneObject(updatedValues);
-		const isEmptyResetValues = isEmptyObject(formValues);
-		const values = isEmptyResetValues ? _defaultValues : cloneUpdatedValues;
-		if (!keepStateOptions.keepDefaultValues) _defaultValues = updatedValues;
-		if (!keepStateOptions.keepValues) {
-			if (keepStateOptions.keepDirtyValues) {
-				const fieldsToCheck = new Set([..._names.mount, ...Object.keys(getDirtyFields(_defaultValues, _formValues))]);
-				for (const fieldName of Array.from(fieldsToCheck)) {
-					const isDirty = get(_formState.dirtyFields, fieldName);
-					const existingValue = get(_formValues, fieldName);
-					const newValue = get(values, fieldName);
-					if (isDirty && !isUndefined(existingValue)) set(values, fieldName, existingValue);
-					else if (!isDirty && !isUndefined(newValue)) setValue(fieldName, newValue);
-				}
-			} else {
-				if (isWeb && isUndefined(formValues)) for (const name of _names.mount) {
-					const field = get(_fields, name);
-					if (field && field._f) {
-						const fieldReference = Array.isArray(field._f.refs) ? field._f.refs[0] : field._f.ref;
-						if (isHTMLElement(fieldReference)) {
-							const form = fieldReference.closest("form");
-							if (form) {
-								form.reset();
-								break;
-							}
-						}
-					}
-				}
-				if (keepStateOptions.keepFieldsRef) for (const fieldName of _names.mount) setValue(fieldName, get(values, fieldName));
-				else _fields = {};
-			}
-			_formValues = _options.shouldUnregister ? keepStateOptions.keepDefaultValues ? cloneObject(_defaultValues) : {} : cloneObject(values);
-			_subjects.array.next({ values: { ...values } });
-			_subjects.state.next({ values: { ...values } });
-		}
-		_names = {
-			mount: keepStateOptions.keepDirtyValues ? _names.mount : /* @__PURE__ */ new Set(),
-			unMount: /* @__PURE__ */ new Set(),
-			array: /* @__PURE__ */ new Set(),
-			disabled: /* @__PURE__ */ new Set(),
-			watch: /* @__PURE__ */ new Set(),
-			watchAll: false,
-			focus: ""
-		};
-		_state.mount = !_proxyFormState.isValid || !!keepStateOptions.keepIsValid || !!keepStateOptions.keepDirtyValues || !_options.shouldUnregister && !isEmptyObject(values);
-		_state.watch = !!_options.shouldUnregister;
-		_state.keepIsValid = !!keepStateOptions.keepIsValid;
-		_state.action = false;
-		if (!keepStateOptions.keepErrors) _formState.errors = {};
-		_subjects.state.next({
-			submitCount: keepStateOptions.keepSubmitCount ? _formState.submitCount : 0,
-			isDirty: isEmptyResetValues ? false : keepStateOptions.keepDirty ? _formState.isDirty : !!(keepStateOptions.keepDefaultValues && !deepEqual(formValues, _defaultValues)),
-			isSubmitted: keepStateOptions.keepIsSubmitted ? _formState.isSubmitted : false,
-			dirtyFields: isEmptyResetValues ? {} : keepStateOptions.keepDirtyValues ? keepStateOptions.keepDefaultValues && _formValues ? getDirtyFields(_defaultValues, _formValues) : _formState.dirtyFields : keepStateOptions.keepDefaultValues && formValues ? getDirtyFields(_defaultValues, formValues) : keepStateOptions.keepDirty ? _formState.dirtyFields : {},
-			touchedFields: keepStateOptions.keepTouched ? _formState.touchedFields : {},
-			errors: keepStateOptions.keepErrors ? _formState.errors : {},
-			isSubmitSuccessful: keepStateOptions.keepIsSubmitSuccessful ? _formState.isSubmitSuccessful : false,
-			isSubmitting: false,
-			defaultValues: _defaultValues
-		});
-	};
-	const reset = (formValues, keepStateOptions) => _reset(isFunction(formValues) ? formValues(_formValues) : formValues, {
-		..._options.resetOptions,
-		...keepStateOptions
-	});
-	const setFocus = (name, options$1 = {}) => {
-		const field = get(_fields, name);
-		const fieldReference = field && field._f;
-		if (fieldReference) {
-			const fieldRef = fieldReference.refs ? fieldReference.refs[0] : fieldReference.ref;
-			if (fieldRef.focus) setTimeout(() => {
-				fieldRef.focus();
-				options$1.shouldSelect && isFunction(fieldRef.select) && fieldRef.select();
-			});
-		}
-	};
-	const _setFormState = (updatedFormState) => {
-		_formState = {
-			..._formState,
-			...updatedFormState
-		};
-	};
-	const _resetDefaultValues = () => isFunction(_options.defaultValues) && _options.defaultValues().then((values) => {
-		reset(values, _options.resetOptions);
-		_subjects.state.next({ isLoading: false });
-	});
-	const methods = {
-		control: {
-			register,
-			unregister,
-			getFieldState,
-			handleSubmit,
-			setError,
-			_subscribe,
-			_runSchema,
-			_updateIsValidating,
-			_focusError,
-			_getWatch,
-			_getDirty,
-			_setValid,
-			_setFieldArray,
-			_setDisabledField,
-			_setErrors,
-			_getFieldArray,
-			_reset,
-			_resetDefaultValues,
-			_removeUnmounted,
-			_disableForm,
-			_subjects,
-			_proxyFormState,
-			get _fields() {
-				return _fields;
-			},
-			get _formValues() {
-				return _formValues;
-			},
-			get _state() {
-				return _state;
-			},
-			set _state(value) {
-				_state = value;
-			},
-			get _defaultValues() {
-				return _defaultValues;
-			},
-			get _names() {
-				return _names;
-			},
-			set _names(value) {
-				_names = value;
-			},
-			get _formState() {
-				return _formState;
-			},
-			get _options() {
-				return _options;
-			},
-			set _options(value) {
-				_options = {
-					..._options,
-					...value
-				};
-			}
-		},
-		subscribe: subscribe$1,
-		trigger,
-		register,
-		handleSubmit,
-		watch,
-		setValue,
-		getValues,
-		reset,
-		resetField,
-		clearErrors,
-		unregister,
-		setError,
-		setFocus,
-		getFieldState
-	};
-	return {
-		...methods,
-		formControl: methods
-	};
-}
-function useForm(props = {}) {
-	const _formControl = import_react.useRef(void 0);
-	const _values = import_react.useRef(void 0);
-	const [formState, updateFormState] = import_react.useState({
-		isDirty: false,
-		isValidating: false,
-		isLoading: isFunction(props.defaultValues),
-		isSubmitted: false,
-		isSubmitting: false,
-		isSubmitSuccessful: false,
-		isValid: false,
-		submitCount: 0,
-		dirtyFields: {},
-		touchedFields: {},
-		validatingFields: {},
-		errors: props.errors || {},
-		disabled: props.disabled || false,
-		isReady: false,
-		defaultValues: isFunction(props.defaultValues) ? void 0 : props.defaultValues
-	});
-	if (!_formControl.current) if (props.formControl) {
-		_formControl.current = {
-			...props.formControl,
-			formState
-		};
-		if (props.defaultValues && !isFunction(props.defaultValues)) props.formControl.reset(props.defaultValues, props.resetOptions);
-	} else {
-		const { formControl, ...rest } = createFormControl(props);
-		_formControl.current = {
-			...rest,
-			formState
-		};
-	}
-	const control = _formControl.current.control;
-	control._options = props;
-	useIsomorphicLayoutEffect(() => {
-		const sub = control._subscribe({
-			formState: control._proxyFormState,
-			callback: () => updateFormState({ ...control._formState }),
-			reRenderRoot: true
-		});
-		updateFormState((data) => ({
-			...data,
-			isReady: true
-		}));
-		control._formState.isReady = true;
-		return sub;
-	}, [control]);
-	import_react.useEffect(() => control._disableForm(props.disabled), [control, props.disabled]);
-	import_react.useEffect(() => {
-		if (props.mode) control._options.mode = props.mode;
-		if (props.reValidateMode) control._options.reValidateMode = props.reValidateMode;
-	}, [
-		control,
-		props.mode,
-		props.reValidateMode
-	]);
-	import_react.useEffect(() => {
-		if (props.errors) {
-			control._setErrors(props.errors);
-			control._focusError();
-		}
-	}, [control, props.errors]);
-	import_react.useEffect(() => {
-		props.shouldUnregister && control._subjects.state.next({ values: control._getWatch() });
-	}, [control, props.shouldUnregister]);
-	import_react.useEffect(() => {
-		if (control._proxyFormState.isDirty) {
-			const isDirty = control._getDirty();
-			if (isDirty !== formState.isDirty) control._subjects.state.next({ isDirty });
-		}
-	}, [control, formState.isDirty]);
-	import_react.useEffect(() => {
-		var _a$1;
-		if (props.values && !deepEqual(props.values, _values.current)) {
-			control._reset(props.values, {
-				keepFieldsRef: true,
-				...control._options.resetOptions
-			});
-			if (!((_a$1 = control._options.resetOptions) === null || _a$1 === void 0 ? void 0 : _a$1.keepIsValid)) control._setValid();
-			_values.current = props.values;
-			updateFormState((state) => ({ ...state }));
-		} else control._resetDefaultValues();
-	}, [control, props.values]);
-	import_react.useEffect(() => {
-		if (!control._state.mount) {
-			control._setValid();
-			control._state.mount = true;
-		}
-		if (control._state.watch) {
-			control._state.watch = false;
-			control._subjects.state.next({ ...control._formState });
-		}
-		control._removeUnmounted();
-	});
-	_formControl.current.formState = import_react.useMemo(() => getProxyFormState(formState, control), [control, formState]);
-	return _formControl.current;
-}
-var r = (t$1, r$2, o$1) => {
-	if (t$1 && "reportValidity" in t$1) {
-		const s$2 = get(o$1, r$2);
-		t$1.setCustomValidity(s$2 && s$2.message || ""), t$1.reportValidity();
-	}
-}, o = (e, t$1) => {
-	for (const o$1 in t$1.fields) {
-		const s$2 = t$1.fields[o$1];
-		s$2 && s$2.ref && "reportValidity" in s$2.ref ? r(s$2.ref, o$1, e) : s$2 && s$2.refs && s$2.refs.forEach((t$2) => r(t$2, o$1, e));
-	}
-}, s = (r$2, s$2) => {
-	s$2.shouldUseNativeValidation && o(r$2, s$2);
-	const n$1 = {};
-	for (const o$1 in r$2) {
-		const f = get(s$2.fields, o$1), c = Object.assign(r$2[o$1] || {}, { ref: f && f.ref });
-		if (i$1(s$2.names || Object.keys(r$2), o$1)) {
-			const r$3 = Object.assign({}, get(n$1, o$1));
-			set(r$3, "root", c), set(n$1, o$1, r$3);
-		} else set(n$1, o$1, c);
-	}
-	return n$1;
-}, i$1 = (e, t$1) => {
-	const r$2 = n(t$1);
-	return e.some((e$1) => n(e$1).match(`^${r$2}\\.\\d+`));
-};
-function n(e) {
-	return e.replace(/\]|\[/g, "");
-}
-Object.freeze({ status: "aborted" });
-function $constructor(name, initializer$2, params) {
-	function init(inst, def) {
-		if (!inst._zod) Object.defineProperty(inst, "_zod", {
-			value: {
-				def,
-				constr: _$1,
-				traits: /* @__PURE__ */ new Set()
-			},
-			enumerable: false
-		});
-		if (inst._zod.traits.has(name)) return;
-		inst._zod.traits.add(name);
-		initializer$2(inst, def);
-		const proto = _$1.prototype;
-		const keys = Object.keys(proto);
-		for (let i$2 = 0; i$2 < keys.length; i$2++) {
-			const k = keys[i$2];
-			if (!(k in inst)) inst[k] = proto[k].bind(inst);
-		}
-	}
-	const Parent = params?.Parent ?? Object;
-	class Definition extends Parent {}
-	Object.defineProperty(Definition, "name", { value: name });
-	function _$1(def) {
-		var _a$1;
-		const inst = params?.Parent ? new Definition() : this;
-		init(inst, def);
-		(_a$1 = inst._zod).deferred ?? (_a$1.deferred = []);
-		for (const fn of inst._zod.deferred) fn();
-		return inst;
-	}
-	Object.defineProperty(_$1, "init", { value: init });
-	Object.defineProperty(_$1, Symbol.hasInstance, { value: (inst) => {
-		if (params?.Parent && inst instanceof params.Parent) return true;
-		return inst?._zod?.traits?.has(name);
-	} });
-	Object.defineProperty(_$1, "name", { value: name });
-	return _$1;
-}
-var $ZodAsyncError = class extends Error {
-	constructor() {
-		super(`Encountered Promise during synchronous parse. Use .parseAsync() instead.`);
-	}
-};
-var $ZodEncodeError = class extends Error {
-	constructor(name) {
-		super(`Encountered unidirectional transform during encode: ${name}`);
-		this.name = "ZodEncodeError";
-	}
-};
-const globalConfig = {};
-function config(newConfig) {
-	if (newConfig) Object.assign(globalConfig, newConfig);
-	return globalConfig;
-}
-function getEnumValues(entries) {
-	const numericValues = Object.values(entries).filter((v) => typeof v === "number");
-	return Object.entries(entries).filter(([k, _$1]) => numericValues.indexOf(+k) === -1).map(([_$1, v]) => v);
-}
-function jsonStringifyReplacer(_$1, value) {
-	if (typeof value === "bigint") return value.toString();
-	return value;
-}
-function cached(getter) {
-	return { get value() {
-		{
-			const value = getter();
-			Object.defineProperty(this, "value", { value });
-			return value;
-		}
-		throw new Error("cached value already set");
-	} };
-}
-function nullish(input) {
-	return input === null || input === void 0;
-}
-function cleanRegex(source) {
-	const start = source.startsWith("^") ? 1 : 0;
-	const end = source.endsWith("$") ? source.length - 1 : source.length;
-	return source.slice(start, end);
-}
-var EVALUATING = Symbol("evaluating");
-function defineLazy(object$1, key, getter) {
-	let value = void 0;
-	Object.defineProperty(object$1, key, {
-		get() {
-			if (value === EVALUATING) return;
-			if (value === void 0) {
-				value = EVALUATING;
-				value = getter();
-			}
-			return value;
-		},
-		set(v) {
-			Object.defineProperty(object$1, key, { value: v });
-		},
-		configurable: true
-	});
-}
-function assignProp(target, prop, value) {
-	Object.defineProperty(target, prop, {
-		value,
-		writable: true,
-		enumerable: true,
-		configurable: true
-	});
-}
-function mergeDefs(...defs) {
-	const mergedDescriptors = {};
-	for (const def of defs) {
-		const descriptors = Object.getOwnPropertyDescriptors(def);
-		Object.assign(mergedDescriptors, descriptors);
-	}
-	return Object.defineProperties({}, mergedDescriptors);
-}
-function esc(str) {
-	return JSON.stringify(str);
-}
-function slugify(input) {
-	return input.toLowerCase().trim().replace(/[^\w\s-]/g, "").replace(/[\s_-]+/g, "-").replace(/^-+|-+$/g, "");
-}
-const captureStackTrace = "captureStackTrace" in Error ? Error.captureStackTrace : (..._args) => {};
-function isObject(data) {
-	return typeof data === "object" && data !== null && !Array.isArray(data);
-}
-const allowsEval = cached(() => {
-	if (typeof navigator !== "undefined" && navigator?.userAgent?.includes("Cloudflare")) return false;
-	try {
-		new Function("");
-		return true;
-	} catch (_$1) {
-		return false;
-	}
-});
-function isPlainObject(o$1) {
-	if (isObject(o$1) === false) return false;
-	const ctor = o$1.constructor;
-	if (ctor === void 0) return true;
-	if (typeof ctor !== "function") return true;
-	const prot = ctor.prototype;
-	if (isObject(prot) === false) return false;
-	if (Object.prototype.hasOwnProperty.call(prot, "isPrototypeOf") === false) return false;
-	return true;
-}
-function shallowClone(o$1) {
-	if (isPlainObject(o$1)) return { ...o$1 };
-	if (Array.isArray(o$1)) return [...o$1];
-	return o$1;
-}
-const propertyKeyTypes = new Set([
-	"string",
-	"number",
-	"symbol"
-]);
-function escapeRegex(str) {
-	return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-}
-function clone(inst, def, params) {
-	const cl = new inst._zod.constr(def ?? inst._zod.def);
-	if (!def || params?.parent) cl._zod.parent = inst;
-	return cl;
-}
-function normalizeParams(_params) {
-	const params = _params;
-	if (!params) return {};
-	if (typeof params === "string") return { error: () => params };
-	if (params?.message !== void 0) {
-		if (params?.error !== void 0) throw new Error("Cannot specify both `message` and `error` params");
-		params.error = params.message;
-	}
-	delete params.message;
-	if (typeof params.error === "string") return {
-		...params,
-		error: () => params.error
-	};
-	return params;
-}
-function optionalKeys(shape) {
-	return Object.keys(shape).filter((k) => {
-		return shape[k]._zod.optin === "optional" && shape[k]._zod.optout === "optional";
-	});
-}
-Number.MIN_SAFE_INTEGER, Number.MAX_SAFE_INTEGER, -Number.MAX_VALUE, Number.MAX_VALUE;
-function pick(schema, mask) {
-	const currDef = schema._zod.def;
-	const checks = currDef.checks;
-	if (checks && checks.length > 0) throw new Error(".pick() cannot be used on object schemas containing refinements");
-	return clone(schema, mergeDefs(schema._zod.def, {
-		get shape() {
-			const newShape = {};
-			for (const key in mask) {
-				if (!(key in currDef.shape)) throw new Error(`Unrecognized key: "${key}"`);
-				if (!mask[key]) continue;
-				newShape[key] = currDef.shape[key];
-			}
-			assignProp(this, "shape", newShape);
-			return newShape;
-		},
-		checks: []
-	}));
-}
-function omit(schema, mask) {
-	const currDef = schema._zod.def;
-	const checks = currDef.checks;
-	if (checks && checks.length > 0) throw new Error(".omit() cannot be used on object schemas containing refinements");
-	return clone(schema, mergeDefs(schema._zod.def, {
-		get shape() {
-			const newShape = { ...schema._zod.def.shape };
-			for (const key in mask) {
-				if (!(key in currDef.shape)) throw new Error(`Unrecognized key: "${key}"`);
-				if (!mask[key]) continue;
-				delete newShape[key];
-			}
-			assignProp(this, "shape", newShape);
-			return newShape;
-		},
-		checks: []
-	}));
-}
-function extend(schema, shape) {
-	if (!isPlainObject(shape)) throw new Error("Invalid input to extend: expected a plain object");
-	const checks = schema._zod.def.checks;
-	if (checks && checks.length > 0) {
-		const existingShape = schema._zod.def.shape;
-		for (const key in shape) if (Object.getOwnPropertyDescriptor(existingShape, key) !== void 0) throw new Error("Cannot overwrite keys on object schemas containing refinements. Use `.safeExtend()` instead.");
-	}
-	return clone(schema, mergeDefs(schema._zod.def, { get shape() {
-		const _shape = {
-			...schema._zod.def.shape,
-			...shape
-		};
-		assignProp(this, "shape", _shape);
-		return _shape;
-	} }));
-}
-function safeExtend(schema, shape) {
-	if (!isPlainObject(shape)) throw new Error("Invalid input to safeExtend: expected a plain object");
-	return clone(schema, mergeDefs(schema._zod.def, { get shape() {
-		const _shape = {
-			...schema._zod.def.shape,
-			...shape
-		};
-		assignProp(this, "shape", _shape);
-		return _shape;
-	} }));
-}
-function merge(a$1, b$1) {
-	return clone(a$1, mergeDefs(a$1._zod.def, {
-		get shape() {
-			const _shape = {
-				...a$1._zod.def.shape,
-				...b$1._zod.def.shape
-			};
-			assignProp(this, "shape", _shape);
-			return _shape;
-		},
-		get catchall() {
-			return b$1._zod.def.catchall;
-		},
-		checks: []
-	}));
-}
-function partial(Class, schema, mask) {
-	const checks = schema._zod.def.checks;
-	if (checks && checks.length > 0) throw new Error(".partial() cannot be used on object schemas containing refinements");
-	return clone(schema, mergeDefs(schema._zod.def, {
-		get shape() {
-			const oldShape = schema._zod.def.shape;
-			const shape = { ...oldShape };
-			if (mask) for (const key in mask) {
-				if (!(key in oldShape)) throw new Error(`Unrecognized key: "${key}"`);
-				if (!mask[key]) continue;
-				shape[key] = Class ? new Class({
-					type: "optional",
-					innerType: oldShape[key]
-				}) : oldShape[key];
-			}
-			else for (const key in oldShape) shape[key] = Class ? new Class({
-				type: "optional",
-				innerType: oldShape[key]
-			}) : oldShape[key];
-			assignProp(this, "shape", shape);
-			return shape;
-		},
-		checks: []
-	}));
-}
-function required(Class, schema, mask) {
-	return clone(schema, mergeDefs(schema._zod.def, { get shape() {
-		const oldShape = schema._zod.def.shape;
-		const shape = { ...oldShape };
-		if (mask) for (const key in mask) {
-			if (!(key in shape)) throw new Error(`Unrecognized key: "${key}"`);
-			if (!mask[key]) continue;
-			shape[key] = new Class({
-				type: "nonoptional",
-				innerType: oldShape[key]
-			});
-		}
-		else for (const key in oldShape) shape[key] = new Class({
-			type: "nonoptional",
-			innerType: oldShape[key]
-		});
-		assignProp(this, "shape", shape);
-		return shape;
-	} }));
-}
-function aborted(x$1, startIndex = 0) {
-	if (x$1.aborted === true) return true;
-	for (let i$2 = startIndex; i$2 < x$1.issues.length; i$2++) if (x$1.issues[i$2]?.continue !== true) return true;
-	return false;
-}
-function prefixIssues(path, issues) {
-	return issues.map((iss) => {
-		var _a$1;
-		(_a$1 = iss).path ?? (_a$1.path = []);
-		iss.path.unshift(path);
-		return iss;
-	});
-}
-function unwrapMessage(message$1) {
-	return typeof message$1 === "string" ? message$1 : message$1?.message;
-}
-function finalizeIssue(iss, ctx, config$1) {
-	const full = {
-		...iss,
-		path: iss.path ?? []
-	};
-	if (!iss.message) full.message = unwrapMessage(iss.inst?._zod.def?.error?.(iss)) ?? unwrapMessage(ctx?.error?.(iss)) ?? unwrapMessage(config$1.customError?.(iss)) ?? unwrapMessage(config$1.localeError?.(iss)) ?? "Invalid input";
-	delete full.inst;
-	delete full.continue;
-	if (!ctx?.reportInput) delete full.input;
-	return full;
-}
-function getLengthableOrigin(input) {
-	if (Array.isArray(input)) return "array";
-	if (typeof input === "string") return "string";
-	return "unknown";
-}
-function issue(...args) {
-	const [iss, input, inst] = args;
-	if (typeof iss === "string") return {
-		message: iss,
-		code: "custom",
-		input,
-		inst
-	};
-	return { ...iss };
-}
-var initializer$1 = (inst, def) => {
-	inst.name = "$ZodError";
-	Object.defineProperty(inst, "_zod", {
-		value: inst._zod,
-		enumerable: false
-	});
-	Object.defineProperty(inst, "issues", {
-		value: def,
-		enumerable: false
-	});
-	inst.message = JSON.stringify(def, jsonStringifyReplacer, 2);
-	Object.defineProperty(inst, "toString", {
-		value: () => inst.message,
-		enumerable: false
-	});
-};
-const $ZodError = $constructor("$ZodError", initializer$1);
-const $ZodRealError = $constructor("$ZodError", initializer$1, { Parent: Error });
-function flattenError(error, mapper = (issue$1) => issue$1.message) {
-	const fieldErrors = {};
-	const formErrors = [];
-	for (const sub of error.issues) if (sub.path.length > 0) {
-		fieldErrors[sub.path[0]] = fieldErrors[sub.path[0]] || [];
-		fieldErrors[sub.path[0]].push(mapper(sub));
-	} else formErrors.push(mapper(sub));
-	return {
-		formErrors,
-		fieldErrors
-	};
-}
-function formatError(error, mapper = (issue$1) => issue$1.message) {
-	const fieldErrors = { _errors: [] };
-	const processError = (error$1) => {
-		for (const issue$1 of error$1.issues) if (issue$1.code === "invalid_union" && issue$1.errors.length) issue$1.errors.map((issues) => processError({ issues }));
-		else if (issue$1.code === "invalid_key") processError({ issues: issue$1.issues });
-		else if (issue$1.code === "invalid_element") processError({ issues: issue$1.issues });
-		else if (issue$1.path.length === 0) fieldErrors._errors.push(mapper(issue$1));
-		else {
-			let curr = fieldErrors;
-			let i$2 = 0;
-			while (i$2 < issue$1.path.length) {
-				const el = issue$1.path[i$2];
-				if (!(i$2 === issue$1.path.length - 1)) curr[el] = curr[el] || { _errors: [] };
-				else {
-					curr[el] = curr[el] || { _errors: [] };
-					curr[el]._errors.push(mapper(issue$1));
-				}
-				curr = curr[el];
-				i$2++;
-			}
-		}
-	};
-	processError(error);
-	return fieldErrors;
-}
-const _parse = (_Err) => (schema, value, _ctx, _params) => {
-	const ctx = _ctx ? Object.assign(_ctx, { async: false }) : { async: false };
-	const result = schema._zod.run({
-		value,
-		issues: []
-	}, ctx);
-	if (result instanceof Promise) throw new $ZodAsyncError();
-	if (result.issues.length) {
-		const e = new (_params?.Err ?? _Err)(result.issues.map((iss) => finalizeIssue(iss, ctx, config())));
-		captureStackTrace(e, _params?.callee);
-		throw e;
-	}
-	return result.value;
-};
-const parse$1 = /* @__PURE__ */ _parse($ZodRealError);
-const _parseAsync = (_Err) => async (schema, value, _ctx, params) => {
-	const ctx = _ctx ? Object.assign(_ctx, { async: true }) : { async: true };
-	let result = schema._zod.run({
-		value,
-		issues: []
-	}, ctx);
-	if (result instanceof Promise) result = await result;
-	if (result.issues.length) {
-		const e = new (params?.Err ?? _Err)(result.issues.map((iss) => finalizeIssue(iss, ctx, config())));
-		captureStackTrace(e, params?.callee);
-		throw e;
-	}
-	return result.value;
-};
-const parseAsync$1 = /* @__PURE__ */ _parseAsync($ZodRealError);
-const _safeParse = (_Err) => (schema, value, _ctx) => {
-	const ctx = _ctx ? {
-		..._ctx,
-		async: false
-	} : { async: false };
-	const result = schema._zod.run({
-		value,
-		issues: []
-	}, ctx);
-	if (result instanceof Promise) throw new $ZodAsyncError();
-	return result.issues.length ? {
-		success: false,
-		error: new (_Err ?? $ZodError)(result.issues.map((iss) => finalizeIssue(iss, ctx, config())))
-	} : {
-		success: true,
-		data: result.value
-	};
-};
-const safeParse$1 = /* @__PURE__ */ _safeParse($ZodRealError);
-const _safeParseAsync = (_Err) => async (schema, value, _ctx) => {
-	const ctx = _ctx ? Object.assign(_ctx, { async: true }) : { async: true };
-	let result = schema._zod.run({
-		value,
-		issues: []
-	}, ctx);
-	if (result instanceof Promise) result = await result;
-	return result.issues.length ? {
-		success: false,
-		error: new _Err(result.issues.map((iss) => finalizeIssue(iss, ctx, config())))
-	} : {
-		success: true,
-		data: result.value
-	};
-};
-const safeParseAsync$1 = /* @__PURE__ */ _safeParseAsync($ZodRealError);
-const _encode = (_Err) => (schema, value, _ctx) => {
-	const ctx = _ctx ? Object.assign(_ctx, { direction: "backward" }) : { direction: "backward" };
-	return _parse(_Err)(schema, value, ctx);
-};
-const _decode = (_Err) => (schema, value, _ctx) => {
-	return _parse(_Err)(schema, value, _ctx);
-};
-const _encodeAsync = (_Err) => async (schema, value, _ctx) => {
-	const ctx = _ctx ? Object.assign(_ctx, { direction: "backward" }) : { direction: "backward" };
-	return _parseAsync(_Err)(schema, value, ctx);
-};
-const _decodeAsync = (_Err) => async (schema, value, _ctx) => {
-	return _parseAsync(_Err)(schema, value, _ctx);
-};
-const _safeEncode = (_Err) => (schema, value, _ctx) => {
-	const ctx = _ctx ? Object.assign(_ctx, { direction: "backward" }) : { direction: "backward" };
-	return _safeParse(_Err)(schema, value, ctx);
-};
-const _safeDecode = (_Err) => (schema, value, _ctx) => {
-	return _safeParse(_Err)(schema, value, _ctx);
-};
-const _safeEncodeAsync = (_Err) => async (schema, value, _ctx) => {
-	const ctx = _ctx ? Object.assign(_ctx, { direction: "backward" }) : { direction: "backward" };
-	return _safeParseAsync(_Err)(schema, value, ctx);
-};
-const _safeDecodeAsync = (_Err) => async (schema, value, _ctx) => {
-	return _safeParseAsync(_Err)(schema, value, _ctx);
-};
-const cuid = /^[cC][^\s-]{8,}$/;
-const cuid2 = /^[0-9a-z]+$/;
-const ulid = /^[0-9A-HJKMNP-TV-Za-hjkmnp-tv-z]{26}$/;
-const xid = /^[0-9a-vA-V]{20}$/;
-const ksuid = /^[A-Za-z0-9]{27}$/;
-const nanoid = /^[a-zA-Z0-9_-]{21}$/;
-const duration$1 = /^P(?:(\d+W)|(?!.*W)(?=\d|T\d)(\d+Y)?(\d+M)?(\d+D)?(T(?=\d)(\d+H)?(\d+M)?(\d+([.,]\d+)?S)?)?)$/;
-const guid = /^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})$/;
-const uuid = (version$1) => {
-	if (!version$1) return /^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$/;
-	return /* @__PURE__ */ new RegExp(`^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-${version$1}[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12})$`);
-};
-const email = /^(?!\.)(?!.*\.\.)([A-Za-z0-9_'+\-\.]*)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\-]*\.)+[A-Za-z]{2,}$/;
-var _emoji$1 = `^(\\p{Extended_Pictographic}|\\p{Emoji_Component})+$`;
-function emoji() {
-	return new RegExp(_emoji$1, "u");
-}
-const ipv4 = /^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])$/;
-const ipv6 = /^(([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:))$/;
-const cidrv4 = /^((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\/([0-9]|[1-2][0-9]|3[0-2])$/;
-const cidrv6 = /^(([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}|::|([0-9a-fA-F]{1,4})?::([0-9a-fA-F]{1,4}:?){0,6})\/(12[0-8]|1[01][0-9]|[1-9]?[0-9])$/;
-const base64 = /^$|^(?:[0-9a-zA-Z+/]{4})*(?:(?:[0-9a-zA-Z+/]{2}==)|(?:[0-9a-zA-Z+/]{3}=))?$/;
-const base64url = /^[A-Za-z0-9_-]*$/;
-const e164 = /^\+[1-9]\d{6,14}$/;
-var dateSource = `(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))`;
-const date$1 = /* @__PURE__ */ new RegExp(`^${dateSource}$`);
-function timeSource(args) {
-	const hhmm = `(?:[01]\\d|2[0-3]):[0-5]\\d`;
-	return typeof args.precision === "number" ? args.precision === -1 ? `${hhmm}` : args.precision === 0 ? `${hhmm}:[0-5]\\d` : `${hhmm}:[0-5]\\d\\.\\d{${args.precision}}` : `${hhmm}(?::[0-5]\\d(?:\\.\\d+)?)?`;
-}
-function time$1(args) {
-	return /* @__PURE__ */ new RegExp(`^${timeSource(args)}$`);
-}
-function datetime$1(args) {
-	const time$2 = timeSource({ precision: args.precision });
-	const opts = ["Z"];
-	if (args.local) opts.push("");
-	if (args.offset) opts.push(`([+-](?:[01]\\d|2[0-3]):[0-5]\\d)`);
-	const timeRegex = `${time$2}(?:${opts.join("|")})`;
-	return /* @__PURE__ */ new RegExp(`^${dateSource}T(?:${timeRegex})$`);
-}
-const string$1 = (params) => {
-	const regex = params ? `[\\s\\S]{${params?.minimum ?? 0},${params?.maximum ?? ""}}` : `[\\s\\S]*`;
-	return /* @__PURE__ */ new RegExp(`^${regex}$`);
-};
-const lowercase = /^[^A-Z]*$/;
-const uppercase = /^[^a-z]*$/;
-const $ZodCheck = /* @__PURE__ */ $constructor("$ZodCheck", (inst, def) => {
-	var _a$1;
-	inst._zod ?? (inst._zod = {});
-	inst._zod.def = def;
-	(_a$1 = inst._zod).onattach ?? (_a$1.onattach = []);
-});
-const $ZodCheckMaxLength = /* @__PURE__ */ $constructor("$ZodCheckMaxLength", (inst, def) => {
-	var _a$1;
-	$ZodCheck.init(inst, def);
-	(_a$1 = inst._zod.def).when ?? (_a$1.when = (payload) => {
-		const val = payload.value;
-		return !nullish(val) && val.length !== void 0;
-	});
-	inst._zod.onattach.push((inst$1) => {
-		const curr = inst$1._zod.bag.maximum ?? Number.POSITIVE_INFINITY;
-		if (def.maximum < curr) inst$1._zod.bag.maximum = def.maximum;
-	});
-	inst._zod.check = (payload) => {
-		const input = payload.value;
-		if (input.length <= def.maximum) return;
-		const origin = getLengthableOrigin(input);
-		payload.issues.push({
-			origin,
-			code: "too_big",
-			maximum: def.maximum,
-			inclusive: true,
-			input,
-			inst,
-			continue: !def.abort
-		});
-	};
-});
-const $ZodCheckMinLength = /* @__PURE__ */ $constructor("$ZodCheckMinLength", (inst, def) => {
-	var _a$1;
-	$ZodCheck.init(inst, def);
-	(_a$1 = inst._zod.def).when ?? (_a$1.when = (payload) => {
-		const val = payload.value;
-		return !nullish(val) && val.length !== void 0;
-	});
-	inst._zod.onattach.push((inst$1) => {
-		const curr = inst$1._zod.bag.minimum ?? Number.NEGATIVE_INFINITY;
-		if (def.minimum > curr) inst$1._zod.bag.minimum = def.minimum;
-	});
-	inst._zod.check = (payload) => {
-		const input = payload.value;
-		if (input.length >= def.minimum) return;
-		const origin = getLengthableOrigin(input);
-		payload.issues.push({
-			origin,
-			code: "too_small",
-			minimum: def.minimum,
-			inclusive: true,
-			input,
-			inst,
-			continue: !def.abort
-		});
-	};
-});
-const $ZodCheckLengthEquals = /* @__PURE__ */ $constructor("$ZodCheckLengthEquals", (inst, def) => {
-	var _a$1;
-	$ZodCheck.init(inst, def);
-	(_a$1 = inst._zod.def).when ?? (_a$1.when = (payload) => {
-		const val = payload.value;
-		return !nullish(val) && val.length !== void 0;
-	});
-	inst._zod.onattach.push((inst$1) => {
-		const bag = inst$1._zod.bag;
-		bag.minimum = def.length;
-		bag.maximum = def.length;
-		bag.length = def.length;
-	});
-	inst._zod.check = (payload) => {
-		const input = payload.value;
-		const length = input.length;
-		if (length === def.length) return;
-		const origin = getLengthableOrigin(input);
-		const tooBig = length > def.length;
-		payload.issues.push({
-			origin,
-			...tooBig ? {
-				code: "too_big",
-				maximum: def.length
-			} : {
-				code: "too_small",
-				minimum: def.length
-			},
-			inclusive: true,
-			exact: true,
-			input: payload.value,
-			inst,
-			continue: !def.abort
-		});
-	};
-});
-const $ZodCheckStringFormat = /* @__PURE__ */ $constructor("$ZodCheckStringFormat", (inst, def) => {
-	var _a$1, _b;
-	$ZodCheck.init(inst, def);
-	inst._zod.onattach.push((inst$1) => {
-		const bag = inst$1._zod.bag;
-		bag.format = def.format;
-		if (def.pattern) {
-			bag.patterns ?? (bag.patterns = /* @__PURE__ */ new Set());
-			bag.patterns.add(def.pattern);
-		}
-	});
-	if (def.pattern) (_a$1 = inst._zod).check ?? (_a$1.check = (payload) => {
-		def.pattern.lastIndex = 0;
-		if (def.pattern.test(payload.value)) return;
-		payload.issues.push({
-			origin: "string",
-			code: "invalid_format",
-			format: def.format,
-			input: payload.value,
-			...def.pattern ? { pattern: def.pattern.toString() } : {},
-			inst,
-			continue: !def.abort
-		});
-	});
-	else (_b = inst._zod).check ?? (_b.check = () => {});
-});
-const $ZodCheckRegex = /* @__PURE__ */ $constructor("$ZodCheckRegex", (inst, def) => {
-	$ZodCheckStringFormat.init(inst, def);
-	inst._zod.check = (payload) => {
-		def.pattern.lastIndex = 0;
-		if (def.pattern.test(payload.value)) return;
-		payload.issues.push({
-			origin: "string",
-			code: "invalid_format",
-			format: "regex",
-			input: payload.value,
-			pattern: def.pattern.toString(),
-			inst,
-			continue: !def.abort
-		});
-	};
-});
-const $ZodCheckLowerCase = /* @__PURE__ */ $constructor("$ZodCheckLowerCase", (inst, def) => {
-	def.pattern ?? (def.pattern = lowercase);
-	$ZodCheckStringFormat.init(inst, def);
-});
-const $ZodCheckUpperCase = /* @__PURE__ */ $constructor("$ZodCheckUpperCase", (inst, def) => {
-	def.pattern ?? (def.pattern = uppercase);
-	$ZodCheckStringFormat.init(inst, def);
-});
-const $ZodCheckIncludes = /* @__PURE__ */ $constructor("$ZodCheckIncludes", (inst, def) => {
-	$ZodCheck.init(inst, def);
-	const escapedRegex = escapeRegex(def.includes);
-	const pattern = new RegExp(typeof def.position === "number" ? `^.{${def.position}}${escapedRegex}` : escapedRegex);
-	def.pattern = pattern;
-	inst._zod.onattach.push((inst$1) => {
-		const bag = inst$1._zod.bag;
-		bag.patterns ?? (bag.patterns = /* @__PURE__ */ new Set());
-		bag.patterns.add(pattern);
-	});
-	inst._zod.check = (payload) => {
-		if (payload.value.includes(def.includes, def.position)) return;
-		payload.issues.push({
-			origin: "string",
-			code: "invalid_format",
-			format: "includes",
-			includes: def.includes,
-			input: payload.value,
-			inst,
-			continue: !def.abort
-		});
-	};
-});
-const $ZodCheckStartsWith = /* @__PURE__ */ $constructor("$ZodCheckStartsWith", (inst, def) => {
-	$ZodCheck.init(inst, def);
-	const pattern = /* @__PURE__ */ new RegExp(`^${escapeRegex(def.prefix)}.*`);
-	def.pattern ?? (def.pattern = pattern);
-	inst._zod.onattach.push((inst$1) => {
-		const bag = inst$1._zod.bag;
-		bag.patterns ?? (bag.patterns = /* @__PURE__ */ new Set());
-		bag.patterns.add(pattern);
-	});
-	inst._zod.check = (payload) => {
-		if (payload.value.startsWith(def.prefix)) return;
-		payload.issues.push({
-			origin: "string",
-			code: "invalid_format",
-			format: "starts_with",
-			prefix: def.prefix,
-			input: payload.value,
-			inst,
-			continue: !def.abort
-		});
-	};
-});
-const $ZodCheckEndsWith = /* @__PURE__ */ $constructor("$ZodCheckEndsWith", (inst, def) => {
-	$ZodCheck.init(inst, def);
-	const pattern = /* @__PURE__ */ new RegExp(`.*${escapeRegex(def.suffix)}$`);
-	def.pattern ?? (def.pattern = pattern);
-	inst._zod.onattach.push((inst$1) => {
-		const bag = inst$1._zod.bag;
-		bag.patterns ?? (bag.patterns = /* @__PURE__ */ new Set());
-		bag.patterns.add(pattern);
-	});
-	inst._zod.check = (payload) => {
-		if (payload.value.endsWith(def.suffix)) return;
-		payload.issues.push({
-			origin: "string",
-			code: "invalid_format",
-			format: "ends_with",
-			suffix: def.suffix,
-			input: payload.value,
-			inst,
-			continue: !def.abort
-		});
-	};
-});
-const $ZodCheckOverwrite = /* @__PURE__ */ $constructor("$ZodCheckOverwrite", (inst, def) => {
-	$ZodCheck.init(inst, def);
-	inst._zod.check = (payload) => {
-		payload.value = def.tx(payload.value);
-	};
-});
-var Doc = class {
-	constructor(args = []) {
-		this.content = [];
-		this.indent = 0;
-		if (this) this.args = args;
-	}
-	indented(fn) {
-		this.indent += 1;
-		fn(this);
-		this.indent -= 1;
-	}
-	write(arg) {
-		if (typeof arg === "function") {
-			arg(this, { execution: "sync" });
-			arg(this, { execution: "async" });
-			return;
-		}
-		const lines = arg.split("\n").filter((x$1) => x$1);
-		const minIndent = Math.min(...lines.map((x$1) => x$1.length - x$1.trimStart().length));
-		const dedented = lines.map((x$1) => x$1.slice(minIndent)).map((x$1) => " ".repeat(this.indent * 2) + x$1);
-		for (const line of dedented) this.content.push(line);
-	}
-	compile() {
-		const F = Function;
-		const args = this?.args;
-		const lines = [...(this?.content ?? [``]).map((x$1) => `  ${x$1}`)];
-		return new F(...args, lines.join("\n"));
-	}
-};
-const version = {
-	major: 4,
-	minor: 3,
-	patch: 6
-};
-const $ZodType = /* @__PURE__ */ $constructor("$ZodType", (inst, def) => {
-	var _a$1;
-	inst ?? (inst = {});
-	inst._zod.def = def;
-	inst._zod.bag = inst._zod.bag || {};
-	inst._zod.version = version;
-	const checks = [...inst._zod.def.checks ?? []];
-	if (inst._zod.traits.has("$ZodCheck")) checks.unshift(inst);
-	for (const ch of checks) for (const fn of ch._zod.onattach) fn(inst);
-	if (checks.length === 0) {
-		(_a$1 = inst._zod).deferred ?? (_a$1.deferred = []);
-		inst._zod.deferred?.push(() => {
-			inst._zod.run = inst._zod.parse;
-		});
-	} else {
-		const runChecks = (payload, checks$1, ctx) => {
-			let isAborted = aborted(payload);
-			let asyncResult;
-			for (const ch of checks$1) {
-				if (ch._zod.def.when) {
-					if (!ch._zod.def.when(payload)) continue;
-				} else if (isAborted) continue;
-				const currLen = payload.issues.length;
-				const _$1 = ch._zod.check(payload);
-				if (_$1 instanceof Promise && ctx?.async === false) throw new $ZodAsyncError();
-				if (asyncResult || _$1 instanceof Promise) asyncResult = (asyncResult ?? Promise.resolve()).then(async () => {
-					await _$1;
-					if (payload.issues.length === currLen) return;
-					if (!isAborted) isAborted = aborted(payload, currLen);
-				});
-				else {
-					if (payload.issues.length === currLen) continue;
-					if (!isAborted) isAborted = aborted(payload, currLen);
-				}
-			}
-			if (asyncResult) return asyncResult.then(() => {
-				return payload;
-			});
-			return payload;
-		};
-		const handleCanaryResult = (canary, payload, ctx) => {
-			if (aborted(canary)) {
-				canary.aborted = true;
-				return canary;
-			}
-			const checkResult = runChecks(payload, checks, ctx);
-			if (checkResult instanceof Promise) {
-				if (ctx.async === false) throw new $ZodAsyncError();
-				return checkResult.then((checkResult$1) => inst._zod.parse(checkResult$1, ctx));
-			}
-			return inst._zod.parse(checkResult, ctx);
-		};
-		inst._zod.run = (payload, ctx) => {
-			if (ctx.skipChecks) return inst._zod.parse(payload, ctx);
-			if (ctx.direction === "backward") {
-				const canary = inst._zod.parse({
-					value: payload.value,
-					issues: []
-				}, {
-					...ctx,
-					skipChecks: true
-				});
-				if (canary instanceof Promise) return canary.then((canary$1) => {
-					return handleCanaryResult(canary$1, payload, ctx);
-				});
-				return handleCanaryResult(canary, payload, ctx);
-			}
-			const result = inst._zod.parse(payload, ctx);
-			if (result instanceof Promise) {
-				if (ctx.async === false) throw new $ZodAsyncError();
-				return result.then((result$1) => runChecks(result$1, checks, ctx));
-			}
-			return runChecks(result, checks, ctx);
-		};
-	}
-	defineLazy(inst, "~standard", () => ({
-		validate: (value) => {
-			try {
-				const r$2 = safeParse$1(inst, value);
-				return r$2.success ? { value: r$2.data } : { issues: r$2.error?.issues };
-			} catch (_$1) {
-				return safeParseAsync$1(inst, value).then((r$2) => r$2.success ? { value: r$2.data } : { issues: r$2.error?.issues });
-			}
-		},
-		vendor: "zod",
-		version: 1
-	}));
-});
-const $ZodString = /* @__PURE__ */ $constructor("$ZodString", (inst, def) => {
-	$ZodType.init(inst, def);
-	inst._zod.pattern = [...inst?._zod.bag?.patterns ?? []].pop() ?? string$1(inst._zod.bag);
-	inst._zod.parse = (payload, _$1) => {
-		if (def.coerce) try {
-			payload.value = String(payload.value);
-		} catch (_$2) {}
-		if (typeof payload.value === "string") return payload;
-		payload.issues.push({
-			expected: "string",
-			code: "invalid_type",
-			input: payload.value,
-			inst
-		});
-		return payload;
-	};
-});
-const $ZodStringFormat = /* @__PURE__ */ $constructor("$ZodStringFormat", (inst, def) => {
-	$ZodCheckStringFormat.init(inst, def);
-	$ZodString.init(inst, def);
-});
-const $ZodGUID = /* @__PURE__ */ $constructor("$ZodGUID", (inst, def) => {
-	def.pattern ?? (def.pattern = guid);
-	$ZodStringFormat.init(inst, def);
-});
-const $ZodUUID = /* @__PURE__ */ $constructor("$ZodUUID", (inst, def) => {
-	if (def.version) {
-		const v = {
-			v1: 1,
-			v2: 2,
-			v3: 3,
-			v4: 4,
-			v5: 5,
-			v6: 6,
-			v7: 7,
-			v8: 8
-		}[def.version];
-		if (v === void 0) throw new Error(`Invalid UUID version: "${def.version}"`);
-		def.pattern ?? (def.pattern = uuid(v));
-	} else def.pattern ?? (def.pattern = uuid());
-	$ZodStringFormat.init(inst, def);
-});
-const $ZodEmail = /* @__PURE__ */ $constructor("$ZodEmail", (inst, def) => {
-	def.pattern ?? (def.pattern = email);
-	$ZodStringFormat.init(inst, def);
-});
-const $ZodURL = /* @__PURE__ */ $constructor("$ZodURL", (inst, def) => {
-	$ZodStringFormat.init(inst, def);
-	inst._zod.check = (payload) => {
-		try {
-			const trimmed = payload.value.trim();
-			const url = new URL(trimmed);
-			if (def.hostname) {
-				def.hostname.lastIndex = 0;
-				if (!def.hostname.test(url.hostname)) payload.issues.push({
-					code: "invalid_format",
-					format: "url",
-					note: "Invalid hostname",
-					pattern: def.hostname.source,
-					input: payload.value,
-					inst,
-					continue: !def.abort
-				});
-			}
-			if (def.protocol) {
-				def.protocol.lastIndex = 0;
-				if (!def.protocol.test(url.protocol.endsWith(":") ? url.protocol.slice(0, -1) : url.protocol)) payload.issues.push({
-					code: "invalid_format",
-					format: "url",
-					note: "Invalid protocol",
-					pattern: def.protocol.source,
-					input: payload.value,
-					inst,
-					continue: !def.abort
-				});
-			}
-			if (def.normalize) payload.value = url.href;
-			else payload.value = trimmed;
-			return;
-		} catch (_$1) {
-			payload.issues.push({
-				code: "invalid_format",
-				format: "url",
-				input: payload.value,
-				inst,
-				continue: !def.abort
-			});
-		}
-	};
-});
-const $ZodEmoji = /* @__PURE__ */ $constructor("$ZodEmoji", (inst, def) => {
-	def.pattern ?? (def.pattern = emoji());
-	$ZodStringFormat.init(inst, def);
-});
-const $ZodNanoID = /* @__PURE__ */ $constructor("$ZodNanoID", (inst, def) => {
-	def.pattern ?? (def.pattern = nanoid);
-	$ZodStringFormat.init(inst, def);
-});
-const $ZodCUID = /* @__PURE__ */ $constructor("$ZodCUID", (inst, def) => {
-	def.pattern ?? (def.pattern = cuid);
-	$ZodStringFormat.init(inst, def);
-});
-const $ZodCUID2 = /* @__PURE__ */ $constructor("$ZodCUID2", (inst, def) => {
-	def.pattern ?? (def.pattern = cuid2);
-	$ZodStringFormat.init(inst, def);
-});
-const $ZodULID = /* @__PURE__ */ $constructor("$ZodULID", (inst, def) => {
-	def.pattern ?? (def.pattern = ulid);
-	$ZodStringFormat.init(inst, def);
-});
-const $ZodXID = /* @__PURE__ */ $constructor("$ZodXID", (inst, def) => {
-	def.pattern ?? (def.pattern = xid);
-	$ZodStringFormat.init(inst, def);
-});
-const $ZodKSUID = /* @__PURE__ */ $constructor("$ZodKSUID", (inst, def) => {
-	def.pattern ?? (def.pattern = ksuid);
-	$ZodStringFormat.init(inst, def);
-});
-const $ZodISODateTime = /* @__PURE__ */ $constructor("$ZodISODateTime", (inst, def) => {
-	def.pattern ?? (def.pattern = datetime$1(def));
-	$ZodStringFormat.init(inst, def);
-});
-const $ZodISODate = /* @__PURE__ */ $constructor("$ZodISODate", (inst, def) => {
-	def.pattern ?? (def.pattern = date$1);
-	$ZodStringFormat.init(inst, def);
-});
-const $ZodISOTime = /* @__PURE__ */ $constructor("$ZodISOTime", (inst, def) => {
-	def.pattern ?? (def.pattern = time$1(def));
-	$ZodStringFormat.init(inst, def);
-});
-const $ZodISODuration = /* @__PURE__ */ $constructor("$ZodISODuration", (inst, def) => {
-	def.pattern ?? (def.pattern = duration$1);
-	$ZodStringFormat.init(inst, def);
-});
-const $ZodIPv4 = /* @__PURE__ */ $constructor("$ZodIPv4", (inst, def) => {
-	def.pattern ?? (def.pattern = ipv4);
-	$ZodStringFormat.init(inst, def);
-	inst._zod.bag.format = `ipv4`;
-});
-const $ZodIPv6 = /* @__PURE__ */ $constructor("$ZodIPv6", (inst, def) => {
-	def.pattern ?? (def.pattern = ipv6);
-	$ZodStringFormat.init(inst, def);
-	inst._zod.bag.format = `ipv6`;
-	inst._zod.check = (payload) => {
-		try {
-			new URL(`http://[${payload.value}]`);
-		} catch {
-			payload.issues.push({
-				code: "invalid_format",
-				format: "ipv6",
-				input: payload.value,
-				inst,
-				continue: !def.abort
-			});
-		}
-	};
-});
-const $ZodCIDRv4 = /* @__PURE__ */ $constructor("$ZodCIDRv4", (inst, def) => {
-	def.pattern ?? (def.pattern = cidrv4);
-	$ZodStringFormat.init(inst, def);
-});
-const $ZodCIDRv6 = /* @__PURE__ */ $constructor("$ZodCIDRv6", (inst, def) => {
-	def.pattern ?? (def.pattern = cidrv6);
-	$ZodStringFormat.init(inst, def);
-	inst._zod.check = (payload) => {
-		const parts = payload.value.split("/");
-		try {
-			if (parts.length !== 2) throw new Error();
-			const [address, prefix] = parts;
-			if (!prefix) throw new Error();
-			const prefixNum = Number(prefix);
-			if (`${prefixNum}` !== prefix) throw new Error();
-			if (prefixNum < 0 || prefixNum > 128) throw new Error();
-			new URL(`http://[${address}]`);
-		} catch {
-			payload.issues.push({
-				code: "invalid_format",
-				format: "cidrv6",
-				input: payload.value,
-				inst,
-				continue: !def.abort
-			});
-		}
-	};
-});
-function isValidBase64(data) {
-	if (data === "") return true;
-	if (data.length % 4 !== 0) return false;
-	try {
-		atob(data);
-		return true;
-	} catch {
-		return false;
-	}
-}
-const $ZodBase64 = /* @__PURE__ */ $constructor("$ZodBase64", (inst, def) => {
-	def.pattern ?? (def.pattern = base64);
-	$ZodStringFormat.init(inst, def);
-	inst._zod.bag.contentEncoding = "base64";
-	inst._zod.check = (payload) => {
-		if (isValidBase64(payload.value)) return;
-		payload.issues.push({
-			code: "invalid_format",
-			format: "base64",
-			input: payload.value,
-			inst,
-			continue: !def.abort
-		});
-	};
-});
-function isValidBase64URL(data) {
-	if (!base64url.test(data)) return false;
-	const base64$1 = data.replace(/[-_]/g, (c) => c === "-" ? "+" : "/");
-	return isValidBase64(base64$1.padEnd(Math.ceil(base64$1.length / 4) * 4, "="));
-}
-const $ZodBase64URL = /* @__PURE__ */ $constructor("$ZodBase64URL", (inst, def) => {
-	def.pattern ?? (def.pattern = base64url);
-	$ZodStringFormat.init(inst, def);
-	inst._zod.bag.contentEncoding = "base64url";
-	inst._zod.check = (payload) => {
-		if (isValidBase64URL(payload.value)) return;
-		payload.issues.push({
-			code: "invalid_format",
-			format: "base64url",
-			input: payload.value,
-			inst,
-			continue: !def.abort
-		});
-	};
-});
-const $ZodE164 = /* @__PURE__ */ $constructor("$ZodE164", (inst, def) => {
-	def.pattern ?? (def.pattern = e164);
-	$ZodStringFormat.init(inst, def);
-});
-function isValidJWT(token, algorithm = null) {
-	try {
-		const tokensParts = token.split(".");
-		if (tokensParts.length !== 3) return false;
-		const [header] = tokensParts;
-		if (!header) return false;
-		const parsedHeader = JSON.parse(atob(header));
-		if ("typ" in parsedHeader && parsedHeader?.typ !== "JWT") return false;
-		if (!parsedHeader.alg) return false;
-		if (algorithm && (!("alg" in parsedHeader) || parsedHeader.alg !== algorithm)) return false;
-		return true;
-	} catch {
-		return false;
-	}
-}
-const $ZodJWT = /* @__PURE__ */ $constructor("$ZodJWT", (inst, def) => {
-	$ZodStringFormat.init(inst, def);
-	inst._zod.check = (payload) => {
-		if (isValidJWT(payload.value, def.alg)) return;
-		payload.issues.push({
-			code: "invalid_format",
-			format: "jwt",
-			input: payload.value,
-			inst,
-			continue: !def.abort
-		});
-	};
-});
-const $ZodUnknown = /* @__PURE__ */ $constructor("$ZodUnknown", (inst, def) => {
-	$ZodType.init(inst, def);
-	inst._zod.parse = (payload) => payload;
-});
-const $ZodNever = /* @__PURE__ */ $constructor("$ZodNever", (inst, def) => {
-	$ZodType.init(inst, def);
-	inst._zod.parse = (payload, _ctx) => {
-		payload.issues.push({
-			expected: "never",
-			code: "invalid_type",
-			input: payload.value,
-			inst
-		});
-		return payload;
-	};
-});
-function handleArrayResult(result, final, index$1) {
-	if (result.issues.length) final.issues.push(...prefixIssues(index$1, result.issues));
-	final.value[index$1] = result.value;
-}
-const $ZodArray = /* @__PURE__ */ $constructor("$ZodArray", (inst, def) => {
-	$ZodType.init(inst, def);
-	inst._zod.parse = (payload, ctx) => {
-		const input = payload.value;
-		if (!Array.isArray(input)) {
-			payload.issues.push({
-				expected: "array",
-				code: "invalid_type",
-				input,
-				inst
-			});
-			return payload;
-		}
-		payload.value = Array(input.length);
-		const proms = [];
-		for (let i$2 = 0; i$2 < input.length; i$2++) {
-			const item = input[i$2];
-			const result = def.element._zod.run({
-				value: item,
-				issues: []
-			}, ctx);
-			if (result instanceof Promise) proms.push(result.then((result$1) => handleArrayResult(result$1, payload, i$2)));
-			else handleArrayResult(result, payload, i$2);
-		}
-		if (proms.length) return Promise.all(proms).then(() => payload);
-		return payload;
-	};
-});
-function handlePropertyResult(result, final, key, input, isOptionalOut) {
-	if (result.issues.length) {
-		if (isOptionalOut && !(key in input)) return;
-		final.issues.push(...prefixIssues(key, result.issues));
-	}
-	if (result.value === void 0) {
-		if (key in input) final.value[key] = void 0;
-	} else final.value[key] = result.value;
-}
-function normalizeDef(def) {
-	const keys = Object.keys(def.shape);
-	for (const k of keys) if (!def.shape?.[k]?._zod?.traits?.has("$ZodType")) throw new Error(`Invalid element at key "${k}": expected a Zod schema`);
-	const okeys = optionalKeys(def.shape);
-	return {
-		...def,
-		keys,
-		keySet: new Set(keys),
-		numKeys: keys.length,
-		optionalKeys: new Set(okeys)
-	};
-}
-function handleCatchall(proms, input, payload, ctx, def, inst) {
-	const unrecognized = [];
-	const keySet = def.keySet;
-	const _catchall = def.catchall._zod;
-	const t$1 = _catchall.def.type;
-	const isOptionalOut = _catchall.optout === "optional";
-	for (const key in input) {
-		if (keySet.has(key)) continue;
-		if (t$1 === "never") {
-			unrecognized.push(key);
-			continue;
-		}
-		const r$2 = _catchall.run({
-			value: input[key],
-			issues: []
-		}, ctx);
-		if (r$2 instanceof Promise) proms.push(r$2.then((r$3) => handlePropertyResult(r$3, payload, key, input, isOptionalOut)));
-		else handlePropertyResult(r$2, payload, key, input, isOptionalOut);
-	}
-	if (unrecognized.length) payload.issues.push({
-		code: "unrecognized_keys",
-		keys: unrecognized,
-		input,
-		inst
-	});
-	if (!proms.length) return payload;
-	return Promise.all(proms).then(() => {
-		return payload;
-	});
-}
-const $ZodObject = /* @__PURE__ */ $constructor("$ZodObject", (inst, def) => {
-	$ZodType.init(inst, def);
-	if (!Object.getOwnPropertyDescriptor(def, "shape")?.get) {
-		const sh = def.shape;
-		Object.defineProperty(def, "shape", { get: () => {
-			const newSh = { ...sh };
-			Object.defineProperty(def, "shape", { value: newSh });
-			return newSh;
-		} });
-	}
-	const _normalized = cached(() => normalizeDef(def));
-	defineLazy(inst._zod, "propValues", () => {
-		const shape = def.shape;
-		const propValues = {};
-		for (const key in shape) {
-			const field = shape[key]._zod;
-			if (field.values) {
-				propValues[key] ?? (propValues[key] = /* @__PURE__ */ new Set());
-				for (const v of field.values) propValues[key].add(v);
-			}
-		}
-		return propValues;
-	});
-	const isObject$2 = isObject;
-	const catchall = def.catchall;
-	let value;
-	inst._zod.parse = (payload, ctx) => {
-		value ?? (value = _normalized.value);
-		const input = payload.value;
-		if (!isObject$2(input)) {
-			payload.issues.push({
-				expected: "object",
-				code: "invalid_type",
-				input,
-				inst
-			});
-			return payload;
-		}
-		payload.value = {};
-		const proms = [];
-		const shape = value.shape;
-		for (const key of value.keys) {
-			const el = shape[key];
-			const isOptionalOut = el._zod.optout === "optional";
-			const r$2 = el._zod.run({
-				value: input[key],
-				issues: []
-			}, ctx);
-			if (r$2 instanceof Promise) proms.push(r$2.then((r$3) => handlePropertyResult(r$3, payload, key, input, isOptionalOut)));
-			else handlePropertyResult(r$2, payload, key, input, isOptionalOut);
-		}
-		if (!catchall) return proms.length ? Promise.all(proms).then(() => payload) : payload;
-		return handleCatchall(proms, input, payload, ctx, _normalized.value, inst);
-	};
-});
-const $ZodObjectJIT = /* @__PURE__ */ $constructor("$ZodObjectJIT", (inst, def) => {
-	$ZodObject.init(inst, def);
-	const superParse = inst._zod.parse;
-	const _normalized = cached(() => normalizeDef(def));
-	const generateFastpass = (shape) => {
-		const doc = new Doc([
-			"shape",
-			"payload",
-			"ctx"
-		]);
-		const normalized = _normalized.value;
-		const parseStr = (key) => {
-			const k = esc(key);
-			return `shape[${k}]._zod.run({ value: input[${k}], issues: [] }, ctx)`;
-		};
-		doc.write(`const input = payload.value;`);
-		const ids = Object.create(null);
-		let counter = 0;
-		for (const key of normalized.keys) ids[key] = `key_${counter++}`;
-		doc.write(`const newResult = {};`);
-		for (const key of normalized.keys) {
-			const id = ids[key];
-			const k = esc(key);
-			const isOptionalOut = shape[key]?._zod?.optout === "optional";
-			doc.write(`const ${id} = ${parseStr(key)};`);
-			if (isOptionalOut) doc.write(`
-        if (${id}.issues.length) {
-          if (${k} in input) {
-            payload.issues = payload.issues.concat(${id}.issues.map(iss => ({
-              ...iss,
-              path: iss.path ? [${k}, ...iss.path] : [${k}]
-            })));
-          }
-        }
-        
-        if (${id}.value === undefined) {
-          if (${k} in input) {
-            newResult[${k}] = undefined;
-          }
-        } else {
-          newResult[${k}] = ${id}.value;
-        }
-        
-      `);
-			else doc.write(`
-        if (${id}.issues.length) {
-          payload.issues = payload.issues.concat(${id}.issues.map(iss => ({
-            ...iss,
-            path: iss.path ? [${k}, ...iss.path] : [${k}]
-          })));
-        }
-        
-        if (${id}.value === undefined) {
-          if (${k} in input) {
-            newResult[${k}] = undefined;
-          }
-        } else {
-          newResult[${k}] = ${id}.value;
-        }
-        
-      `);
-		}
-		doc.write(`payload.value = newResult;`);
-		doc.write(`return payload;`);
-		const fn = doc.compile();
-		return (payload, ctx) => fn(shape, payload, ctx);
-	};
-	let fastpass;
-	const isObject$2 = isObject;
-	const jit = !globalConfig.jitless;
-	const fastEnabled = jit && allowsEval.value;
-	const catchall = def.catchall;
-	let value;
-	inst._zod.parse = (payload, ctx) => {
-		value ?? (value = _normalized.value);
-		const input = payload.value;
-		if (!isObject$2(input)) {
-			payload.issues.push({
-				expected: "object",
-				code: "invalid_type",
-				input,
-				inst
-			});
-			return payload;
-		}
-		if (jit && fastEnabled && ctx?.async === false && ctx.jitless !== true) {
-			if (!fastpass) fastpass = generateFastpass(def.shape);
-			payload = fastpass(payload, ctx);
-			if (!catchall) return payload;
-			return handleCatchall([], input, payload, ctx, value, inst);
-		}
-		return superParse(payload, ctx);
-	};
-});
-function handleUnionResults(results, final, inst, ctx) {
-	for (const result of results) if (result.issues.length === 0) {
-		final.value = result.value;
-		return final;
-	}
-	const nonaborted = results.filter((r$2) => !aborted(r$2));
-	if (nonaborted.length === 1) {
-		final.value = nonaborted[0].value;
-		return nonaborted[0];
-	}
-	final.issues.push({
-		code: "invalid_union",
-		input: final.value,
-		inst,
-		errors: results.map((result) => result.issues.map((iss) => finalizeIssue(iss, ctx, config())))
-	});
-	return final;
-}
-const $ZodUnion = /* @__PURE__ */ $constructor("$ZodUnion", (inst, def) => {
-	$ZodType.init(inst, def);
-	defineLazy(inst._zod, "optin", () => def.options.some((o$1) => o$1._zod.optin === "optional") ? "optional" : void 0);
-	defineLazy(inst._zod, "optout", () => def.options.some((o$1) => o$1._zod.optout === "optional") ? "optional" : void 0);
-	defineLazy(inst._zod, "values", () => {
-		if (def.options.every((o$1) => o$1._zod.values)) return new Set(def.options.flatMap((option) => Array.from(option._zod.values)));
-	});
-	defineLazy(inst._zod, "pattern", () => {
-		if (def.options.every((o$1) => o$1._zod.pattern)) {
-			const patterns = def.options.map((o$1) => o$1._zod.pattern);
-			return /* @__PURE__ */ new RegExp(`^(${patterns.map((p) => cleanRegex(p.source)).join("|")})$`);
-		}
-	});
-	const single = def.options.length === 1;
-	const first = def.options[0]._zod.run;
-	inst._zod.parse = (payload, ctx) => {
-		if (single) return first(payload, ctx);
-		let async = false;
-		const results = [];
-		for (const option of def.options) {
-			const result = option._zod.run({
-				value: payload.value,
-				issues: []
-			}, ctx);
-			if (result instanceof Promise) {
-				results.push(result);
-				async = true;
-			} else {
-				if (result.issues.length === 0) return result;
-				results.push(result);
-			}
-		}
-		if (!async) return handleUnionResults(results, payload, inst, ctx);
-		return Promise.all(results).then((results$1) => {
-			return handleUnionResults(results$1, payload, inst, ctx);
-		});
-	};
-});
-const $ZodIntersection = /* @__PURE__ */ $constructor("$ZodIntersection", (inst, def) => {
-	$ZodType.init(inst, def);
-	inst._zod.parse = (payload, ctx) => {
-		const input = payload.value;
-		const left = def.left._zod.run({
-			value: input,
-			issues: []
-		}, ctx);
-		const right = def.right._zod.run({
-			value: input,
-			issues: []
-		}, ctx);
-		if (left instanceof Promise || right instanceof Promise) return Promise.all([left, right]).then(([left$1, right$1]) => {
-			return handleIntersectionResults(payload, left$1, right$1);
-		});
-		return handleIntersectionResults(payload, left, right);
-	};
-});
-function mergeValues(a$1, b$1) {
-	if (a$1 === b$1) return {
-		valid: true,
-		data: a$1
-	};
-	if (a$1 instanceof Date && b$1 instanceof Date && +a$1 === +b$1) return {
-		valid: true,
-		data: a$1
-	};
-	if (isPlainObject(a$1) && isPlainObject(b$1)) {
-		const bKeys = Object.keys(b$1);
-		const sharedKeys = Object.keys(a$1).filter((key) => bKeys.indexOf(key) !== -1);
-		const newObj = {
-			...a$1,
-			...b$1
-		};
-		for (const key of sharedKeys) {
-			const sharedValue = mergeValues(a$1[key], b$1[key]);
-			if (!sharedValue.valid) return {
-				valid: false,
-				mergeErrorPath: [key, ...sharedValue.mergeErrorPath]
-			};
-			newObj[key] = sharedValue.data;
-		}
-		return {
-			valid: true,
-			data: newObj
-		};
-	}
-	if (Array.isArray(a$1) && Array.isArray(b$1)) {
-		if (a$1.length !== b$1.length) return {
-			valid: false,
-			mergeErrorPath: []
-		};
-		const newArray = [];
-		for (let index$1 = 0; index$1 < a$1.length; index$1++) {
-			const itemA = a$1[index$1];
-			const itemB = b$1[index$1];
-			const sharedValue = mergeValues(itemA, itemB);
-			if (!sharedValue.valid) return {
-				valid: false,
-				mergeErrorPath: [index$1, ...sharedValue.mergeErrorPath]
-			};
-			newArray.push(sharedValue.data);
-		}
-		return {
-			valid: true,
-			data: newArray
-		};
-	}
-	return {
-		valid: false,
-		mergeErrorPath: []
-	};
-}
-function handleIntersectionResults(result, left, right) {
-	const unrecKeys = /* @__PURE__ */ new Map();
-	let unrecIssue;
-	for (const iss of left.issues) if (iss.code === "unrecognized_keys") {
-		unrecIssue ?? (unrecIssue = iss);
-		for (const k of iss.keys) {
-			if (!unrecKeys.has(k)) unrecKeys.set(k, {});
-			unrecKeys.get(k).l = true;
-		}
-	} else result.issues.push(iss);
-	for (const iss of right.issues) if (iss.code === "unrecognized_keys") for (const k of iss.keys) {
-		if (!unrecKeys.has(k)) unrecKeys.set(k, {});
-		unrecKeys.get(k).r = true;
-	}
-	else result.issues.push(iss);
-	const bothKeys = [...unrecKeys].filter(([, f]) => f.l && f.r).map(([k]) => k);
-	if (bothKeys.length && unrecIssue) result.issues.push({
-		...unrecIssue,
-		keys: bothKeys
-	});
-	if (aborted(result)) return result;
-	const merged = mergeValues(left.value, right.value);
-	if (!merged.valid) throw new Error(`Unmergable intersection. Error path: ${JSON.stringify(merged.mergeErrorPath)}`);
-	result.value = merged.data;
-	return result;
-}
-const $ZodEnum = /* @__PURE__ */ $constructor("$ZodEnum", (inst, def) => {
-	$ZodType.init(inst, def);
-	const values = getEnumValues(def.entries);
-	const valuesSet = new Set(values);
-	inst._zod.values = valuesSet;
-	inst._zod.pattern = /* @__PURE__ */ new RegExp(`^(${values.filter((k) => propertyKeyTypes.has(typeof k)).map((o$1) => typeof o$1 === "string" ? escapeRegex(o$1) : o$1.toString()).join("|")})$`);
-	inst._zod.parse = (payload, _ctx) => {
-		const input = payload.value;
-		if (valuesSet.has(input)) return payload;
-		payload.issues.push({
-			code: "invalid_value",
-			values,
-			input,
-			inst
-		});
-		return payload;
-	};
-});
-const $ZodTransform = /* @__PURE__ */ $constructor("$ZodTransform", (inst, def) => {
-	$ZodType.init(inst, def);
-	inst._zod.parse = (payload, ctx) => {
-		if (ctx.direction === "backward") throw new $ZodEncodeError(inst.constructor.name);
-		const _out = def.transform(payload.value, payload);
-		if (ctx.async) return (_out instanceof Promise ? _out : Promise.resolve(_out)).then((output) => {
-			payload.value = output;
-			return payload;
-		});
-		if (_out instanceof Promise) throw new $ZodAsyncError();
-		payload.value = _out;
-		return payload;
-	};
-});
-function handleOptionalResult(result, input) {
-	if (result.issues.length && input === void 0) return {
-		issues: [],
-		value: void 0
-	};
-	return result;
-}
-const $ZodOptional = /* @__PURE__ */ $constructor("$ZodOptional", (inst, def) => {
-	$ZodType.init(inst, def);
-	inst._zod.optin = "optional";
-	inst._zod.optout = "optional";
-	defineLazy(inst._zod, "values", () => {
-		return def.innerType._zod.values ? new Set([...def.innerType._zod.values, void 0]) : void 0;
-	});
-	defineLazy(inst._zod, "pattern", () => {
-		const pattern = def.innerType._zod.pattern;
-		return pattern ? /* @__PURE__ */ new RegExp(`^(${cleanRegex(pattern.source)})?$`) : void 0;
-	});
-	inst._zod.parse = (payload, ctx) => {
-		if (def.innerType._zod.optin === "optional") {
-			const result = def.innerType._zod.run(payload, ctx);
-			if (result instanceof Promise) return result.then((r$2) => handleOptionalResult(r$2, payload.value));
-			return handleOptionalResult(result, payload.value);
-		}
-		if (payload.value === void 0) return payload;
-		return def.innerType._zod.run(payload, ctx);
-	};
-});
-const $ZodExactOptional = /* @__PURE__ */ $constructor("$ZodExactOptional", (inst, def) => {
-	$ZodOptional.init(inst, def);
-	defineLazy(inst._zod, "values", () => def.innerType._zod.values);
-	defineLazy(inst._zod, "pattern", () => def.innerType._zod.pattern);
-	inst._zod.parse = (payload, ctx) => {
-		return def.innerType._zod.run(payload, ctx);
-	};
-});
-const $ZodNullable = /* @__PURE__ */ $constructor("$ZodNullable", (inst, def) => {
-	$ZodType.init(inst, def);
-	defineLazy(inst._zod, "optin", () => def.innerType._zod.optin);
-	defineLazy(inst._zod, "optout", () => def.innerType._zod.optout);
-	defineLazy(inst._zod, "pattern", () => {
-		const pattern = def.innerType._zod.pattern;
-		return pattern ? /* @__PURE__ */ new RegExp(`^(${cleanRegex(pattern.source)}|null)$`) : void 0;
-	});
-	defineLazy(inst._zod, "values", () => {
-		return def.innerType._zod.values ? new Set([...def.innerType._zod.values, null]) : void 0;
-	});
-	inst._zod.parse = (payload, ctx) => {
-		if (payload.value === null) return payload;
-		return def.innerType._zod.run(payload, ctx);
-	};
-});
-const $ZodDefault = /* @__PURE__ */ $constructor("$ZodDefault", (inst, def) => {
-	$ZodType.init(inst, def);
-	inst._zod.optin = "optional";
-	defineLazy(inst._zod, "values", () => def.innerType._zod.values);
-	inst._zod.parse = (payload, ctx) => {
-		if (ctx.direction === "backward") return def.innerType._zod.run(payload, ctx);
-		if (payload.value === void 0) {
-			payload.value = def.defaultValue;
-			return payload;
-		}
-		const result = def.innerType._zod.run(payload, ctx);
-		if (result instanceof Promise) return result.then((result$1) => handleDefaultResult(result$1, def));
-		return handleDefaultResult(result, def);
-	};
-});
-function handleDefaultResult(payload, def) {
-	if (payload.value === void 0) payload.value = def.defaultValue;
-	return payload;
-}
-const $ZodPrefault = /* @__PURE__ */ $constructor("$ZodPrefault", (inst, def) => {
-	$ZodType.init(inst, def);
-	inst._zod.optin = "optional";
-	defineLazy(inst._zod, "values", () => def.innerType._zod.values);
-	inst._zod.parse = (payload, ctx) => {
-		if (ctx.direction === "backward") return def.innerType._zod.run(payload, ctx);
-		if (payload.value === void 0) payload.value = def.defaultValue;
-		return def.innerType._zod.run(payload, ctx);
-	};
-});
-const $ZodNonOptional = /* @__PURE__ */ $constructor("$ZodNonOptional", (inst, def) => {
-	$ZodType.init(inst, def);
-	defineLazy(inst._zod, "values", () => {
-		const v = def.innerType._zod.values;
-		return v ? new Set([...v].filter((x$1) => x$1 !== void 0)) : void 0;
-	});
-	inst._zod.parse = (payload, ctx) => {
-		const result = def.innerType._zod.run(payload, ctx);
-		if (result instanceof Promise) return result.then((result$1) => handleNonOptionalResult(result$1, inst));
-		return handleNonOptionalResult(result, inst);
-	};
-});
-function handleNonOptionalResult(payload, inst) {
-	if (!payload.issues.length && payload.value === void 0) payload.issues.push({
-		code: "invalid_type",
-		expected: "nonoptional",
-		input: payload.value,
-		inst
-	});
-	return payload;
-}
-const $ZodCatch = /* @__PURE__ */ $constructor("$ZodCatch", (inst, def) => {
-	$ZodType.init(inst, def);
-	defineLazy(inst._zod, "optin", () => def.innerType._zod.optin);
-	defineLazy(inst._zod, "optout", () => def.innerType._zod.optout);
-	defineLazy(inst._zod, "values", () => def.innerType._zod.values);
-	inst._zod.parse = (payload, ctx) => {
-		if (ctx.direction === "backward") return def.innerType._zod.run(payload, ctx);
-		const result = def.innerType._zod.run(payload, ctx);
-		if (result instanceof Promise) return result.then((result$1) => {
-			payload.value = result$1.value;
-			if (result$1.issues.length) {
-				payload.value = def.catchValue({
-					...payload,
-					error: { issues: result$1.issues.map((iss) => finalizeIssue(iss, ctx, config())) },
-					input: payload.value
-				});
-				payload.issues = [];
-			}
-			return payload;
-		});
-		payload.value = result.value;
-		if (result.issues.length) {
-			payload.value = def.catchValue({
-				...payload,
-				error: { issues: result.issues.map((iss) => finalizeIssue(iss, ctx, config())) },
-				input: payload.value
-			});
-			payload.issues = [];
-		}
-		return payload;
-	};
-});
-const $ZodPipe = /* @__PURE__ */ $constructor("$ZodPipe", (inst, def) => {
-	$ZodType.init(inst, def);
-	defineLazy(inst._zod, "values", () => def.in._zod.values);
-	defineLazy(inst._zod, "optin", () => def.in._zod.optin);
-	defineLazy(inst._zod, "optout", () => def.out._zod.optout);
-	defineLazy(inst._zod, "propValues", () => def.in._zod.propValues);
-	inst._zod.parse = (payload, ctx) => {
-		if (ctx.direction === "backward") {
-			const right = def.out._zod.run(payload, ctx);
-			if (right instanceof Promise) return right.then((right$1) => handlePipeResult(right$1, def.in, ctx));
-			return handlePipeResult(right, def.in, ctx);
-		}
-		const left = def.in._zod.run(payload, ctx);
-		if (left instanceof Promise) return left.then((left$1) => handlePipeResult(left$1, def.out, ctx));
-		return handlePipeResult(left, def.out, ctx);
-	};
-});
-function handlePipeResult(left, next, ctx) {
-	if (left.issues.length) {
-		left.aborted = true;
-		return left;
-	}
-	return next._zod.run({
-		value: left.value,
-		issues: left.issues
-	}, ctx);
-}
-const $ZodReadonly = /* @__PURE__ */ $constructor("$ZodReadonly", (inst, def) => {
-	$ZodType.init(inst, def);
-	defineLazy(inst._zod, "propValues", () => def.innerType._zod.propValues);
-	defineLazy(inst._zod, "values", () => def.innerType._zod.values);
-	defineLazy(inst._zod, "optin", () => def.innerType?._zod?.optin);
-	defineLazy(inst._zod, "optout", () => def.innerType?._zod?.optout);
-	inst._zod.parse = (payload, ctx) => {
-		if (ctx.direction === "backward") return def.innerType._zod.run(payload, ctx);
-		const result = def.innerType._zod.run(payload, ctx);
-		if (result instanceof Promise) return result.then(handleReadonlyResult);
-		return handleReadonlyResult(result);
-	};
-});
-function handleReadonlyResult(payload) {
-	payload.value = Object.freeze(payload.value);
-	return payload;
-}
-const $ZodCustom = /* @__PURE__ */ $constructor("$ZodCustom", (inst, def) => {
-	$ZodCheck.init(inst, def);
-	$ZodType.init(inst, def);
-	inst._zod.parse = (payload, _$1) => {
-		return payload;
-	};
-	inst._zod.check = (payload) => {
-		const input = payload.value;
-		const r$2 = def.fn(input);
-		if (r$2 instanceof Promise) return r$2.then((r$3) => handleRefineResult(r$3, payload, input, inst));
-		handleRefineResult(r$2, payload, input, inst);
-	};
-});
-function handleRefineResult(result, payload, input, inst) {
-	if (!result) {
-		const _iss = {
-			code: "custom",
-			input,
-			inst,
-			path: [...inst._zod.def.path ?? []],
-			continue: !inst._zod.def.abort
-		};
-		if (inst._zod.def.params) _iss.params = inst._zod.def.params;
-		payload.issues.push(issue(_iss));
-	}
-}
-var _a;
-var $ZodRegistry = class {
-	constructor() {
-		this._map = /* @__PURE__ */ new WeakMap();
-		this._idmap = /* @__PURE__ */ new Map();
-	}
-	add(schema, ..._meta) {
-		const meta$2 = _meta[0];
-		this._map.set(schema, meta$2);
-		if (meta$2 && typeof meta$2 === "object" && "id" in meta$2) this._idmap.set(meta$2.id, schema);
-		return this;
-	}
-	clear() {
-		this._map = /* @__PURE__ */ new WeakMap();
-		this._idmap = /* @__PURE__ */ new Map();
-		return this;
-	}
-	remove(schema) {
-		const meta$2 = this._map.get(schema);
-		if (meta$2 && typeof meta$2 === "object" && "id" in meta$2) this._idmap.delete(meta$2.id);
-		this._map.delete(schema);
-		return this;
-	}
-	get(schema) {
-		const p = schema._zod.parent;
-		if (p) {
-			const pm = { ...this.get(p) ?? {} };
-			delete pm.id;
-			const f = {
-				...pm,
-				...this._map.get(schema)
-			};
-			return Object.keys(f).length ? f : void 0;
-		}
-		return this._map.get(schema);
-	}
-	has(schema) {
-		return this._map.has(schema);
-	}
-};
-function registry() {
-	return new $ZodRegistry();
-}
-(_a = globalThis).__zod_globalRegistry ?? (_a.__zod_globalRegistry = registry());
-const globalRegistry = globalThis.__zod_globalRegistry;
-/* @__NO_SIDE_EFFECTS__ */
-function _string(Class, params) {
-	return new Class({
-		type: "string",
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _email(Class, params) {
-	return new Class({
-		type: "string",
-		format: "email",
-		check: "string_format",
-		abort: false,
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _guid(Class, params) {
-	return new Class({
-		type: "string",
-		format: "guid",
-		check: "string_format",
-		abort: false,
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _uuid(Class, params) {
-	return new Class({
-		type: "string",
-		format: "uuid",
-		check: "string_format",
-		abort: false,
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _uuidv4(Class, params) {
-	return new Class({
-		type: "string",
-		format: "uuid",
-		check: "string_format",
-		abort: false,
-		version: "v4",
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _uuidv6(Class, params) {
-	return new Class({
-		type: "string",
-		format: "uuid",
-		check: "string_format",
-		abort: false,
-		version: "v6",
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _uuidv7(Class, params) {
-	return new Class({
-		type: "string",
-		format: "uuid",
-		check: "string_format",
-		abort: false,
-		version: "v7",
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _url(Class, params) {
-	return new Class({
-		type: "string",
-		format: "url",
-		check: "string_format",
-		abort: false,
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _emoji(Class, params) {
-	return new Class({
-		type: "string",
-		format: "emoji",
-		check: "string_format",
-		abort: false,
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _nanoid(Class, params) {
-	return new Class({
-		type: "string",
-		format: "nanoid",
-		check: "string_format",
-		abort: false,
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _cuid(Class, params) {
-	return new Class({
-		type: "string",
-		format: "cuid",
-		check: "string_format",
-		abort: false,
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _cuid2(Class, params) {
-	return new Class({
-		type: "string",
-		format: "cuid2",
-		check: "string_format",
-		abort: false,
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _ulid(Class, params) {
-	return new Class({
-		type: "string",
-		format: "ulid",
-		check: "string_format",
-		abort: false,
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _xid(Class, params) {
-	return new Class({
-		type: "string",
-		format: "xid",
-		check: "string_format",
-		abort: false,
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _ksuid(Class, params) {
-	return new Class({
-		type: "string",
-		format: "ksuid",
-		check: "string_format",
-		abort: false,
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _ipv4(Class, params) {
-	return new Class({
-		type: "string",
-		format: "ipv4",
-		check: "string_format",
-		abort: false,
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _ipv6(Class, params) {
-	return new Class({
-		type: "string",
-		format: "ipv6",
-		check: "string_format",
-		abort: false,
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _cidrv4(Class, params) {
-	return new Class({
-		type: "string",
-		format: "cidrv4",
-		check: "string_format",
-		abort: false,
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _cidrv6(Class, params) {
-	return new Class({
-		type: "string",
-		format: "cidrv6",
-		check: "string_format",
-		abort: false,
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _base64(Class, params) {
-	return new Class({
-		type: "string",
-		format: "base64",
-		check: "string_format",
-		abort: false,
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _base64url(Class, params) {
-	return new Class({
-		type: "string",
-		format: "base64url",
-		check: "string_format",
-		abort: false,
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _e164(Class, params) {
-	return new Class({
-		type: "string",
-		format: "e164",
-		check: "string_format",
-		abort: false,
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _jwt(Class, params) {
-	return new Class({
-		type: "string",
-		format: "jwt",
-		check: "string_format",
-		abort: false,
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _isoDateTime(Class, params) {
-	return new Class({
-		type: "string",
-		format: "datetime",
-		check: "string_format",
-		offset: false,
-		local: false,
-		precision: null,
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _isoDate(Class, params) {
-	return new Class({
-		type: "string",
-		format: "date",
-		check: "string_format",
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _isoTime(Class, params) {
-	return new Class({
-		type: "string",
-		format: "time",
-		check: "string_format",
-		precision: null,
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _isoDuration(Class, params) {
-	return new Class({
-		type: "string",
-		format: "duration",
-		check: "string_format",
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _unknown(Class) {
-	return new Class({ type: "unknown" });
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _never(Class, params) {
-	return new Class({
-		type: "never",
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _maxLength(maximum, params) {
-	return new $ZodCheckMaxLength({
-		check: "max_length",
-		...normalizeParams(params),
-		maximum
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _minLength(minimum, params) {
-	return new $ZodCheckMinLength({
-		check: "min_length",
-		...normalizeParams(params),
-		minimum
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _length(length, params) {
-	return new $ZodCheckLengthEquals({
-		check: "length_equals",
-		...normalizeParams(params),
-		length
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _regex(pattern, params) {
-	return new $ZodCheckRegex({
-		check: "string_format",
-		format: "regex",
-		...normalizeParams(params),
-		pattern
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _lowercase(params) {
-	return new $ZodCheckLowerCase({
-		check: "string_format",
-		format: "lowercase",
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _uppercase(params) {
-	return new $ZodCheckUpperCase({
-		check: "string_format",
-		format: "uppercase",
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _includes(includes, params) {
-	return new $ZodCheckIncludes({
-		check: "string_format",
-		format: "includes",
-		...normalizeParams(params),
-		includes
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _startsWith(prefix, params) {
-	return new $ZodCheckStartsWith({
-		check: "string_format",
-		format: "starts_with",
-		...normalizeParams(params),
-		prefix
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _endsWith(suffix, params) {
-	return new $ZodCheckEndsWith({
-		check: "string_format",
-		format: "ends_with",
-		...normalizeParams(params),
-		suffix
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _overwrite(tx) {
-	return new $ZodCheckOverwrite({
-		check: "overwrite",
-		tx
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _normalize(form) {
-	return /* @__PURE__ */ _overwrite((input) => input.normalize(form));
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _trim() {
-	return /* @__PURE__ */ _overwrite((input) => input.trim());
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _toLowerCase() {
-	return /* @__PURE__ */ _overwrite((input) => input.toLowerCase());
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _toUpperCase() {
-	return /* @__PURE__ */ _overwrite((input) => input.toUpperCase());
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _slugify() {
-	return /* @__PURE__ */ _overwrite((input) => slugify(input));
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _array(Class, element, params) {
-	return new Class({
-		type: "array",
-		element,
-		...normalizeParams(params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _refine(Class, fn, _params) {
-	return new Class({
-		type: "custom",
-		check: "custom",
-		fn,
-		...normalizeParams(_params)
-	});
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _superRefine(fn) {
-	const ch = /* @__PURE__ */ _check((payload) => {
-		payload.addIssue = (issue$1) => {
-			if (typeof issue$1 === "string") payload.issues.push(issue(issue$1, payload.value, ch._zod.def));
-			else {
-				const _issue = issue$1;
-				if (_issue.fatal) _issue.continue = false;
-				_issue.code ?? (_issue.code = "custom");
-				_issue.input ?? (_issue.input = payload.value);
-				_issue.inst ?? (_issue.inst = ch);
-				_issue.continue ?? (_issue.continue = !ch._zod.def.abort);
-				payload.issues.push(issue(_issue));
-			}
-		};
-		return fn(payload.value, payload);
-	});
-	return ch;
-}
-/* @__NO_SIDE_EFFECTS__ */
-function _check(fn, params) {
-	const ch = new $ZodCheck({
-		check: "custom",
-		...normalizeParams(params)
-	});
-	ch._zod.check = fn;
-	return ch;
-}
-function initializeContext(params) {
-	let target = params?.target ?? "draft-2020-12";
-	if (target === "draft-4") target = "draft-04";
-	if (target === "draft-7") target = "draft-07";
-	return {
-		processors: params.processors ?? {},
-		metadataRegistry: params?.metadata ?? globalRegistry,
-		target,
-		unrepresentable: params?.unrepresentable ?? "throw",
-		override: params?.override ?? (() => {}),
-		io: params?.io ?? "output",
-		counter: 0,
-		seen: /* @__PURE__ */ new Map(),
-		cycles: params?.cycles ?? "ref",
-		reused: params?.reused ?? "inline",
-		external: params?.external ?? void 0
-	};
-}
-function process$1(schema, ctx, _params = {
-	path: [],
-	schemaPath: []
-}) {
-	var _a$1;
-	const def = schema._zod.def;
-	const seen$1 = ctx.seen.get(schema);
-	if (seen$1) {
-		seen$1.count++;
-		if (_params.schemaPath.includes(schema)) seen$1.cycle = _params.path;
-		return seen$1.schema;
-	}
-	const result = {
-		schema: {},
-		count: 1,
-		cycle: void 0,
-		path: _params.path
-	};
-	ctx.seen.set(schema, result);
-	const overrideSchema = schema._zod.toJSONSchema?.();
-	if (overrideSchema) result.schema = overrideSchema;
-	else {
-		const params = {
-			..._params,
-			schemaPath: [..._params.schemaPath, schema],
-			path: _params.path
-		};
-		if (schema._zod.processJSONSchema) schema._zod.processJSONSchema(ctx, result.schema, params);
-		else {
-			const _json = result.schema;
-			const processor = ctx.processors[def.type];
-			if (!processor) throw new Error(`[toJSONSchema]: Non-representable type encountered: ${def.type}`);
-			processor(schema, ctx, _json, params);
-		}
-		const parent = schema._zod.parent;
-		if (parent) {
-			if (!result.ref) result.ref = parent;
-			process$1(parent, ctx, params);
-			ctx.seen.get(parent).isParent = true;
-		}
-	}
-	const meta$2 = ctx.metadataRegistry.get(schema);
-	if (meta$2) Object.assign(result.schema, meta$2);
-	if (ctx.io === "input" && isTransforming(schema)) {
-		delete result.schema.examples;
-		delete result.schema.default;
-	}
-	if (ctx.io === "input" && result.schema._prefault) (_a$1 = result.schema).default ?? (_a$1.default = result.schema._prefault);
-	delete result.schema._prefault;
-	return ctx.seen.get(schema).schema;
-}
-function extractDefs(ctx, schema) {
-	const root = ctx.seen.get(schema);
-	if (!root) throw new Error("Unprocessed schema. This is a bug in Zod.");
-	const idToSchema = /* @__PURE__ */ new Map();
-	for (const entry of ctx.seen.entries()) {
-		const id = ctx.metadataRegistry.get(entry[0])?.id;
-		if (id) {
-			const existing = idToSchema.get(id);
-			if (existing && existing !== entry[0]) throw new Error(`Duplicate schema id "${id}" detected during JSON Schema conversion. Two different schemas cannot share the same id when converted together.`);
-			idToSchema.set(id, entry[0]);
-		}
-	}
-	const makeURI = (entry) => {
-		const defsSegment = ctx.target === "draft-2020-12" ? "$defs" : "definitions";
-		if (ctx.external) {
-			const externalId = ctx.external.registry.get(entry[0])?.id;
-			const uriGenerator = ctx.external.uri ?? ((id$1) => id$1);
-			if (externalId) return { ref: uriGenerator(externalId) };
-			const id = entry[1].defId ?? entry[1].schema.id ?? `schema${ctx.counter++}`;
-			entry[1].defId = id;
-			return {
-				defId: id,
-				ref: `${uriGenerator("__shared")}#/${defsSegment}/${id}`
-			};
-		}
-		if (entry[1] === root) return { ref: "#" };
-		const defUriPrefix = `#/${defsSegment}/`;
-		const defId = entry[1].schema.id ?? `__schema${ctx.counter++}`;
-		return {
-			defId,
-			ref: defUriPrefix + defId
-		};
-	};
-	const extractToDef = (entry) => {
-		if (entry[1].schema.$ref) return;
-		const seen$1 = entry[1];
-		const { ref, defId } = makeURI(entry);
-		seen$1.def = { ...seen$1.schema };
-		if (defId) seen$1.defId = defId;
-		const schema$1 = seen$1.schema;
-		for (const key in schema$1) delete schema$1[key];
-		schema$1.$ref = ref;
-	};
-	if (ctx.cycles === "throw") for (const entry of ctx.seen.entries()) {
-		const seen$1 = entry[1];
-		if (seen$1.cycle) throw new Error(`Cycle detected: #/${seen$1.cycle?.join("/")}/<root>
-
-Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.`);
-	}
-	for (const entry of ctx.seen.entries()) {
-		const seen$1 = entry[1];
-		if (schema === entry[0]) {
-			extractToDef(entry);
-			continue;
-		}
-		if (ctx.external) {
-			const ext = ctx.external.registry.get(entry[0])?.id;
-			if (schema !== entry[0] && ext) {
-				extractToDef(entry);
-				continue;
-			}
-		}
-		if (ctx.metadataRegistry.get(entry[0])?.id) {
-			extractToDef(entry);
-			continue;
-		}
-		if (seen$1.cycle) {
-			extractToDef(entry);
-			continue;
-		}
-		if (seen$1.count > 1) {
-			if (ctx.reused === "ref") {
-				extractToDef(entry);
-				continue;
-			}
-		}
-	}
-}
-function finalize(ctx, schema) {
-	const root = ctx.seen.get(schema);
-	if (!root) throw new Error("Unprocessed schema. This is a bug in Zod.");
-	const flattenRef = (zodSchema) => {
-		const seen$1 = ctx.seen.get(zodSchema);
-		if (seen$1.ref === null) return;
-		const schema$1 = seen$1.def ?? seen$1.schema;
-		const _cached = { ...schema$1 };
-		const ref = seen$1.ref;
-		seen$1.ref = null;
-		if (ref) {
-			flattenRef(ref);
-			const refSeen = ctx.seen.get(ref);
-			const refSchema = refSeen.schema;
-			if (refSchema.$ref && (ctx.target === "draft-07" || ctx.target === "draft-04" || ctx.target === "openapi-3.0")) {
-				schema$1.allOf = schema$1.allOf ?? [];
-				schema$1.allOf.push(refSchema);
-			} else Object.assign(schema$1, refSchema);
-			Object.assign(schema$1, _cached);
-			if (zodSchema._zod.parent === ref) for (const key in schema$1) {
-				if (key === "$ref" || key === "allOf") continue;
-				if (!(key in _cached)) delete schema$1[key];
-			}
-			if (refSchema.$ref && refSeen.def) for (const key in schema$1) {
-				if (key === "$ref" || key === "allOf") continue;
-				if (key in refSeen.def && JSON.stringify(schema$1[key]) === JSON.stringify(refSeen.def[key])) delete schema$1[key];
-			}
-		}
-		const parent = zodSchema._zod.parent;
-		if (parent && parent !== ref) {
-			flattenRef(parent);
-			const parentSeen = ctx.seen.get(parent);
-			if (parentSeen?.schema.$ref) {
-				schema$1.$ref = parentSeen.schema.$ref;
-				if (parentSeen.def) for (const key in schema$1) {
-					if (key === "$ref" || key === "allOf") continue;
-					if (key in parentSeen.def && JSON.stringify(schema$1[key]) === JSON.stringify(parentSeen.def[key])) delete schema$1[key];
-				}
-			}
-		}
-		ctx.override({
-			zodSchema,
-			jsonSchema: schema$1,
-			path: seen$1.path ?? []
-		});
-	};
-	for (const entry of [...ctx.seen.entries()].reverse()) flattenRef(entry[0]);
-	const result = {};
-	if (ctx.target === "draft-2020-12") result.$schema = "https://json-schema.org/draft/2020-12/schema";
-	else if (ctx.target === "draft-07") result.$schema = "http://json-schema.org/draft-07/schema#";
-	else if (ctx.target === "draft-04") result.$schema = "http://json-schema.org/draft-04/schema#";
-	else if (ctx.target === "openapi-3.0") {}
-	if (ctx.external?.uri) {
-		const id = ctx.external.registry.get(schema)?.id;
-		if (!id) throw new Error("Schema is missing an `id` property");
-		result.$id = ctx.external.uri(id);
-	}
-	Object.assign(result, root.def ?? root.schema);
-	const defs = ctx.external?.defs ?? {};
-	for (const entry of ctx.seen.entries()) {
-		const seen$1 = entry[1];
-		if (seen$1.def && seen$1.defId) defs[seen$1.defId] = seen$1.def;
-	}
-	if (ctx.external) {} else if (Object.keys(defs).length > 0) if (ctx.target === "draft-2020-12") result.$defs = defs;
-	else result.definitions = defs;
-	try {
-		const finalized = JSON.parse(JSON.stringify(result));
-		Object.defineProperty(finalized, "~standard", {
-			value: {
-				...schema["~standard"],
-				jsonSchema: {
-					input: createStandardJSONSchemaMethod(schema, "input", ctx.processors),
-					output: createStandardJSONSchemaMethod(schema, "output", ctx.processors)
-				}
-			},
-			enumerable: false,
-			writable: false
-		});
-		return finalized;
-	} catch (_err) {
-		throw new Error("Error converting schema to JSON.");
-	}
-}
-function isTransforming(_schema, _ctx) {
-	const ctx = _ctx ?? { seen: /* @__PURE__ */ new Set() };
-	if (ctx.seen.has(_schema)) return false;
-	ctx.seen.add(_schema);
-	const def = _schema._zod.def;
-	if (def.type === "transform") return true;
-	if (def.type === "array") return isTransforming(def.element, ctx);
-	if (def.type === "set") return isTransforming(def.valueType, ctx);
-	if (def.type === "lazy") return isTransforming(def.getter(), ctx);
-	if (def.type === "promise" || def.type === "optional" || def.type === "nonoptional" || def.type === "nullable" || def.type === "readonly" || def.type === "default" || def.type === "prefault") return isTransforming(def.innerType, ctx);
-	if (def.type === "intersection") return isTransforming(def.left, ctx) || isTransforming(def.right, ctx);
-	if (def.type === "record" || def.type === "map") return isTransforming(def.keyType, ctx) || isTransforming(def.valueType, ctx);
-	if (def.type === "pipe") return isTransforming(def.in, ctx) || isTransforming(def.out, ctx);
-	if (def.type === "object") {
-		for (const key in def.shape) if (isTransforming(def.shape[key], ctx)) return true;
-		return false;
-	}
-	if (def.type === "union") {
-		for (const option of def.options) if (isTransforming(option, ctx)) return true;
-		return false;
-	}
-	if (def.type === "tuple") {
-		for (const item of def.items) if (isTransforming(item, ctx)) return true;
-		if (def.rest && isTransforming(def.rest, ctx)) return true;
-		return false;
-	}
-	return false;
-}
-const createToJSONSchemaMethod = (schema, processors = {}) => (params) => {
-	const ctx = initializeContext({
-		...params,
-		processors
-	});
-	process$1(schema, ctx);
-	extractDefs(ctx, schema);
-	return finalize(ctx, schema);
-};
-const createStandardJSONSchemaMethod = (schema, io, processors = {}) => (params) => {
-	const { libraryOptions, target } = params ?? {};
-	const ctx = initializeContext({
-		...libraryOptions ?? {},
-		target,
-		io,
-		processors
-	});
-	process$1(schema, ctx);
-	extractDefs(ctx, schema);
-	return finalize(ctx, schema);
-};
-var formatMap = {
-	guid: "uuid",
-	url: "uri",
-	datetime: "date-time",
-	json_string: "json-string",
-	regex: ""
-};
-const stringProcessor = (schema, ctx, _json, _params) => {
-	const json = _json;
-	json.type = "string";
-	const { minimum, maximum, format: format$1, patterns, contentEncoding } = schema._zod.bag;
-	if (typeof minimum === "number") json.minLength = minimum;
-	if (typeof maximum === "number") json.maxLength = maximum;
-	if (format$1) {
-		json.format = formatMap[format$1] ?? format$1;
-		if (json.format === "") delete json.format;
-		if (format$1 === "time") delete json.format;
-	}
-	if (contentEncoding) json.contentEncoding = contentEncoding;
-	if (patterns && patterns.size > 0) {
-		const regexes = [...patterns];
-		if (regexes.length === 1) json.pattern = regexes[0].source;
-		else if (regexes.length > 1) json.allOf = [...regexes.map((regex) => ({
-			...ctx.target === "draft-07" || ctx.target === "draft-04" || ctx.target === "openapi-3.0" ? { type: "string" } : {},
-			pattern: regex.source
-		}))];
-	}
-};
-const neverProcessor = (_schema, _ctx, json, _params) => {
-	json.not = {};
-};
-const unknownProcessor = (_schema, _ctx, _json, _params) => {};
-const enumProcessor = (schema, _ctx, json, _params) => {
-	const def = schema._zod.def;
-	const values = getEnumValues(def.entries);
-	if (values.every((v) => typeof v === "number")) json.type = "number";
-	if (values.every((v) => typeof v === "string")) json.type = "string";
-	json.enum = values;
-};
-const customProcessor = (_schema, ctx, _json, _params) => {
-	if (ctx.unrepresentable === "throw") throw new Error("Custom types cannot be represented in JSON Schema");
-};
-const transformProcessor = (_schema, ctx, _json, _params) => {
-	if (ctx.unrepresentable === "throw") throw new Error("Transforms cannot be represented in JSON Schema");
-};
-const arrayProcessor = (schema, ctx, _json, params) => {
-	const json = _json;
-	const def = schema._zod.def;
-	const { minimum, maximum } = schema._zod.bag;
-	if (typeof minimum === "number") json.minItems = minimum;
-	if (typeof maximum === "number") json.maxItems = maximum;
-	json.type = "array";
-	json.items = process$1(def.element, ctx, {
-		...params,
-		path: [...params.path, "items"]
-	});
-};
-const objectProcessor = (schema, ctx, _json, params) => {
-	const json = _json;
-	const def = schema._zod.def;
-	json.type = "object";
-	json.properties = {};
-	const shape = def.shape;
-	for (const key in shape) json.properties[key] = process$1(shape[key], ctx, {
-		...params,
-		path: [
-			...params.path,
-			"properties",
-			key
-		]
-	});
-	const allKeys = new Set(Object.keys(shape));
-	const requiredKeys = new Set([...allKeys].filter((key) => {
-		const v = def.shape[key]._zod;
-		if (ctx.io === "input") return v.optin === void 0;
-		else return v.optout === void 0;
-	}));
-	if (requiredKeys.size > 0) json.required = Array.from(requiredKeys);
-	if (def.catchall?._zod.def.type === "never") json.additionalProperties = false;
-	else if (!def.catchall) {
-		if (ctx.io === "output") json.additionalProperties = false;
-	} else if (def.catchall) json.additionalProperties = process$1(def.catchall, ctx, {
-		...params,
-		path: [...params.path, "additionalProperties"]
-	});
-};
-const unionProcessor = (schema, ctx, json, params) => {
-	const def = schema._zod.def;
-	const isExclusive = def.inclusive === false;
-	const options$1 = def.options.map((x$1, i$2) => process$1(x$1, ctx, {
-		...params,
-		path: [
-			...params.path,
-			isExclusive ? "oneOf" : "anyOf",
-			i$2
-		]
-	}));
-	if (isExclusive) json.oneOf = options$1;
-	else json.anyOf = options$1;
-};
-const intersectionProcessor = (schema, ctx, json, params) => {
-	const def = schema._zod.def;
-	const a$1 = process$1(def.left, ctx, {
-		...params,
-		path: [
-			...params.path,
-			"allOf",
-			0
-		]
-	});
-	const b$1 = process$1(def.right, ctx, {
-		...params,
-		path: [
-			...params.path,
-			"allOf",
-			1
-		]
-	});
-	const isSimpleIntersection = (val) => "allOf" in val && Object.keys(val).length === 1;
-	json.allOf = [...isSimpleIntersection(a$1) ? a$1.allOf : [a$1], ...isSimpleIntersection(b$1) ? b$1.allOf : [b$1]];
-};
-const nullableProcessor = (schema, ctx, json, params) => {
-	const def = schema._zod.def;
-	const inner = process$1(def.innerType, ctx, params);
-	const seen$1 = ctx.seen.get(schema);
-	if (ctx.target === "openapi-3.0") {
-		seen$1.ref = def.innerType;
-		json.nullable = true;
-	} else json.anyOf = [inner, { type: "null" }];
-};
-const nonoptionalProcessor = (schema, ctx, _json, params) => {
-	const def = schema._zod.def;
-	process$1(def.innerType, ctx, params);
-	const seen$1 = ctx.seen.get(schema);
-	seen$1.ref = def.innerType;
-};
-const defaultProcessor = (schema, ctx, json, params) => {
-	const def = schema._zod.def;
-	process$1(def.innerType, ctx, params);
-	const seen$1 = ctx.seen.get(schema);
-	seen$1.ref = def.innerType;
-	json.default = JSON.parse(JSON.stringify(def.defaultValue));
-};
-const prefaultProcessor = (schema, ctx, json, params) => {
-	const def = schema._zod.def;
-	process$1(def.innerType, ctx, params);
-	const seen$1 = ctx.seen.get(schema);
-	seen$1.ref = def.innerType;
-	if (ctx.io === "input") json._prefault = JSON.parse(JSON.stringify(def.defaultValue));
-};
-const catchProcessor = (schema, ctx, json, params) => {
-	const def = schema._zod.def;
-	process$1(def.innerType, ctx, params);
-	const seen$1 = ctx.seen.get(schema);
-	seen$1.ref = def.innerType;
-	let catchValue;
-	try {
-		catchValue = def.catchValue(void 0);
-	} catch {
-		throw new Error("Dynamic catch values are not supported in JSON Schema");
-	}
-	json.default = catchValue;
-};
-const pipeProcessor = (schema, ctx, _json, params) => {
-	const def = schema._zod.def;
-	const innerType = ctx.io === "input" ? def.in._zod.def.type === "transform" ? def.out : def.in : def.out;
-	process$1(innerType, ctx, params);
-	const seen$1 = ctx.seen.get(schema);
-	seen$1.ref = innerType;
-};
-const readonlyProcessor = (schema, ctx, json, params) => {
-	const def = schema._zod.def;
-	process$1(def.innerType, ctx, params);
-	const seen$1 = ctx.seen.get(schema);
-	seen$1.ref = def.innerType;
-	json.readOnly = true;
-};
-const optionalProcessor = (schema, ctx, _json, params) => {
-	const def = schema._zod.def;
-	process$1(def.innerType, ctx, params);
-	const seen$1 = ctx.seen.get(schema);
-	seen$1.ref = def.innerType;
-};
-function t(r$2, e) {
-	try {
-		var o$1 = r$2();
-	} catch (r$3) {
-		return e(r$3);
-	}
-	return o$1 && o$1.then ? o$1.then(void 0, e) : o$1;
-}
-function s$1(r$2, e) {
-	for (var n$1 = {}; r$2.length;) {
-		var t$1 = r$2[0], s$2 = t$1.code, i$2 = t$1.message, a$1 = t$1.path.join(".");
-		if (!n$1[a$1]) if ("unionErrors" in t$1) {
-			var u = t$1.unionErrors[0].errors[0];
-			n$1[a$1] = {
-				message: u.message,
-				type: u.code
-			};
-		} else n$1[a$1] = {
-			message: i$2,
-			type: s$2
-		};
-		if ("unionErrors" in t$1 && t$1.unionErrors.forEach(function(e$1) {
-			return e$1.errors.forEach(function(e$2) {
-				return r$2.push(e$2);
-			});
-		}), e) {
-			var c = n$1[a$1].types, f = c && c[t$1.code];
-			n$1[a$1] = appendErrors(a$1, e, n$1, s$2, f ? [].concat(f, t$1.message) : t$1.message);
-		}
-		r$2.shift();
-	}
-	return n$1;
-}
-function i(r$2, e) {
-	for (var n$1 = {}; r$2.length;) {
-		var t$1 = r$2[0], s$2 = t$1.code, i$2 = t$1.message, a$1 = t$1.path.join(".");
-		if (!n$1[a$1]) if ("invalid_union" === t$1.code && t$1.errors.length > 0) {
-			var u = t$1.errors[0][0];
-			n$1[a$1] = {
-				message: u.message,
-				type: u.code
-			};
-		} else n$1[a$1] = {
-			message: i$2,
-			type: s$2
-		};
-		if ("invalid_union" === t$1.code && t$1.errors.forEach(function(e$1) {
-			return e$1.forEach(function(e$2) {
-				return r$2.push(e$2);
-			});
-		}), e) {
-			var c = n$1[a$1].types, f = c && c[t$1.code];
-			n$1[a$1] = appendErrors(a$1, e, n$1, s$2, f ? [].concat(f, t$1.message) : t$1.message);
-		}
-		r$2.shift();
-	}
-	return n$1;
-}
-function a(o$1, a$1, u) {
-	if (void 0 === u && (u = {}), function(r$2) {
-		return "_def" in r$2 && "object" == typeof r$2._def && "typeName" in r$2._def;
-	}(o$1)) return function(n$1, i$2, c) {
-		try {
-			return Promise.resolve(t(function() {
-				return Promise.resolve(o$1["sync" === u.mode ? "parse" : "parseAsync"](n$1, a$1)).then(function(e) {
-					return c.shouldUseNativeValidation && o({}, c), {
-						errors: {},
-						values: u.raw ? Object.assign({}, n$1) : e
-					};
-				});
-			}, function(r$2) {
-				if (function(r$3) {
-					return Array.isArray(null == r$3 ? void 0 : r$3.issues);
-				}(r$2)) return {
-					values: {},
-					errors: s(s$1(r$2.errors, !c.shouldUseNativeValidation && "all" === c.criteriaMode), c)
-				};
-				throw r$2;
-			}));
-		} catch (r$2) {
-			return Promise.reject(r$2);
-		}
-	};
-	if (function(r$2) {
-		return "_zod" in r$2 && "object" == typeof r$2._zod;
-	}(o$1)) return function(s$2, c, f) {
-		try {
-			return Promise.resolve(t(function() {
-				return Promise.resolve(("sync" === u.mode ? parse$1 : parseAsync$1)(o$1, s$2, a$1)).then(function(e) {
-					return f.shouldUseNativeValidation && o({}, f), {
-						errors: {},
-						values: u.raw ? Object.assign({}, s$2) : e
-					};
-				});
-			}, function(r$2) {
-				if (function(r$3) {
-					return r$3 instanceof $ZodError;
-				}(r$2)) return {
-					values: {},
-					errors: s(i(r$2.issues, !f.shouldUseNativeValidation && "all" === f.criteriaMode), f)
-				};
-				throw r$2;
-			}));
-		} catch (r$2) {
-			return Promise.reject(r$2);
-		}
-	};
-	throw new Error("Invalid input: not a Zod schema");
-}
-const ZodISODateTime = /* @__PURE__ */ $constructor("ZodISODateTime", (inst, def) => {
-	$ZodISODateTime.init(inst, def);
-	ZodStringFormat.init(inst, def);
-});
-function datetime(params) {
-	return /* @__PURE__ */ _isoDateTime(ZodISODateTime, params);
-}
-const ZodISODate = /* @__PURE__ */ $constructor("ZodISODate", (inst, def) => {
-	$ZodISODate.init(inst, def);
-	ZodStringFormat.init(inst, def);
-});
-function date(params) {
-	return /* @__PURE__ */ _isoDate(ZodISODate, params);
-}
-const ZodISOTime = /* @__PURE__ */ $constructor("ZodISOTime", (inst, def) => {
-	$ZodISOTime.init(inst, def);
-	ZodStringFormat.init(inst, def);
-});
-function time(params) {
-	return /* @__PURE__ */ _isoTime(ZodISOTime, params);
-}
-const ZodISODuration = /* @__PURE__ */ $constructor("ZodISODuration", (inst, def) => {
-	$ZodISODuration.init(inst, def);
-	ZodStringFormat.init(inst, def);
-});
-function duration(params) {
-	return /* @__PURE__ */ _isoDuration(ZodISODuration, params);
-}
-var initializer = (inst, issues) => {
-	$ZodError.init(inst, issues);
-	inst.name = "ZodError";
-	Object.defineProperties(inst, {
-		format: { value: (mapper) => formatError(inst, mapper) },
-		flatten: { value: (mapper) => flattenError(inst, mapper) },
-		addIssue: { value: (issue$1) => {
-			inst.issues.push(issue$1);
-			inst.message = JSON.stringify(inst.issues, jsonStringifyReplacer, 2);
-		} },
-		addIssues: { value: (issues$1) => {
-			inst.issues.push(...issues$1);
-			inst.message = JSON.stringify(inst.issues, jsonStringifyReplacer, 2);
-		} },
-		isEmpty: { get() {
-			return inst.issues.length === 0;
-		} }
-	});
-};
-$constructor("ZodError", initializer);
-const ZodRealError = $constructor("ZodError", initializer, { Parent: Error });
-const parse = /* @__PURE__ */ _parse(ZodRealError);
-const parseAsync = /* @__PURE__ */ _parseAsync(ZodRealError);
-const safeParse = /* @__PURE__ */ _safeParse(ZodRealError);
-const safeParseAsync = /* @__PURE__ */ _safeParseAsync(ZodRealError);
-const encode = /* @__PURE__ */ _encode(ZodRealError);
-const decode = /* @__PURE__ */ _decode(ZodRealError);
-const encodeAsync = /* @__PURE__ */ _encodeAsync(ZodRealError);
-const decodeAsync = /* @__PURE__ */ _decodeAsync(ZodRealError);
-const safeEncode = /* @__PURE__ */ _safeEncode(ZodRealError);
-const safeDecode = /* @__PURE__ */ _safeDecode(ZodRealError);
-const safeEncodeAsync = /* @__PURE__ */ _safeEncodeAsync(ZodRealError);
-const safeDecodeAsync = /* @__PURE__ */ _safeDecodeAsync(ZodRealError);
-const ZodType = /* @__PURE__ */ $constructor("ZodType", (inst, def) => {
-	$ZodType.init(inst, def);
-	Object.assign(inst["~standard"], { jsonSchema: {
-		input: createStandardJSONSchemaMethod(inst, "input"),
-		output: createStandardJSONSchemaMethod(inst, "output")
-	} });
-	inst.toJSONSchema = createToJSONSchemaMethod(inst, {});
-	inst.def = def;
-	inst.type = def.type;
-	Object.defineProperty(inst, "_def", { value: def });
-	inst.check = (...checks) => {
-		return inst.clone(mergeDefs(def, { checks: [...def.checks ?? [], ...checks.map((ch) => typeof ch === "function" ? { _zod: {
-			check: ch,
-			def: { check: "custom" },
-			onattach: []
-		} } : ch)] }), { parent: true });
-	};
-	inst.with = inst.check;
-	inst.clone = (def$1, params) => clone(inst, def$1, params);
-	inst.brand = () => inst;
-	inst.register = ((reg, meta$2) => {
-		reg.add(inst, meta$2);
-		return inst;
-	});
-	inst.parse = (data, params) => parse(inst, data, params, { callee: inst.parse });
-	inst.safeParse = (data, params) => safeParse(inst, data, params);
-	inst.parseAsync = async (data, params) => parseAsync(inst, data, params, { callee: inst.parseAsync });
-	inst.safeParseAsync = async (data, params) => safeParseAsync(inst, data, params);
-	inst.spa = inst.safeParseAsync;
-	inst.encode = (data, params) => encode(inst, data, params);
-	inst.decode = (data, params) => decode(inst, data, params);
-	inst.encodeAsync = async (data, params) => encodeAsync(inst, data, params);
-	inst.decodeAsync = async (data, params) => decodeAsync(inst, data, params);
-	inst.safeEncode = (data, params) => safeEncode(inst, data, params);
-	inst.safeDecode = (data, params) => safeDecode(inst, data, params);
-	inst.safeEncodeAsync = async (data, params) => safeEncodeAsync(inst, data, params);
-	inst.safeDecodeAsync = async (data, params) => safeDecodeAsync(inst, data, params);
-	inst.refine = (check, params) => inst.check(refine(check, params));
-	inst.superRefine = (refinement) => inst.check(superRefine(refinement));
-	inst.overwrite = (fn) => inst.check(/* @__PURE__ */ _overwrite(fn));
-	inst.optional = () => optional(inst);
-	inst.exactOptional = () => exactOptional(inst);
-	inst.nullable = () => nullable(inst);
-	inst.nullish = () => optional(nullable(inst));
-	inst.nonoptional = (params) => nonoptional(inst, params);
-	inst.array = () => array(inst);
-	inst.or = (arg) => union([inst, arg]);
-	inst.and = (arg) => intersection(inst, arg);
-	inst.transform = (tx) => pipe(inst, transform(tx));
-	inst.default = (def$1) => _default(inst, def$1);
-	inst.prefault = (def$1) => prefault(inst, def$1);
-	inst.catch = (params) => _catch(inst, params);
-	inst.pipe = (target) => pipe(inst, target);
-	inst.readonly = () => readonly(inst);
-	inst.describe = (description) => {
-		const cl = inst.clone();
-		globalRegistry.add(cl, { description });
-		return cl;
-	};
-	Object.defineProperty(inst, "description", {
-		get() {
-			return globalRegistry.get(inst)?.description;
-		},
-		configurable: true
-	});
-	inst.meta = (...args) => {
-		if (args.length === 0) return globalRegistry.get(inst);
-		const cl = inst.clone();
-		globalRegistry.add(cl, args[0]);
-		return cl;
-	};
-	inst.isOptional = () => inst.safeParse(void 0).success;
-	inst.isNullable = () => inst.safeParse(null).success;
-	inst.apply = (fn) => fn(inst);
-	return inst;
-});
-const _ZodString = /* @__PURE__ */ $constructor("_ZodString", (inst, def) => {
-	$ZodString.init(inst, def);
-	ZodType.init(inst, def);
-	inst._zod.processJSONSchema = (ctx, json, params) => stringProcessor(inst, ctx, json, params);
-	const bag = inst._zod.bag;
-	inst.format = bag.format ?? null;
-	inst.minLength = bag.minimum ?? null;
-	inst.maxLength = bag.maximum ?? null;
-	inst.regex = (...args) => inst.check(/* @__PURE__ */ _regex(...args));
-	inst.includes = (...args) => inst.check(/* @__PURE__ */ _includes(...args));
-	inst.startsWith = (...args) => inst.check(/* @__PURE__ */ _startsWith(...args));
-	inst.endsWith = (...args) => inst.check(/* @__PURE__ */ _endsWith(...args));
-	inst.min = (...args) => inst.check(/* @__PURE__ */ _minLength(...args));
-	inst.max = (...args) => inst.check(/* @__PURE__ */ _maxLength(...args));
-	inst.length = (...args) => inst.check(/* @__PURE__ */ _length(...args));
-	inst.nonempty = (...args) => inst.check(/* @__PURE__ */ _minLength(1, ...args));
-	inst.lowercase = (params) => inst.check(/* @__PURE__ */ _lowercase(params));
-	inst.uppercase = (params) => inst.check(/* @__PURE__ */ _uppercase(params));
-	inst.trim = () => inst.check(/* @__PURE__ */ _trim());
-	inst.normalize = (...args) => inst.check(/* @__PURE__ */ _normalize(...args));
-	inst.toLowerCase = () => inst.check(/* @__PURE__ */ _toLowerCase());
-	inst.toUpperCase = () => inst.check(/* @__PURE__ */ _toUpperCase());
-	inst.slugify = () => inst.check(/* @__PURE__ */ _slugify());
-});
-const ZodString = /* @__PURE__ */ $constructor("ZodString", (inst, def) => {
-	$ZodString.init(inst, def);
-	_ZodString.init(inst, def);
-	inst.email = (params) => inst.check(/* @__PURE__ */ _email(ZodEmail, params));
-	inst.url = (params) => inst.check(/* @__PURE__ */ _url(ZodURL, params));
-	inst.jwt = (params) => inst.check(/* @__PURE__ */ _jwt(ZodJWT, params));
-	inst.emoji = (params) => inst.check(/* @__PURE__ */ _emoji(ZodEmoji, params));
-	inst.guid = (params) => inst.check(/* @__PURE__ */ _guid(ZodGUID, params));
-	inst.uuid = (params) => inst.check(/* @__PURE__ */ _uuid(ZodUUID, params));
-	inst.uuidv4 = (params) => inst.check(/* @__PURE__ */ _uuidv4(ZodUUID, params));
-	inst.uuidv6 = (params) => inst.check(/* @__PURE__ */ _uuidv6(ZodUUID, params));
-	inst.uuidv7 = (params) => inst.check(/* @__PURE__ */ _uuidv7(ZodUUID, params));
-	inst.nanoid = (params) => inst.check(/* @__PURE__ */ _nanoid(ZodNanoID, params));
-	inst.guid = (params) => inst.check(/* @__PURE__ */ _guid(ZodGUID, params));
-	inst.cuid = (params) => inst.check(/* @__PURE__ */ _cuid(ZodCUID, params));
-	inst.cuid2 = (params) => inst.check(/* @__PURE__ */ _cuid2(ZodCUID2, params));
-	inst.ulid = (params) => inst.check(/* @__PURE__ */ _ulid(ZodULID, params));
-	inst.base64 = (params) => inst.check(/* @__PURE__ */ _base64(ZodBase64, params));
-	inst.base64url = (params) => inst.check(/* @__PURE__ */ _base64url(ZodBase64URL, params));
-	inst.xid = (params) => inst.check(/* @__PURE__ */ _xid(ZodXID, params));
-	inst.ksuid = (params) => inst.check(/* @__PURE__ */ _ksuid(ZodKSUID, params));
-	inst.ipv4 = (params) => inst.check(/* @__PURE__ */ _ipv4(ZodIPv4, params));
-	inst.ipv6 = (params) => inst.check(/* @__PURE__ */ _ipv6(ZodIPv6, params));
-	inst.cidrv4 = (params) => inst.check(/* @__PURE__ */ _cidrv4(ZodCIDRv4, params));
-	inst.cidrv6 = (params) => inst.check(/* @__PURE__ */ _cidrv6(ZodCIDRv6, params));
-	inst.e164 = (params) => inst.check(/* @__PURE__ */ _e164(ZodE164, params));
-	inst.datetime = (params) => inst.check(datetime(params));
-	inst.date = (params) => inst.check(date(params));
-	inst.time = (params) => inst.check(time(params));
-	inst.duration = (params) => inst.check(duration(params));
-});
-function string(params) {
-	return /* @__PURE__ */ _string(ZodString, params);
-}
-const ZodStringFormat = /* @__PURE__ */ $constructor("ZodStringFormat", (inst, def) => {
-	$ZodStringFormat.init(inst, def);
-	_ZodString.init(inst, def);
-});
-const ZodEmail = /* @__PURE__ */ $constructor("ZodEmail", (inst, def) => {
-	$ZodEmail.init(inst, def);
-	ZodStringFormat.init(inst, def);
-});
-const ZodGUID = /* @__PURE__ */ $constructor("ZodGUID", (inst, def) => {
-	$ZodGUID.init(inst, def);
-	ZodStringFormat.init(inst, def);
-});
-const ZodUUID = /* @__PURE__ */ $constructor("ZodUUID", (inst, def) => {
-	$ZodUUID.init(inst, def);
-	ZodStringFormat.init(inst, def);
-});
-const ZodURL = /* @__PURE__ */ $constructor("ZodURL", (inst, def) => {
-	$ZodURL.init(inst, def);
-	ZodStringFormat.init(inst, def);
-});
-const ZodEmoji = /* @__PURE__ */ $constructor("ZodEmoji", (inst, def) => {
-	$ZodEmoji.init(inst, def);
-	ZodStringFormat.init(inst, def);
-});
-const ZodNanoID = /* @__PURE__ */ $constructor("ZodNanoID", (inst, def) => {
-	$ZodNanoID.init(inst, def);
-	ZodStringFormat.init(inst, def);
-});
-const ZodCUID = /* @__PURE__ */ $constructor("ZodCUID", (inst, def) => {
-	$ZodCUID.init(inst, def);
-	ZodStringFormat.init(inst, def);
-});
-const ZodCUID2 = /* @__PURE__ */ $constructor("ZodCUID2", (inst, def) => {
-	$ZodCUID2.init(inst, def);
-	ZodStringFormat.init(inst, def);
-});
-const ZodULID = /* @__PURE__ */ $constructor("ZodULID", (inst, def) => {
-	$ZodULID.init(inst, def);
-	ZodStringFormat.init(inst, def);
-});
-const ZodXID = /* @__PURE__ */ $constructor("ZodXID", (inst, def) => {
-	$ZodXID.init(inst, def);
-	ZodStringFormat.init(inst, def);
-});
-const ZodKSUID = /* @__PURE__ */ $constructor("ZodKSUID", (inst, def) => {
-	$ZodKSUID.init(inst, def);
-	ZodStringFormat.init(inst, def);
-});
-const ZodIPv4 = /* @__PURE__ */ $constructor("ZodIPv4", (inst, def) => {
-	$ZodIPv4.init(inst, def);
-	ZodStringFormat.init(inst, def);
-});
-const ZodIPv6 = /* @__PURE__ */ $constructor("ZodIPv6", (inst, def) => {
-	$ZodIPv6.init(inst, def);
-	ZodStringFormat.init(inst, def);
-});
-const ZodCIDRv4 = /* @__PURE__ */ $constructor("ZodCIDRv4", (inst, def) => {
-	$ZodCIDRv4.init(inst, def);
-	ZodStringFormat.init(inst, def);
-});
-const ZodCIDRv6 = /* @__PURE__ */ $constructor("ZodCIDRv6", (inst, def) => {
-	$ZodCIDRv6.init(inst, def);
-	ZodStringFormat.init(inst, def);
-});
-const ZodBase64 = /* @__PURE__ */ $constructor("ZodBase64", (inst, def) => {
-	$ZodBase64.init(inst, def);
-	ZodStringFormat.init(inst, def);
-});
-const ZodBase64URL = /* @__PURE__ */ $constructor("ZodBase64URL", (inst, def) => {
-	$ZodBase64URL.init(inst, def);
-	ZodStringFormat.init(inst, def);
-});
-const ZodE164 = /* @__PURE__ */ $constructor("ZodE164", (inst, def) => {
-	$ZodE164.init(inst, def);
-	ZodStringFormat.init(inst, def);
-});
-const ZodJWT = /* @__PURE__ */ $constructor("ZodJWT", (inst, def) => {
-	$ZodJWT.init(inst, def);
-	ZodStringFormat.init(inst, def);
-});
-const ZodUnknown = /* @__PURE__ */ $constructor("ZodUnknown", (inst, def) => {
-	$ZodUnknown.init(inst, def);
-	ZodType.init(inst, def);
-	inst._zod.processJSONSchema = (ctx, json, params) => unknownProcessor(inst, ctx, json, params);
-});
-function unknown() {
-	return /* @__PURE__ */ _unknown(ZodUnknown);
-}
-const ZodNever = /* @__PURE__ */ $constructor("ZodNever", (inst, def) => {
-	$ZodNever.init(inst, def);
-	ZodType.init(inst, def);
-	inst._zod.processJSONSchema = (ctx, json, params) => neverProcessor(inst, ctx, json, params);
-});
-function never(params) {
-	return /* @__PURE__ */ _never(ZodNever, params);
-}
-const ZodArray = /* @__PURE__ */ $constructor("ZodArray", (inst, def) => {
-	$ZodArray.init(inst, def);
-	ZodType.init(inst, def);
-	inst._zod.processJSONSchema = (ctx, json, params) => arrayProcessor(inst, ctx, json, params);
-	inst.element = def.element;
-	inst.min = (minLength, params) => inst.check(/* @__PURE__ */ _minLength(minLength, params));
-	inst.nonempty = (params) => inst.check(/* @__PURE__ */ _minLength(1, params));
-	inst.max = (maxLength, params) => inst.check(/* @__PURE__ */ _maxLength(maxLength, params));
-	inst.length = (len, params) => inst.check(/* @__PURE__ */ _length(len, params));
-	inst.unwrap = () => inst.element;
-});
-function array(element, params) {
-	return /* @__PURE__ */ _array(ZodArray, element, params);
-}
-const ZodObject = /* @__PURE__ */ $constructor("ZodObject", (inst, def) => {
-	$ZodObjectJIT.init(inst, def);
-	ZodType.init(inst, def);
-	inst._zod.processJSONSchema = (ctx, json, params) => objectProcessor(inst, ctx, json, params);
-	defineLazy(inst, "shape", () => {
-		return def.shape;
-	});
-	inst.keyof = () => _enum(Object.keys(inst._zod.def.shape));
-	inst.catchall = (catchall) => inst.clone({
-		...inst._zod.def,
-		catchall
-	});
-	inst.passthrough = () => inst.clone({
-		...inst._zod.def,
-		catchall: unknown()
-	});
-	inst.loose = () => inst.clone({
-		...inst._zod.def,
-		catchall: unknown()
-	});
-	inst.strict = () => inst.clone({
-		...inst._zod.def,
-		catchall: never()
-	});
-	inst.strip = () => inst.clone({
-		...inst._zod.def,
-		catchall: void 0
-	});
-	inst.extend = (incoming) => {
-		return extend(inst, incoming);
-	};
-	inst.safeExtend = (incoming) => {
-		return safeExtend(inst, incoming);
-	};
-	inst.merge = (other) => merge(inst, other);
-	inst.pick = (mask) => pick(inst, mask);
-	inst.omit = (mask) => omit(inst, mask);
-	inst.partial = (...args) => partial(ZodOptional, inst, args[0]);
-	inst.required = (...args) => required(ZodNonOptional, inst, args[0]);
-});
-function object(shape, params) {
-	return new ZodObject({
-		type: "object",
-		shape: shape ?? {},
-		...normalizeParams(params)
-	});
-}
-const ZodUnion = /* @__PURE__ */ $constructor("ZodUnion", (inst, def) => {
-	$ZodUnion.init(inst, def);
-	ZodType.init(inst, def);
-	inst._zod.processJSONSchema = (ctx, json, params) => unionProcessor(inst, ctx, json, params);
-	inst.options = def.options;
-});
-function union(options$1, params) {
-	return new ZodUnion({
-		type: "union",
-		options: options$1,
-		...normalizeParams(params)
-	});
-}
-const ZodIntersection = /* @__PURE__ */ $constructor("ZodIntersection", (inst, def) => {
-	$ZodIntersection.init(inst, def);
-	ZodType.init(inst, def);
-	inst._zod.processJSONSchema = (ctx, json, params) => intersectionProcessor(inst, ctx, json, params);
-});
-function intersection(left, right) {
-	return new ZodIntersection({
-		type: "intersection",
-		left,
-		right
-	});
-}
-const ZodEnum = /* @__PURE__ */ $constructor("ZodEnum", (inst, def) => {
-	$ZodEnum.init(inst, def);
-	ZodType.init(inst, def);
-	inst._zod.processJSONSchema = (ctx, json, params) => enumProcessor(inst, ctx, json, params);
-	inst.enum = def.entries;
-	inst.options = Object.values(def.entries);
-	const keys = new Set(Object.keys(def.entries));
-	inst.extract = (values, params) => {
-		const newEntries = {};
-		for (const value of values) if (keys.has(value)) newEntries[value] = def.entries[value];
-		else throw new Error(`Key ${value} not found in enum`);
-		return new ZodEnum({
-			...def,
-			checks: [],
-			...normalizeParams(params),
-			entries: newEntries
-		});
-	};
-	inst.exclude = (values, params) => {
-		const newEntries = { ...def.entries };
-		for (const value of values) if (keys.has(value)) delete newEntries[value];
-		else throw new Error(`Key ${value} not found in enum`);
-		return new ZodEnum({
-			...def,
-			checks: [],
-			...normalizeParams(params),
-			entries: newEntries
-		});
-	};
-});
-function _enum(values, params) {
-	return new ZodEnum({
-		type: "enum",
-		entries: Array.isArray(values) ? Object.fromEntries(values.map((v) => [v, v])) : values,
-		...normalizeParams(params)
-	});
-}
-const ZodTransform = /* @__PURE__ */ $constructor("ZodTransform", (inst, def) => {
-	$ZodTransform.init(inst, def);
-	ZodType.init(inst, def);
-	inst._zod.processJSONSchema = (ctx, json, params) => transformProcessor(inst, ctx, json, params);
-	inst._zod.parse = (payload, _ctx) => {
-		if (_ctx.direction === "backward") throw new $ZodEncodeError(inst.constructor.name);
-		payload.addIssue = (issue$1) => {
-			if (typeof issue$1 === "string") payload.issues.push(issue(issue$1, payload.value, def));
-			else {
-				const _issue = issue$1;
-				if (_issue.fatal) _issue.continue = false;
-				_issue.code ?? (_issue.code = "custom");
-				_issue.input ?? (_issue.input = payload.value);
-				_issue.inst ?? (_issue.inst = inst);
-				payload.issues.push(issue(_issue));
-			}
-		};
-		const output = def.transform(payload.value, payload);
-		if (output instanceof Promise) return output.then((output$1) => {
-			payload.value = output$1;
-			return payload;
-		});
-		payload.value = output;
-		return payload;
-	};
-});
-function transform(fn) {
-	return new ZodTransform({
-		type: "transform",
-		transform: fn
-	});
-}
-const ZodOptional = /* @__PURE__ */ $constructor("ZodOptional", (inst, def) => {
-	$ZodOptional.init(inst, def);
-	ZodType.init(inst, def);
-	inst._zod.processJSONSchema = (ctx, json, params) => optionalProcessor(inst, ctx, json, params);
-	inst.unwrap = () => inst._zod.def.innerType;
-});
-function optional(innerType) {
-	return new ZodOptional({
-		type: "optional",
-		innerType
-	});
-}
-const ZodExactOptional = /* @__PURE__ */ $constructor("ZodExactOptional", (inst, def) => {
-	$ZodExactOptional.init(inst, def);
-	ZodType.init(inst, def);
-	inst._zod.processJSONSchema = (ctx, json, params) => optionalProcessor(inst, ctx, json, params);
-	inst.unwrap = () => inst._zod.def.innerType;
-});
-function exactOptional(innerType) {
-	return new ZodExactOptional({
-		type: "optional",
-		innerType
-	});
-}
-const ZodNullable = /* @__PURE__ */ $constructor("ZodNullable", (inst, def) => {
-	$ZodNullable.init(inst, def);
-	ZodType.init(inst, def);
-	inst._zod.processJSONSchema = (ctx, json, params) => nullableProcessor(inst, ctx, json, params);
-	inst.unwrap = () => inst._zod.def.innerType;
-});
-function nullable(innerType) {
-	return new ZodNullable({
-		type: "nullable",
-		innerType
-	});
-}
-const ZodDefault = /* @__PURE__ */ $constructor("ZodDefault", (inst, def) => {
-	$ZodDefault.init(inst, def);
-	ZodType.init(inst, def);
-	inst._zod.processJSONSchema = (ctx, json, params) => defaultProcessor(inst, ctx, json, params);
-	inst.unwrap = () => inst._zod.def.innerType;
-	inst.removeDefault = inst.unwrap;
-});
-function _default(innerType, defaultValue) {
-	return new ZodDefault({
-		type: "default",
-		innerType,
-		get defaultValue() {
-			return typeof defaultValue === "function" ? defaultValue() : shallowClone(defaultValue);
-		}
-	});
-}
-const ZodPrefault = /* @__PURE__ */ $constructor("ZodPrefault", (inst, def) => {
-	$ZodPrefault.init(inst, def);
-	ZodType.init(inst, def);
-	inst._zod.processJSONSchema = (ctx, json, params) => prefaultProcessor(inst, ctx, json, params);
-	inst.unwrap = () => inst._zod.def.innerType;
-});
-function prefault(innerType, defaultValue) {
-	return new ZodPrefault({
-		type: "prefault",
-		innerType,
-		get defaultValue() {
-			return typeof defaultValue === "function" ? defaultValue() : shallowClone(defaultValue);
-		}
-	});
-}
-const ZodNonOptional = /* @__PURE__ */ $constructor("ZodNonOptional", (inst, def) => {
-	$ZodNonOptional.init(inst, def);
-	ZodType.init(inst, def);
-	inst._zod.processJSONSchema = (ctx, json, params) => nonoptionalProcessor(inst, ctx, json, params);
-	inst.unwrap = () => inst._zod.def.innerType;
-});
-function nonoptional(innerType, params) {
-	return new ZodNonOptional({
-		type: "nonoptional",
-		innerType,
-		...normalizeParams(params)
-	});
-}
-const ZodCatch = /* @__PURE__ */ $constructor("ZodCatch", (inst, def) => {
-	$ZodCatch.init(inst, def);
-	ZodType.init(inst, def);
-	inst._zod.processJSONSchema = (ctx, json, params) => catchProcessor(inst, ctx, json, params);
-	inst.unwrap = () => inst._zod.def.innerType;
-	inst.removeCatch = inst.unwrap;
-});
-function _catch(innerType, catchValue) {
-	return new ZodCatch({
-		type: "catch",
-		innerType,
-		catchValue: typeof catchValue === "function" ? catchValue : () => catchValue
-	});
-}
-const ZodPipe = /* @__PURE__ */ $constructor("ZodPipe", (inst, def) => {
-	$ZodPipe.init(inst, def);
-	ZodType.init(inst, def);
-	inst._zod.processJSONSchema = (ctx, json, params) => pipeProcessor(inst, ctx, json, params);
-	inst.in = def.in;
-	inst.out = def.out;
-});
-function pipe(in_, out) {
-	return new ZodPipe({
-		type: "pipe",
-		in: in_,
-		out
-	});
-}
-const ZodReadonly = /* @__PURE__ */ $constructor("ZodReadonly", (inst, def) => {
-	$ZodReadonly.init(inst, def);
-	ZodType.init(inst, def);
-	inst._zod.processJSONSchema = (ctx, json, params) => readonlyProcessor(inst, ctx, json, params);
-	inst.unwrap = () => inst._zod.def.innerType;
-});
-function readonly(innerType) {
-	return new ZodReadonly({
-		type: "readonly",
-		innerType
-	});
-}
-const ZodCustom = /* @__PURE__ */ $constructor("ZodCustom", (inst, def) => {
-	$ZodCustom.init(inst, def);
-	ZodType.init(inst, def);
-	inst._zod.processJSONSchema = (ctx, json, params) => customProcessor(inst, ctx, json, params);
-});
-function refine(fn, _params = {}) {
-	return /* @__PURE__ */ _refine(ZodCustom, fn, _params);
-}
-function superRefine(fn) {
-	return /* @__PURE__ */ _superRefine(fn);
-}
-var NAME = "Label";
-var Label$1 = import_react.forwardRef((props, forwardedRef) => {
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Primitive.label, {
-		...props,
-		ref: forwardedRef,
-		onMouseDown: (event) => {
-			if (event.target.closest("button, input, select, textarea")) return;
-			props.onMouseDown?.(event);
-			if (!event.defaultPrevented && event.detail > 1) event.preventDefault();
-		}
-	});
-});
-Label$1.displayName = NAME;
-var Root$1 = Label$1;
-var labelVariants = cva("text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70");
-var Label = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root$1, {
-	ref,
-	className: cn(labelVariants(), className),
-	...props
-}));
-Label.displayName = Root$1.displayName;
-var Form = FormProvider;
-var FormFieldContext = import_react.createContext({});
-var FormField = ({ ...props }) => {
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FormFieldContext.Provider, {
-		value: { name: props.name },
-		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Controller, { ...props })
-	});
-};
-var useFormField = () => {
-	const fieldContext = import_react.useContext(FormFieldContext);
-	const itemContext = import_react.useContext(FormItemContext);
-	const { getFieldState, formState } = useFormContext();
-	const fieldState = getFieldState(fieldContext.name, formState);
-	if (!fieldContext) throw new Error("useFormField should be used within <FormField>");
-	const { id } = itemContext;
-	return {
-		id,
-		name: fieldContext.name,
-		formItemId: `${id}-form-item`,
-		formDescriptionId: `${id}-form-item-description`,
-		formMessageId: `${id}-form-item-message`,
-		...fieldState
-	};
-};
-var FormItemContext = import_react.createContext({});
-var FormItem = import_react.forwardRef(({ className, ...props }, ref) => {
-	const id = import_react.useId();
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FormItemContext.Provider, {
-		value: { id },
-		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-			ref,
-			className: cn("space-y-2", className),
-			...props
-		})
-	});
-});
-FormItem.displayName = "FormItem";
-var FormLabel = import_react.forwardRef(({ className, ...props }, ref) => {
-	const { error, formItemId } = useFormField();
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
-		ref,
-		className: cn(error && "text-destructive", className),
-		htmlFor: formItemId,
-		...props
-	});
-});
-FormLabel.displayName = "FormLabel";
-var FormControl = import_react.forwardRef(({ ...props }, ref) => {
-	const { error, formItemId, formDescriptionId, formMessageId } = useFormField();
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Slot, {
-		ref,
-		id: formItemId,
-		"aria-describedby": !error ? `${formDescriptionId}` : `${formDescriptionId} ${formMessageId}`,
-		"aria-invalid": !!error,
-		...props
-	});
-});
-FormControl.displayName = "FormControl";
-var FormDescription = import_react.forwardRef(({ className, ...props }, ref) => {
-	const { formDescriptionId } = useFormField();
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-		ref,
-		id: formDescriptionId,
-		className: cn("text-sm text-muted-foreground", className),
-		...props
-	});
-});
-FormDescription.displayName = "FormDescription";
-var FormMessage = import_react.forwardRef(({ className, children, ...props }, ref) => {
-	const { error, formMessageId } = useFormField();
-	const body = error ? String(error?.message ?? "") : children;
-	if (!body) return null;
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-		ref,
-		id: formMessageId,
-		className: cn("text-sm font-medium text-destructive", className),
-		...props,
-		children: body
-	});
-});
-FormMessage.displayName = "FormMessage";
-var Card = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-	ref,
-	className: cn("rounded-lg border bg-card text-card-foreground shadow-sm", className),
-	...props
-}));
-Card.displayName = "Card";
-var CardHeader = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-	ref,
-	className: cn("flex flex-col space-y-1.5 p-6", className),
-	...props
-}));
-CardHeader.displayName = "CardHeader";
-var CardTitle = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-	ref,
-	className: cn("text-2xl font-semibold leading-none tracking-tight", className),
-	...props
-}));
-CardTitle.displayName = "CardTitle";
-var CardDescription = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-	ref,
-	className: cn("text-sm text-muted-foreground", className),
-	...props
-}));
-CardDescription.displayName = "CardDescription";
-var CardContent = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-	ref,
-	className: cn("p-6 pt-0", className),
-	...props
-}));
-CardContent.displayName = "CardContent";
-var CardFooter = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-	ref,
-	className: cn("flex items-center p-6 pt-0", className),
-	...props
-}));
-CardFooter.displayName = "CardFooter";
-var profileFormSchema = object({
-	fullName: string().min(3, { message: "Nome deve ter pelo menos 3 caracteres." }),
-	phone: string().min(10, { message: "Telefone inválido." }),
-	cpf: string().length(11, { message: "CPF deve conter 11 dígitos numéricos." }).regex(/^\d+$/, "Apenas números"),
-	birthDate: string().refine((val) => !isNaN(Date.parse(val)), { message: "Data de nascimento inválida." })
-});
-function Onboarding() {
-	const { completeProfile } = useAuthStore();
-	const navigate = useNavigate();
-	const form = useForm({
-		resolver: a(profileFormSchema),
-		defaultValues: {
-			fullName: "",
-			phone: "",
-			cpf: "",
-			birthDate: ""
-		}
-	});
-	function onSubmit(data) {
-		completeProfile(data);
-		navigate("/app/dashboard");
-	}
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-		className: "min-h-[80vh] flex items-center justify-center animate-fade-in-up",
-		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-			className: "w-full max-w-lg shadow-elevation border-muted",
-			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardHeader, {
-				className: "space-y-1 text-center",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardTitle, {
-					className: "text-2xl font-bold",
-					children: "Complete seu Perfil"
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardDescription, { children: "Precisamos de mais alguns detalhes para configurar sua conta Nomadwise." })]
-			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardContent, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Form, {
-				...form,
-				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("form", {
-					onSubmit: form.handleSubmit(onSubmit),
-					className: "space-y-6",
-					children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FormField, {
-							control: form.control,
-							name: "fullName",
-							render: ({ field }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(FormItem, { children: [
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FormLabel, { children: "Nome Completo" }),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FormControl, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
-									placeholder: "João da Silva",
-									...field
-								}) }),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FormMessage, {})
-							] })
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "grid grid-cols-1 md:grid-cols-2 gap-6",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FormField, {
-								control: form.control,
-								name: "cpf",
-								render: ({ field }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(FormItem, { children: [
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FormLabel, { children: "CPF" }),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FormControl, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
-										placeholder: "Apenas números",
-										maxLength: 11,
-										...field
-									}) }),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FormMessage, {})
-								] })
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FormField, {
-								control: form.control,
-								name: "phone",
-								render: ({ field }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(FormItem, { children: [
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FormLabel, { children: "Telefone" }),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FormControl, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
-										placeholder: "(11) 99999-9999",
-										...field
-									}) }),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FormMessage, {})
-								] })
-							})]
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FormField, {
-							control: form.control,
-							name: "birthDate",
-							render: ({ field }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(FormItem, { children: [
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FormLabel, { children: "Data de Nascimento" }),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FormControl, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
-									type: "date",
-									...field
-								}) }),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FormMessage, {})
-							] })
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-							type: "submit",
-							className: "w-full h-11 text-base shadow-md",
-							children: "Finalizar Cadastro"
-						})
-					]
-				})
-			}) })]
-		})
-	});
-}
-var PROGRESS_NAME = "Progress";
-var DEFAULT_MAX = 100;
-var [createProgressContext, createProgressScope] = createContextScope(PROGRESS_NAME);
-var [ProgressProvider, useProgressContext] = createProgressContext(PROGRESS_NAME);
-var Progress$1 = import_react.forwardRef((props, forwardedRef) => {
-	const { __scopeProgress, value: valueProp = null, max: maxProp, getValueLabel = defaultGetValueLabel, ...progressProps } = props;
-	if ((maxProp || maxProp === 0) && !isValidMaxNumber(maxProp)) console.error(getInvalidMaxError(`${maxProp}`, "Progress"));
-	const max$1 = isValidMaxNumber(maxProp) ? maxProp : DEFAULT_MAX;
-	if (valueProp !== null && !isValidValueNumber(valueProp, max$1)) console.error(getInvalidValueError(`${valueProp}`, "Progress"));
-	const value = isValidValueNumber(valueProp, max$1) ? valueProp : null;
-	const valueLabel = isNumber(value) ? getValueLabel(value, max$1) : void 0;
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ProgressProvider, {
-		scope: __scopeProgress,
-		value,
-		max: max$1,
-		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Primitive.div, {
-			"aria-valuemax": max$1,
-			"aria-valuemin": 0,
-			"aria-valuenow": isNumber(value) ? value : void 0,
-			"aria-valuetext": valueLabel,
-			role: "progressbar",
-			"data-state": getProgressState(value, max$1),
-			"data-value": value ?? void 0,
-			"data-max": max$1,
-			...progressProps,
-			ref: forwardedRef
-		})
-	});
-});
-Progress$1.displayName = PROGRESS_NAME;
-var INDICATOR_NAME = "ProgressIndicator";
-var ProgressIndicator = import_react.forwardRef((props, forwardedRef) => {
-	const { __scopeProgress, ...indicatorProps } = props;
-	const context = useProgressContext(INDICATOR_NAME, __scopeProgress);
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Primitive.div, {
-		"data-state": getProgressState(context.value, context.max),
-		"data-value": context.value ?? void 0,
-		"data-max": context.max,
-		...indicatorProps,
-		ref: forwardedRef
-	});
-});
-ProgressIndicator.displayName = INDICATOR_NAME;
-function defaultGetValueLabel(value, max$1) {
-	return `${Math.round(value / max$1 * 100)}%`;
-}
-function getProgressState(value, maxValue) {
-	return value == null ? "indeterminate" : value === maxValue ? "complete" : "loading";
-}
-function isNumber(value) {
-	return typeof value === "number";
-}
-function isValidMaxNumber(max$1) {
-	return isNumber(max$1) && !isNaN(max$1) && max$1 > 0;
-}
-function isValidValueNumber(value, max$1) {
-	return isNumber(value) && !isNaN(value) && value <= max$1 && value >= 0;
-}
-function getInvalidMaxError(propValue, componentName) {
-	return `Invalid prop \`max\` of value \`${propValue}\` supplied to \`${componentName}\`. Only numbers greater than 0 are valid max values. Defaulting to \`${DEFAULT_MAX}\`.`;
-}
-function getInvalidValueError(propValue, componentName) {
-	return `Invalid prop \`value\` of value \`${propValue}\` supplied to \`${componentName}\`. The \`value\` prop must be:
-  - a positive number
-  - less than the value passed to \`max\` (or ${DEFAULT_MAX} if no \`max\` prop is set)
-  - \`null\` or \`undefined\` if the progress is indeterminate.
-
-Defaulting to \`null\`.`;
-}
-var Root = Progress$1;
-var Indicator = ProgressIndicator;
-var Progress = import_react.forwardRef(({ className, value, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
-	ref,
-	className: cn("relative h-4 w-full overflow-hidden rounded-full bg-secondary", className),
-	...props,
-	children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Indicator, {
-		className: "h-full w-full flex-1 bg-primary transition-all",
-		style: { transform: `translateX(-${100 - (value || 0)}%)` }
-	})
-}));
-Progress.displayName = Root.displayName;
-function DashboardPage() {
-	const { trips, vehicles } = useDataStore();
-	const { user } = useAuthStore();
-	const activeTrips = (0, import_react.useMemo)(() => trips.filter((t$1) => t$1.status === "em_andamento"), [trips]);
-	const totalBudget = (0, import_react.useMemo)(() => activeTrips.reduce((acc, t$1) => acc + t$1.budget, 0), [activeTrips]);
-	const totalSpent = (0, import_react.useMemo)(() => activeTrips.reduce((acc, t$1) => acc + t$1.spent, 0), [activeTrips]);
-	const budgetPercentage = totalBudget > 0 ? totalSpent / totalBudget * 100 : 0;
-	const needsMaintenance = (0, import_react.useMemo)(() => {
-		const today = /* @__PURE__ */ new Date();
-		return vehicles.filter((v) => {
-			const diffTime = new Date(v.nextMaintenance).getTime() - today.getTime();
-			return Math.ceil(diffTime / (1e3 * 60 * 60 * 24)) <= 30;
-		});
-	}, [vehicles]);
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "space-y-8 animate-fade-in",
-		children: [
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h2", {
-				className: "text-3xl font-bold tracking-tight",
-				children: [
-					"Olá, ",
-					user?.name?.split(" ")[0] || "Viajante",
-					"!"
-				]
-			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-				className: "text-muted-foreground mt-1",
-				children: "Aqui está o resumo das suas aventuras e veículos."
-			})] }),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "grid gap-4 md:grid-cols-2 lg:grid-cols-4",
-				children: [
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-						className: "hover:shadow-md transition-shadow",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardHeader, {
-							className: "flex flex-row items-center justify-between space-y-0 pb-2",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardTitle, {
-								className: "text-sm font-medium",
-								children: "Viagens Ativas"
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(MapPin, { className: "h-4 w-4 text-primary" })]
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardContent, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-							className: "text-2xl font-bold",
-							children: activeTrips.length
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
-							className: "text-xs text-muted-foreground mt-1",
-							children: [trips.filter((t$1) => t$1.status === "planejada").length, " planejadas"]
-						})] })]
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-						className: "hover:shadow-md transition-shadow",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardHeader, {
-							className: "flex flex-row items-center justify-between space-y-0 pb-2",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardTitle, {
-								className: "text-sm font-medium",
-								children: "Orçamento Atual"
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Wallet, { className: "h-4 w-4 text-primary" })]
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardContent, { children: [
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-								className: "text-2xl font-bold",
-								children: new Intl.NumberFormat("pt-BR", {
-									style: "currency",
-									currency: "BRL"
-								}).format(totalSpent)
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Progress, {
-								value: budgetPercentage,
-								className: "h-2 mt-3"
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
-								className: "text-xs text-muted-foreground mt-2",
-								children: [budgetPercentage.toFixed(1), "% do total planejado consumido"]
-							})
-						] })]
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-						className: "hover:shadow-md transition-shadow",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardHeader, {
-							className: "flex flex-row items-center justify-between space-y-0 pb-2",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardTitle, {
-								className: "text-sm font-medium",
-								children: "Veículos na Garagem"
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(TrendingUp, { className: "h-4 w-4 text-primary" })]
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardContent, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-							className: "text-2xl font-bold",
-							children: vehicles.length
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "text-xs text-muted-foreground mt-1",
-							children: "Prontos para a estrada"
-						})] })]
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-						className: "border-destructive/50 bg-destructive/5 hover:shadow-md transition-shadow",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardHeader, {
-							className: "flex flex-row items-center justify-between space-y-0 pb-2",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardTitle, {
-								className: "text-sm font-medium text-destructive",
-								children: "Atenção Necessária"
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(TriangleAlert, { className: "h-4 w-4 text-destructive" })]
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardContent, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-							className: "text-2xl font-bold text-destructive",
-							children: needsMaintenance.length
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "text-xs text-destructive/80 mt-1",
-							children: "Veículos próximos da manutenção"
-						})] })]
-					})
-				]
-			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "grid gap-4 md:grid-cols-2 lg:grid-cols-7",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-					className: "col-span-4",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardHeader, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardTitle, { children: "Viagens em Andamento" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardDescription, { children: "Acompanhamento das suas expedições atuais." })] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardContent, { children: activeTrips.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "flex flex-col items-center justify-center py-8 text-center",
-						children: [
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MapPin, { className: "h-10 w-10 text-muted-foreground mb-4 opacity-50" }),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-								className: "text-muted-foreground",
-								children: "Nenhuma viagem em andamento."
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-								asChild: true,
-								variant: "link",
-								className: "mt-2",
-								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
-									to: "/app/trips",
-									children: "Planejar nova viagem"
-								})
-							})
-						]
-					}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-						className: "space-y-6",
-						children: activeTrips.map((trip) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "flex items-center justify-between border-b pb-4 last:border-0 last:pb-0",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "space-y-1",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-									className: "text-sm font-medium leading-none",
-									children: trip.title
-								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
-									className: "text-sm text-muted-foreground",
-									children: ["Destino: ", trip.destination]
-								})]
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "text-right",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-									className: "text-sm font-medium",
-									children: new Intl.NumberFormat("pt-BR", {
-										style: "currency",
-										currency: "BRL"
-									}).format(trip.spent)
-								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
-									className: "text-xs text-muted-foreground",
-									children: [
-										"de",
-										" ",
-										new Intl.NumberFormat("pt-BR", {
-											style: "currency",
-											currency: "BRL"
-										}).format(trip.budget)
-									]
-								})]
-							})]
-						}, trip.id))
-					}) })]
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-					className: "col-span-3",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardHeader, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardTitle, { children: "Avisos de Manutenção" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardDescription, { children: "Próximas revisões programadas." })] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardContent, { children: needsMaintenance.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-						className: "text-sm text-muted-foreground text-center py-8",
-						children: "Tudo em dia com seus veículos!"
-					}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-						className: "space-y-4",
-						children: needsMaintenance.map((vehicle) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "flex items-start gap-4 p-3 rounded-lg border bg-card text-card-foreground shadow-sm",
-							children: [
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TriangleAlert, { className: "h-5 w-5 text-destructive mt-0.5" }),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "space-y-1 flex-1",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
-										className: "text-sm font-medium leading-none",
-										children: [
-											vehicle.make,
-											" ",
-											vehicle.model
-										]
-									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
-										className: "text-xs text-muted-foreground",
-										children: ["Revisão até: ", new Date(vehicle.nextMaintenance).toLocaleDateString("pt-BR")]
-									})]
-								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-									asChild: true,
-									variant: "outline",
-									size: "sm",
-									className: "h-7 text-xs",
-									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
-										to: "/app/garage",
-										children: "Ver"
-									})
-								})
-							]
-						}, vehicle.id))
-					}) })]
-				})]
-			})
-		]
-	});
-}
-const daysInYear = 365.2425;
-Math.pow(10, 8) * 24 * 60 * 60 * 1e3;
-const millisecondsInWeek = 6048e5;
-const millisecondsInDay = 864e5;
-const secondsInDay = 3600 * 24;
-secondsInDay * 7;
-secondsInDay * daysInYear / 12 * 3;
-const constructFromSymbol = Symbol.for("constructDateFrom");
-function constructFrom(date$2, value) {
-	if (typeof date$2 === "function") return date$2(value);
-	if (date$2 && typeof date$2 === "object" && constructFromSymbol in date$2) return date$2[constructFromSymbol](value);
-	if (date$2 instanceof Date) return new date$2.constructor(value);
-	return new Date(value);
-}
-function toDate(argument, context) {
-	return constructFrom(context || argument, argument);
-}
-var defaultOptions = {};
-function getDefaultOptions() {
-	return defaultOptions;
-}
-function startOfWeek(date$2, options$1) {
-	const defaultOptions$2 = getDefaultOptions();
-	const weekStartsOn = options$1?.weekStartsOn ?? options$1?.locale?.options?.weekStartsOn ?? defaultOptions$2.weekStartsOn ?? defaultOptions$2.locale?.options?.weekStartsOn ?? 0;
-	const _date = toDate(date$2, options$1?.in);
-	const day = _date.getDay();
-	const diff = (day < weekStartsOn ? 7 : 0) + day - weekStartsOn;
-	_date.setDate(_date.getDate() - diff);
-	_date.setHours(0, 0, 0, 0);
-	return _date;
-}
-function startOfISOWeek(date$2, options$1) {
-	return startOfWeek(date$2, {
-		...options$1,
-		weekStartsOn: 1
-	});
-}
-function getISOWeekYear(date$2, options$1) {
-	const _date = toDate(date$2, options$1?.in);
-	const year = _date.getFullYear();
-	const fourthOfJanuaryOfNextYear = constructFrom(_date, 0);
-	fourthOfJanuaryOfNextYear.setFullYear(year + 1, 0, 4);
-	fourthOfJanuaryOfNextYear.setHours(0, 0, 0, 0);
-	const startOfNextYear = startOfISOWeek(fourthOfJanuaryOfNextYear);
-	const fourthOfJanuaryOfThisYear = constructFrom(_date, 0);
-	fourthOfJanuaryOfThisYear.setFullYear(year, 0, 4);
-	fourthOfJanuaryOfThisYear.setHours(0, 0, 0, 0);
-	const startOfThisYear = startOfISOWeek(fourthOfJanuaryOfThisYear);
-	if (_date.getTime() >= startOfNextYear.getTime()) return year + 1;
-	else if (_date.getTime() >= startOfThisYear.getTime()) return year;
-	else return year - 1;
-}
-function getTimezoneOffsetInMilliseconds(date$2) {
-	const _date = toDate(date$2);
-	const utcDate = new Date(Date.UTC(_date.getFullYear(), _date.getMonth(), _date.getDate(), _date.getHours(), _date.getMinutes(), _date.getSeconds(), _date.getMilliseconds()));
-	utcDate.setUTCFullYear(_date.getFullYear());
-	return +date$2 - +utcDate;
-}
-function normalizeDates(context, ...dates) {
-	const normalize = constructFrom.bind(null, context || dates.find((date$2) => typeof date$2 === "object"));
-	return dates.map(normalize);
-}
-function startOfDay(date$2, options$1) {
-	const _date = toDate(date$2, options$1?.in);
-	_date.setHours(0, 0, 0, 0);
-	return _date;
-}
-function differenceInCalendarDays(laterDate, earlierDate, options$1) {
-	const [laterDate_, earlierDate_] = normalizeDates(options$1?.in, laterDate, earlierDate);
-	const laterStartOfDay = startOfDay(laterDate_);
-	const earlierStartOfDay = startOfDay(earlierDate_);
-	const laterTimestamp = +laterStartOfDay - getTimezoneOffsetInMilliseconds(laterStartOfDay);
-	const earlierTimestamp = +earlierStartOfDay - getTimezoneOffsetInMilliseconds(earlierStartOfDay);
-	return Math.round((laterTimestamp - earlierTimestamp) / millisecondsInDay);
-}
-function startOfISOWeekYear(date$2, options$1) {
-	const year = getISOWeekYear(date$2, options$1);
-	const fourthOfJanuary = constructFrom(options$1?.in || date$2, 0);
-	fourthOfJanuary.setFullYear(year, 0, 4);
-	fourthOfJanuary.setHours(0, 0, 0, 0);
-	return startOfISOWeek(fourthOfJanuary);
-}
-function isDate(value) {
-	return value instanceof Date || typeof value === "object" && Object.prototype.toString.call(value) === "[object Date]";
-}
-function isValid(date$2) {
-	return !(!isDate(date$2) && typeof date$2 !== "number" || isNaN(+toDate(date$2)));
-}
-function startOfYear(date$2, options$1) {
-	const date_ = toDate(date$2, options$1?.in);
-	date_.setFullYear(date_.getFullYear(), 0, 1);
-	date_.setHours(0, 0, 0, 0);
-	return date_;
-}
-var formatDistanceLocale$1 = {
-	lessThanXSeconds: {
-		one: "less than a second",
-		other: "less than {{count}} seconds"
-	},
-	xSeconds: {
-		one: "1 second",
-		other: "{{count}} seconds"
-	},
-	halfAMinute: "half a minute",
-	lessThanXMinutes: {
-		one: "less than a minute",
-		other: "less than {{count}} minutes"
-	},
-	xMinutes: {
-		one: "1 minute",
-		other: "{{count}} minutes"
-	},
-	aboutXHours: {
-		one: "about 1 hour",
-		other: "about {{count}} hours"
-	},
-	xHours: {
-		one: "1 hour",
-		other: "{{count}} hours"
-	},
-	xDays: {
-		one: "1 day",
-		other: "{{count}} days"
-	},
-	aboutXWeeks: {
-		one: "about 1 week",
-		other: "about {{count}} weeks"
-	},
-	xWeeks: {
-		one: "1 week",
-		other: "{{count}} weeks"
-	},
-	aboutXMonths: {
-		one: "about 1 month",
-		other: "about {{count}} months"
-	},
-	xMonths: {
-		one: "1 month",
-		other: "{{count}} months"
-	},
-	aboutXYears: {
-		one: "about 1 year",
-		other: "about {{count}} years"
-	},
-	xYears: {
-		one: "1 year",
-		other: "{{count}} years"
-	},
-	overXYears: {
-		one: "over 1 year",
-		other: "over {{count}} years"
-	},
-	almostXYears: {
-		one: "almost 1 year",
-		other: "almost {{count}} years"
-	}
-};
-const formatDistance$1 = (token, count$3, options$1) => {
-	let result;
-	const tokenValue = formatDistanceLocale$1[token];
-	if (typeof tokenValue === "string") result = tokenValue;
-	else if (count$3 === 1) result = tokenValue.one;
-	else result = tokenValue.other.replace("{{count}}", count$3.toString());
-	if (options$1?.addSuffix) if (options$1.comparison && options$1.comparison > 0) return "in " + result;
-	else return result + " ago";
-	return result;
-};
-function buildFormatLongFn(args) {
-	return (options$1 = {}) => {
-		const width = options$1.width ? String(options$1.width) : args.defaultWidth;
-		return args.formats[width] || args.formats[args.defaultWidth];
-	};
-}
-const formatLong$1 = {
-	date: buildFormatLongFn({
-		formats: {
-			full: "EEEE, MMMM do, y",
-			long: "MMMM do, y",
-			medium: "MMM d, y",
-			short: "MM/dd/yyyy"
-		},
-		defaultWidth: "full"
-	}),
-	time: buildFormatLongFn({
-		formats: {
-			full: "h:mm:ss a zzzz",
-			long: "h:mm:ss a z",
-			medium: "h:mm:ss a",
-			short: "h:mm a"
-		},
-		defaultWidth: "full"
-	}),
-	dateTime: buildFormatLongFn({
-		formats: {
-			full: "{{date}} 'at' {{time}}",
-			long: "{{date}} 'at' {{time}}",
-			medium: "{{date}}, {{time}}",
-			short: "{{date}}, {{time}}"
-		},
-		defaultWidth: "full"
-	})
-};
-var formatRelativeLocale$1 = {
-	lastWeek: "'last' eeee 'at' p",
-	yesterday: "'yesterday at' p",
-	today: "'today at' p",
-	tomorrow: "'tomorrow at' p",
-	nextWeek: "eeee 'at' p",
-	other: "P"
-};
-const formatRelative$1 = (token, _date, _baseDate, _options) => formatRelativeLocale$1[token];
-function buildLocalizeFn(args) {
-	return (value, options$1) => {
-		const context = options$1?.context ? String(options$1.context) : "standalone";
-		let valuesArray;
-		if (context === "formatting" && args.formattingValues) {
-			const defaultWidth = args.defaultFormattingWidth || args.defaultWidth;
-			const width = options$1?.width ? String(options$1.width) : defaultWidth;
-			valuesArray = args.formattingValues[width] || args.formattingValues[defaultWidth];
-		} else {
-			const defaultWidth = args.defaultWidth;
-			const width = options$1?.width ? String(options$1.width) : args.defaultWidth;
-			valuesArray = args.values[width] || args.values[defaultWidth];
-		}
-		const index$1 = args.argumentCallback ? args.argumentCallback(value) : value;
-		return valuesArray[index$1];
-	};
-}
-var eraValues$1 = {
-	narrow: ["B", "A"],
-	abbreviated: ["BC", "AD"],
-	wide: ["Before Christ", "Anno Domini"]
-};
-var quarterValues$1 = {
-	narrow: [
-		"1",
-		"2",
-		"3",
-		"4"
-	],
-	abbreviated: [
-		"Q1",
-		"Q2",
-		"Q3",
-		"Q4"
-	],
-	wide: [
-		"1st quarter",
-		"2nd quarter",
-		"3rd quarter",
-		"4th quarter"
-	]
-};
-var monthValues$1 = {
-	narrow: [
-		"J",
-		"F",
-		"M",
-		"A",
-		"M",
-		"J",
-		"J",
-		"A",
-		"S",
-		"O",
-		"N",
-		"D"
-	],
-	abbreviated: [
-		"Jan",
-		"Feb",
-		"Mar",
-		"Apr",
-		"May",
-		"Jun",
-		"Jul",
-		"Aug",
-		"Sep",
-		"Oct",
-		"Nov",
-		"Dec"
-	],
-	wide: [
-		"January",
-		"February",
-		"March",
-		"April",
-		"May",
-		"June",
-		"July",
-		"August",
-		"September",
-		"October",
-		"November",
-		"December"
-	]
-};
-var dayValues$1 = {
-	narrow: [
-		"S",
-		"M",
-		"T",
-		"W",
-		"T",
-		"F",
-		"S"
-	],
-	short: [
-		"Su",
-		"Mo",
-		"Tu",
-		"We",
-		"Th",
-		"Fr",
-		"Sa"
-	],
-	abbreviated: [
-		"Sun",
-		"Mon",
-		"Tue",
-		"Wed",
-		"Thu",
-		"Fri",
-		"Sat"
-	],
-	wide: [
-		"Sunday",
-		"Monday",
-		"Tuesday",
-		"Wednesday",
-		"Thursday",
-		"Friday",
-		"Saturday"
-	]
-};
-var dayPeriodValues$1 = {
-	narrow: {
-		am: "a",
-		pm: "p",
-		midnight: "mi",
-		noon: "n",
-		morning: "morning",
-		afternoon: "afternoon",
-		evening: "evening",
-		night: "night"
-	},
-	abbreviated: {
-		am: "AM",
-		pm: "PM",
-		midnight: "midnight",
-		noon: "noon",
-		morning: "morning",
-		afternoon: "afternoon",
-		evening: "evening",
-		night: "night"
-	},
-	wide: {
-		am: "a.m.",
-		pm: "p.m.",
-		midnight: "midnight",
-		noon: "noon",
-		morning: "morning",
-		afternoon: "afternoon",
-		evening: "evening",
-		night: "night"
-	}
-};
-var formattingDayPeriodValues$1 = {
-	narrow: {
-		am: "a",
-		pm: "p",
-		midnight: "mi",
-		noon: "n",
-		morning: "in the morning",
-		afternoon: "in the afternoon",
-		evening: "in the evening",
-		night: "at night"
-	},
-	abbreviated: {
-		am: "AM",
-		pm: "PM",
-		midnight: "midnight",
-		noon: "noon",
-		morning: "in the morning",
-		afternoon: "in the afternoon",
-		evening: "in the evening",
-		night: "at night"
-	},
-	wide: {
-		am: "a.m.",
-		pm: "p.m.",
-		midnight: "midnight",
-		noon: "noon",
-		morning: "in the morning",
-		afternoon: "in the afternoon",
-		evening: "in the evening",
-		night: "at night"
-	}
-};
-var ordinalNumber$1 = (dirtyNumber, _options) => {
-	const number = Number(dirtyNumber);
-	const rem100 = number % 100;
-	if (rem100 > 20 || rem100 < 10) switch (rem100 % 10) {
-		case 1: return number + "st";
-		case 2: return number + "nd";
-		case 3: return number + "rd";
-	}
-	return number + "th";
-};
-const localize$1 = {
-	ordinalNumber: ordinalNumber$1,
-	era: buildLocalizeFn({
-		values: eraValues$1,
-		defaultWidth: "wide"
-	}),
-	quarter: buildLocalizeFn({
-		values: quarterValues$1,
-		defaultWidth: "wide",
-		argumentCallback: (quarter) => quarter - 1
-	}),
-	month: buildLocalizeFn({
-		values: monthValues$1,
-		defaultWidth: "wide"
-	}),
-	day: buildLocalizeFn({
-		values: dayValues$1,
-		defaultWidth: "wide"
-	}),
-	dayPeriod: buildLocalizeFn({
-		values: dayPeriodValues$1,
-		defaultWidth: "wide",
-		formattingValues: formattingDayPeriodValues$1,
-		defaultFormattingWidth: "wide"
-	})
-};
-function buildMatchFn(args) {
-	return (string$2, options$1 = {}) => {
-		const width = options$1.width;
-		const matchPattern = width && args.matchPatterns[width] || args.matchPatterns[args.defaultMatchWidth];
-		const matchResult = string$2.match(matchPattern);
-		if (!matchResult) return null;
-		const matchedString = matchResult[0];
-		const parsePatterns = width && args.parsePatterns[width] || args.parsePatterns[args.defaultParseWidth];
-		const key = Array.isArray(parsePatterns) ? findIndex(parsePatterns, (pattern) => pattern.test(matchedString)) : findKey(parsePatterns, (pattern) => pattern.test(matchedString));
-		let value;
-		value = args.valueCallback ? args.valueCallback(key) : key;
-		value = options$1.valueCallback ? options$1.valueCallback(value) : value;
-		const rest = string$2.slice(matchedString.length);
-		return {
-			value,
-			rest
-		};
-	};
-}
-function findKey(object$1, predicate) {
-	for (const key in object$1) if (Object.prototype.hasOwnProperty.call(object$1, key) && predicate(object$1[key])) return key;
-}
-function findIndex(array$1, predicate) {
-	for (let key = 0; key < array$1.length; key++) if (predicate(array$1[key])) return key;
-}
-function buildMatchPatternFn(args) {
-	return (string$2, options$1 = {}) => {
-		const matchResult = string$2.match(args.matchPattern);
-		if (!matchResult) return null;
-		const matchedString = matchResult[0];
-		const parseResult = string$2.match(args.parsePattern);
-		if (!parseResult) return null;
-		let value = args.valueCallback ? args.valueCallback(parseResult[0]) : parseResult[0];
-		value = options$1.valueCallback ? options$1.valueCallback(value) : value;
-		const rest = string$2.slice(matchedString.length);
-		return {
-			value,
-			rest
-		};
-	};
-}
-const enUS = {
-	code: "en-US",
-	formatDistance: formatDistance$1,
-	formatLong: formatLong$1,
-	formatRelative: formatRelative$1,
-	localize: localize$1,
-	match: {
-		ordinalNumber: buildMatchPatternFn({
-			matchPattern: /^(\d+)(th|st|nd|rd)?/i,
-			parsePattern: /\d+/i,
-			valueCallback: (value) => parseInt(value, 10)
-		}),
-		era: buildMatchFn({
-			matchPatterns: {
-				narrow: /^(b|a)/i,
-				abbreviated: /^(b\.?\s?c\.?|b\.?\s?c\.?\s?e\.?|a\.?\s?d\.?|c\.?\s?e\.?)/i,
-				wide: /^(before christ|before common era|anno domini|common era)/i
-			},
-			defaultMatchWidth: "wide",
-			parsePatterns: { any: [/^b/i, /^(a|c)/i] },
-			defaultParseWidth: "any"
-		}),
-		quarter: buildMatchFn({
-			matchPatterns: {
-				narrow: /^[1234]/i,
-				abbreviated: /^q[1234]/i,
-				wide: /^[1234](th|st|nd|rd)? quarter/i
-			},
-			defaultMatchWidth: "wide",
-			parsePatterns: { any: [
-				/1/i,
-				/2/i,
-				/3/i,
-				/4/i
-			] },
-			defaultParseWidth: "any",
-			valueCallback: (index$1) => index$1 + 1
-		}),
-		month: buildMatchFn({
-			matchPatterns: {
-				narrow: /^[jfmasond]/i,
-				abbreviated: /^(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)/i,
-				wide: /^(january|february|march|april|may|june|july|august|september|october|november|december)/i
-			},
-			defaultMatchWidth: "wide",
-			parsePatterns: {
-				narrow: [
-					/^j/i,
-					/^f/i,
-					/^m/i,
-					/^a/i,
-					/^m/i,
-					/^j/i,
-					/^j/i,
-					/^a/i,
-					/^s/i,
-					/^o/i,
-					/^n/i,
-					/^d/i
-				],
-				any: [
-					/^ja/i,
-					/^f/i,
-					/^mar/i,
-					/^ap/i,
-					/^may/i,
-					/^jun/i,
-					/^jul/i,
-					/^au/i,
-					/^s/i,
-					/^o/i,
-					/^n/i,
-					/^d/i
-				]
-			},
-			defaultParseWidth: "any"
-		}),
-		day: buildMatchFn({
-			matchPatterns: {
-				narrow: /^[smtwf]/i,
-				short: /^(su|mo|tu|we|th|fr|sa)/i,
-				abbreviated: /^(sun|mon|tue|wed|thu|fri|sat)/i,
-				wide: /^(sunday|monday|tuesday|wednesday|thursday|friday|saturday)/i
-			},
-			defaultMatchWidth: "wide",
-			parsePatterns: {
-				narrow: [
-					/^s/i,
-					/^m/i,
-					/^t/i,
-					/^w/i,
-					/^t/i,
-					/^f/i,
-					/^s/i
-				],
-				any: [
-					/^su/i,
-					/^m/i,
-					/^tu/i,
-					/^w/i,
-					/^th/i,
-					/^f/i,
-					/^sa/i
-				]
-			},
-			defaultParseWidth: "any"
-		}),
-		dayPeriod: buildMatchFn({
-			matchPatterns: {
-				narrow: /^(a|p|mi|n|(in the|at) (morning|afternoon|evening|night))/i,
-				any: /^([ap]\.?\s?m\.?|midnight|noon|(in the|at) (morning|afternoon|evening|night))/i
-			},
-			defaultMatchWidth: "any",
-			parsePatterns: { any: {
-				am: /^a/i,
-				pm: /^p/i,
-				midnight: /^mi/i,
-				noon: /^no/i,
-				morning: /morning/i,
-				afternoon: /afternoon/i,
-				evening: /evening/i,
-				night: /night/i
-			} },
-			defaultParseWidth: "any"
-		})
-	},
-	options: {
-		weekStartsOn: 0,
-		firstWeekContainsDate: 1
-	}
-};
-function getDayOfYear(date$2, options$1) {
-	const _date = toDate(date$2, options$1?.in);
-	return differenceInCalendarDays(_date, startOfYear(_date)) + 1;
-}
-function getISOWeek(date$2, options$1) {
-	const _date = toDate(date$2, options$1?.in);
-	const diff = +startOfISOWeek(_date) - +startOfISOWeekYear(_date);
-	return Math.round(diff / millisecondsInWeek) + 1;
-}
-function getWeekYear(date$2, options$1) {
-	const _date = toDate(date$2, options$1?.in);
-	const year = _date.getFullYear();
-	const defaultOptions$2 = getDefaultOptions();
-	const firstWeekContainsDate = options$1?.firstWeekContainsDate ?? options$1?.locale?.options?.firstWeekContainsDate ?? defaultOptions$2.firstWeekContainsDate ?? defaultOptions$2.locale?.options?.firstWeekContainsDate ?? 1;
-	const firstWeekOfNextYear = constructFrom(options$1?.in || date$2, 0);
-	firstWeekOfNextYear.setFullYear(year + 1, 0, firstWeekContainsDate);
-	firstWeekOfNextYear.setHours(0, 0, 0, 0);
-	const startOfNextYear = startOfWeek(firstWeekOfNextYear, options$1);
-	const firstWeekOfThisYear = constructFrom(options$1?.in || date$2, 0);
-	firstWeekOfThisYear.setFullYear(year, 0, firstWeekContainsDate);
-	firstWeekOfThisYear.setHours(0, 0, 0, 0);
-	const startOfThisYear = startOfWeek(firstWeekOfThisYear, options$1);
-	if (+_date >= +startOfNextYear) return year + 1;
-	else if (+_date >= +startOfThisYear) return year;
-	else return year - 1;
-}
-function startOfWeekYear(date$2, options$1) {
-	const defaultOptions$2 = getDefaultOptions();
-	const firstWeekContainsDate = options$1?.firstWeekContainsDate ?? options$1?.locale?.options?.firstWeekContainsDate ?? defaultOptions$2.firstWeekContainsDate ?? defaultOptions$2.locale?.options?.firstWeekContainsDate ?? 1;
-	const year = getWeekYear(date$2, options$1);
-	const firstWeek = constructFrom(options$1?.in || date$2, 0);
-	firstWeek.setFullYear(year, 0, firstWeekContainsDate);
-	firstWeek.setHours(0, 0, 0, 0);
-	return startOfWeek(firstWeek, options$1);
-}
-function getWeek(date$2, options$1) {
-	const _date = toDate(date$2, options$1?.in);
-	const diff = +startOfWeek(_date, options$1) - +startOfWeekYear(_date, options$1);
-	return Math.round(diff / millisecondsInWeek) + 1;
-}
-function addLeadingZeros(number, targetLength) {
-	return (number < 0 ? "-" : "") + Math.abs(number).toString().padStart(targetLength, "0");
-}
-const lightFormatters = {
-	y(date$2, token) {
-		const signedYear = date$2.getFullYear();
-		const year = signedYear > 0 ? signedYear : 1 - signedYear;
-		return addLeadingZeros(token === "yy" ? year % 100 : year, token.length);
-	},
-	M(date$2, token) {
-		const month = date$2.getMonth();
-		return token === "M" ? String(month + 1) : addLeadingZeros(month + 1, 2);
-	},
-	d(date$2, token) {
-		return addLeadingZeros(date$2.getDate(), token.length);
-	},
-	a(date$2, token) {
-		const dayPeriodEnumValue = date$2.getHours() / 12 >= 1 ? "pm" : "am";
-		switch (token) {
-			case "a":
-			case "aa": return dayPeriodEnumValue.toUpperCase();
-			case "aaa": return dayPeriodEnumValue;
-			case "aaaaa": return dayPeriodEnumValue[0];
-			case "aaaa":
-			default: return dayPeriodEnumValue === "am" ? "a.m." : "p.m.";
-		}
-	},
-	h(date$2, token) {
-		return addLeadingZeros(date$2.getHours() % 12 || 12, token.length);
-	},
-	H(date$2, token) {
-		return addLeadingZeros(date$2.getHours(), token.length);
-	},
-	m(date$2, token) {
-		return addLeadingZeros(date$2.getMinutes(), token.length);
-	},
-	s(date$2, token) {
-		return addLeadingZeros(date$2.getSeconds(), token.length);
-	},
-	S(date$2, token) {
-		const numberOfDigits = token.length;
-		const milliseconds = date$2.getMilliseconds();
-		return addLeadingZeros(Math.trunc(milliseconds * Math.pow(10, numberOfDigits - 3)), token.length);
-	}
-};
-var dayPeriodEnum = {
-	am: "am",
-	pm: "pm",
-	midnight: "midnight",
-	noon: "noon",
-	morning: "morning",
-	afternoon: "afternoon",
-	evening: "evening",
-	night: "night"
-};
-const formatters = {
-	G: function(date$2, token, localize$2) {
-		const era = date$2.getFullYear() > 0 ? 1 : 0;
-		switch (token) {
-			case "G":
-			case "GG":
-			case "GGG": return localize$2.era(era, { width: "abbreviated" });
-			case "GGGGG": return localize$2.era(era, { width: "narrow" });
-			case "GGGG":
-			default: return localize$2.era(era, { width: "wide" });
-		}
-	},
-	y: function(date$2, token, localize$2) {
-		if (token === "yo") {
-			const signedYear = date$2.getFullYear();
-			const year = signedYear > 0 ? signedYear : 1 - signedYear;
-			return localize$2.ordinalNumber(year, { unit: "year" });
-		}
-		return lightFormatters.y(date$2, token);
-	},
-	Y: function(date$2, token, localize$2, options$1) {
-		const signedWeekYear = getWeekYear(date$2, options$1);
-		const weekYear = signedWeekYear > 0 ? signedWeekYear : 1 - signedWeekYear;
-		if (token === "YY") return addLeadingZeros(weekYear % 100, 2);
-		if (token === "Yo") return localize$2.ordinalNumber(weekYear, { unit: "year" });
-		return addLeadingZeros(weekYear, token.length);
-	},
-	R: function(date$2, token) {
-		return addLeadingZeros(getISOWeekYear(date$2), token.length);
-	},
-	u: function(date$2, token) {
-		return addLeadingZeros(date$2.getFullYear(), token.length);
-	},
-	Q: function(date$2, token, localize$2) {
-		const quarter = Math.ceil((date$2.getMonth() + 1) / 3);
-		switch (token) {
-			case "Q": return String(quarter);
-			case "QQ": return addLeadingZeros(quarter, 2);
-			case "Qo": return localize$2.ordinalNumber(quarter, { unit: "quarter" });
-			case "QQQ": return localize$2.quarter(quarter, {
-				width: "abbreviated",
-				context: "formatting"
-			});
-			case "QQQQQ": return localize$2.quarter(quarter, {
-				width: "narrow",
-				context: "formatting"
-			});
-			case "QQQQ":
-			default: return localize$2.quarter(quarter, {
-				width: "wide",
-				context: "formatting"
-			});
-		}
-	},
-	q: function(date$2, token, localize$2) {
-		const quarter = Math.ceil((date$2.getMonth() + 1) / 3);
-		switch (token) {
-			case "q": return String(quarter);
-			case "qq": return addLeadingZeros(quarter, 2);
-			case "qo": return localize$2.ordinalNumber(quarter, { unit: "quarter" });
-			case "qqq": return localize$2.quarter(quarter, {
-				width: "abbreviated",
-				context: "standalone"
-			});
-			case "qqqqq": return localize$2.quarter(quarter, {
-				width: "narrow",
-				context: "standalone"
-			});
-			case "qqqq":
-			default: return localize$2.quarter(quarter, {
-				width: "wide",
-				context: "standalone"
-			});
-		}
-	},
-	M: function(date$2, token, localize$2) {
-		const month = date$2.getMonth();
-		switch (token) {
-			case "M":
-			case "MM": return lightFormatters.M(date$2, token);
-			case "Mo": return localize$2.ordinalNumber(month + 1, { unit: "month" });
-			case "MMM": return localize$2.month(month, {
-				width: "abbreviated",
-				context: "formatting"
-			});
-			case "MMMMM": return localize$2.month(month, {
-				width: "narrow",
-				context: "formatting"
-			});
-			case "MMMM":
-			default: return localize$2.month(month, {
-				width: "wide",
-				context: "formatting"
-			});
-		}
-	},
-	L: function(date$2, token, localize$2) {
-		const month = date$2.getMonth();
-		switch (token) {
-			case "L": return String(month + 1);
-			case "LL": return addLeadingZeros(month + 1, 2);
-			case "Lo": return localize$2.ordinalNumber(month + 1, { unit: "month" });
-			case "LLL": return localize$2.month(month, {
-				width: "abbreviated",
-				context: "standalone"
-			});
-			case "LLLLL": return localize$2.month(month, {
-				width: "narrow",
-				context: "standalone"
-			});
-			case "LLLL":
-			default: return localize$2.month(month, {
-				width: "wide",
-				context: "standalone"
-			});
-		}
-	},
-	w: function(date$2, token, localize$2, options$1) {
-		const week = getWeek(date$2, options$1);
-		if (token === "wo") return localize$2.ordinalNumber(week, { unit: "week" });
-		return addLeadingZeros(week, token.length);
-	},
-	I: function(date$2, token, localize$2) {
-		const isoWeek = getISOWeek(date$2);
-		if (token === "Io") return localize$2.ordinalNumber(isoWeek, { unit: "week" });
-		return addLeadingZeros(isoWeek, token.length);
-	},
-	d: function(date$2, token, localize$2) {
-		if (token === "do") return localize$2.ordinalNumber(date$2.getDate(), { unit: "date" });
-		return lightFormatters.d(date$2, token);
-	},
-	D: function(date$2, token, localize$2) {
-		const dayOfYear = getDayOfYear(date$2);
-		if (token === "Do") return localize$2.ordinalNumber(dayOfYear, { unit: "dayOfYear" });
-		return addLeadingZeros(dayOfYear, token.length);
-	},
-	E: function(date$2, token, localize$2) {
-		const dayOfWeek = date$2.getDay();
-		switch (token) {
-			case "E":
-			case "EE":
-			case "EEE": return localize$2.day(dayOfWeek, {
-				width: "abbreviated",
-				context: "formatting"
-			});
-			case "EEEEE": return localize$2.day(dayOfWeek, {
-				width: "narrow",
-				context: "formatting"
-			});
-			case "EEEEEE": return localize$2.day(dayOfWeek, {
-				width: "short",
-				context: "formatting"
-			});
-			case "EEEE":
-			default: return localize$2.day(dayOfWeek, {
-				width: "wide",
-				context: "formatting"
-			});
-		}
-	},
-	e: function(date$2, token, localize$2, options$1) {
-		const dayOfWeek = date$2.getDay();
-		const localDayOfWeek = (dayOfWeek - options$1.weekStartsOn + 8) % 7 || 7;
-		switch (token) {
-			case "e": return String(localDayOfWeek);
-			case "ee": return addLeadingZeros(localDayOfWeek, 2);
-			case "eo": return localize$2.ordinalNumber(localDayOfWeek, { unit: "day" });
-			case "eee": return localize$2.day(dayOfWeek, {
-				width: "abbreviated",
-				context: "formatting"
-			});
-			case "eeeee": return localize$2.day(dayOfWeek, {
-				width: "narrow",
-				context: "formatting"
-			});
-			case "eeeeee": return localize$2.day(dayOfWeek, {
-				width: "short",
-				context: "formatting"
-			});
-			case "eeee":
-			default: return localize$2.day(dayOfWeek, {
-				width: "wide",
-				context: "formatting"
-			});
-		}
-	},
-	c: function(date$2, token, localize$2, options$1) {
-		const dayOfWeek = date$2.getDay();
-		const localDayOfWeek = (dayOfWeek - options$1.weekStartsOn + 8) % 7 || 7;
-		switch (token) {
-			case "c": return String(localDayOfWeek);
-			case "cc": return addLeadingZeros(localDayOfWeek, token.length);
-			case "co": return localize$2.ordinalNumber(localDayOfWeek, { unit: "day" });
-			case "ccc": return localize$2.day(dayOfWeek, {
-				width: "abbreviated",
-				context: "standalone"
-			});
-			case "ccccc": return localize$2.day(dayOfWeek, {
-				width: "narrow",
-				context: "standalone"
-			});
-			case "cccccc": return localize$2.day(dayOfWeek, {
-				width: "short",
-				context: "standalone"
-			});
-			case "cccc":
-			default: return localize$2.day(dayOfWeek, {
-				width: "wide",
-				context: "standalone"
-			});
-		}
-	},
-	i: function(date$2, token, localize$2) {
-		const dayOfWeek = date$2.getDay();
-		const isoDayOfWeek = dayOfWeek === 0 ? 7 : dayOfWeek;
-		switch (token) {
-			case "i": return String(isoDayOfWeek);
-			case "ii": return addLeadingZeros(isoDayOfWeek, token.length);
-			case "io": return localize$2.ordinalNumber(isoDayOfWeek, { unit: "day" });
-			case "iii": return localize$2.day(dayOfWeek, {
-				width: "abbreviated",
-				context: "formatting"
-			});
-			case "iiiii": return localize$2.day(dayOfWeek, {
-				width: "narrow",
-				context: "formatting"
-			});
-			case "iiiiii": return localize$2.day(dayOfWeek, {
-				width: "short",
-				context: "formatting"
-			});
-			case "iiii":
-			default: return localize$2.day(dayOfWeek, {
-				width: "wide",
-				context: "formatting"
-			});
-		}
-	},
-	a: function(date$2, token, localize$2) {
-		const dayPeriodEnumValue = date$2.getHours() / 12 >= 1 ? "pm" : "am";
-		switch (token) {
-			case "a":
-			case "aa": return localize$2.dayPeriod(dayPeriodEnumValue, {
-				width: "abbreviated",
-				context: "formatting"
-			});
-			case "aaa": return localize$2.dayPeriod(dayPeriodEnumValue, {
-				width: "abbreviated",
-				context: "formatting"
-			}).toLowerCase();
-			case "aaaaa": return localize$2.dayPeriod(dayPeriodEnumValue, {
-				width: "narrow",
-				context: "formatting"
-			});
-			case "aaaa":
-			default: return localize$2.dayPeriod(dayPeriodEnumValue, {
-				width: "wide",
-				context: "formatting"
-			});
-		}
-	},
-	b: function(date$2, token, localize$2) {
-		const hours = date$2.getHours();
-		let dayPeriodEnumValue;
-		if (hours === 12) dayPeriodEnumValue = dayPeriodEnum.noon;
-		else if (hours === 0) dayPeriodEnumValue = dayPeriodEnum.midnight;
-		else dayPeriodEnumValue = hours / 12 >= 1 ? "pm" : "am";
-		switch (token) {
-			case "b":
-			case "bb": return localize$2.dayPeriod(dayPeriodEnumValue, {
-				width: "abbreviated",
-				context: "formatting"
-			});
-			case "bbb": return localize$2.dayPeriod(dayPeriodEnumValue, {
-				width: "abbreviated",
-				context: "formatting"
-			}).toLowerCase();
-			case "bbbbb": return localize$2.dayPeriod(dayPeriodEnumValue, {
-				width: "narrow",
-				context: "formatting"
-			});
-			case "bbbb":
-			default: return localize$2.dayPeriod(dayPeriodEnumValue, {
-				width: "wide",
-				context: "formatting"
-			});
-		}
-	},
-	B: function(date$2, token, localize$2) {
-		const hours = date$2.getHours();
-		let dayPeriodEnumValue;
-		if (hours >= 17) dayPeriodEnumValue = dayPeriodEnum.evening;
-		else if (hours >= 12) dayPeriodEnumValue = dayPeriodEnum.afternoon;
-		else if (hours >= 4) dayPeriodEnumValue = dayPeriodEnum.morning;
-		else dayPeriodEnumValue = dayPeriodEnum.night;
-		switch (token) {
-			case "B":
-			case "BB":
-			case "BBB": return localize$2.dayPeriod(dayPeriodEnumValue, {
-				width: "abbreviated",
-				context: "formatting"
-			});
-			case "BBBBB": return localize$2.dayPeriod(dayPeriodEnumValue, {
-				width: "narrow",
-				context: "formatting"
-			});
-			case "BBBB":
-			default: return localize$2.dayPeriod(dayPeriodEnumValue, {
-				width: "wide",
-				context: "formatting"
-			});
-		}
-	},
-	h: function(date$2, token, localize$2) {
-		if (token === "ho") {
-			let hours = date$2.getHours() % 12;
-			if (hours === 0) hours = 12;
-			return localize$2.ordinalNumber(hours, { unit: "hour" });
-		}
-		return lightFormatters.h(date$2, token);
-	},
-	H: function(date$2, token, localize$2) {
-		if (token === "Ho") return localize$2.ordinalNumber(date$2.getHours(), { unit: "hour" });
-		return lightFormatters.H(date$2, token);
-	},
-	K: function(date$2, token, localize$2) {
-		const hours = date$2.getHours() % 12;
-		if (token === "Ko") return localize$2.ordinalNumber(hours, { unit: "hour" });
-		return addLeadingZeros(hours, token.length);
-	},
-	k: function(date$2, token, localize$2) {
-		let hours = date$2.getHours();
-		if (hours === 0) hours = 24;
-		if (token === "ko") return localize$2.ordinalNumber(hours, { unit: "hour" });
-		return addLeadingZeros(hours, token.length);
-	},
-	m: function(date$2, token, localize$2) {
-		if (token === "mo") return localize$2.ordinalNumber(date$2.getMinutes(), { unit: "minute" });
-		return lightFormatters.m(date$2, token);
-	},
-	s: function(date$2, token, localize$2) {
-		if (token === "so") return localize$2.ordinalNumber(date$2.getSeconds(), { unit: "second" });
-		return lightFormatters.s(date$2, token);
-	},
-	S: function(date$2, token) {
-		return lightFormatters.S(date$2, token);
-	},
-	X: function(date$2, token, _localize) {
-		const timezoneOffset = date$2.getTimezoneOffset();
-		if (timezoneOffset === 0) return "Z";
-		switch (token) {
-			case "X": return formatTimezoneWithOptionalMinutes(timezoneOffset);
-			case "XXXX":
-			case "XX": return formatTimezone(timezoneOffset);
-			case "XXXXX":
-			case "XXX":
-			default: return formatTimezone(timezoneOffset, ":");
-		}
-	},
-	x: function(date$2, token, _localize) {
-		const timezoneOffset = date$2.getTimezoneOffset();
-		switch (token) {
-			case "x": return formatTimezoneWithOptionalMinutes(timezoneOffset);
-			case "xxxx":
-			case "xx": return formatTimezone(timezoneOffset);
-			case "xxxxx":
-			case "xxx":
-			default: return formatTimezone(timezoneOffset, ":");
-		}
-	},
-	O: function(date$2, token, _localize) {
-		const timezoneOffset = date$2.getTimezoneOffset();
-		switch (token) {
-			case "O":
-			case "OO":
-			case "OOO": return "GMT" + formatTimezoneShort(timezoneOffset, ":");
-			case "OOOO":
-			default: return "GMT" + formatTimezone(timezoneOffset, ":");
-		}
-	},
-	z: function(date$2, token, _localize) {
-		const timezoneOffset = date$2.getTimezoneOffset();
-		switch (token) {
-			case "z":
-			case "zz":
-			case "zzz": return "GMT" + formatTimezoneShort(timezoneOffset, ":");
-			case "zzzz":
-			default: return "GMT" + formatTimezone(timezoneOffset, ":");
-		}
-	},
-	t: function(date$2, token, _localize) {
-		return addLeadingZeros(Math.trunc(+date$2 / 1e3), token.length);
-	},
-	T: function(date$2, token, _localize) {
-		return addLeadingZeros(+date$2, token.length);
-	}
-};
-function formatTimezoneShort(offset$3, delimiter = "") {
-	const sign = offset$3 > 0 ? "-" : "+";
-	const absOffset = Math.abs(offset$3);
-	const hours = Math.trunc(absOffset / 60);
-	const minutes = absOffset % 60;
-	if (minutes === 0) return sign + String(hours);
-	return sign + String(hours) + delimiter + addLeadingZeros(minutes, 2);
-}
-function formatTimezoneWithOptionalMinutes(offset$3, delimiter) {
-	if (offset$3 % 60 === 0) return (offset$3 > 0 ? "-" : "+") + addLeadingZeros(Math.abs(offset$3) / 60, 2);
-	return formatTimezone(offset$3, delimiter);
-}
-function formatTimezone(offset$3, delimiter = "") {
-	const sign = offset$3 > 0 ? "-" : "+";
-	const absOffset = Math.abs(offset$3);
-	const hours = addLeadingZeros(Math.trunc(absOffset / 60), 2);
-	const minutes = addLeadingZeros(absOffset % 60, 2);
-	return sign + hours + delimiter + minutes;
-}
-var dateLongFormatter = (pattern, formatLong$2) => {
-	switch (pattern) {
-		case "P": return formatLong$2.date({ width: "short" });
-		case "PP": return formatLong$2.date({ width: "medium" });
-		case "PPP": return formatLong$2.date({ width: "long" });
-		case "PPPP":
-		default: return formatLong$2.date({ width: "full" });
-	}
-};
-var timeLongFormatter = (pattern, formatLong$2) => {
-	switch (pattern) {
-		case "p": return formatLong$2.time({ width: "short" });
-		case "pp": return formatLong$2.time({ width: "medium" });
-		case "ppp": return formatLong$2.time({ width: "long" });
-		case "pppp":
-		default: return formatLong$2.time({ width: "full" });
-	}
-};
-var dateTimeLongFormatter = (pattern, formatLong$2) => {
-	const matchResult = pattern.match(/(P+)(p+)?/) || [];
-	const datePattern = matchResult[1];
-	const timePattern = matchResult[2];
-	if (!timePattern) return dateLongFormatter(pattern, formatLong$2);
-	let dateTimeFormat;
-	switch (datePattern) {
-		case "P":
-			dateTimeFormat = formatLong$2.dateTime({ width: "short" });
-			break;
-		case "PP":
-			dateTimeFormat = formatLong$2.dateTime({ width: "medium" });
-			break;
-		case "PPP":
-			dateTimeFormat = formatLong$2.dateTime({ width: "long" });
-			break;
-		case "PPPP":
-		default:
-			dateTimeFormat = formatLong$2.dateTime({ width: "full" });
-			break;
-	}
-	return dateTimeFormat.replace("{{date}}", dateLongFormatter(datePattern, formatLong$2)).replace("{{time}}", timeLongFormatter(timePattern, formatLong$2));
-};
-const longFormatters = {
-	p: timeLongFormatter,
-	P: dateTimeLongFormatter
-};
-var dayOfYearTokenRE = /^D+$/;
-var weekYearTokenRE = /^Y+$/;
-var throwTokens = [
-	"D",
-	"DD",
-	"YY",
-	"YYYY"
-];
-function isProtectedDayOfYearToken(token) {
-	return dayOfYearTokenRE.test(token);
-}
-function isProtectedWeekYearToken(token) {
-	return weekYearTokenRE.test(token);
-}
-function warnOrThrowProtectedError(token, format$1, input) {
-	const _message = message(token, format$1, input);
-	console.warn(_message);
-	if (throwTokens.includes(token)) throw new RangeError(_message);
-}
-function message(token, format$1, input) {
-	const subject = token[0] === "Y" ? "years" : "days of the month";
-	return `Use \`${token.toLowerCase()}\` instead of \`${token}\` (in \`${format$1}\`) for formatting ${subject} to the input \`${input}\`; see: https://github.com/date-fns/date-fns/blob/master/docs/unicodeTokens.md`;
-}
-var formattingTokensRegExp = /[yYQqMLwIdDecihHKkms]o|(\w)\1*|''|'(''|[^'])+('|$)|./g;
-var longFormattingTokensRegExp = /P+p+|P+|p+|''|'(''|[^'])+('|$)|./g;
-var escapedStringRegExp = /^'([^]*?)'?$/;
-var doubleQuoteRegExp = /''/g;
-var unescapedLatinCharacterRegExp = /[a-zA-Z]/;
-function format(date$2, formatStr, options$1) {
-	const defaultOptions$2 = getDefaultOptions();
-	const locale = options$1?.locale ?? defaultOptions$2.locale ?? enUS;
-	const firstWeekContainsDate = options$1?.firstWeekContainsDate ?? options$1?.locale?.options?.firstWeekContainsDate ?? defaultOptions$2.firstWeekContainsDate ?? defaultOptions$2.locale?.options?.firstWeekContainsDate ?? 1;
-	const weekStartsOn = options$1?.weekStartsOn ?? options$1?.locale?.options?.weekStartsOn ?? defaultOptions$2.weekStartsOn ?? defaultOptions$2.locale?.options?.weekStartsOn ?? 0;
-	const originalDate = toDate(date$2, options$1?.in);
-	if (!isValid(originalDate)) throw new RangeError("Invalid time value");
-	let parts = formatStr.match(longFormattingTokensRegExp).map((substring) => {
-		const firstCharacter = substring[0];
-		if (firstCharacter === "p" || firstCharacter === "P") {
-			const longFormatter = longFormatters[firstCharacter];
-			return longFormatter(substring, locale.formatLong);
-		}
-		return substring;
-	}).join("").match(formattingTokensRegExp).map((substring) => {
-		if (substring === "''") return {
-			isToken: false,
-			value: "'"
-		};
-		const firstCharacter = substring[0];
-		if (firstCharacter === "'") return {
-			isToken: false,
-			value: cleanEscapedString(substring)
-		};
-		if (formatters[firstCharacter]) return {
-			isToken: true,
-			value: substring
-		};
-		if (firstCharacter.match(unescapedLatinCharacterRegExp)) throw new RangeError("Format string contains an unescaped latin alphabet character `" + firstCharacter + "`");
-		return {
-			isToken: false,
-			value: substring
-		};
-	});
-	if (locale.localize.preprocessor) parts = locale.localize.preprocessor(originalDate, parts);
-	const formatterOptions = {
-		firstWeekContainsDate,
-		weekStartsOn,
-		locale
-	};
-	return parts.map((part) => {
-		if (!part.isToken) return part.value;
-		const token = part.value;
-		if (!options$1?.useAdditionalWeekYearTokens && isProtectedWeekYearToken(token) || !options$1?.useAdditionalDayOfYearTokens && isProtectedDayOfYearToken(token)) warnOrThrowProtectedError(token, formatStr, String(date$2));
-		const formatter = formatters[token[0]];
-		return formatter(originalDate, token, locale.localize, formatterOptions);
-	}).join("");
-}
-function cleanEscapedString(input) {
-	const matched = input.match(escapedStringRegExp);
-	if (!matched) return input;
-	return matched[1].replace(doubleQuoteRegExp, "'");
-}
-var formatDistanceLocale = {
-	lessThanXSeconds: {
-		one: "menos de um segundo",
-		other: "menos de {{count}} segundos"
-	},
-	xSeconds: {
-		one: "1 segundo",
-		other: "{{count}} segundos"
-	},
-	halfAMinute: "meio minuto",
-	lessThanXMinutes: {
-		one: "menos de um minuto",
-		other: "menos de {{count}} minutos"
-	},
-	xMinutes: {
-		one: "1 minuto",
-		other: "{{count}} minutos"
-	},
-	aboutXHours: {
-		one: "cerca de 1 hora",
-		other: "cerca de {{count}} horas"
-	},
-	xHours: {
-		one: "1 hora",
-		other: "{{count}} horas"
-	},
-	xDays: {
-		one: "1 dia",
-		other: "{{count}} dias"
-	},
-	aboutXWeeks: {
-		one: "cerca de 1 semana",
-		other: "cerca de {{count}} semanas"
-	},
-	xWeeks: {
-		one: "1 semana",
-		other: "{{count}} semanas"
-	},
-	aboutXMonths: {
-		one: "cerca de 1 mês",
-		other: "cerca de {{count}} meses"
-	},
-	xMonths: {
-		one: "1 mês",
-		other: "{{count}} meses"
-	},
-	aboutXYears: {
-		one: "cerca de 1 ano",
-		other: "cerca de {{count}} anos"
-	},
-	xYears: {
-		one: "1 ano",
-		other: "{{count}} anos"
-	},
-	overXYears: {
-		one: "mais de 1 ano",
-		other: "mais de {{count}} anos"
-	},
-	almostXYears: {
-		one: "quase 1 ano",
-		other: "quase {{count}} anos"
-	}
-};
-const formatDistance = (token, count$3, options$1) => {
-	let result;
-	const tokenValue = formatDistanceLocale[token];
-	if (typeof tokenValue === "string") result = tokenValue;
-	else if (count$3 === 1) result = tokenValue.one;
-	else result = tokenValue.other.replace("{{count}}", String(count$3));
-	if (options$1?.addSuffix) if (options$1.comparison && options$1.comparison > 0) return "em " + result;
-	else return "há " + result;
-	return result;
-};
-const formatLong = {
-	date: buildFormatLongFn({
-		formats: {
-			full: "EEEE, d 'de' MMMM 'de' y",
-			long: "d 'de' MMMM 'de' y",
-			medium: "d MMM y",
-			short: "dd/MM/yyyy"
-		},
-		defaultWidth: "full"
-	}),
-	time: buildFormatLongFn({
-		formats: {
-			full: "HH:mm:ss zzzz",
-			long: "HH:mm:ss z",
-			medium: "HH:mm:ss",
-			short: "HH:mm"
-		},
-		defaultWidth: "full"
-	}),
-	dateTime: buildFormatLongFn({
-		formats: {
-			full: "{{date}} 'às' {{time}}",
-			long: "{{date}} 'às' {{time}}",
-			medium: "{{date}}, {{time}}",
-			short: "{{date}}, {{time}}"
-		},
-		defaultWidth: "full"
-	})
-};
-var formatRelativeLocale = {
-	lastWeek: (date$2) => {
-		const weekday = date$2.getDay();
-		return "'" + (weekday === 0 || weekday === 6 ? "último" : "última") + "' eeee 'às' p";
-	},
-	yesterday: "'ontem às' p",
-	today: "'hoje às' p",
-	tomorrow: "'amanhã às' p",
-	nextWeek: "eeee 'às' p",
-	other: "P"
-};
-const formatRelative = (token, date$2, _baseDate, _options) => {
-	const format$1 = formatRelativeLocale[token];
-	if (typeof format$1 === "function") return format$1(date$2);
-	return format$1;
-};
-var eraValues = {
-	narrow: ["AC", "DC"],
-	abbreviated: ["AC", "DC"],
-	wide: ["antes de cristo", "depois de cristo"]
-};
-var quarterValues = {
-	narrow: [
-		"1",
-		"2",
-		"3",
-		"4"
-	],
-	abbreviated: [
-		"T1",
-		"T2",
-		"T3",
-		"T4"
-	],
-	wide: [
-		"1º trimestre",
-		"2º trimestre",
-		"3º trimestre",
-		"4º trimestre"
-	]
-};
-var monthValues = {
-	narrow: [
-		"j",
-		"f",
-		"m",
-		"a",
-		"m",
-		"j",
-		"j",
-		"a",
-		"s",
-		"o",
-		"n",
-		"d"
-	],
-	abbreviated: [
-		"jan",
-		"fev",
-		"mar",
-		"abr",
-		"mai",
-		"jun",
-		"jul",
-		"ago",
-		"set",
-		"out",
-		"nov",
-		"dez"
-	],
-	wide: [
-		"janeiro",
-		"fevereiro",
-		"março",
-		"abril",
-		"maio",
-		"junho",
-		"julho",
-		"agosto",
-		"setembro",
-		"outubro",
-		"novembro",
-		"dezembro"
-	]
-};
-var dayValues = {
-	narrow: [
-		"D",
-		"S",
-		"T",
-		"Q",
-		"Q",
-		"S",
-		"S"
-	],
-	short: [
-		"dom",
-		"seg",
-		"ter",
-		"qua",
-		"qui",
-		"sex",
-		"sab"
-	],
-	abbreviated: [
-		"domingo",
-		"segunda",
-		"terça",
-		"quarta",
-		"quinta",
-		"sexta",
-		"sábado"
-	],
-	wide: [
-		"domingo",
-		"segunda-feira",
-		"terça-feira",
-		"quarta-feira",
-		"quinta-feira",
-		"sexta-feira",
-		"sábado"
-	]
-};
-var dayPeriodValues = {
-	narrow: {
-		am: "a",
-		pm: "p",
-		midnight: "mn",
-		noon: "md",
-		morning: "manhã",
-		afternoon: "tarde",
-		evening: "tarde",
-		night: "noite"
-	},
-	abbreviated: {
-		am: "AM",
-		pm: "PM",
-		midnight: "meia-noite",
-		noon: "meio-dia",
-		morning: "manhã",
-		afternoon: "tarde",
-		evening: "tarde",
-		night: "noite"
-	},
-	wide: {
-		am: "a.m.",
-		pm: "p.m.",
-		midnight: "meia-noite",
-		noon: "meio-dia",
-		morning: "manhã",
-		afternoon: "tarde",
-		evening: "tarde",
-		night: "noite"
-	}
-};
-var formattingDayPeriodValues = {
-	narrow: {
-		am: "a",
-		pm: "p",
-		midnight: "mn",
-		noon: "md",
-		morning: "da manhã",
-		afternoon: "da tarde",
-		evening: "da tarde",
-		night: "da noite"
-	},
-	abbreviated: {
-		am: "AM",
-		pm: "PM",
-		midnight: "meia-noite",
-		noon: "meio-dia",
-		morning: "da manhã",
-		afternoon: "da tarde",
-		evening: "da tarde",
-		night: "da noite"
-	},
-	wide: {
-		am: "a.m.",
-		pm: "p.m.",
-		midnight: "meia-noite",
-		noon: "meio-dia",
-		morning: "da manhã",
-		afternoon: "da tarde",
-		evening: "da tarde",
-		night: "da noite"
-	}
-};
-var ordinalNumber = (dirtyNumber, options$1) => {
-	const number = Number(dirtyNumber);
-	if (options$1?.unit === "week") return number + "ª";
-	return number + "º";
-};
-const ptBR = {
-	code: "pt-BR",
-	formatDistance,
-	formatLong,
-	formatRelative,
-	localize: {
-		ordinalNumber,
-		era: buildLocalizeFn({
-			values: eraValues,
-			defaultWidth: "wide"
-		}),
-		quarter: buildLocalizeFn({
-			values: quarterValues,
-			defaultWidth: "wide",
-			argumentCallback: (quarter) => quarter - 1
-		}),
-		month: buildLocalizeFn({
-			values: monthValues,
-			defaultWidth: "wide"
-		}),
-		day: buildLocalizeFn({
-			values: dayValues,
-			defaultWidth: "wide"
-		}),
-		dayPeriod: buildLocalizeFn({
-			values: dayPeriodValues,
-			defaultWidth: "wide",
-			formattingValues: formattingDayPeriodValues,
-			defaultFormattingWidth: "wide"
-		})
-	},
-	match: {
-		ordinalNumber: buildMatchPatternFn({
-			matchPattern: /^(\d+)[ºªo]?/i,
-			parsePattern: /\d+/i,
-			valueCallback: (value) => parseInt(value, 10)
-		}),
-		era: buildMatchFn({
-			matchPatterns: {
-				narrow: /^(ac|dc|a|d)/i,
-				abbreviated: /^(a\.?\s?c\.?|d\.?\s?c\.?)/i,
-				wide: /^(antes de cristo|depois de cristo)/i
-			},
-			defaultMatchWidth: "wide",
-			parsePatterns: {
-				any: [/^ac/i, /^dc/i],
-				wide: [/^antes de cristo/i, /^depois de cristo/i]
-			},
-			defaultParseWidth: "any"
-		}),
-		quarter: buildMatchFn({
-			matchPatterns: {
-				narrow: /^[1234]/i,
-				abbreviated: /^T[1234]/i,
-				wide: /^[1234](º)? trimestre/i
-			},
-			defaultMatchWidth: "wide",
-			parsePatterns: { any: [
-				/1/i,
-				/2/i,
-				/3/i,
-				/4/i
-			] },
-			defaultParseWidth: "any",
-			valueCallback: (index$1) => index$1 + 1
-		}),
-		month: buildMatchFn({
-			matchPatterns: {
-				narrow: /^[jfmajsond]/i,
-				abbreviated: /^(jan|fev|mar|abr|mai|jun|jul|ago|set|out|nov|dez)/i,
-				wide: /^(janeiro|fevereiro|março|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro)/i
-			},
-			defaultMatchWidth: "wide",
-			parsePatterns: {
-				narrow: [
-					/^j/i,
-					/^f/i,
-					/^m/i,
-					/^a/i,
-					/^m/i,
-					/^j/i,
-					/^j/i,
-					/^a/i,
-					/^s/i,
-					/^o/i,
-					/^n/i,
-					/^d/i
-				],
-				any: [
-					/^ja/i,
-					/^fev/i,
-					/^mar/i,
-					/^abr/i,
-					/^mai/i,
-					/^jun/i,
-					/^jul/i,
-					/^ago/i,
-					/^set/i,
-					/^out/i,
-					/^nov/i,
-					/^dez/i
-				]
-			},
-			defaultParseWidth: "any"
-		}),
-		day: buildMatchFn({
-			matchPatterns: {
-				narrow: /^(dom|[23456]ª?|s[aá]b)/i,
-				short: /^(dom|[23456]ª?|s[aá]b)/i,
-				abbreviated: /^(dom|seg|ter|qua|qui|sex|s[aá]b)/i,
-				wide: /^(domingo|(segunda|ter[cç]a|quarta|quinta|sexta)([- ]feira)?|s[aá]bado)/i
-			},
-			defaultMatchWidth: "wide",
-			parsePatterns: {
-				short: [
-					/^d/i,
-					/^2/i,
-					/^3/i,
-					/^4/i,
-					/^5/i,
-					/^6/i,
-					/^s[aá]/i
-				],
-				narrow: [
-					/^d/i,
-					/^2/i,
-					/^3/i,
-					/^4/i,
-					/^5/i,
-					/^6/i,
-					/^s[aá]/i
-				],
-				any: [
-					/^d/i,
-					/^seg/i,
-					/^t/i,
-					/^qua/i,
-					/^qui/i,
-					/^sex/i,
-					/^s[aá]b/i
-				]
-			},
-			defaultParseWidth: "any"
-		}),
-		dayPeriod: buildMatchFn({
-			matchPatterns: {
-				narrow: /^(a|p|mn|md|(da) (manhã|tarde|noite))/i,
-				any: /^([ap]\.?\s?m\.?|meia[-\s]noite|meio[-\s]dia|(da) (manhã|tarde|noite))/i
-			},
-			defaultMatchWidth: "any",
-			parsePatterns: { any: {
-				am: /^a/i,
-				pm: /^p/i,
-				midnight: /^mn|^meia[-\s]noite/i,
-				noon: /^md|^meio[-\s]dia/i,
-				morning: /manhã/i,
-				afternoon: /tarde/i,
-				evening: /tarde/i,
-				night: /noite/i
-			} },
-			defaultParseWidth: "any"
-		})
-	},
-	options: {
-		weekStartsOn: 0,
-		firstWeekContainsDate: 1
-	}
-};
-var badgeVariants = cva("inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2", {
-	variants: { variant: {
-		default: "border-transparent bg-primary text-primary-foreground hover:bg-primary/80",
-		secondary: "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
-		destructive: "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
-		outline: "text-foreground"
-	} },
-	defaultVariants: { variant: "default" }
-});
-function Badge({ className, variant, ...props }) {
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-		className: cn(badgeVariants({ variant }), className),
-		...props
-	});
-}
-function TripsPage() {
-	const { trips } = useDataStore();
-	const [filter, setFilter] = (0, import_react.useState)("todas");
-	const filteredTrips = trips.filter((t$1) => filter === "todas" ? true : t$1.status === filter);
-	const getStatusBadge = (status) => {
-		switch (status) {
-			case "planejada": return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Badge, {
-				variant: "secondary",
-				className: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100",
-				children: "Planejada"
-			});
-			case "em_andamento": return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Badge, {
-				className: "bg-green-100 text-green-800 hover:bg-green-200 dark:bg-green-900 dark:text-green-100",
-				children: "Em Andamento"
-			});
-			case "concluida": return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Badge, {
-				variant: "outline",
-				className: "text-muted-foreground",
-				children: "Concluída"
-			});
-		}
-	};
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "space-y-6 animate-fade-in",
-		children: [
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
-					className: "text-3xl font-bold tracking-tight",
-					children: "Minhas Viagens"
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-					className: "text-muted-foreground",
-					children: "Gerencie seus roteiros e orçamentos."
-				})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
-					className: "shadow-sm",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Plus, { className: "h-4 w-4 mr-2" }), "Nova Viagem"]
-				})]
-			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "flex gap-2 overflow-x-auto pb-2",
-				children: [
-					"todas",
-					"planejada",
-					"em_andamento",
-					"concluida"
-				].map((f) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-					variant: filter === f ? "default" : "outline",
-					size: "sm",
-					onClick: () => setFilter(f),
-					className: "capitalize",
-					children: f === "todas" ? "Todas" : f.replace("_", " ")
-				}, f))
-			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "grid gap-6 md:grid-cols-2 lg:grid-cols-3",
-				children: [filteredTrips.map((trip) => {
-					const budgetPercentage = trip.budget > 0 ? Math.min(trip.spent / trip.budget * 100, 100) : 0;
-					return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-						className: "group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col",
-						children: [
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardHeader, {
-								className: "pb-3",
-								children: [
-									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-										className: "flex justify-between items-start",
-										children: [getStatusBadge(trip.status), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DropdownMenu, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DropdownMenuTrigger, {
-											asChild: true,
-											children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-												variant: "ghost",
-												className: "h-8 w-8 p-0",
-												children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Ellipsis, { className: "h-4 w-4" })
-											})
-										}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DropdownMenuContent, {
-											align: "end",
-											children: [
-												/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DropdownMenuItem, { children: "Editar Detalhes" }),
-												/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DropdownMenuItem, { children: "Adicionar Despesa" }),
-												/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DropdownMenuItem, {
-													className: "text-destructive",
-													children: "Excluir"
-												})
-											]
-										})] })]
-									}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardTitle, {
-										className: "text-xl mt-3 line-clamp-1 group-hover:text-primary transition-colors",
-										children: trip.title
-									}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-										className: "flex items-center text-sm text-muted-foreground mt-1",
-										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MapPin, { className: "h-3.5 w-3.5 mr-1 shrink-0" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-											className: "truncate",
-											children: trip.destination
-										})]
-									})
-								]
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardContent, {
-								className: "flex-1 pb-3",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "flex items-center text-sm text-muted-foreground mb-4",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Calendar, { className: "h-3.5 w-3.5 mr-1 shrink-0" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [
-										format(new Date(trip.startDate), "dd 'de' MMM", { locale: ptBR }),
-										trip.endDate && ` - ${format(new Date(trip.endDate), "dd 'de' MMM, yyyy", { locale: ptBR })}`,
-										!trip.endDate && ` (${new Date(trip.startDate).getFullYear()})`
-									] })]
-								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "space-y-1.5 mt-auto",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-										className: "flex justify-between text-sm",
-										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-											className: "text-muted-foreground",
-											children: "Orçamento"
-										}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-											className: "font-medium",
-											children: [
-												new Intl.NumberFormat("pt-BR", {
-													style: "currency",
-													currency: "BRL"
-												}).format(trip.spent),
-												" ",
-												"/",
-												" ",
-												new Intl.NumberFormat("pt-BR", {
-													style: "currency",
-													currency: "BRL"
-												}).format(trip.budget)
-											]
-										})]
-									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Progress, {
-										value: budgetPercentage,
-										className: budgetPercentage > 90 ? "[&>div]:bg-destructive" : ""
-									})]
-								})]
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardFooter, {
-								className: "pt-0 pb-4 px-6 border-t mt-4",
-								children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
-									variant: "ghost",
-									className: "w-full justify-between px-0 hover:bg-transparent hover:text-primary",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Ver planejamento completo" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Plus, { className: "h-4 w-4" })]
-								})
-							})
-						]
-					}, trip.id);
-				}), filteredTrips.length === 0 && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "col-span-full py-12 text-center border-2 border-dashed rounded-xl",
-					children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MapPin, { className: "h-12 w-12 text-muted-foreground mx-auto mb-4 opacity-50" }),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-							className: "text-lg font-medium",
-							children: "Nenhuma viagem encontrada"
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "text-muted-foreground mb-4",
-							children: "Que tal planejar sua próxima aventura?"
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, { children: "Criar Viagem" })
-					]
-				})]
-			})
-		]
-	});
-}
-var Dialog = Root$3;
-var DialogTrigger = Trigger;
-var DialogPortal = Portal$1;
-var DialogOverlay = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Overlay, {
-	ref,
-	className: cn("fixed inset-0 z-50 bg-black/80 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0", className),
-	...props
-}));
-DialogOverlay.displayName = Overlay.displayName;
-var DialogContent = import_react.forwardRef(({ className, children, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogPortal, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogOverlay, {}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Content, {
-	ref,
-	className: cn("fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg overflow-y-auto max-h-screen", className),
-	...props,
-	children: [children, /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Close, {
-		className: "absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground",
-		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(X, { className: "h-4 w-4" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-			className: "sr-only",
-			children: "Close"
-		})]
-	})]
-})] }));
-DialogContent.displayName = Content.displayName;
-var DialogHeader = ({ className, ...props }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-	className: cn("flex flex-col space-y-1.5 text-center sm:text-left", className),
-	...props
-});
-DialogHeader.displayName = "DialogHeader";
-var DialogFooter = ({ className, ...props }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-	className: cn("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2", className),
-	...props
-});
-DialogFooter.displayName = "DialogFooter";
-var DialogTitle = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Title, {
-	ref,
-	className: cn("text-lg font-semibold leading-none tracking-tight", className),
-	...props
-}));
-DialogTitle.displayName = Title.displayName;
-var DialogDescription = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Description, {
-	ref,
-	className: cn("text-sm text-muted-foreground", className),
-	...props
-}));
-DialogDescription.displayName = Description.displayName;
-function GaragePage() {
-	const { vehicles } = useDataStore();
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "space-y-6 animate-fade-in",
-		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			className: "flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4",
-			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
-				className: "text-3xl font-bold tracking-tight",
-				children: "Garagem"
-			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-				className: "text-muted-foreground",
-				children: "Gerencie seus veículos, manutenções e documentos."
-			})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Dialog, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogTrigger, {
-				asChild: true,
-				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
-					className: "shadow-sm",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Plus, { className: "h-4 w-4 mr-2" }), "Adicionar Veículo"]
-				})
-			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogContent, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogHeader, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogTitle, { children: "Novo Veículo" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogDescription, { children: "Cadastre um novo veículo para acompanhar manutenções. (Mock demonstrativo)" })] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "grid gap-4 py-4",
-				children: [
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "grid grid-cols-2 gap-4",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "space-y-2",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
-								htmlFor: "make",
-								children: "Marca"
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
-								id: "make",
-								placeholder: "Ex: Fiat"
-							})]
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "space-y-2",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
-								htmlFor: "model",
-								children: "Modelo"
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
-								id: "model",
-								placeholder: "Ex: Ducato"
-							})]
-						})]
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "space-y-2",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
-							htmlFor: "plate",
-							children: "Placa"
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
-							id: "plate",
-							placeholder: "ABC-1234"
-						})]
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-						type: "submit",
-						className: "w-full mt-4",
-						children: "Salvar Veículo"
-					})
-				]
-			})] })] })]
-		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-			className: "grid gap-6 md:grid-cols-2",
-			children: vehicles.map((vehicle) => {
-				const nextMaint = new Date(vehicle.nextMaintenance);
-				const isUrgent = nextMaint.getTime() - (/* @__PURE__ */ new Date()).getTime() < 1e3 * 60 * 60 * 24 * 30;
-				return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-					className: "overflow-hidden flex flex-col md:flex-row group hover:shadow-lg transition-all",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "md:w-2/5 relative h-48 md:h-auto overflow-hidden",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-							src: vehicle.imageUrl,
-							alt: `${vehicle.make} ${vehicle.model}`,
-							className: "object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-							className: "absolute top-2 left-2",
-							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Badge, {
-								variant: "secondary",
-								className: "bg-background/80 backdrop-blur font-mono",
-								children: vehicle.plate
-							})
-						})]
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardContent, {
-						className: "p-6 md:w-3/5 flex flex-col",
-						children: [
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-								className: "flex justify-between items-start mb-4",
-								children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h3", {
-									className: "text-xl font-bold group-hover:text-primary transition-colors",
-									children: [
-										vehicle.make,
-										" ",
-										vehicle.model
-									]
-								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
-									className: "text-sm text-muted-foreground",
-									children: ["Ano ", vehicle.year]
-								})] })
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-								className: "space-y-3 flex-1",
-								children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: `flex items-center gap-2 text-sm p-2 rounded-md border ${isUrgent ? "bg-destructive/10 border-destructive/20 text-destructive" : "bg-muted/50 border-transparent"}`,
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleAlert, { className: "h-4 w-4 shrink-0" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										className: "font-medium block",
-										children: "Próxima Revisão"
-									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										className: "opacity-90",
-										children: nextMaint.toLocaleDateString("pt-BR")
-									})] })]
-								})
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "flex gap-2 mt-6",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
-									variant: "outline",
-									className: "flex-1 h-9 text-xs",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Settings, { className: "h-3.5 w-3.5 mr-1.5" }), "Serviços"]
-								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
-									variant: "outline",
-									className: "flex-1 h-9 text-xs",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FileText, { className: "h-3.5 w-3.5 mr-1.5" }), "Docs"]
-								})]
-							})
-						]
-					})]
-				}, vehicle.id);
-			})
-		})]
-	});
-}
-function AdminPage() {
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "space-y-6 animate-fade-in",
-		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			className: "flex items-center gap-3 border-b pb-4 border-destructive/20",
-			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ShieldAlert, { className: "h-8 w-8 text-destructive" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
-				className: "text-3xl font-bold tracking-tight",
-				children: "Painel Administrativo"
-			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-				className: "text-muted-foreground",
-				children: "Área restrita. Acesso permitido apenas para administradores."
-			})] })]
-		}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			className: "grid gap-6 md:grid-cols-3",
-			children: [
-				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-					className: "border-border/50",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardHeader, { children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Tag, { className: "h-6 w-6 text-primary mb-2" }),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardTitle, { children: "Gestão de Cupons" }),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardDescription, { children: "Crie e gerencie cupons de desconto para assinaturas." })
-					] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardContent, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-						variant: "secondary",
-						className: "w-full",
-						children: "Gerenciar Cupons"
-					}) })]
-				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-					className: "border-border/50",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardHeader, { children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ListChecks, { className: "h-6 w-6 text-primary mb-2" }),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardTitle, { children: "Templates de Checklist" }),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardDescription, { children: "Crie templates globais que os usuários podem clonar." })
-					] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardContent, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-						variant: "secondary",
-						className: "w-full",
-						children: "Editar Templates"
-					}) })]
-				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-					className: "border-border/50",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardHeader, { children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Users, { className: "h-6 w-6 text-primary mb-2" }),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardTitle, { children: "Métricas de Usuários" }),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardDescription, { children: "Visualize o crescimento da plataforma e retenção." })
-					] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardContent, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-						variant: "secondary",
-						className: "w-full",
-						children: "Ver Relatórios"
-					}) })]
-				})
-			]
-		})]
-	});
-}
+var Index = (0, import_react.lazy)(() => __vitePreload(() => import("./Index-BqYMpsRO.js"), __vite__mapDeps([0,1,2])));
+var NotFound = (0, import_react.lazy)(() => __vitePreload(() => import("./NotFound-Dzovcd0G.js"), []));
+var Onboarding = (0, import_react.lazy)(() => __vitePreload(() => import("./Onboarding-DtXPxcAW.js"), __vite__mapDeps([3,4,5])));
+var DashboardPage = (0, import_react.lazy)(() => __vitePreload(() => import("./DashboardPage-GYTCz7dE.js"), __vite__mapDeps([6,7,1,2,5])));
+var TripsPage = (0, import_react.lazy)(() => __vitePreload(() => import("./TripsPage-E9g4DPme.js"), __vite__mapDeps([8,7,1,9,5])));
+var GaragePage = (0, import_react.lazy)(() => __vitePreload(() => import("./GaragePage-BGrMRGoY.js"), __vite__mapDeps([10,4,9,5])));
+var AdminPage = (0, import_react.lazy)(() => __vitePreload(() => import("./AdminPage-DYHVryzi.js"), __vite__mapDeps([11,5])));
 var App = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemeProvider, {
 	defaultTheme: "system",
 	storageKey: "nomadwise-theme",
@@ -35696,13 +27655,16 @@ var App = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemeProvider, {
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Route, {
 					element: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AuthGuard, {}),
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Route, {
-						element: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Layout, {}),
-						children: [
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Route, {
-								path: "/onboarding",
-								element: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Onboarding, {})
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Route, {
+						element: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(OnboardingGuard, {}),
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Route, {
+							path: "/onboarding",
+							element: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react.Suspense, {
+								fallback: null,
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Onboarding, {})
+							})
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Route, {
+							element: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Layout, {}),
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Route, {
 								path: "/app",
 								children: [
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Route, {
@@ -35725,17 +27687,22 @@ var App = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemeProvider, {
 										element: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(GaragePage, {})
 									})
 								]
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Route, {
-								path: "/admin",
-								element: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AdminPage, {})
-							})
-						]
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Route, {
+								element: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AdminGuard, {}),
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Route, {
+									path: "/admin",
+									element: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AdminPage, {})
+								})
+							})]
+						})]
 					})
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Route, {
 					path: "*",
-					element: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(NotFound_default, {})
+					element: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react.Suspense, {
+						fallback: null,
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(NotFound, {})
+					})
 				})
 			] })
 		] })
@@ -35743,5 +27710,6 @@ var App = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemeProvider, {
 });
 var App_default = App;
 (0, import_client.createRoot)(document.getElementById("root")).render(/* @__PURE__ */ (0, import_jsx_runtime.jsx)(App_default, {}));
+export { Navigate as A, ShieldAlert as C, require_jsx_runtime as D, cva as E, useNavigate as M, require_react as N, toast as O, __toESM as P, TriangleAlert as S, createLucideIcon as T, Slot as _, Overlay as a, cn as b, Title as c, Input as d, DropdownMenu as f, Button as g, DropdownMenuTrigger as h, Description as i, useLocation as j, Link as k, Trigger as l, DropdownMenuItem as m, Close as n, Portal$1 as o, DropdownMenuContent as p, Content as r, Root$1 as s, createContextScope as t, Primitive as u, useDataStore as v, LoaderCircle as w, X as x, useAuthStore as y };
 
-//# sourceMappingURL=index-Cx02q8M_.js.map
+//# sourceMappingURL=index-CF_5B8U_.js.map

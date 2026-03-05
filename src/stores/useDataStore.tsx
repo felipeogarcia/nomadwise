@@ -1,28 +1,6 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react'
 import { toast } from '@/hooks/use-toast'
-
-export type TripStatus = 'planejada' | 'em_andamento' | 'concluida'
-
-export interface Trip {
-  id: string
-  title: string
-  destination: string
-  status: TripStatus
-  budget: number
-  spent: number
-  startDate: string
-  endDate?: string
-}
-
-export interface Vehicle {
-  id: string
-  make: string
-  model: string
-  year: number
-  plate: string
-  nextMaintenance: string
-  imageUrl: string
-}
+import { Trip, Vehicle } from '@/types'
 
 interface DataState {
   trips: Trip[]

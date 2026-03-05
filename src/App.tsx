@@ -1,3 +1,4 @@
+import { Suspense, lazy } from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { Toaster } from '@/components/ui/toaster'
 import { Toaster as Sonner } from '@/components/ui/sonner'
@@ -7,16 +8,19 @@ import { AuthProvider } from '@/stores/useAuthStore'
 import { DataProvider } from '@/stores/useDataStore'
 
 import { AuthGuard } from '@/components/AuthGuard'
+import { OnboardingGuard } from '@/components/OnboardingGuard'
+import { AdminGuard } from '@/components/AdminGuard'
 import PublicLayout from '@/components/PublicLayout'
 import Layout from '@/components/Layout'
 
-import Index from '@/pages/Index'
-import NotFound from '@/pages/NotFound'
-import Onboarding from '@/pages/Onboarding'
-import DashboardPage from '@/pages/dashboard/DashboardPage'
-import TripsPage from '@/pages/trips/TripsPage'
-import GaragePage from '@/pages/garage/GaragePage'
-import AdminPage from '@/pages/admin/AdminPage'
+// Lazy loaded routes
+const Index = lazy(() => import('@/pages/Index'))
+const NotFound = lazy(() => import('@/pages/NotFound'))
+const Onboarding = lazy(() => import('@/pages/Onboarding'))
+const DashboardPage = lazy(() => import('@/pages/dashboard/DashboardPage'))
+const TripsPage = lazy(() => import('@/pages/trips/TripsPage'))
+const GaragePage = lazy(() => import('@/pages/garage/GaragePage'))
+const AdminPage = lazy(() => import('@/pages/admin/AdminPage'))
 
 const App = () => (
   <ThemeProvider defaultTheme="system" storageKey="nomadwise-theme">
@@ -27,31 +31,49 @@ const App = () => (
             <Toaster />
             <Sonner />
             <Routes>
-              {/* Public Routes */}
+              {/* Public Routes via PublicLayout (includes its own Suspense) */}
               <Route element={<PublicLayout />}>
                 <Route path="/" element={<Index />} />
               </Route>
 
-              {/* Protected Routes Wrapper */}
+              {/* Protected Environment */}
               <Route element={<AuthGuard />}>
-                {/* Onboarding uses its own simple layout or PublicLayout, let's use Layout without sidebar */}
-                <Route element={<Layout />}>
-                  <Route path="/onboarding" element={<Onboarding />} />
+                <Route element={<OnboardingGuard />}>
+                  {/* Dedicated Onboarding Route */}
+                  <Route
+                    path="/onboarding"
+                    element={
+                      <Suspense fallback={null}>
+                        <Onboarding />
+                      </Suspense>
+                    }
+                  />
 
-                  {/* Main App Routes */}
-                  <Route path="/app">
-                    <Route index element={<Navigate to="/app/dashboard" replace />} />
-                    <Route path="dashboard" element={<DashboardPage />} />
-                    <Route path="trips" element={<TripsPage />} />
-                    <Route path="garage" element={<GaragePage />} />
+                  {/* Main App Authenticated Layout (includes its own Suspense) */}
+                  <Route element={<Layout />}>
+                    <Route path="/app">
+                      <Route index element={<Navigate to="/app/dashboard" replace />} />
+                      <Route path="dashboard" element={<DashboardPage />} />
+                      <Route path="trips" element={<TripsPage />} />
+                      <Route path="garage" element={<GaragePage />} />
+                    </Route>
+
+                    {/* Admin Specific Protected Route */}
+                    <Route element={<AdminGuard />}>
+                      <Route path="/admin" element={<AdminPage />} />
+                    </Route>
                   </Route>
-
-                  {/* Admin Routes */}
-                  <Route path="/admin" element={<AdminPage />} />
                 </Route>
               </Route>
 
-              <Route path="*" element={<NotFound />} />
+              <Route
+                path="*"
+                element={
+                  <Suspense fallback={null}>
+                    <NotFound />
+                  </Suspense>
+                }
+              />
             </Routes>
           </TooltipProvider>
         </BrowserRouter>

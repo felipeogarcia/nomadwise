@@ -681,6 +681,10 @@ section[aria-label='Notifications alt+T'] {
   visibility: hidden;
 }
 
+.static{
+  position: static;
+}
+
 .fixed{
   position: fixed;
 }
@@ -917,10 +921,6 @@ section[aria-label='Notifications alt+T'] {
   margin-bottom: 2rem;
 }
 
-.ml-0{
-  margin-left: 0px;
-}
-
 .ml-1{
   margin-left: 0.25rem;
 }
@@ -1146,12 +1146,16 @@ section[aria-label='Notifications alt+T'] {
   min-height: 0px;
 }
 
-.min-h-\[80px\]{
-  min-height: 80px;
+.min-h-\[400px\]{
+  min-height: 400px;
 }
 
-.min-h-\[80vh\]{
-  min-height: 80vh;
+.min-h-\[50vh\]{
+  min-height: 50vh;
+}
+
+.min-h-\[80px\]{
+  min-height: 80px;
 }
 
 .min-h-screen{
@@ -1180,6 +1184,10 @@ section[aria-label='Notifications alt+T'] {
 
 .w-12{
   width: 3rem;
+}
+
+.w-16{
+  width: 4rem;
 }
 
 .w-2{
@@ -1467,6 +1475,17 @@ section[aria-label='Notifications alt+T'] {
 
 .animate-pulse{
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes spin{
+
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin{
+  animation: spin 1s linear infinite;
 }
 
 .cursor-default{
@@ -1815,6 +1834,10 @@ section[aria-label='Notifications alt+T'] {
 
 .bg-background{
   background-color: hsl(var(--background));
+}
+
+.bg-background\/50{
+  background-color: hsl(var(--background) / 0.5);
 }
 
 .bg-background\/80{
@@ -2221,6 +2244,10 @@ section[aria-label='Notifications alt+T'] {
 
 .font-semibold{
   font-weight: 600;
+}
+
+.uppercase{
+  text-transform: uppercase;
 }
 
 .capitalize{

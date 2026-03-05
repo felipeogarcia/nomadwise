@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
 import { useNavigate } from 'react-router-dom'
+import { Loader2, Ticket } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
   Form,
@@ -14,25 +15,23 @@ import {
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import useAuthStore from '@/stores/useAuthStore'
+import { useOnboarding } from '@/hooks/useOnboarding'
 
 const profileFormSchema = z.object({
   fullName: z.string().min(3, { message: 'Nome deve ter pelo menos 3 caracteres.' }),
-  phone: z.string().min(10, { message: 'Telefone inválido.' }),
-  cpf: z
-    .string()
-    .length(11, { message: 'CPF deve conter 11 dígitos numéricos.' })
-    .regex(/^\d+$/, 'Apenas números'),
+  phone: z.string().regex(/^\d{10,11}$/, 'Telefone deve conter 10 ou 11 dígitos numéricos.'),
+  cpf: z.string().regex(/^\d{11}$/, 'CPF deve conter 11 dígitos numéricos.'),
   birthDate: z
     .string()
     .refine((val) => !isNaN(Date.parse(val)), { message: 'Data de nascimento inválida.' }),
+  couponCode: z.string().optional(),
 })
 
 type ProfileFormValues = z.infer<typeof profileFormSchema>
 
 export default function Onboarding() {
-  const { completeProfile } = useAuthStore()
   const navigate = useNavigate()
+  const { submitProfile, isLoading } = useOnboarding()
 
   const form = useForm<ProfileFormValues>({
     resolver: zodResolver(profileFormSchema),
@@ -41,22 +40,30 @@ export default function Onboarding() {
       phone: '',
       cpf: '',
       birthDate: '',
+      couponCode: '',
     },
   })
 
-  function onSubmit(data: ProfileFormValues) {
-    completeProfile(data)
-    navigate('/app/dashboard')
+  async function onSubmit(data: ProfileFormValues) {
+    const success = await submitProfile(data)
+    if (success) {
+      navigate('/app/dashboard')
+    }
   }
 
   return (
-    <div className="min-h-[80vh] flex items-center justify-center animate-fade-in-up">
+    <div className="min-h-screen flex flex-col bg-background/50 items-center justify-center p-4 animate-fade-in-up">
+      <div className="w-full max-w-lg mb-8 text-center space-y-2">
+        <h1 className="text-3xl font-extrabold tracking-tight">Falta pouco!</h1>
+        <p className="text-muted-foreground">
+          Precisamos de mais alguns detalhes para configurar sua conta Nomadwise.
+        </p>
+      </div>
+
       <Card className="w-full max-w-lg shadow-elevation border-muted">
-        <CardHeader className="space-y-1 text-center">
-          <CardTitle className="text-2xl font-bold">Complete seu Perfil</CardTitle>
-          <CardDescription>
-            Precisamos de mais alguns detalhes para configurar sua conta Nomadwise.
-          </CardDescription>
+        <CardHeader>
+          <CardTitle className="text-xl">Complete seu Perfil</CardTitle>
+          <CardDescription>Suas informações são mantidas de forma segura.</CardDescription>
         </CardHeader>
         <CardContent>
           <Form {...form}>
@@ -95,7 +102,7 @@ export default function Onboarding() {
                     <FormItem>
                       <FormLabel>Telefone</FormLabel>
                       <FormControl>
-                        <Input placeholder="(11) 99999-9999" {...field} />
+                        <Input placeholder="Ex: 11999999999" maxLength={11} {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -115,8 +122,41 @@ export default function Onboarding() {
                   </FormItem>
                 )}
               />
-              <Button type="submit" className="w-full h-11 text-base shadow-md">
-                Finalizar Cadastro
+
+              <div className="pt-4 border-t">
+                <FormField
+                  control={form.control}
+                  name="couponCode"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="flex items-center gap-2">
+                        <Ticket className="h-4 w-4 text-primary" />
+                        Código de Cupom{' '}
+                        <span className="text-muted-foreground font-normal">(Opcional)</span>
+                      </FormLabel>
+                      <FormControl>
+                        <Input placeholder="Ex: NOMAD2024" className="uppercase" {...field} />
+                      </FormControl>
+                      <FormDescription>Insira seu código promocional, se tiver um.</FormDescription>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+
+              <Button
+                type="submit"
+                className="w-full h-11 text-base shadow-md"
+                disabled={isLoading}
+              >
+                {isLoading ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Validando e Salvando...
+                  </>
+                ) : (
+                  'Finalizar Cadastro'
+                )}
               </Button>
             </form>
           </Form>

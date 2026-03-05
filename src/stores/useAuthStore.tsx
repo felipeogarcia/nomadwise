@@ -1,36 +1,20 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react'
 import { toast } from '@/hooks/use-toast'
-
-export type UserRole = 0 | 1 // 0: Admin, 1: User
-export type UserStatus = 'pending_profile' | 'active'
-
-export interface User {
-  id: string
-  email: string
-  name: string
-  role: UserRole
-  status: UserStatus
-  avatar?: string
-}
+import { Profile } from '@/types'
 
 interface AuthState {
-  user: User | null
+  user: Profile | null
   isAuthenticated: boolean
   login: () => void
   loginAsAdmin: () => void
   logout: () => void
-  completeProfile: (data: {
-    fullName: string
-    phone: string
-    cpf: string
-    birthDate: string
-  }) => void
+  completeProfile: (data: Partial<Profile>) => void
 }
 
 const AuthContext = createContext<AuthState | undefined>(undefined)
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<User | null>(null)
+  const [user, setUser] = useState<Profile | null>(null)
 
   const login = () => {
     setUser({
@@ -61,19 +45,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     toast({ title: 'Sessão encerrada', description: 'Até logo!' })
   }
 
-  const completeProfile = (data: {
-    fullName: string
-    phone: string
-    cpf: string
-    birthDate: string
-  }) => {
+  const completeProfile = (data: Partial<Profile>) => {
     if (!user) return
     setUser({
       ...user,
-      name: data.fullName,
+      ...data,
       status: 'active',
     })
-    toast({ title: 'Perfil atualizado', description: 'Seu perfil foi ativado com sucesso.' })
   }
 
   return React.createElement(
